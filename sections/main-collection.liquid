@@ -29,18 +29,6 @@
         --section-products-per-row: {{ section.settings.desktop_products_per_row }};
       }
     }
-
-    @media screen and (min-width: 1750px) {
-      #shopify-section-{{ section.id }} {
-        --section-products-per-row: 5;
-      }
-    }
-    
-    @media screen and (min-width: 2250px) {
-      #shopify-section-{{ section.id }} {
-        --section-products-per-row: 6;
-      }
-    }
   {%- else -%}
     @media screen and (min-width: 1400px) {
       #shopify-section-{{ section.id }} {
@@ -268,55 +256,24 @@
                  {% endif %}  
 
          {% if forloop.index0 == 10 %}
-          {% if collection.metafields.custom.promo_block != blank and collection.metafields.custom.promo_block.value != blank %}
-            {% assign promo = collection.metafields.custom.promo_block.value %}
-
-            {% assign bg_style = '' %}
-            {% if promo.bg_image != blank %}
-              {% assign image_url = promo.bg_image.value | image_url: width: 450 %}
-              {% assign bg_style = 'background-image: url(' | append: image_url | append: '); background-size: cover; background-position: center;' %}
-            {% elsif promo.bg_color != blank %}
-              {% assign bg_style = 'background-color: ' | append: promo.bg_color | append: ';' %}
-            {% endif %}
-
-            <div class="cstmpromotion2_faq" style="{{ bg_style }}">
-              <div class="cstmpromotion2_faq_text">
-                <div class="promotion_2head">
-                  <h2>{{ promo.title }}</h2>
-                  {% if promo.text != blank %}
-                    <div class="promo2_text">
-                      {{ promo.text | metafield_tag }}
-                    </div>
-                  {% endif %}
-                  <div class="promo2btn">
-                    {% if promo.cta_url != blank %}
-                      <a href="{{ promo.cta_url }}" class="btn">
-                        {{ promo.cta_label }}
-                      </a>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          {% elsif section.settings.promotion2_head != blank %}
-            <div class="cstmpromotion2_faq">
-              <div class="cstmpromotion2_faq_text">
-                <div class="promotion_2head">
-                  <h2>{{ section.settings.promotion2_head }}</h2>
+           {% if section.settings.promotion2_head != blank %}
+             <div class="cstmpromotion2_faq">
+                <div class="cstmpromotion2_faq_text">
+                  <div class="promotion_2head">
+                   <h2>{{ section.settings.promotion2_head }}</h2> 
                   <div class="promo2_text">
                     {{ section.settings.promotion2_text }}
                   </div>
-                  <div class="promo2btn">
-                    <a href="{{ section.settings.promo2btn_url }}" class="btn">
-                      {{ section.settings.promo2btn_text }}
-                    </a>
-                  </div>
+
+                    <div class="promo2btn">
+                      <a href="{{  section.settings.promo2btn_url }}" class="btn"> {{ section.settings.promo2btn_text }} </a>
+                    </div>
+                  
                 </div>
-              </div>
-            </div>
-          {% endif %}
-          
+               
+             </div>
+             </div>
+               {% endif %}
          {% endif %}           
                  {% endif %}       
                 {%- endfor -%}

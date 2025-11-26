@@ -3187,10 +3187,6 @@ p a:not(.button), .rte a:not(.button), .link {
     margin-inline-end: 10px;
   }
 
-  .combo-box__color-swatch.option-stroke {
-    box-shadow: 0 0 0 1px color-mix(in srgb, rgb(var(--text-color)) 80%, black) inset;
-  }
-
   .combo-box + .select {
     transition: border-radius .2s ease-in-out;
   }
@@ -4940,7 +4936,7 @@ input:checked + .popover__choice-label:is(:lang(ae), :lang(ar), :lang(arc), :lan
 }
 
 .color-swatch--white .color-swatch__item:before {
-  box-shadow: 0 0 0 1px color-mix(in srgb, rgb(var(--text-color)) 80%, black) inset;
+  box-shadow: 0 0 0 1px rgba(var(--text-color), .3) inset;
 }
 
 .color-swatch__radio:checked + .color-swatch__item:after, .color-swatch__item.is-selected:after {

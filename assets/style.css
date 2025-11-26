@@ -61,11 +61,7 @@
 .product_custom_tab_section .tab button.active { /* background-color: #ccc; */ }
 .product_custom_tab_section .tabcontent {  display: none; padding: 15px 0px;  border-top: none; color: black; }
 
-.product .cstm_shortdescription .short_descp,
-.product .cstm_shortdescription .product-highlights{  color: black; }
-.product .cstm_shortdescription .product-highlights {
-  padding-left: 24px;
-}
+.product .cstm_shortdescription .short_descp {  color: black; }
 
 .template-page .page-header__text-wrapper { margin-top: 12px; margin-bottom: 12px; }
 
@@ -355,22 +351,12 @@ a,p,span,button{
 .cstm_collection_nav_item_container ul {  padding: 0;   display: flex;  gap: 25px;  overflow: auto; -webkit-overflow-scrolling: touch;padding-bottom: 20px; }
 .cstm_collection_nav_item_container .cstm_collection_title a {  white-space: nowrap; font-size: 16px; color: #00BDE7;}
 .show_less_btn {  margin-left: 10px; border-bottom: 1px solid; cursor: pointer;}
-.cstm_collection_descp .read_moredot {  padding: 0 6px; font-size: 16px; color: #01BAE3;}
-.cstm_collection_descp .read_moretext {  border-bottom: 1px solid; cursor: pointer; font-size: 16px; color: #01BAE3; }
+.cstm_collection_descp #readMoreBtn {   font-size: 16px; color: #01BAE3;}
+.cstm_collection_descp #readMoreBtn .read_moretext {  border-bottom: 1px solid; cursor: pointer; }
 .shopify-section--collection-banner .page-header__text-wrapper .cstm_collection_descp p {  font-size: 16px;  color: #01BAE3; margin: 0; }
-.shopify-section--collection-banner .page-header__text-wrapper .cstm_collection_descp .descp a { text-decoration: underline; }
-.shopify-section--collection-banner .page-header__text-wrapper .cstm_collection_descp .js-readmore-init-hidden {
-  opacity: 0;
-  transform: translateY(5px);
-  transition: opacity 2s ease, transform 2s ease;
-}
-
-.shopify-section--collection-banner .page-header__text-wrapper .cstm_collection_descp .js-readmore-visible {
-  opacity: 1;
-    transform: translateY(0);
-}
-.shopify-section--collection-banner .page-header .page-header__text-wrapper .heading { text-align: left; margin:0px;}
+.shopify-section--collection-banner .page-header .page-header__text-wrapper  .heading {  font-size: 45px; text-transform: capitalize;  display: flex;  align-items: center;}
 .shopify-section--collection-banner .page-header .page-header__text-wrapper {  max-width: 100%;}
+.shopify-section--collection-banner .page-header .page-header__text-wrapper .heading { text-align: left; margin:0px;}
 .cstm_collection_descp {   text-align: left; gap: 10px;    margin-top: 7px; }
 .ib-coll .slick-dotted.slick-slider {  margin-bottom: 0px;}
 .ib_images_load_more_btn { display: none;}

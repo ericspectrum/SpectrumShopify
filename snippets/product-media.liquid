@@ -13,14 +13,7 @@
     {%- endcomment -%}
 
     {% assign filtered_media_ids = '' %}
-    {% assign has_alt_variant_id = false %}
-  
-    {%- for media in product.media -%}
-      {%- if media.alt contains '#' -%}
-          {% assign has_alt_variant_id = true %}
-      {%- endif -%}
-    {%- endfor -%}
-  
+
     {%- if product.variants.size > 1 -%}
         {%- for media in product.media -%}
             {%- if media.alt contains '#' -%}
@@ -50,7 +43,6 @@
         {%- assign largest_image_aspect_ratio = largest_image_aspect_ratio | at_most: media.preview_image.aspect_ratio -%}
     {%- endfor -%}
 
-
     <product-media filtered-ids="{{ filtered_media_ids | json }}" form-id="{{ product_form_id }}" {% if section.settings.enable_video_autoplay %}autoplay-video{% endif %} thumbnails-position="{{ section.settings.desktop_thumbnails_position }}" {% if settings.reveal_product_media %}reveal-on-scroll{% endif %} product-handle="{{ product.handle }}" class="product__media" style="--largest-image-aspect-ratio: {{ largest_image_aspect_ratio }}">
         <div class="product__media-list-wrapper" style="max-width: {{ max_width }}px">
             {%- capture flickity_config -%}
@@ -76,33 +68,18 @@
                     {%- assign is_media_filtered = false -%}
                     {%- assign media_id_as_string = media.id | append: '' -%}
 
-                                {% if has_alt_variant_id %}
-                                {% if media.alt contains '#' %}
-                                    {%- assign alt = product.title -%}
-                                {% elsif product.variants.size > 1 %}
-                                    {%- continue -%}
-                                {% endif %}
+                    {% if media.alt contains '#' %}
+                        {%- assign alt = product.title -%}
+                    {% elsif product.variants.size > 1 %}
+                        {%- continue -%}
+                    {% endif %}
 
-                                {%- if product.variants.size > 1 -%}
-                                    {%- if filtered_media_ids contains media_id_as_string or media.alt == product.title -%}
-                                        {%- assign is_media_filtered = true -%}
-                                    {%- endif -%}
-                                {%- endif -%}
-                          
-                                  {% else %}
+                    {%- if product.variants.size > 1 -%}
+                        {%- if filtered_media_ids contains media_id_as_string or media.alt == product.title -%}
+                            {%- assign is_media_filtered = true -%}
+                        {%- endif -%}
+                    {%- endif -%}
 
-                          
-                                  {%- if product.variants.size > 1 -%}
-                                      {%- if filtered_media_ids contains media_id_as_string and media.alt contains '#' -%}
-                                          {%- assign is_media_filtered = true -%}
-                                      {%- endif -%}
-                                  {%- endif -%}
-              
-                                  {% if media.alt contains '#' %}
-                                      {%- assign alt = product.title -%}
-                                  {% endif %}
-                               {% endif %}           
-                  
                     <div id="product-{{ section.id }}-{{ media.id }}" class="product__media-item {% if is_media_filtered %}is-filtered{% endif %} {% if selected_media_id == media.id %}is-initial-selected is-selected{% endif %}" data-media-type="{{ media.media_type }}" data-media-id="{{ media.id }}" data-original-position="{{ forloop.index0 }}">
                         {%- case media.media_type -%}
                             {%- when 'image' -%}
@@ -247,7 +224,6 @@
                                 {%- assign is_media_filtered = false -%}
                                 {%- assign media_id_as_string = media.id | append: '' -%}
 
-                                {% if has_alt_variant_id %}
                                 {% if media.alt contains '#' %}
                                     {%- assign alt = product.title -%}
                                 {% elsif product.variants.size > 1 %}
@@ -259,20 +235,7 @@
                                         {%- assign is_media_filtered = true -%}
                                     {%- endif -%}
                                 {%- endif -%}
-                          
-                                  {% else %}
 
-                          
-                                  {%- if product.variants.size > 1 -%}
-                                      {%- if filtered_media_ids contains media_id_as_string and media.alt contains '#' -%}
-                                          {%- assign is_media_filtered = true -%}
-                                      {%- endif -%}
-                                  {%- endif -%}
-              
-                                  {% if media.alt contains '#' %}
-                                      {%- assign alt = product.title -%}
-                                  {% endif %}
-                               {% endif %}   
                                 <button type="button" tabindex="-1" {% if settings.reveal_product_media and is_media_filtered == false %}reveal{% endif %} class="product__thumbnail-item {% if is_media_filtered %}is-filtered{% endif %} {% unless section.settings.show_thumbnails_on_mobile %}hidden-pocket{% endunless %}" {% if selected_media_id == media.id %}aria-current="true"{% endif %} aria-controls="product-{{ section.id }}-{{ media.id }}" data-media-id="{{ media.id }}" data-action="select">
                                     <div class="product__thumbnail">
                                         {{ media.preview_image | image_url: width: media.preview_image.width | image_tag: loading: 'lazy', sizes: '(max-width: 999px) 72px, 60px', widths: '60,72,120,144,180,216,240,288' }}

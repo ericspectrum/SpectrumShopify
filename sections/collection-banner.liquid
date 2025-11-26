@@ -86,13 +86,13 @@
                     {%- endif -%}
 
                     {%- if section.settings.show_collection_description and collection.description != blank -%}
-                      <div class="cstm_collection_descp">
-                        <div class="descp-wrapper">
-                          <div class="descp js-readmore-init-hidden" id="descp">
-                            {{ collection.description }}
-                          </div>
+                        <div class="cstm_collection_descp">
+                            <p><span class="descp">{{- collection.description -}}</span> <span id="readMoreBtn"><span
+                                            class="read_moredot">...</span> <span class="read_moretext">Read More</span></span>
+                            </p>
+
+
                         </div>
-                      </div>
 
                     {%- endif -%}
                 </div>
@@ -249,13 +249,6 @@
 
 
 <!--  Add Active Class -->
-<style>
-.descp-wrapper {
-  position: relative;
-  max-width: 100%;
-}
-
-</style>
 
 <script>
     const collActive = document.querySelectorAll('.cstm_collection_title23 a')
@@ -270,108 +263,51 @@
 
 </script>
 
-{%- if section.settings.show_collection_description and collection.description != blank -%}
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const descp = document.getElementById('descp');
-    console.log(descp);
-    if (!descp) return;
-    console.log(descp);
+    const coll_descp = document.querySelector('.cstm_collection_descp p .descp');
+    if (typeof coll_descp != 'undefined') {
+        const readMoreBtn = document.getElementById('readMoreBtn');
 
-    const originalHTML = descp.innerHTML;
-    const originalText = descp.innerText;
-    const maxWords = 50;
+        const fullText = coll_descp.innerText;
+        const splitText = coll_descp.innerText.split(' ');
+        const trunctedText = splitText.slice(0, 50).join(' ');
 
-    const words = originalText.trim().split(/\s+/);
-    if (words.length <= maxWords) {
-      descp.classList.remove('js-readmore-init-hidden');
-      return;
-    }
+        if (splitText.length <= 50) {
+            readMoreBtn.style.display = 'none';
+        }
 
-    let wordCount = 0;
-    let truncatedHTML = '';
 
-    function truncateNode(node) {
-      if (wordCount >= maxWords) return '';
+        coll_descp.innerText = trunctedText
 
-      if (node.nodeType === Node.TEXT_NODE) {
-        const nodeWords = node.textContent.trim().split(/\s+/);
-        const allowedWords = nodeWords.slice(0, maxWords - wordCount);
-        wordCount += allowedWords.length;
-        return allowedWords.join(' ') + (wordCount < maxWords ? ' ' : '');
-      }
+        readMoreBtn.addEventListener('click', function () {
+            coll_descp.innerText = fullText;
+            readMoreBtn.style.visibility = 'hidden';
 
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        let inner = '';
-        node.childNodes.forEach(child => {
-          inner += truncateNode(child);
+
+            const showLessBtn = document.createElement('span');
+            showLessBtn.innerText = 'Show Less'
+            showLessBtn.classList.add('show_less_btn')
+            coll_descp.appendChild(showLessBtn)
+
+            showLessBtn.addEventListener('click', function () {
+
+                coll_descp.innerText = trunctedText;
+                readMoreBtn.style.visibility = 'visible';
+                showLessBtn.style.display = 'none';
+            });
         });
-        return `<${node.nodeName.toLowerCase()}${getAttributes(node)}>${inner}</${node.nodeName.toLowerCase()}>`;
-      }
-
-      return '';
     }
 
-    function getAttributes(node) {
-      if (!node.attributes) return '';
-      return Array.from(node.attributes)
-        .map(attr => ` ${attr.name}="${attr.value}"`)
-        .join('');
-    }
+    const showLessBtn = document.querySelectorAll('.cstm_collection_title');
 
-    const temp = document.createElement('div');
-    temp.innerHTML = originalHTML;
-    temp.childNodes.forEach(child => {
-      truncatedHTML += truncateNode(child);
-    });
+    showLessBtn.forEach((item, index) => {
+        item.addEventListener('click', (itm) => {
 
-    function createButton(text, className) {
-      const btn = document.createElement('span');
-      btn.innerText = text;
-      btn.classList.add(className);
-      btn.style.cursor = 'pointer';
-      return btn;
-    }
+        })
+    })
 
-    function showTruncated() {
-      descp.innerHTML = truncatedHTML.trim();
-
-      const dots = document.createElement('span');
-      dots.className = 'read_moredot';
-      dots.innerText = '...';
-
-      const readMoreBtn = createButton('Read More', 'read_moretext');
-
-      descp.appendChild(dots);
-      descp.appendChild(readMoreBtn);
-
-      readMoreBtn.addEventListener('click', () => {
-        showFull();
-      });
-    }
-
-    function showFull() {
-      descp.innerHTML = originalHTML;
-
-      const showLessBtn = createButton('Show Less', 'show_less_btn');
-      descp.appendChild(showLessBtn);
-
-      showLessBtn.addEventListener('click', () => {
-        showTruncated();
-      });
-    }
-
-    showTruncated();
-    console.log(descp, "descp")
-    descp.classList.remove('js-readmore-init-hidden');
-    descp.classList.add('js-readmore-visible');
-
-  }, 150);
-});
 </script>
-
-{%- endif -%}
 {% schema %}
 {
   "name": "Collection banner",

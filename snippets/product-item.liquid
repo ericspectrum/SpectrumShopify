@@ -262,74 +262,22 @@
                 <div class="product-item-meta__swatch-list color-swatch-list color-swatch-list--mini">
                   {%- assign variant_option = 'option' | append: product_option.position -%}
                   {%- assign color_swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
+
                   {%- capture color_name -%}{{ section.id }}-{{ block.id }}-{{ product.id }}{%- endcapture -%}
 
                   {%- for value in product_option.values -%}
                     {%- capture color_id -%}{{ color_name }}-{{ forloop.index }}{%- endcapture -%}
-                    {%- assign swatch_stroke = false -%}
+                    {%- assign color_value_downcase = value | downcase -%}
                     {%- assign variant_for_value = product.variants | where: variant_option, value | first -%}
-                    {%- assign swatch_style = null -%}
-                  
-                    {%- if variant_for_value and variant_for_value.metafields.custom.variant_color_swatches != blank -%}
-                      {%- assign swatches = variant_for_value.metafields.custom.variant_color_swatches.value -%}
-                  
-                      {%- if swatches.first != nil -%}
-                        {%- for swatch in swatches -%}
-                          {%- if swatch.name == value -%}
-                            {%- assign swatch_stroke = swatch.stroke -%}
-                            {%- if swatch.hex != blank -%}
-                              {%- assign swatch_style = "background-color: " | append: swatch.hex -%}
-                            {%- elsif swatch.image != blank -%}
-                              {%- assign image_url = swatch.image | image_url -%}
-                              {%- assign swatch_style = "background-image: url(" | append: image_url | append: "); background-size: cover;" -%}
-                            {%- endif -%}
-                            {%- break -%}
-                          {%- endif -%}
-                        {%- endfor -%}
-                      {%- else -%}
-                        {%- if swatches.name == value -%}
-                          {%- assign swatch_stroke = swatches.stroke -%}
-                          {%- if swatches.hex != blank -%}
-                            {%- assign swatch_style = "background-color: " | append: swatches.hex -%}
-                          {%- elsif swatches.image != blank -%}
-                            {%- assign image_url = swatches.image | image_url -%}
-                            {%- assign swatch_style = "background-image: url(" | append: image_url | append: "); background-size: cover;" -%}
-                          {%- endif -%}
-                        {%- endif -%}
-                      {%- endif -%}
-                    {%- endif -%}
-                  
-                    <div
-                      class="{% if swatch_stroke %}color-swatch--white{% endif %}"
-                      data-tooltip="{{ value | replace: " ", "-" }}"
-                    >
-                      <input
-                        class="color-swatch__radio visually-hidden"
-                        type="radio"
-                        name="{{ color_name }}"
-                        id="{{ color_id }}"
-                        value="{{ value | escape }}"
-                        {% if product_option.selected_value == value %}checked="checked"{% endif %}
-                        data-variant-id="{{ variant_for_value.id }}"
-                        {% if variant_for_value.featured_media %}
-                          data-variant-featured-media="{{ variant_for_value.featured_media.id }}"
-                        {% endif %}
-                      >
-                      
-                      <label
-                        class="color-swatch__item"
-                        for="{{ color_id }}"
-                        {% if swatch_style %}
-                          style="{{ swatch_style }}"
-                        {% else %}
-                          style="{% render 'color-swatch-style', swatch: value.swatch, color_swatch_config: color_swatch_config, value: value %}"
-                        {% endif %}
-                      >
+
+                    <div class="{% if color_white_label == color_value_downcase %}color-swatch--white{% endif %}"  data-tooltip={{ value | replace: " " , "-"}}>
+                      <input class="color-swatch__radio visually-hidden" type="radio" name="{{ color_name }}" id="{{ color_id }}" value="{{ value | escape }}" {% if product_option.selected_value == value %}checked="checked"{% endif %} data-variant-id="{{ variant_for_value.id }}" {% if variant_for_value.featured_media %}data-variant-featured-media="{{ variant_for_value.featured_media.id }}"{% endif %}>
+                      <label class="color-swatch__item" for="{{ color_id }}" style="{% render 'color-swatch-style', swatch: value.swatch, color_swatch_config: color_swatch_config, value: value %}">
                         <span class="visually-hidden">{{ value }}</span>
                       </label>
                     </div>
+                    
                   {%- endfor -%}
-
                 </div>
             {%- endcase -%}
 

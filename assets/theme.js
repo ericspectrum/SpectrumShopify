@@ -5483,14 +5483,6 @@ var ProductMedia = class extends CustomHTMLElement {
     this.viewInSpaceElement = this.querySelector("[data-shopify-model3d-id]");
     this.zoomButton = this.querySelector(".product__zoom-button");
     this.product = await ProductLoader.load(this.getAttribute("product-handle"));
-    if (this.product.options.length > 1) {
-      const urlParams = new URLSearchParams(window.location.search);
-      const variantId = Number(urlParams.get('variant'));
-      const selectedVariant =
-      this.product.variants.find(v => v.id === variantId) ||
-      this.product.variants[0];
-      selectedVariant && this._onVariantChanged({ detail: { variant: selectedVariant } });
-    }
     const form = document.getElementById(this.getAttribute("form-id"));
     form?.addEventListener("variant:change", this._onVariantChanged.bind(this));
     this.mainCarousel.addEventListener("model:played", () => this.mainCarousel.setDraggable(false));
@@ -5534,40 +5526,17 @@ var ProductMedia = class extends CustomHTMLElement {
         shouldReload = true;
         const altParts = media["alt"].split("#"), mediaGroupParts = altParts.pop().split("&").reduce((acc, pair) => {
           const [key, value] = pair.split("=");
-          if (key === "color") {
-            acc[key] = value.toLowerCase();
-          } else {
-            acc[key] = parseInt(value);
-          }
+          acc[key] = parseInt(value);
           return acc;
         }, {});
-        if (event.detail.variant && event.detail.variant.options && event.detail.variant.options.length > 1) {
-          const selectedColor = event.detail.variant.options[0].toLowerCase();
-          for (const media of this.product["media"]) {
-            if (media.alt && media.alt.includes('#')) {
-              const mediaParts = media.alt.split('#');
-              const mediaParams = mediaParts[1].split('&').reduce((acc, pair) => {
-                const [key, value] = pair.split('=');
-                acc[key] = key === 'color' ? value.toLowerCase() : value;
-                return acc;
-              }, {});
-              if (mediaParams.color && mediaParams.color !== selectedColor) {
-                filteredMediaIds.push(media.id);
-              }
-            }
-          }
-
-        } else {
-          if (typeof mediaGroupParts['variant_id'] === 'undefined' || mediaGroupParts['variant_id'] !== variant['id']) {
-            console.log(mediaGroupParts['variant_id'], variant['id']);
-            filteredMediaIds.push(media["id"]);
-          } else if (!selectedMediaId) {
-            selectedMediaId = media["id"];
-          }
+        if (typeof mediaGroupParts['variant_id'] === 'undefined' || mediaGroupParts['variant_id'] !== variant['id']) {
+          console.log(mediaGroupParts['variant_id'], variant['id']);
+          filteredMediaIds.push(media["id"]);
+        } else if (!selectedMediaId) {
+          selectedMediaId = media["id"];
         }
       }
     });
-    
     const currentlyFilteredIds = [...new Set(Array.from(this.querySelectorAll(".is-filtered[data-media-id]")).map((item) => parseInt(item.getAttribute("data-media-id"))))];
     if (currentlyFilteredIds.some((value) => !filteredMediaIds.includes(value))) {
       const flickityInstance = await this.mainCarousel.flickityInstance;

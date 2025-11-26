@@ -74,73 +74,15 @@
                         </header>
 
                         <div class="combo-box__option-list" role="listbox">
-                          
-                        {%- assign option_index = option.position | minus: 1 -%}
-                        
-                        {%- for value in option.values -%}
-                          {%- assign matched_variant = null -%}
-                          {%- assign swatch_style = null -%}
-                          {%- assign swatch_stroke = false -%}
-
-                          {%- for variant in product.variants -%}
-                            {%- if variant.options[option_index] == value -%}
-                              {%- assign matched_variant = variant -%}
-                              {%- break -%}
-                            {%- endif -%}
-                          {%- endfor -%}
-                        
-                          {%- if matched_variant and matched_variant.metafields.custom.variant_color_swatches != blank -%}
-                            {%- assign swatches = matched_variant.metafields.custom.variant_color_swatches.value -%}
-                        
-                            {%- if swatches.first != nil -%}
-                              {%- for swatch in swatches -%}
-                                {%- if swatch.name == value -%}
-                                  {%- assign swatch_stroke = swatch.stroke -%}
-                                  {%- if swatch.hex != blank -%}
-                                    {%- assign swatch_style = "background-color: " | append: swatch.hex -%}
-                                  {%- elsif swatch.image != blank -%}
-                                    {%- assign image_url = swatch.image | image_url -%}
-                                    {%- assign swatch_style = "background-image: url(" | append: image_url | append: "); background-size: cover;" -%}
-                                  {%- endif -%}
-                                  {%- break -%}
-                                {%- endif -%}
-                              {%- endfor -%}
-                            {%- else -%}
-                              {%- if swatches.name == value -%}
-                                {%- assign swatch_stroke = swatches.stroke -%}
-                                {%- if swatches.hex != blank -%}
-                                  {%- assign swatch_style = "background-color: " | append: swatches.hex -%}
-                                {%- elsif swatches.image != blank -%}
-                                  {%- assign image_url = swatches.image | image_url -%}
-                                  {%- assign swatch_style = "background-image: url(" | append: image_url | append: "); background-size: cover;" -%}
-                                {%- endif -%}
+                          {%- for value in option.values -%}
+                            <button type="button" role="option" class="combo-box__option-item" value="{{ value.id }}" aria-selected="{% if value == option.selected_value %}true{% else %}false{% endif %}">
+                              {%- if color_label_list contains option_downcase -%}
+                                <span class="combo-box__color-swatch" aria-label="{{ value | escape }}" style="{% render 'color-swatch-style', swatch: value.swatch, color_swatch_config: color_swatch_config, value: value %}"></span>
                               {%- endif -%}
-                            {%- endif -%}
-                          {%- endif -%}
-                        
-                          <button
-                            type="button"
-                            role="option"
-                            class="combo-box__option-item"
-                            value="{{ value.id }}"
-                            aria-selected="{% if value == option.selected_value %}true{% else %}false{% endif %}"
-                          >
-                            {%- if color_label_list contains option_downcase -%}
-                              <span
-                                class="combo-box__color-swatch {% if swatch_stroke %}option-stroke{% endif %}"
-                                aria-label="{{ value | escape }}"
-                                {% if swatch_style %}
-                                  style="{{ swatch_style }}"
-                                {% else %}
-                                  style="{% render 'color-swatch-style', swatch: value.swatch, color_swatch_config: color_swatch_config, value: value %}"
-                                {% endif %}
-                              ></span>
-                            {%- endif -%}
-                        
-                            {{- value -}}
-                          </button>
-                        {%- endfor -%}
-                    
+
+                              {{- value -}}
+                            </button>
+                          {%- endfor -%}
                         </div>
 
                         <select class="visually-hidden" data-option-position="{{ option.position }}" name="option{{ option.position }}" form="{{ product_form_id }}" aria-label="{{ option.name | escape }}">
