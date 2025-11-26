@@ -1,18 +1,18 @@
 <div class="venderLink_container">
-<div class="container">
+
   <div class="venderLink_container_content ib-image-main">
     <div class="venderLink_item">
        {% for block in section.blocks %}
          {% if block.settings.linkText != blank %}
             <div class="Link">
-              <a href={{ block.settings.linkUrl }} {% if link.url contains shop.origin %} target="_blank" {% endif %} >{{ block.settings.linkText }}</a>
+              <a href={{ block.settings.linkUrl }}>{{ block.settings.linkText }}</a>
             </div>
            {% endif %}
        {% endfor %}
       </div>
   </div>
 
-  </div>
+  
 </div>
 
 

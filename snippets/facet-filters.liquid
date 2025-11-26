@@ -128,20 +128,9 @@ Code that create the faceted search for the collection and search pages. It curr
                       {%- elsif filter.presentation == 'swatch' -%}
                         <div class="color-swatch-list">
                           {%- for filter_value in filter.values -%}
-                            {%- assign swatch_stroke = false -%}
                             {%- assign color_value_downcase = filter_value.label | downcase -%}
-                            {% assign color_swatches = shop.metaobjects['color_swatches'].values %}
 
-                            {% if color_swatches %}
-                              {% for swatch in color_swatches %}
-                                {%- assign swatch_name = swatch.name | downcase -%}
-                                  {%- if swatch_name == color_value_downcase -%}
-                                    {%- assign swatch_stroke = swatch.stroke -%}
-                                  {% endif %}
-                              {% endfor %}
-                            {% endif %}
-
-                            <div class="color-swatch {% if swatch_stroke %}color-swatch--white{% endif %} {% if filter_value.count == 0 %}is-disabled{% endif %}" data-tooltip="{{ filter_value.label | escape }}">
+                            <div class="color-swatch {% if color_white_label == color_value_downcase %}color-swatch--white{% endif %} {% if filter_value.count == 0 %}is-disabled{% endif %}" data-tooltip="{{ filter_value.label | escape }}">
                               <input class="color-swatch__radio visually-hidden" type="checkbox" name="{{ filter_value.param_name }}" id="{{ filter_value.param_name | escape }}-{{ forloop.index }}" value="{{ filter_value.value | escape }}" title="{{ filter_value.label | escape }}" {% if filter_value.active %}checked="checked"{% endif %} {% if filter_value.count == 0 %}disabled{% endif %}>
                               <label class="color-swatch__item" for="{{ filter_value.param_name | escape }}-{{ forloop.index }}" style="{% render 'color-swatch-style', swatch: filter_value.swatch %}">
                                 <span class="visually-hidden">{{ filter_value.label }}</span>
@@ -154,20 +143,9 @@ Code that create the faceted search for the collection and search pages. It curr
 
                         <div class="color-swatch-list">
                           {%- for filter_value in filter.values -%}
-                            {%- assign swatch_stroke = false -%}
                             {%- assign color_value_downcase = filter_value.label | downcase -%}
-                            {% assign color_swatches = shop.metaobjects['color_swatches'].values %}
 
-                            {% if color_swatches %}
-                              {% for swatch in color_swatches %}
-                                {%- assign swatch_name = swatch.name | downcase -%}
-                                  {%- if swatch_name == color_value_downcase -%}
-                                    {%- assign swatch_stroke = swatch.stroke -%}
-                                  {% endif %}
-                              {% endfor %}
-                            {% endif %}
-
-                            <div class="color-swatch {% if swatch_stroke %}color-swatch--white{% endif %} {% if filter_value.count == 0 %}is-disabled{% endif %}" data-tooltip="{{ filter_value.label | escape }}">
+                            <div class="color-swatch {% if color_white_label == color_value_downcase %}color-swatch--white{% endif %} {% if filter_value.count == 0 %}is-disabled{% endif %}" data-tooltip="{{ filter_value.label | escape }}">
                               <input class="color-swatch__radio visually-hidden" type="checkbox" name="{{ filter_value.param_name }}" id="{{ filter_value.param_name | escape }}-{{ forloop.index }}" value="{{ filter_value.value | escape }}" title="{{ filter_value.label | escape }}" {% if filter_value.active %}checked="checked"{% endif %} {% if filter_value.count == 0 %}disabled{% endif %}>
                               <label class="color-swatch__item" for="{{ filter_value.param_name | escape }}-{{ forloop.index }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: filter_value.label %}">
                                 <span class="visually-hidden">{{ filter_value.label }}</span>

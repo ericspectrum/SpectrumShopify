@@ -73,9 +73,7 @@ NOTE TO DEVELOPERS: welcome to Focal theme! We hope that you will enjoy editing 
     <script src="{{ 'vendor.js' | asset_url }}" defer></script>
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
-<script>
-    window.gwCustomCheckisLoggedIn = {% if customer %}true{% else %}false{% endif %};
-</script>
+
     {{ content_for_header }}
 
     
@@ -95,10 +93,6 @@ NOTE TO DEVELOPERS: welcome to Focal theme! We hope that you will enjoy editing 
   {%- endif -%}
 
   <body class="template-{{ template | replace: '.', '-' | replace: '/', '-' }}  no-focus-outline {{ feature_classes }}" data-instant-allow-query-string>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K92SF3R"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     {%- comment -%}Common SVG definitions that we are re-using in several places{%- endcomment -%}
     <svg class="visually-hidden">
       <linearGradient id="rating-star-gradient-half">
@@ -188,10 +182,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 $('.product_slider_c').slick({
   dots: true,
   infinite: false,
-  cssEase: 'linear',
-  touchMove:true,
   speed: 300,
-
   slidesToShow: 4,
   slidesToScroll: 4,
   responsive: [
@@ -207,13 +198,6 @@ $('.product_slider_c').slick({
     {
       breakpoint: 780,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-     {
-      breakpoint: 480,
-      settings: {
         slidesToShow: 4,
         slidesToScroll: 2
       }
@@ -222,91 +206,7 @@ $('.product_slider_c').slick({
 });          
 </script>  
 
-  <script>
-
-  function openCity(evt, cityName) {
- 
-  var i, tabcontent, tablinks;
-
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-  </script>
-
-
-<script>
-
-var acc = document.getElementsByClassName("footer__item-title ");
-var i;
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-
-if (window.innerWidth <= 780) {
-  
-    this.classList.toggle("active");
-
-    var panel = this.nextElementSibling;
-     panel.classList.remove('active-content')
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-      panel.classList.add('active-content')
-    }
-}  
-  });
-}
-
-const ibimages = document.querySelectorAll('.ib-links .ib-images-full');
-const ibimages_loadbtn = document.querySelector('.ib_images_load_more_btn .load_more_btn')
-const initialCount = 8;
-
-ibimages.forEach((item,index) => {
-if(window.innerWidth <= 480){
-if(index >= initialCount){
-item.style.display = 'none';
-  }
- 
-  }
-  
-
-})
-
-
-
-if (typeof ibimages_loadbtn !== 'undefined' && ibimages_loadbtn !== null) {
-  ibimages_loadbtn.addEventListener('click',() => {
-  const ibimages = document.querySelectorAll('.ib-links .ib-images-full');
-  ibimages.forEach((item,index) => {
-    if (index >= initialCount) {
-          item.style.display = 'block';
-        }
-  })
-     ibimages_loadbtn.style.display = 'none';
-  })
-}
-
-
-  
-</script>
-
-          
-          
- <script> window.onload=function(){
-  //window.location.href.indexOf(".myshopify.com")>-1||window.location.href.indexOf(".shopifypreview.com")>-1?console.log():window.location.href.indexOf("/404")>-1?console.log():window.location.href="/404"
-} </script>
 
   <script src="https://app.redirectmapper.com/dist/app.bundle.js" class="1689707436859011" id="redirectMapperID"></script>        
   </body>
 </html>
-{% if content_for_header contains "kimonix_void_script" %}<script async id="kimonix_elements_script" src="https://api.kimonix.com/kimonix_elements.js?shop=906ca8-4.myshopify.com"></script>{% endif %}

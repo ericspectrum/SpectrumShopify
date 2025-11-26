@@ -55,7 +55,6 @@
   {%- endif -%}
 
   <div class="container">
-    {% comment %}
     <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb text--xsmall text--subdued hidden-phone">
       <ol class="breadcrumb__list" role="list">
         <li class="breadcrumb__item">
@@ -73,7 +72,7 @@
         </li>
       </ol>
     </nav>
-{% endcomment %}
+
     <!-- PRODUCT TOP PART -->
 
     <product-rerender id="product-info-{{ product.id }}-{{ section.id }}" observe-form="{{ product_form_id }}" allow-partial-rerender>
@@ -162,17 +161,6 @@ quite differently, as it is in a drawer on tablet/desktop, and a popover on mobi
       "type": "quantity_selector",
       "name": "Quantity selector",
       "limit": 1
-    },
-    {
-      "type": "volume_pricing",
-      "name": "Volume pricing table",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "Volume pricing is only available to Shopify Plus merchants. [Learn more](https://help.shopify.com/en/manual/b2b/catalogs/quantity-pricing#volume-pricing)"
-        }
-      ]
     },
     {
       "type": "buy_buttons",

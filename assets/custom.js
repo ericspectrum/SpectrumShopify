@@ -128,14 +128,3 @@
  * "photoswipe": v4.1.3. PhotoSwipe is only loaded on demand to power the zoom feature on product page. If the zoom
  * feature is disabled, then this script is never loaded.
  */
-
-
-
-
-var links = document.links;
-for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
-  if (links[i].hostname !== window.location.hostname) {
-    links[i].target = '_blank';
-    links[i].rel = 'noreferrer noopener';
-  }
-}

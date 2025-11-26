@@ -5483,14 +5483,6 @@ var ProductMedia = class extends CustomHTMLElement {
     this.viewInSpaceElement = this.querySelector("[data-shopify-model3d-id]");
     this.zoomButton = this.querySelector(".product__zoom-button");
     this.product = await ProductLoader.load(this.getAttribute("product-handle"));
-    if (this.product.options.length > 1) {
-      const urlParams = new URLSearchParams(window.location.search);
-      const variantId = Number(urlParams.get('variant'));
-      const selectedVariant =
-      this.product.variants.find(v => v.id === variantId) ||
-      this.product.variants[0];
-      selectedVariant && this._onVariantChanged({ detail: { variant: selectedVariant } });
-    }
     const form = document.getElementById(this.getAttribute("form-id"));
     form?.addEventListener("variant:change", this._onVariantChanged.bind(this));
     this.mainCarousel.addEventListener("model:played", () => this.mainCarousel.setDraggable(false));
@@ -5527,49 +5519,26 @@ var ProductMedia = class extends CustomHTMLElement {
   async _onVariantChanged(event) {
     const variant = event.detail.variant;
     const filteredMediaIds = [];
-    let selectedMediaId = false;
     let shouldReload = false;
     this.product["media"].forEach((media) => {
+      let matchMedia2 = variant["featured_media"] && media["id"] === variant["featured_media"]["id"];
       if (media["alt"]?.includes("#")) {
         shouldReload = true;
-        const altParts = media["alt"].split("#"), mediaGroupParts = altParts.pop().split("&").reduce((acc, pair) => {
-          const [key, value] = pair.split("=");
-          if (key === "color") {
-            acc[key] = value.toLowerCase();
-          } else {
-            acc[key] = parseInt(value);
-          }
-          return acc;
-        }, {});
-        if (event.detail.variant && event.detail.variant.options && event.detail.variant.options.length > 1) {
-          const selectedColor = event.detail.variant.options[0].toLowerCase();
-          for (const media of this.product["media"]) {
-            if (media.alt && media.alt.includes('#')) {
-              const mediaParts = media.alt.split('#');
-              const mediaParams = mediaParts[1].split('&').reduce((acc, pair) => {
-                const [key, value] = pair.split('=');
-                acc[key] = key === 'color' ? value.toLowerCase() : value;
-                return acc;
-              }, {});
-              if (mediaParams.color && mediaParams.color !== selectedColor) {
-                filteredMediaIds.push(media.id);
+        if (!matchMedia2) {
+          const altParts = media["alt"].split("#"), mediaGroupParts = altParts.pop().split("_");
+          this.product["options"].forEach((option) => {
+            if (option["name"].toLowerCase() === mediaGroupParts[0].toLowerCase()) {
+              if (variant["options"][option["position"] - 1].toLowerCase() !== mediaGroupParts[1].trim().toLowerCase()) {
+                filteredMediaIds.push(media["id"]);
               }
             }
-          }
-
-        } else {
-          if (typeof mediaGroupParts['variant_id'] === 'undefined' || mediaGroupParts['variant_id'] !== variant['id']) {
-            console.log(mediaGroupParts['variant_id'], variant['id']);
-            filteredMediaIds.push(media["id"]);
-          } else if (!selectedMediaId) {
-            selectedMediaId = media["id"];
-          }
+          });
         }
       }
     });
-    
     const currentlyFilteredIds = [...new Set(Array.from(this.querySelectorAll(".is-filtered[data-media-id]")).map((item) => parseInt(item.getAttribute("data-media-id"))))];
     if (currentlyFilteredIds.some((value) => !filteredMediaIds.includes(value))) {
+      const selectedMediaId = variant["featured_media"] ? variant["featured_media"]["id"] : this.product["media"].map((item) => item.id).filter((item) => !filteredMediaIds.includes(item))[0];
       const flickityInstance = await this.mainCarousel.flickityInstance;
       flickityInstance.destroy();
       Array.from(this.querySelectorAll("[data-media-id]")).forEach((item) => {
@@ -5584,7 +5553,7 @@ var ProductMedia = class extends CustomHTMLElement {
       }
       this.mainCarousel.select(`[data-media-id="${event.detail.variant["featured_media"]["id"]}"]`);
     }
-    this.selectedVariantMediaId = selectedMediaId;
+    this.selectedVariantMediaId = event.detail.variant["featured_media"] ? event.detail.variant["featured_media"]["id"] : null;
   }
   async _onFlickityReady() {
     const flickityInstance = await this.mainCarousel.flickityInstance;
@@ -6655,6 +6624,58 @@ focus-trap/dist/focus-trap.esm.js:
   *)
 */
 
+
+var acc = document.getElementsByClassName("footer__item-title ");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+
+if (window.innerWidth <= 780) {
+    
+    
+    this.classList.toggle("active");
+
+    
+    var panel = this.nextElementSibling;
+     panel.classList.remove('active-content')
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+      panel.classList.add('active-content')
+    }
+}  
+  });
+}
+
+const ibimages = document.querySelectorAll('.ib-links .ib-images-full');
+const ibimages_loadbtn = document.querySelector('.ib_images_load_more_btn .load_more_btn')
+const initialCount = 8;
+
+ibimages.forEach((item,index) => {
+if(window.innerWidth <= 480){
+if(index >= initialCount){
+item.style.display = 'none';
+  }
+ 
+  }
+  
+
+})
+
+
+
+
+ibimages_loadbtn.addEventListener('click',() => {
+const ibimages = document.querySelectorAll('.ib-links .ib-images-full');
+ibimages.forEach((item,index) => {
+  if (index >= initialCount) {
+        item.style.display = 'block';
+      }
+})
+   ibimages_loadbtn.style.display = 'none';
+})
 
 
 

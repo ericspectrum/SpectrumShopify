@@ -55,34 +55,6 @@
         {%- assign text_alignment = section.settings.text_alignment -%}
 
         <div class="content-box content-box--{{ section.settings.text_width }} content-box--text-{{ text_alignment }} content-box--{{ text_position }} text-container">
-          {% if section.settings.show_socialIcon %}
-                  <div class="cstm_socialicononbanner">
-
-       <div class="article__share">
-                <span class="article__share-label">{{ 'article.general.share' | t }}</span>
-
-                <div class="article__share-button-list" role="list">
-                  <a class="article__share-button-item article__share-button-item--facebook tap-area" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener" role="listitem" aria-label="{{ 'general.social.facebook_share' | t }}">
-                    {%- render 'icon' with 'facebook' -%}
-                  </a>
-
-                  <a class="article__share-button-item article__share-button-item--pinterest tap-area" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener" role="listitem" aria-label="{{ 'general.social.pinterest_pin' | t }}">
-                    {%- render 'icon' with 'pinterest' -%}
-                  </a>
-
-                  <a class="article__share-button-item article__share-button-item--twitter tap-area" href="https://twitter.com/intent/tweet?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener" role="listitem" aria-label="{{ 'general.social.twitter_tweet' | t }}">
-                    {%- render 'icon' with 'twitter' -%}
-                  </a>
-
-                  <a class="article__share-button-item article__share-button-item--mail tap-area" href="mailto:?&subject={{ article.title | escape }}&body={{ share_url }}" role="listitem" aria-label="{{ 'general.social.email_share' | t }}">
-                    {%- render 'icon' with 'share' -%}
-                  </a>
-                </div>
-              </div>
-      
-    </div>
-          {% endif %}
-           
           {%- if section.settings.subheading != blank -%}
             <h2 class="heading heading--small">{{ section.settings.subheading | escape }}</h2>
           {%- endif -%}
@@ -114,13 +86,6 @@
     "groups": ["header", "custom.overlay"]
   },
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_socialIcon",
-      "label": "Show Social Icon",
-      "default": false,
-      
-    },
     {
       "type": "text",
       "id": "subheading",

@@ -70,12 +70,12 @@
             <div class="announcement-bar__message {{ text_size_class }}">
               {%- if block.settings.content != blank or block.settings.image != blank -%}
                 {%- if block.settings.learn_more_text != blank -%}
-                 <a href={{ block.settings.announceUrl }}> <h2>{{ block.settings.text | escape }} <button class="link" data-action="open-content">{{ block.settings.learn_more_text | escape }}</button></h2> </a>
+                  <h2>{{ block.settings.text | escape }} <button class="link" data-action="open-content">{{ block.settings.learn_more_text | escape }}</button></h2>
                 {%- else -%}
                   <button class="link" data-action="open-content">{{ block.settings.text | escape }}</button>
                 {%- endif -%}
               {%- else -%}
-               <a href={{ block.settings.announceUrl  }}>  <h2>{{ block.settings.text | escape }}</h2> </a>
+                <h2>{{ block.settings.text | escape }}</h2>
               {%- endif -%}
             </div>
 
@@ -151,12 +151,6 @@
           "id": "text",
           "label": "Text",
           "default": "Announce something here"
-        },
-        {
-          "type": "url",
-          "id": "announceUrl",
-          "label": "Announcement Bar Link",
-          
         },
         {
           "type": "text",

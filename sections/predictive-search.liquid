@@ -24,18 +24,15 @@
         <div class="tabs-nav__item-list">
           {%- assign is_first = true -%}
 
-
-          {%- if predictive_search.resources.queries.size > 0 -%}
-            <button type="button" class="tabs-nav__item heading heading--small" aria-expanded="{% if is_first %}true{% else %}false{% endif %}" aria-controls="predictive-search-queries">{{- 'search.general.queries' | t -}}</button>
-            {%- assign is_first = false -%}
-          {%- endif -%}
-          
           {%- if predictive_search.resources.products.size > 0 -%}
             <button type="button" class="tabs-nav__item heading heading--small" aria-expanded="{% if is_first %}true{% else %}false{% endif %}" aria-controls="predictive-search-products">{{- 'search.general.products' | t -}}</button>
             {%- assign is_first = false -%}
           {%- endif -%}
 
-          
+          {%- if predictive_search.resources.queries.size > 0 -%}
+            <button type="button" class="tabs-nav__item heading heading--small" aria-expanded="{% if is_first %}true{% else %}false{% endif %}" aria-controls="predictive-search-queries">{{- 'search.general.queries' | t -}}</button>
+            {%- assign is_first = false -%}
+          {%- endif -%}
 
           {%- if predictive_search.resources.articles.size > 0 -%}
             <button type="button" class="tabs-nav__item heading heading--small" aria-expanded="{% if is_first %}true{% else %}false{% endif %}" aria-controls="predictive-search-articles">{{- 'search.general.articles' | t -}}</button>
@@ -59,25 +56,6 @@
   <div class="predictive-search__results-categories">
     {%- assign is_first = true -%}
 
-
-    {%- if predictive_search.resources.queries.size > 0 -%}
-      <div class="predictive-search__results-categories-item" {% unless is_first %}hidden{% endunless %} id="predictive-search-queries">
-        <ul class="predictive-search__product-list list--unstyled" role="list" data-type="queries">
-          {%- for query in predictive_search.resources.queries -%}
-            <li class="predictive-search__linklist-item">
-              <a class="predictive-search__linklist-link" href="{{ query.url }}" data-instant>
-                <span>{{- query.styled_text -}}</span>
-                {%- render 'icon' with 'nav-arrow-right', direction_aware: true -%}
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-
-      {%- assign is_first = false -%}
-    {%- endif -%}
-
-    
     {%- if predictive_search.resources.products.size > 0 -%}
       <div class="predictive-search__results-categories-item" {% unless is_first %}hidden{% endunless %} id="predictive-search-products">
         {%- if is_first -%}
@@ -140,7 +118,22 @@
       {%- assign is_first = false -%}
     {%- endif -%}
 
-    
+    {%- if predictive_search.resources.queries.size > 0 -%}
+      <div class="predictive-search__results-categories-item" {% unless is_first %}hidden{% endunless %} id="predictive-search-queries">
+        <ul class="predictive-search__product-list list--unstyled" role="list" data-type="queries">
+          {%- for query in predictive_search.resources.queries -%}
+            <li class="predictive-search__linklist-item">
+              <a class="predictive-search__linklist-link" href="{{ query.url }}" data-instant>
+                <span>{{- query.styled_text -}}</span>
+                {%- render 'icon' with 'nav-arrow-right', direction_aware: true -%}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      {%- assign is_first = false -%}
+    {%- endif -%}
 
     {%- if predictive_search.resources.articles.size > 0 -%}
       <div class="predictive-search__results-categories-item" {% unless is_first %}hidden{% endunless %} id="predictive-search-articles">

@@ -101,35 +101,9 @@
                       {%- assign color_swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
 
                       {%- for value in option.values -%}
-                        {%- assign swatch_stroke = false -%}
-                        {%- if value.product_url == blank -%}
-                           {%- assign matched_variant = null -%}
-                            {%- assign option_index = option.position | minus: 1 -%}
+                        {%- assign color_value_downcase = value | downcase -%}
 
-                            {%- for variant in product.variants -%}
-                              {%- if variant.options[option_index] == value -%}
-                                {%- assign matched_variant = variant -%}
-                                {%- break -%}
-                              {%- endif -%}
-                            {%- endfor -%}
-                              {%- if matched_variant and matched_variant.metafields.custom.variant_color_swatches != blank -%}
-                                {%- assign swatches = matched_variant.metafields.custom.variant_color_swatches.value -%}
-                                {%- if swatches.first != nil -%}
-                                  {%- for swatch in swatches -%}
-                                    {%- if swatch.name == value -%}
-                                    {%- assign swatch_stroke = swatch.stroke -%}
-                                  {%- endif -%}
-                                  {%- endfor -%}
-                                {%- else -%}
-                                  {%- if swatches.name == value -%}
-                                    {%- assign swatch_stroke = swatches.stroke -%}
-                                  {%- endif -%}
-                                {%- endif -%}
-                              {%- endif -%}
-                        {%- endif -%}
-
-
-                        <div class="color-swatch {% if swatch_stroke %}color-swatch--white{% endif %} {% unless value.available %}is-disabled{% endunless %}">
+                        <div class="color-swatch {% if color_white_label == color_value_downcase %}color-swatch--white{% endif %} {% unless value.available %}is-disabled{% endunless %}">
                           {%- if value.product_url != blank -%}
                             {%- if value == option.selected_value -%}
                               <input type="hidden" form="{{ product_form_id }}" data-option-position="{{ option.position }}" name="option{{ option.position }}" value="{{ value.id }}">
@@ -139,61 +113,10 @@
                               <span class="visually-hidden">{{ value }}</span>
                             </a>
                           {%- else -%}
-                            
-                           {%- assign matched_variant = null -%}
-                            {%- assign option_index = option.position | minus: 1 -%}
-
-                            {%- for variant in product.variants -%}
-                              {%- if variant.options[option_index] == value -%}
-                                {%- assign matched_variant = variant -%}
-                                {%- break -%}
-                              {%- endif -%}
-                            {%- endfor -%}
-                          
                             <input class="color-swatch__radio visually-hidden" type="radio" data-option-position="{{ option.position }}" name="option{{ option.position }}" form="{{ product_form_id }}" id="{{ option_id }}-{{ forloop.index }}" value="{{ value.id }}" {% if value == option.selected_value %}checked="checked"{% endif %}>
-                            
-
-                            {%- assign swatch_style = null -%}
-                            
-                            {%- if matched_variant and matched_variant.metafields.custom.variant_color_swatches != blank -%}
-                              {%- assign swatches = matched_variant.metafields.custom.variant_color_swatches.value -%}
-                            
-                              {%- if swatches.first != nil -%}
-                                {%- for swatch in swatches -%}
-                                  {%- if swatch.name == value -%}
-                                    {%- if swatch.hex != blank -%}
-                                      {%- assign swatch_style = "background-color: " | append: swatch.hex -%}
-                                    {%- elsif swatch.image != blank -%}
-                                      {%- assign image_url = swatch.image | image_url -%}
-                                      {%- assign swatch_style = "background-image: url(" | append: image_url | append: "); background-size: cover;" -%}
-                                      {%- endif -%}
-                                    {%- break -%}
-                                  {%- endif -%}
-                                {%- endfor -%}
-                              {%- else -%}
-                                {%- if swatches.name == value -%}
-                                  {%- if swatches.hex != blank -%}
-                                    {%- assign swatch_style = "background-color: " | append: swatches.hex -%}
-                                  {%- elsif swatches.image != blank -%}
-                                    {%- assign image_url = swatches.image | image_url -%}
-                                    {%- assign swatch_style = "background-image: url(" | append: image_url | append: "); background-size: cover;" -%}
-                                  {%- endif -%}
-                                {%- endif -%}
-                              {%- endif -%}
-                            {%- endif -%}
-                            
-                            <label
-                              class="color-swatch__item"
-                              for="{{ option_id }}-{{ forloop.index }}"
-                              {% if swatch_style %}
-                                style="{{ swatch_style }}"
-                              {% else %}
-                                style="{% render 'color-swatch-style', swatch: value.swatch, color_swatch_config: color_swatch_config, value: value %}"
-                              {% endif %}
-                            >    
+                            <label class="color-swatch__item" for="{{ option_id }}-{{ forloop.index }}" style="{% render 'color-swatch-style', swatch: value.swatch, color_swatch_config: color_swatch_config, value: value %}">
                               <span class="visually-hidden">{{ value }}</span>
                             </label>
-                            
                           {%- endif -%}
                         </div>
                       {%- endfor -%}
@@ -473,22 +396,14 @@
   {% comment %}
   <!-- {{ block.settings.tab_cont1 }} -->
   {% endcomment %}
-                  {%- if product.metafields.magento.description_product_detail.value -%}
-              {{ product.metafields.magento.description_product_detail.value }}
-          {%- endif -%}    
 </div>
 
 <div id="Paris" class="tabcontent">
 
-  <div class="gw-rv-main-widget-placeholder" style="display: block" data-product_id={{product.id}}></div>
-
- 
-  
-{% capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1 %}{% endcapture %} 
+  {% capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1 %}{% endcapture %} 
 {% unless the_snippet_reviews contains 'Liquid error' %} 
 {{ the_snippet_reviews }} 
 {% endunless %} 
-  
     {% comment %}
 {{ block.settings.tab_cont2 }}
    {% endcomment %}
@@ -512,26 +427,6 @@
         </a>
       </li>
     {% endfor %}
-
-
-    {% if product.metafields.magento.tag_attributes %}
-
-
-      {% for tag in product.metafields.magento.tag_attributes.value %}
-        {% assign formatted_tag = tag | replace: ' ', '-' %}
-         <li>
-        <a href="/search?q={{ tag | url_encode }}">
-          {{ tag }}
-        </a>
-      </li>
-    {% endfor %}
-
-      
-
-    {% endif %}
-
-
-    
   </ul>
 {% else %}
   <p>No tags available for this product.</p>
@@ -543,20 +438,6 @@
 
   <div class="cstm_shortdescription">
       <div class="short_descp">{{ product.metafields.magento.short_description }}</div> 
-      <ul class="product-highlights">
-    {%- if product.metafields.magento.description_product_highlight_1.value -%}
-      <li>{{ product.metafields.magento.description_product_highlight_1.value }}</li>
-    {%- endif -%}
-    {%- if product.metafields.magento.description_product_highlight_2.value -%}
-      <li>{{ product.metafields.magento.description_product_highlight_2.value }}</li>
-    {%- endif -%}
-    {%- if product.metafields.magento.description_product_highlight_3.value -%}
-      <li>{{ product.metafields.magento.description_product_highlight_3.value }}</li>
-    {%- endif -%}
-    {%- if product.metafields.magento.description_product_highlight_4.value -%}
-      <li>{{ product.metafields.magento.description_product_highlight_4.value }}</li>
-    {%- endif -%}
-    </ul>
   </div>
 
   
@@ -625,7 +506,7 @@
           {%- if product.gift_card? and block.settings.show_gift_card_recipient -%}
             {%- assign recipient_feature_active = true -%}
           {%- endif -%}
-    <product-meta data-block-type="meta" data-block-id="{{ section.id }}" price-class="price--large" class="product-meta">
+
            <div class="product-meta__price-list-container">
       {%- if product.selected_or_first_available_variant != nil -%}
         <div class="price-list">
@@ -676,9 +557,7 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-         
-            
-{% comment %}
+
       {%- if product.selected_or_first_available_variant != nil -%}
         <div class="product-meta__label-list label-list">
           {%- unless product.selected_or_first_available_variant.available -%}
@@ -694,15 +573,15 @@
           {%- endunless -%}
         </div>
       {%- endif -%}
-{% endcomment %}
-
-      <div class="cstm-rve-widgt">
-            <div class="gw-rv-average-placeholder" style="display: block" data-product_id={{product.id}}></div>
-         </div>
     </div>
-      </product-meta>
           <div data-block-type="buy-buttons" data-block-id="{{ block.id }}" class="product-form__buy-buttons" {{ block.shopify_attributes }}>
             {%- form 'product', product, is: 'product-form', id: product_form_id -%}
+              {% comment %}
+                Automatically inserted by Shop Pay Installments theme updater
+              {% endcomment %}
+              {% unless settings.disable_autogenerated_payment_terms %}
+                {{ form | payment_terms }}
+              {% endunless %}
               {%- if recipient_feature_active -%}
                 <gift-card-recipient class="gift-card-recipient">
                   <div class="input input--checkbox">
@@ -757,7 +636,6 @@
                 {%- if block.settings.show_payment_button and recipient_feature_active == false and template.suffix != 'quick-buy-popover' -%}
                   {{ form | payment_button }}
 
-                  
                   {%- unless product.selected_or_first_available_variant.available -%}
                     <style>
                       #shopify-section-{{ section.id }} .shopify-payment-button {
@@ -765,19 +643,10 @@
                       }
                     </style>
                   {%- endunless -%}
-
-                  
-                  
                 {%- endif -%}
               </product-payment-container>
             {%- endform -%}
-
-           
-
-            
           </div>
-
-          
         {%- endif -%}
 
         {%- if context != 'quick-buy' -%}
@@ -797,6 +666,12 @@
 
   {%- if buy_buttons_block == blank -%}
     {%- form 'product', product, is: 'product-form', id: product_form_id -%}
+      {% comment %}
+        Automatically inserted by Shop Pay Installments theme updater
+      {% endcomment %}
+      {% unless settings.disable_autogenerated_payment_terms %}
+        {{ form | payment_terms }}
+      {% endunless %}
       <input type="hidden" disabled name="id" value="{{ product.selected_or_first_available_variant.id }}">
     {%- endform -%}
   {%- endif -%}
@@ -846,3 +721,81 @@ IMPLEMENTATION NOTE: if during the iteration of the options we have found an opt
   </popover-content>
 {%- endif -%}
 
+
+
+
+
+
+
+<!--  -->
+
+<style>
+
+.product_custom_tab_section .tab {
+  overflow: hidden;
+  border-bottom: 1px solid #A0A0A04D;
+}
+
+.product_custom_tab_section .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 0px;
+    transition: 0.3s;
+    margin-right: 50px;
+}
+.product_custom_tab_section .tablinks{
+     font-family: 'Lausanne' !important;
+    font-size:14px;
+    font-weight:300 !important;
+  }
+
+ .product_custom_tab_section .tabcontent p {
+      font-family: 'Lausanne' !important;
+    font-size:14px;
+    font-weight:400 !important;
+}
+  
+.product_custom_tab_section .tablinks.active {
+  color: #00B9E2;
+  border-bottom: 2px solid #00B9E2;
+  font-family: 'Lausanne' !important;
+}
+.product_custom_tab_section .tab button:hover {
+  /* background-color: #ddd; */
+}
+
+.product_custom_tab_section .tab button.active {
+  /* background-color: #ccc; */
+}
+
+.product_custom_tab_section .tabcontent {
+  display: none;
+  padding: 15px 0px;
+  /* border: 1px solid #ccc; */
+  border-top: none;
+}
+  </style>
+
+  <script>
+
+  function openCity(evt, cityName) {
+ 
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>

@@ -1,377 +1,404 @@
 <style>
-    #shopify-section-{{ section.id }} .image-overlay {
-        --heading-color: {{ section.settings.image_text_color.red }}, {{ section.settings.image_text_color.green }},{{ section.settings.image_text_color.blue }};
-        --text-color: {{ section.settings.image_text_color.red }}, {{ section.settings.image_text_color.green }},{{ section.settings.image_text_color.blue }};
-        --section-items-alignment: center;
-        --section-overlay-color: {{ section.settings.image_overlay_color.red }}, {{ section.settings.image_overlay_color.green }},{{ section.settings.image_overlay_color.blue }};
-        --section-overlay-opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
-    }
+  #shopify-section-{{ section.id }} .image-overlay {
+    --heading-color: {{ section.settings.image_text_color.red }}, {{ section.settings.image_text_color.green }}, {{ section.settings.image_text_color.blue }};
+    --text-color: {{ section.settings.image_text_color.red }}, {{ section.settings.image_text_color.green }}, {{ section.settings.image_text_color.blue }};
+    --section-items-alignment: center;
+    --section-overlay-color: {{ section.settings.image_overlay_color.red }}, {{ section.settings.image_overlay_color.green }}, {{ section.settings.image_overlay_color.blue }};
+    --section-overlay-opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+  }
 </style>
 
 <section>
-    {%- comment -%}
-    ------------------------------------------------------------------------------------------
-    TOP PART (IMAGE AND BREADCRUMB)
-    ------------------------------------------------------------------------------------------
-    {%- endcomment -%}
-    {%- comment -%}
-      {%- capture breadcrumb -%}
-        <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb breadcrumb--floating text--xsmall hidden-phone">
-          <ol class="breadcrumb__list" role="list">
-            <li class="breadcrumb__item">
-              <a class="breadcrumb__link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
-            </li>
+  {%- comment -%}
+  ------------------------------------------------------------------------------------------
+  TOP PART (IMAGE AND BREADCRUMB)
+  ------------------------------------------------------------------------------------------
+  {%- endcomment -%}
 
-            <li class="breadcrumb__item">
-              <span class="breadcrumb__link" aria-current="page">
-                {%- if collection.handle == 'all' -%}
-                  {{- 'collection.general.all_products' | t -}}
-                {%- else -%}
-                  {{- collection.title -}}
-                {%- endif -%}
-              </span>
-            </li>
-          </ol>
-        </nav>
-      {%- endcapture -%}
-     {%- endcomment -%}
+  {%- capture breadcrumb -%}
+    <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb breadcrumb--floating text--xsmall hidden-phone">
+      <ol class="breadcrumb__list" role="list">
+        <li class="breadcrumb__item">
+          <a class="breadcrumb__link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
+        </li>
 
-    {%- if collection.image and section.settings.show_collection_image -%}
-        <image-with-text-overlay reveal-on-scroll parallax
-                                 class="image-overlay image-overlay--{{ section.settings.section_height }}"
-                                 {% if section.settings.section_height == 'auto' %}style="--image-aspect-ratio: {{ collection.image.aspect_ratio }}"{% endif %}>
-            <div class="image-overlay__image-wrapper"
-                 {% if section.settings.section_height == 'auto' %}style="padding-bottom: {{ 100.0 | divided_by: collection.image.aspect_ratio }}%"{% endif %}>
-                {%- comment -%}Performance note: this image must not be lazyloaded as it contributes to the LCP{%- endcomment -%}
-                <picture>
-                    {%- if section.settings.section_height != 'auto' -%}
-                        {{- collection.image | image_url: width: collection.image.width, height: 600, crop: 'center' | image_tag: widths: '400,500,600,700,800,900,1000', media: '(max-width: 740px)' | replace: '<img', '<source' -}}
-                    {%- else -%}
-                        {{- collection.image | image_url: width: collection.image.width | image_tag: widths: '400,500,600,700,800,900,1000', media: '(max-width: 740px)' | replace: '<img', '<source' -}}
-                    {%- endif -%}
+        <li class="breadcrumb__item">
+          <span class="breadcrumb__link" aria-current="page">
+            {%- if collection.handle == 'all' -%}
+              {{- 'collection.general.all_products' | t -}}
+            {%- else -%}
+              {{- collection.title -}}
+            {%- endif -%}
+          </span>
+        </li>
+      </ol>
+    </nav>
+  {%- endcapture -%}
 
-                    {{- collection.image | image_url: width: collection.image.width | image_tag: widths: '600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600', class: 'image-overlay__image', reveal: true -}}
-                </picture>
-            </div>
+  {%- if collection.image and section.settings.show_collection_image -%}
+    <image-with-text-overlay reveal-on-scroll parallax class="image-overlay image-overlay--{{ section.settings.section_height }}" {% if section.settings.section_height == 'auto' %}style="--image-aspect-ratio: {{ collection.image.aspect_ratio }}"{% endif %}>
+      <div class="image-overlay__image-wrapper" {% if section.settings.section_height == 'auto' %}style="padding-bottom: {{ 100.0 | divided_by: collection.image.aspect_ratio }}%"{% endif %}>
+        {%- comment -%}Performance note: this image must not be lazyloaded as it contributes to the LCP{%- endcomment -%}
+        <picture>
+          {%- if section.settings.section_height != 'auto' -%}
+            {{- collection.image | image_url: width: collection.image.width, height: 600, crop: 'center' | image_tag: widths: '400,500,600,700,800,900,1000', media: '(max-width: 740px)' | replace: '<img', '<source' -}}
+          {%- else -%}
+            {{- collection.image | image_url: width: collection.image.width | image_tag: widths: '400,500,600,700,800,900,1000', media: '(max-width: 740px)' | replace: '<img', '<source' -}}
+          {%- endif -%}
 
-            <div class="container">
-                <div class="image-overlay__content-wrapper">
-                    {{- breadcrumb -}}
+          {{- collection.image | image_url: width: collection.image.width | image_tag: widths: '600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600', class: 'image-overlay__image', reveal: true -}}
+        </picture>
+      </div>
 
-                    <div class="image-overlay__content content-box content-box--{{ section.settings.text_width }} content-box--text-center content-box--center text-container">
-                        {%- if section.settings.show_collection_title -%}
-                            <h1 class="heading h1">
-                                <split-lines reveal>{{ collection.title }}</split-lines>
-                            </h1>
-                        {%- endif -%}
+      <div class="container">
+        <div class="image-overlay__content-wrapper">
+          {{- breadcrumb -}}
 
-                        {%- if section.settings.show_collection_description and collection.description != blank -%}
-                            <div class="image-overlay__text-container" reveal>
-                                {{- collection.description -}}
-                            </div>
-                        {%- endif -%}
-                    </div>
-                </div>
-            </div>
-        </image-with-text-overlay>
-    {%- else -%}
-        <div class="container">
-            <div class="page-header">
-                {{- breadcrumb -}}
+          <div class="image-overlay__content content-box content-box--{{ section.settings.text_width }} content-box--text-center content-box--center text-container">
+            {%- if section.settings.show_collection_title -%}
+              <h1 class="heading h1">
+                <split-lines reveal>{{ collection.title }}</split-lines>
+              </h1>
+            {%- endif -%}
 
-                <div class="page-header__text-wrapper text-container">
-                    {%- if section.settings.show_collection_title -%}
-                        <h1 class="heading h1">{{ collection.title }} <span
-                                    class="ban_head_icon"> {%- render 'icon' with 'vibr_icon' -%} </span></h1>
-                    {%- endif -%}
-
-                    {%- if section.settings.show_collection_description and collection.description != blank -%}
-                      <div class="cstm_collection_descp">
-                        <div class="descp-wrapper">
-                          <div class="descp js-readmore-init-hidden" id="descp">
-                            {{ collection.description }}
-                          </div>
-                        </div>
-                      </div>
-
-                    {%- endif -%}
-                </div>
-            </div>
+            {%- if section.settings.show_collection_description and collection.description != blank -%}
+              <div class="image-overlay__text-container" reveal>
+                {{- collection.description -}}
+              </div>
+            {%- endif -%}
+          </div>
         </div>
-    {%- endif -%}
+      </div>
+    </image-with-text-overlay>
+  {%- else -%}
+    <div class="container">
+      <div class="page-header">
+        {{- breadcrumb -}}
 
-    {%- comment -%}
-    ------------------------------------------------------------------------------------------
-    QUICK LINKS PART
-    ------------------------------------------------------------------------------------------
-    {%- endcomment -%}
+        <div class="page-header__text-wrapper text-container">
+          {%- if section.settings.show_collection_title -%}
+            <h1 class="heading h1">{{ collection.title }}  <span class="ban_head_icon"> {%- render 'icon' with 'vibr_icon'-%} </span> </h1>  
+          {%- endif -%}
 
-    {% assign collection_data = collection.metafields.custom.menu_handle | parse_json %}
-
-
-    {{ collection_data.text }}
-
-    {%- assign quick_links_menu = section.settings.quick_links -%}
-
-    {%- if quick_links_menu.links.size > 0 -%}
-        <link-bar class="link-bar">
-            <div class="container">
-                <div class="link-bar__wrapper">
-                    <span class="link-bar__title heading heading--small text--subdued">{{ quick_links_menu.title }}</span>
-
-                    <div class="link-bar__scroller hide-scrollbar">
-                        <ul class="link-bar__linklist list--unstyled" role="list">
-                            {%- for link in quick_links_menu.links -%}
-                                <li class="link-bar__link-item {% if link.active %}link-bar__link-item--selected{% endif %}">
-                                    <a href="{{ link.url }}"
-                                       class="link-bar__link link--animated {% if link.active %}text--underlined{% endif %}">{{ link.title }}</a>
-                                </li>
-                            {%- endfor -%}
-                        </ul>
-                    </div>
-                </div>
+          {%- if section.settings.show_collection_description and collection.description != blank -%}
+            <div class="cstm_collection_descp">
+             <p>  <span class="descp">{{- collection.description -}}</span> <span id="readMoreBtn">Read More</span>   </p> 
+              
+              
             </div>
-        </link-bar>
-    {%- endif -%}
+              
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%}
+  ------------------------------------------------------------------------------------------
+  QUICK LINKS PART
+  ------------------------------------------------------------------------------------------
+  {%- endcomment -%}
+
+  {% assign collection_data = collection.metafields.custom.menu_handle | parse_json %}
+
+
+  {{ collection_data.text}}
+
+  {%- assign quick_links_menu = section.settings.quick_links -%}
+
+  {%- if quick_links_menu.links.size > 0 -%}
+    <link-bar class="link-bar">
+      <div class="container">
+        <div class="link-bar__wrapper">
+          <span class="link-bar__title heading heading--small text--subdued">{{ quick_links_menu.title }}</span>
+
+          <div class="link-bar__scroller hide-scrollbar">
+            <ul class="link-bar__linklist list--unstyled" role="list">
+              {%- for link in quick_links_menu.links -%}
+                <li class="link-bar__link-item {% if link.active %}link-bar__link-item--selected{% endif %}">
+                  <a href="{{ link.url }}" class="link-bar__link link--animated {% if link.active %}text--underlined{% endif %}">{{ link.title }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </link-bar>
+  {%- endif -%}
 </section>
 
-{% assign display_nav = false %}
 
-{%- if collection.metafields.custom.sub_nav.value.count > 0 -%}
-    {% assign display_nav = true %}
-{% endif -%}
+  
+<div class="cstm_collection_nav_item">
+  {% if collection.title == 'Vibrators' or collection.title == 'Dildos' or collection.title == 'BDSM' or collection.title == 'Health' or collection.title == 'Gender'  or collection.title == 'ACCESSORIES'   %} 
+<div class="cstm_collection_nav_item_container container">
+<ul>
+  <div class="cstm_collection_title23">
+    <a href="" data-collection-handle="{{ sublink.url }}"> All</a>
+  </div>
+{% for link in linklists.main-menu.links %}
 
-{%- if display_nav == false -%}
+ {% if link.title == collection.title %} 
+
+  
+  
+      {% if link.links.size > 0 %}
+          {% for sublink in link.links %}
+              {% comment %}
+              <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+               {% endcomment %}
+             
+                   {% for sublink in sublink.links %}
+                   
+                     <div class="cstm_collection_title23">
+                       <a href="{{ sublink.url }} " class="tag-link cstm_banner_tags" >{{ sublink.title }}</a>
+                     </div>
+                   {% endfor %}
+          {% endfor %}
+      {% endif %}
+
+       
+     {% endif %} 
+
+ 
+    
+  {% endfor %}
+
+
+
+     {% elsif collection.title != 'Vibrators' or collection.title != 'Dildos' %} 
     {% assign all_tags = "" %}
+<div class="cstm_collection_nav_item_container container">
+  <ul>
+     <div class="cstm_collection_title23 ">
+    <a href="" data-collection-handle="{{ sublink.url }}"> All</a>
+  </div>
     {% for product in collection.products %}
-        {% for tag in product.metafields.magento.tag_attributes.value %}
-            {% unless all_tags contains tag %}
-                {% capture all_tags %}{{ all_tags }},{{ tag }}{% endcapture %}
-                {% assign display_nav = true %}
-            {% endunless %}
-        {% endfor %}
+      {% for tag in product.tags %}
+        {% unless all_tags contains tag %}
+          {% capture all_tags %}{{ all_tags }},{{ tag }}{% endcapture %}
+        {% endunless %}
+      {% endfor %}
     {% endfor %}
-{% endif -%}
 
-{%- if display_nav -%}
-<div class="{{ collection.title | replace: ' ', '-' }}_tillbarcollection">
-    <div class="cstm_collection_nav_item">
-        <div class="cstm_collection_nav_item_container container">
-            <ul>
-                {%- if collection.metafields.custom.sub_nav.value.count > 0 -%}
-                    <div class="cstm_collection_title23">
-                        <a onclick="history.back()" href="#">Back</a>
-                    </div>
-                    {%- for sublink in collection.metafields.custom.sub_nav.value -%}
-                        <div class="cstm_collection_title23">
-                            <a href="{{ sublink.url }}" class="tag-link cstm_banner_tags">{{ sublink.title }}</a>
-                        </div>
-                    {%- endfor -%}
-                {% else %}
-                    <div class="cstm_collection_title23 ">
-                        <a href="{{ collection.url }}">All</a>
-                    </div>
-                    {% assign tags_array = all_tags | split: ',' | uniq %}
-                    {% for tag in tags_array %}
-                        <div class="cstm_collection_title23 ">
-                            <a href="{{ collection.url }}?filter.p.m.magento.tag_attributes={{ tag | url_encode }}"
-                               class="tag-link cstm_banner_tags">{{ tag }}</a>
-                        </div>
-                    {% endfor %}
-                {%- endif -%}
-            </ul>
-        </div>
-    </div>
+    {% assign tags_array = all_tags  | split: ',' | uniq %}
+
+
+    {% for tag in tags_array %}
+        
+        
+      <div class="cstm_collection_title23 ">
+        
+        <a href="{{ collection.url }}?constraint={{ tag | replace: ' ', '-' }}" class="tag-link cstm_banner_tags">{{ tag }}</a>
+      </div>
+    {% endfor %}
+  </ul>
 </div>
-{%- endif -%}
+
+ 
+
+<!-- ------------------------------------   -->
+
+
+
+
+
+  
+
+  <!--  ----------------------------------------    -->
+
+  
+{% comment %}
+
+     {% if link.title != collection.title %}
+  
+  <ul>
+    {% assign all_tags = "" %}
+
+    {% for product in collection.products %}
+      {% for tag in product.tags %}
+        {% unless all_tags contains tag %}
+          {% capture all_tags %}{{ all_tags }},{{ tag }}{% endcapture %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign tags_array = all_tags | split: ',' | uniq %}
+    
+    {% for tag in tags_array %}
+      <li>{{ tag }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  
+{% endcomment %}
+
+  
+  
+  </ul>
+ </div>   
+{% endif %}
+
+  
+</div>
+
+{% comment %}
+
+<h1>Hello ....</h1>
+{%  if collection.tags.size > 0 %}
+
+
+<ul class="collection-tags">
+      {% for tag in collection.tags %}
+       <li><a href="{{ collection.url | append: '?tag=' | append: tag }}">{{ tag }}</a></li>
+      {% endfor %}
+</ul>
+    {% else %}
+  <p>No tags available for this collection.</p>
+    
+ 
+
+  
+  {% endif %}
+{% endcomment %}
 
 <script>
-    //  document.querySelectorAll('.cstm_collection_title a').forEach(link => {
+//  document.querySelectorAll('.cstm_collection_title a').forEach(link => {
+  
+
+//   link.addEventListener('click', function(event) {
+//     event.preventDefault(); // Prevent default behavior of navigating to the collection page
 
 
-    //   link.addEventListener('click', function(event) {
-    //     event.preventDefault(); // Prevent default behavior of navigating to the collection page
+//         const  productCount = document.querySelector('.product-facet__meta-bar .product-facet__meta-bar-item--count')  
+//         const cstmPagination = document.querySelector('.pagination')
+//         const showProd = document.querySelector('.product-list')
 
+//         cstmPagination.style.display = 'none'
+//         showProd.classList.remove("showing_sel_coll")
+//          if(true){
+//            showProd.classList.add("showing_sel_coll")
+//          }
+      
+    
+//     const collectionHandle = this.dataset.collectionHandle; // Get the collection handle from the data attribute
+    
 
-    //         const  productCount = document.querySelector('.product-facet__meta-bar .product-facet__meta-bar-item--count')
-    //         const cstmPagination = document.querySelector('.pagination')
-    //         const showProd = document.querySelector('.product-list')
+//     // Fetch only the products from the collection using Shopify's AJAX API
+//     fetch(`${collectionHandle}/products.json`)
+//       .then(response => response.json())
+//       .then(data => {
+       
+        
+//         // Assuming you have a container to display the products
+//         const productList = document.querySelector('.product-list');
+       
+//         productList.innerHTML = ''; // Clear the current product list
+//         // Loop through products and render them
+//         // console.log("888888888 :- ",data.products )
+//         data.products.forEach((product,index) => {
 
-    //         cstmPagination.style.display = 'none'
-    //         showProd.classList.remove("showing_sel_coll")
-    //          if(true){
-    //            showProd.classList.add("showing_sel_coll")
-    //          }
+//           // console.log("99999999 :- ", product)
+//            productCount.innerText = `${data.products.length} products`
+          
+//         // console.log("Product main :- ",product)
 
+         
+//           const img =  product.images.map(item => item)
+         
+//           let showimg = product.images.length > 0 ? img[0].src : 'path/to/null-image.png'; 
+//           const price =  product.variants.map(item=> item)
+          
+//           const productItem =   `
+//                  <div class="insideProductListItem" >
+//           <a href="/products/${product.handle}"> <div class="img"><img src="${showimg}" alt="${product.title}" /> </div>  <h3>${product.title} </h3> <div class="price"> $ ${price[0].price} </div> </a>
+          
+//           </div>`;      
+//           productList.innerHTML += productItem;
+//         });
+//       })
+//       .catch(error => console.log('Error:', error));
 
-    //     const collectionHandle = this.dataset.collectionHandle; // Get the collection handle from the data attribute
-
-
-    //     // Fetch only the products from the collection using Shopify's AJAX API
-    //     fetch(`${collectionHandle}/products.json`)
-    //       .then(response => response.json())
-    //       .then(data => {
-
-
-    //         // Assuming you have a container to display the products
-    //         const productList = document.querySelector('.product-list');
-
-    //         productList.innerHTML = ''; // Clear the current product list
-    //         // Loop through products and render them
-    //         // console.log("888888888 :- ",data.products )
-    //         data.products.forEach((product,index) => {
-
-    //           // console.log("99999999 :- ", product)
-    //            productCount.innerText = `${data.products.length} products`
-
-    //         // console.log("Product main :- ",product)
-
-
-    //           const img =  product.images.map(item => item)
-
-    //           let showimg = product.images.length > 0 ? img[0].src : 'path/to/null-image.png';
-    //           const price =  product.variants.map(item=> item)
-
-    //           const productItem =   `
-    //                  <div class="insideProductListItem" >
-    //           <a href="/products/${product.handle}"> <div class="img"><img src="${showimg}" alt="${product.title}" /> </div>  <h3>${product.title} </h3> <div class="price"> $ ${price[0].price} </div> </a>
-
-    //           </div>`;
-    //           productList.innerHTML += productItem;
-    //         });
-    //       })
-    //       .catch(error => console.log('Error:', error));
-
-
-    //   });
-    // });
+        
+//   });
+// });
 </script>
 
 
 <!--  Add Active Class -->
-<style>
-.descp-wrapper {
-  position: relative;
-  max-width: 100%;
-}
-
-</style>
 
 <script>
-    const collActive = document.querySelectorAll('.cstm_collection_title23 a')
-    let url = new URL(window.location.href);
-    let urlParams = new URLSearchParams(url.search);
+  const collActive = document.querySelectorAll('.cstm_collection_title23 a')
+  
+  let url = new URL(window.location.href);
 
-    collActive.forEach((item, index) => {
-        if (urlParams.get('filter.p.m.magento.tag_attributes') == item.innerText) {
-            item.classList.add("active_colect")
-        }
-    })
+  const constr = url.search
 
+  var match = constr.match(/[\?&]constraint=([^&]+)/)
+  var constraintValue = match ? match[1] : null;
+  console.log("URL :- ",constraintValue)
+
+  
+  collActive.forEach((item , index ) =>{
+    
+    const menus = item.innerText
+    const modifiedMenus = menus.replace(/ /g, '-');
+
+    console.log("ME Collactive :- ", modifiedMenus)
+
+    if( constraintValue == modifiedMenus ){
+      console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+      item.classList.add("active_colect")
+    }
+   
+   
+    
+  })
+  
 </script>
 
-{%- if section.settings.show_collection_description and collection.description != blank -%}
+
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const descp = document.getElementById('descp');
-    console.log(descp);
-    if (!descp) return;
-    console.log(descp);
+  const coll_descp = document.querySelector('.cstm_collection_descp p .descp');
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  
+  const fullText = coll_descp.innerText;
+  const splitText = coll_descp.innerText.split(' ');
+  const trunctedText = splitText.slice(0, 50).join(' ') ;
 
-    const originalHTML = descp.innerHTML;
-    const originalText = descp.innerText;
-    const maxWords = 50;
+  coll_descp.innerText = trunctedText
 
-    const words = originalText.trim().split(/\s+/);
-    if (words.length <= maxWords) {
-      descp.classList.remove('js-readmore-init-hidden');
-      return;
-    }
+  readMoreBtn.addEventListener('click', function() {
+  coll_descp.innerText = fullText;
+  readMoreBtn.style.visibility = 'hidden'; 
 
-    let wordCount = 0;
-    let truncatedHTML = '';
+    
+  const showLessBtn =  document.createElement('span');
+    showLessBtn.innerText = 'Show Less'
+    showLessBtn.classList.add('show_less_btn')
+     coll_descp.appendChild(showLessBtn)   
 
-    function truncateNode(node) {
-      if (wordCount >= maxWords) return '';
-
-      if (node.nodeType === Node.TEXT_NODE) {
-        const nodeWords = node.textContent.trim().split(/\s+/);
-        const allowedWords = nodeWords.slice(0, maxWords - wordCount);
-        wordCount += allowedWords.length;
-        return allowedWords.join(' ') + (wordCount < maxWords ? ' ' : '');
-      }
-
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        let inner = '';
-        node.childNodes.forEach(child => {
-          inner += truncateNode(child);
-        });
-        return `<${node.nodeName.toLowerCase()}${getAttributes(node)}>${inner}</${node.nodeName.toLowerCase()}>`;
-      }
-
-      return '';
-    }
-
-    function getAttributes(node) {
-      if (!node.attributes) return '';
-      return Array.from(node.attributes)
-        .map(attr => ` ${attr.name}="${attr.value}"`)
-        .join('');
-    }
-
-    const temp = document.createElement('div');
-    temp.innerHTML = originalHTML;
-    temp.childNodes.forEach(child => {
-      truncatedHTML += truncateNode(child);
-    });
-
-    function createButton(text, className) {
-      const btn = document.createElement('span');
-      btn.innerText = text;
-      btn.classList.add(className);
-      btn.style.cursor = 'pointer';
-      return btn;
-    }
-
-    function showTruncated() {
-      descp.innerHTML = truncatedHTML.trim();
-
-      const dots = document.createElement('span');
-      dots.className = 'read_moredot';
-      dots.innerText = '...';
-
-      const readMoreBtn = createButton('Read More', 'read_moretext');
-
-      descp.appendChild(dots);
-      descp.appendChild(readMoreBtn);
-
-      readMoreBtn.addEventListener('click', () => {
-        showFull();
-      });
-    }
-
-    function showFull() {
-      descp.innerHTML = originalHTML;
-
-      const showLessBtn = createButton('Show Less', 'show_less_btn');
-      descp.appendChild(showLessBtn);
-
-      showLessBtn.addEventListener('click', () => {
-        showTruncated();
-      });
-    }
-
-    showTruncated();
-    console.log(descp, "descp")
-    descp.classList.remove('js-readmore-init-hidden');
-    descp.classList.add('js-readmore-visible');
-
-  }, 150);
+     showLessBtn.addEventListener('click', function() {
+    console.log("Show Less Btn...")
+  coll_descp.innerText = trunctedText; 
+  readMoreBtn.style.visibility = 'visible';
+  showLessBtn.style.display = 'none'; 
+}); 
 });
-</script>
 
-{%- endif -%}
+// const showLessBtn = document.querySelector('.show_less_btn');
+// console.log("555555 555 ",showLessBtn)  
+const showLessBtn = document.querySelectorAll('.cstm_collection_title');
+  
+  showLessBtn.forEach((item,index) => {
+    item.addEventListener('click' , (itm) => {
+      console.log('Iteam :- ', itm)
+    })
+  })
+  
+</script>
 {% schema %}
 {
   "name": "Collection banner",

@@ -1,7 +1,6 @@
 
 
 <div class="ib-image-main page-width">
-  <div class="container">
   <div class="ib-sub-main-image">
     <div class="ib-top-text">
       <div class="ib-inline-text">
@@ -12,9 +11,7 @@
     <div class="ib-links">
       {% for block in section.blocks %}
       <div class="ib-images-full">
-          <a  href="{{ block.settings.link }}">
         <img src="{{ block.settings.image | img_url:"4000x" }}">
-          </a>
         <a class="button button--small button--secondary ib-btt-shop" href="{{ block.settings.link }}">{{ block.settings.link-text }}</a>
       </div>
         {% endfor %}
@@ -24,7 +21,6 @@
         <div class="load_more_btn"> Load More</div>
     </div>
   </div>
-    </div>
 </div>
 
 

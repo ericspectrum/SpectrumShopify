@@ -14,7 +14,6 @@
     <div class="footer_upper">
       <div class="footer_upper_conat">
          <div class="fott_uppCont_first">
-           <div class="fott_uppCont_first_ovel">
            <div class="icon_heading">
              <h2> <span>{% render 'icon' with 'foot_mail' %}</span> Sign up for our newsletter </h2>
            </div>
@@ -45,8 +44,6 @@
                     {%- endif -%}
                   {%- endform -%}
              </div>
-
-           </div>
          </div>
 
       
@@ -54,8 +51,10 @@
               {% if section.settings.footUppHead  != blank%}
                <div class="fott_uppCont_sec_inner">
                  <h2>{{ section.settings.footUppHead }}</h2>
-                 <div class="footer_contenttext"><span class="footer_orText">{{ section.settings.footUppText }}</span>  <span class="footer_readmore">Read More</span> <span class="footer_showless">Show Less</span></div>
-                 
+                 <div>{{ section.settings.footUppText }}</div>
+                 <div class="foot_up_link">
+                 <a href="{{ section.settings.footUppBtnLink }}"  >{{ section.settings.footUppBtnTxt }}</a>
+                 </div>
                </div>
                 {% endif %}
                
@@ -101,7 +100,7 @@
                     <ul class="linklist list--unstyled" role="list">
                       {%- for link in menu.links -%}
                         <li class="linklist__item">
-                          <a  href="{{ link.url }}" class="link--faded"  {% if link.url contains shop.origin %} target="_blank" {% endif %}>{{ link.title }}</a>
+                          <a href="{{ link.url }}" class="link--faded">{{ link.title }}</a>
                         </li>
                       {%- endfor -%}
                     </ul>
@@ -253,7 +252,7 @@
           {%- endform -%}
         {%- endif -%}
 
-        <span class="footer__copyright text--xsmall text--subdued">	&#169; 2024 {{ shop.name }}  {{ powered_by_link | replace: '<a', '<a class="link--faded"' }} <span style="margin-left:5px;"><a href="/pages/terms-of-service#privacy-policy">  Privacy Policy Terms</a> </span></span>
+        <span class="footer__copyright text--xsmall text--subdued">	&#169; 2024 {{ shop.name }}  {{ powered_by_link | replace: '<a', '<a class="link--faded"' }}</span>
 
         <div class="footer__follow-and-payment">
           {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
@@ -279,35 +278,6 @@
      </div>
   
 </footer>
-
-
-
-<script>
-  const footerText = document.querySelector('.fott_uppCont_sec .footer_contenttext .footer_orText')    
-  const textReadMoreBtn = document.querySelector('.footer_readmore')
-  const textShowLessBtn = document.querySelector('.footer_showless')
-  
-  const footerInnerText = footerText.innerText
-  const textSplit = footerInnerText.split(" ")
-  const trunctText = textSplit.slice(0, 40).join(" ") + "...";
-
-  if(textSplit.length >= 40){
-    footerText.innerText = trunctText
-    textShowLessBtn.style.display = 'none'
-  }
-
-  textReadMoreBtn.addEventListener('click' , (item) =>{
-    footerText.innerText = footerInnerText;
-   textShowLessBtn.style.display = 'block'
-   textReadMoreBtn.style.display = 'none'
-  })
-  textShowLessBtn.addEventListener('click',()=>{
-     footerText.innerText = trunctText;
-    textShowLessBtn.style.display = 'none'
-   textReadMoreBtn.style.display = 'block'
-  })
-  
-</script>
 
 {% schema %}
 {

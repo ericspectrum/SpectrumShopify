@@ -5,9 +5,7 @@
  
   <div class="simpleImgTextImg_part2">
      {% if section.settings.img != blank %}
-       <a href="{{ section.settings.btnUrl }}">
     <img src="{{ section.settings.img | img_url:"original" }}"  alt="banner_img"/>
-          </a>
        {% endif %}
   </div>
     
@@ -40,6 +38,19 @@
 </div>
 
 
+<style>
+
+.Img_TextCont_part2 { display: flex;  height: 500px;   overflow: hidden; box-shadow: -6px 1px 6px 0px rgba(139, 6, 6, .18);}
+.Img_TextCont_part2 .simpleImgTextImg_part2{width:50%}
+.Img_TextCont_part2 .simpleImgTextImg_part2 img {  height: 500px;  object-fit: cover; width:100%;} 
+.Img_TextCont_part2 .simpleImgTextTest {  display: flex;  justify-content: center;  align-items: center;width:50%;}
+.Img_TextCont_part2 .simpleImgTextTest .simpleImgTextTest_content {  width: 85%;  text-align: center;}
+.simpleImgTextTest_content .simpleImgTexth2 { font-size: 40px; margin-bottom: 10px;}
+.simpleImgTextp p { font-size: 16px;  line-height: 30px;}
+.simpleImgTextTest_content .cont_btn {  margin-top: 40px;   display: flex; justify-content: center; gap: 17px;}
+.simpleImgTextTest_content .cont_btn  .btn {  width: 100%;  display: block;  border: 1px solid;  min-width: 222px;  padding: 8px; color: white; background: #00b9e2;  text-transform: uppercase;  letter-spacing: 1.3px;}
+.simpleImgTextTest_content .cont_btn  .btn2 { background: white;  color: #00b9e2;}
+</style>
 
 {% schema %}
   {

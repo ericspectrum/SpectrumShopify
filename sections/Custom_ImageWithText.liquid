@@ -141,7 +141,6 @@
           {%- assign image_count = 0 -%}
 
           <div class="image-with-text__image-wrapper">
-            <a href={{ section.settings.img_link }}>
             {%- for block in section.blocks -%}
               {%- if block.settings.image != blank -%}
                 {%- capture id_attribute -%}block-{{ block.id }}-{{ block.settings.image.id }}{%- endcapture -%}
@@ -176,16 +175,12 @@
                 {{- 'image' | placeholder_svg_tag: 'image-with-text__image placeholder-background' -}}
               {%- endif -%}
             {%- endif -%}
-
-           </a> 
           </div>
 
           <div class="image-with-text__content-wrapper">
             <div class="image-with-text__content-list">
               {%- for block in section.blocks -%}
-               
-                <image-with-text-item {% if block.settings.image != blank and image_count > 1 %}attached-image="block-{{ block.id }}-{{ block.settings.image.id }}"{% endif %} {% unless forloop.first %}hidden{% endunless %} class="image-with-text__content text-container text--{{ section.settings.text_alignment }}" {{ block.shopify_attributes }} >
-                  
+                <image-with-text-item {% if block.settings.image != blank and image_count > 1 %}attached-image="block-{{ block.id }}-{{ block.settings.image.id }}"{% endif %} {% unless forloop.first %}hidden{% endunless %} class="image-with-text__content text-container text--{{ section.settings.text_alignment }}" {{ block.shopify_attributes }}>
                  <h2 class="heading heading--small ib-small-text">{{ block.settings.heading1 }}</h2>
                   {%- if block.settings.subheading != blank -%}
                     <h2 class="heading heading--small">
@@ -217,7 +212,6 @@
                   </div>
                   </div>
                 </image-with-text-item>
-            
               {%- endfor -%}
             </div>
 
@@ -253,11 +247,6 @@
       "label": "Reveal on scroll",
       "info": "Show animation when section becomes visible.",
       "default": true
-    },
-    {
-      "type": "url",
-      "id": "img_link",
-      "label": "Image Link"
     },
     {
       "type": "select",

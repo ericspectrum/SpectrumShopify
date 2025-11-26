@@ -4,9 +4,7 @@
     <div class="column">
       <div class="ib-padd">
       <div class="column-image">
-     <a href="{{ block.settings.link }}">
         <img src="{{ block.settings.image | img_url: '4000x' }}" alt="{{ block.settings.heading }}">
-     </a>
       </div>
       <div class="column-content">
         <h3>{{ block.settings.heading }}</h3>
@@ -25,9 +23,7 @@
     <div class="column">
       <div class="ib-padd">
       <div class="column-image">
-        <a href="{{ block.settings.link }}">
         <img src="{{ block.settings.image | img_url: '4000x' }}" alt="{{ block.settings.heading }}">
-        </a>
       </div>
       <div class="column-content">
         <h3>{{ block.settings.heading }}</h3>
@@ -45,9 +41,7 @@
       <div class="ib-spect-cont1">
         <div class="ib-spec-img-text">
            <div class="ib-spec-img">
-             <a href="{{ section.settings.link1 }}">
           <img src="{{ section.settings.image |img_url:"4000x"}}">
-             </a>
            </div>
            <div class="ib-spec-text">
           <h2>{{ section.settings.heading }}</h2>
@@ -77,9 +71,7 @@
       </div>
       <div class="ib-spect-cont2">
         <div class="ib-spect-img2">
-          <a href="{{ section.settings.link11 }}">
             <img src="{{ section.settings.image1 |img_url:"4000x"}}">
-          </a>
         </div>
         <div class="ib-last">
         <h2>{{ section.settings.heading1 }}</h2>
@@ -111,7 +103,7 @@
   </div>
   {% endcomment %}
 </div>
-{% comment %}
+
 <script>
   $(document).ready(function(){
   $('.ib-slick-slider').slick({
@@ -150,7 +142,7 @@
 
 
 </script>
-{% endcomment %}
+
 
 {% schema %}
  

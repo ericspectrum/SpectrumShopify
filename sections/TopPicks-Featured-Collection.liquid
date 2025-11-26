@@ -127,25 +127,25 @@
         </header>
       {%- endif -%}
 
+  <div class="nav_on_twelHun_show">
+     {%- if section.blocks.size > 1 -%}
+            <tabs-nav class="tabs-nav tabs-nav--center tabs-nav--edge2edge">
+              <scrollable-content class="tabs-nav__scroller hide-scrollbar">
+                <div class="tabs-nav__scroller-inner">
+                  <div class="tabs-nav__item-list">
+                    {%- for block in section.blocks -%}
+                      {%- capture on_boarding_title -%}{{ 'general.onboarding.collection_title' | t }} {{ forloop.index }}{%- endcapture -%}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+                      <button type="button" class="tabs-nav__item  heading--small" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="block-{{ section.id }}-{{ block.id }}" {{ block.shopify_attributes }}>
+                        {{- block.settings.label | default: block.settings.collection.title | default: on_boarding_title -}}
+                      </button>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </scrollable-content>
+            </tabs-nav>
+          {%- endif -%}
+  </div>
 
   
     </div>
@@ -221,47 +221,30 @@
 <script> 
 
 const allBtn = document.querySelectorAll('.tabs-nav__item-list .tabs-nav__item');
-const allAnchr =   document.querySelector('.ib-tab-inline .btn-link-inline .ib-lnk a');
-const mobilAnchr = document.querySelector('.ib-tab-inline .text-container .ib-lnk a');
+const allAnchr = document.querySelector('.ib-tab-inline .btn-link-inline .ib-lnk a');
   
   allBtn.forEach((item,index) => {
 
-  item.addEventListener('click', () => {
-      console.log('Clickeomgkfkdljfkdjfldjfkljdklfjdklf.......................',mobilAnchr)
+    item.addEventListener('click', () => {
+      
  if (index === 0){
-
-
-      mobilAnchr.innerText = 'Shop All Featured Products';
-      mobilAnchr.href = "/collections/featured-products";
-   
+         
       allAnchr.innerText = 'Shop All Featured Products';
-      allAnchr.href = "/collections/featured-products";
+      allAnchr.href = "/collections/air-pressure-sex-toys";
 
-     
     }
 
        if (index === 1){
-
-      mobilAnchr.innerText = 'Shop All Popular Products'; 
-      mobilAnchr.href = "/collections/best-sellers";  
          
-      allAnchr.innerText = 'Shop All Popular Products';
-      allAnchr.href = "/collections/best-sellers";
-
-     
+      allAnchr.innerText = 'Shop All Popular Products'
+      allAnchr.href = "/collections/anal-formulas";
+      
     }
 
       if (index === 2){
-
-
-      mobilAnchr.innerText = 'Shop All New Products';
-      mobilAnchr.href = "/collections/new-arrivals";
-
-        
-      allAnchr.innerText = 'Shop All New Products';
-      allAnchr.href = "/collections/new-arrivals";
-
-      
+      allAnchr.innerText = 'Shop All New Products'
+        allAnchr.href = "/collections/anal-butt-plugs";
+  
     }
       
     })
