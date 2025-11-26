@@ -1,0 +1,152 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.blog_header_text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign header_text_color = settings.heading_color -%}
+    {%- else -%}
+      {%- assign header_text_color = section.settings.blog_header_text_color -%}
+    {%- endif -%}
+
+    {%- if section.settings.blog_header_text_color == 'rgba(0,0,0,0)' -%}
+      {%- assign header_background = settings.secondary_background -%}
+    {%- else -%}
+      {%- assign header_background = section.settings.blog_header_background -%}
+    {%- endif -%}
+
+    --heading-color: {{ header_text_color.red }}, {{ header_text_color.green }}, {{ header_text_color.blue }};
+    --text-color: {{ header_text_color.red }}, {{ header_text_color.green }}, {{ header_text_color.blue }};
+
+    --section-header-background: {{ header_background.red }}, {{ header_background.green }}, {{ header_background.blue }};
+  }
+</style>
+
+<blog-post-header class="article__header">
+  {% comment %}
+  <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb breadcrumb--floating text--xsmall text--subdued hidden-pocket">
+    <ol class="breadcrumb__list" role="list">
+      <li class="breadcrumb__item">
+        <a class="breadcrumb__link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
+      </li>
+
+      <li class="breadcrumb__item">
+        <a class="breadcrumb__link" href="{{ blog.url }}">{{- blog.title -}}</a>
+      </li>
+
+      <li class="breadcrumb__item">
+        <span class="breadcrumb__link" aria-current="page">{{ article.title }}</span>
+      </li>
+    </ol>
+  </nav>
+{% endcomment %}
+  {%- if article.image -%}
+    {%- comment -%}Performance note: this image must not be lazyloaded as it contributes to the LCP{%- endcomment -%}
+    <div class="article__image-wrapper {% if article.image.aspect_ratio >= 1 %}article__image-wrapper--square{% else %}article__image-wrapper--tall{% endif %}">
+      {%- capture sizes -%}(max-width: 740px) 100vw, {% if article.image.aspect_ratio >= 1 %}50vw{% else %}37.5vw{% endif %}{%- endcapture -%}
+      {{ article.image | image_url: width: 1500 | image_tag: sizes: sizes, widths: '200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500', class: 'article__image', reveal: true }}
+    </div>
+  {%- endif -%}
+
+  <div class="article__header-content text-container">
+    {%- if section.settings.show_category and article.tags.size > 0 -%}
+      <a href="{{ blog.url }}/tagged/{{ article.tags.first | handle }}" class="article__category heading heading--small">{{ article.tags.first }}</a>
+    {%- endif -%}
+
+    <h1 class="article__title heading h1">{{ article.title }}</h1>
+
+    {%- if article.excerpt != blank -%}
+      <div class="article__excerpt text--large">
+        {{- article.excerpt -}}
+      </div>
+    {%- endif -%}
+
+    <div class="cstm_socialicononbanner">
+              {%- assign share_url = shop.url | append: article.url -%}
+              {%- assign twitter_text = article.title | url_param_escape -%}
+              {%- assign pinterest_description = article.excerpt_or_content | strip_html | truncatewords: 15 | url_param_escape -%}
+              {%- assign pinterest_image = article.image | image_url: width: 800 | prepend: 'https:' -%}
+        <button type="button" is="share-toggle-button" share-url="{{ share_url | escape }}" share-title="{{ article.title | escape }}" class="article__share text--subdued link hidden-tablet-and-up" aria-controls="mobile-share-buttons-{{ section.id }}" aria-expanded="false">{{ 'article.general.share' | t }}</button>
+
+              <popover-content id="mobile-share-buttons-{{ section.id }}" class="popover hidden-tablet-and-up">
+                <span class="popover__overlay"></span>
+
+                <header class="popover__header">
+                  <span class="popover__title heading h6">{{- 'article.general.share' | t -}}</span>
+
+                  <button type="button" class="popover__close-button tap-area tap-area--large" data-action="close" title="{{ 'general.accessibility.close' | t | escape }}">
+                    {%- render 'icon' with 'close' -%}
+                  </button>
+                </header>
+
+                <div class="mobile-share-buttons">
+                  <a class="mobile-share-buttons__item mobile-share-buttons__item--facebook" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.facebook_share' | t }}">
+                    {%- render 'icon' with 'facebook-share-mobile' -%} Facebook
+                  </a>
+
+                  <a class="mobile-share-buttons__item mobile-share-buttons__item--pinterest" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.pinterest_pin' | t }}">
+                    {%- render 'icon' with 'pinterest-share-mobile' -%} Pinterest
+                  </a>
+
+                  <a class="mobile-share-buttons__item mobile-share-buttons__item--twitter" href="https://twitter.com/intent/tweet?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.twitter_tweet' | t }}">
+                    {%- render 'icon' with 'twitter-share-mobile' -%} Twitter
+                  </a>
+
+                  <a class="mobile-share-buttons__item mobile-share-buttons__item--mail" href="mailto:?&subject={{ article.title | escape }}&body={{ share_url }}" aria-label="{{ 'general.social.email_share' | t }}">
+                    {%- render 'icon' with 'email-share-mobile' -%} {{ 'general.social.email_label' | t }}
+                  </a>
+                </div>
+              </popover-content>
+       <div class="article__share">
+                <span class="article__share-label">{{ 'article.general.share' | t }}</span>
+
+                <div class="article__share-button-list" role="list">
+                  <a class="article__share-button-item article__share-button-item--facebook tap-area" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener" role="listitem" aria-label="{{ 'general.social.facebook_share' | t }}">
+                    {%- render 'icon' with 'facebook' -%}
+                  </a>
+
+                  <a class="article__share-button-item article__share-button-item--pinterest tap-area" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener" role="listitem" aria-label="{{ 'general.social.pinterest_pin' | t }}">
+                    {%- render 'icon' with 'pinterest' -%}
+                  </a>
+
+                  <a class="article__share-button-item article__share-button-item--twitter tap-area" href="https://twitter.com/intent/tweet?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener" role="listitem" aria-label="{{ 'general.social.twitter_tweet' | t }}">
+                    {%- render 'icon' with 'twitter' -%}
+                  </a>
+
+                  <a class="article__share-button-item article__share-button-item--mail tap-area" href="mailto:?&subject={{ article.title | escape }}&body={{ share_url }}" role="listitem" aria-label="{{ 'general.social.email_share' | t }}">
+                    {%- render 'icon' with 'share' -%}
+                  </a>
+                </div>
+              </div>
+      
+    </div>
+
+
+    
+  </div>
+</blog-post-header>
+
+{%- schema %}
+{
+  "name": "Blog post header",
+  "class": "shopify-section--blog-post-banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show category",
+      "info": "The first article's tag will be shown as category.",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "blog_header_background",
+      "label": "Background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "blog_header_text_color",
+      "label": "Text color",
+      "default": "#282828"
+    }
+  ]
+}
+{%- endschema -%}

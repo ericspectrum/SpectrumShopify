@@ -1,0 +1,19 @@
+{% assign products_with_metafields = '' %}
+
+<ul>
+  {% for product in collections.all.products %}
+    {% if product.metafields.namespace.key %}
+      <li>
+        <a href="{{ product.url }}">{{ product.title }}</a>
+        <p>Metafield Value: {{ product.metafields.namespace.key }}</p>
+      </li>
+
+      {% assign products_with_metafields = products_with_metafields | append: product.title | append: ', ' %}
+    {% endif %}
+  {% endfor %}
+</ul>
+
+{% comment %}
+Optional: Debugging Output
+{% endcomment %}
+<p>Products with metafields: {{ products_with_metafields }}</p>

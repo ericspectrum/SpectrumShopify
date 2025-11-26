@@ -1,0 +1,74 @@
+<div class="ib-banner-mian">
+  <div class="ib-sub-banner">
+    <div class="ib-banner-content">
+      <div class="ib-image-banner">
+      <a href="{{ section.settings.link }}">
+        <img src="{{ section.settings.image | img_url:"4000x" }}">
+      </a>
+      </div>
+      <div class="ib-banner-text-section" style="background:{{ section.settings.clr }};">
+        <div class="ib-banner-innerBox">
+        <h1 style="color:{{ section.settings.clr-text}};";>{{ section.settings.text }}</h1>
+        <div style="color:{{ section.settings.clr-text}};">{{ section.settings.phag | newline_to_br }}</div>
+        <a class="ib-banner-button button button--primary" href="{{ section.settings.link }}">{{ section.settings.link-text }}</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Custom Banner Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default":"Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "phag",
+        "label": "Description",
+        "default" : "<p> of innovative, body-safe toys! <br> Use code: Best Shot thru June 30th! </p>"
+      },
+      {
+        "type": "color",
+        "id": "clr",
+        "label": "Background Color",
+        "default":"#fff"
+      },
+      {
+        "type": "color",
+        "id": "clr-text",
+        "label": "Heading Color",
+        "default":"#000"
+      },
+       {
+            "type": "text",
+            "id": "link-text",
+            "label": "Button Text",
+            "default":"Button"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+    ],
+    "presets": [
+      {
+        "name": "Custom Banner Section"
+      }
+    ]
+  }
+{% endschema %}

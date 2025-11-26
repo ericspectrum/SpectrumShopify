@@ -1,0 +1,49 @@
+<div class="venderLink_container">
+<div class="container">
+  <div class="venderLink_container_content ib-image-main">
+    <div class="venderLink_item">
+       {% for block in section.blocks %}
+         {% if block.settings.linkText != blank %}
+            <div class="Link">
+              <a href={{ block.settings.linkUrl }} {% if link.url contains shop.origin %} target="_blank" {% endif %} >{{ block.settings.linkText }}</a>
+            </div>
+           {% endif %}
+       {% endfor %}
+      </div>
+  </div>
+
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Vender Link Section",
+    "settings": [],
+     "blocks":[
+       {
+        "name":"Link",
+        "type":"url",
+        "settings":[
+          {
+            "type": "text",
+            "id": "linkText",
+            "label": "Link Text"
+          },
+            {
+            "type": "url",
+            "id": "linkUrl",
+            "label": "Link URL"
+          }
+        ]
+       }
+     ],
+     "presets":[
+      {
+        "name":"Vender Link Section"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,96 @@
+
+
+<div class="ib-image-main page-width">
+  <div class="container">
+  <div class="ib-sub-main-image">
+    <div class="ib-top-text">
+      <div class="ib-inline-text">
+      <h2>{{ section.settings.text }}</h2>
+        <a class="button Ib-button button--primary" href="{{ section.settings.link }}">{{ section.settings.link-text }}</a>
+      </div>
+    </div>
+    <div class="ib-links">
+      {% for block in section.blocks %}
+      <div class="ib-images-full">
+          <a  href="{{ block.settings.link }}">
+        <img src="{{ block.settings.image | img_url:"4000x" }}">
+          </a>
+        <a class="button button--small button--secondary ib-btt-shop" href="{{ block.settings.link }}">{{ block.settings.link-text }}</a>
+      </div>
+        {% endfor %}
+    </div>
+
+    <div class="ib_images_load_more_btn">
+        <div class="load_more_btn"> Load More</div>
+    </div>
+  </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Custom Featured Col",
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id":"text",
+        "label": "Text",
+        "default":"Shop our Favorites"
+      },
+        {
+            "type": "text",
+            "id": "link-text",
+            "label": "Button Text",
+            "default":"Button"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+    ],
+    "blocks": [
+      {
+        "type": "images",
+        "name":"Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id":"image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "link-text",
+            "label": "Button Text",
+            "default":"Button"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name":"Custom Featured Collection",
+        "blocks": [
+          {
+            "type": "images"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

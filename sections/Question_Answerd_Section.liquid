@@ -1,0 +1,99 @@
+<div class="about_QuestionAnswer">
+
+  <div class="about_QuestionAnswer_content container">
+
+    {% if section.settings.heading != blank %}
+    <h2 class="about_QuestionAnswer_head">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+    <div class="about_QuestionAnswe_Item">
+
+      {% if section.settings.text1 != blank %}
+      <div class="about_QuestionAnswer_Box Box1">
+          <a href="{{section.settings.url1 }}">{{ section.settings.text1 }}</a>
+      </div>
+        {% endif %}
+  {% if section.settings.text2 != blank %}
+       <div class="about_QuestionAnswer_Box Box2">
+         <a href="{{section.settings.url2 }}">{{ section.settings.text2 }}</a>
+      </div>
+{% endif %}
+        {% if section.settings.text3 != blank %}
+       <div class="about_QuestionAnswer_Box Box3">
+          <a href="{{section.settings.url3 }}">{{ section.settings.text3 }}</a>
+      </div>
+          {% endif %}
+           
+    </div>
+
+    {% if  section.settings.text4 != blank %}
+    <div class="about_QuestionAnswe_text">
+     <a href="{{ section.settings.url4 }}">{{ section.settings.text4 }}</a>  
+    </div>
+{% endif %}
+    
+  </div>
+
+  
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "About QuestionAnswer Sec",
+    "settings": [
+      {
+        "type":"text",
+        "id":"heading",
+        "label":"Heading"
+      },
+        {
+        "type":"text",
+        "id":"text1",
+        "label":"Text 1"
+      },
+         {
+        "type":"url",
+        "id":"url1",
+        "label":"URL 1"
+      },
+       {
+        "type":"text",
+        "id":"text2",
+        "label":"Text 2"
+      },
+        {
+        "type":"url",
+        "id":"url2",
+        "label":"URL 2"
+      },
+       {
+        "type":"text",
+        "id":"text3",
+        "label":"Text 3"
+      },
+        {
+        "type":"url",
+        "id":"url3",
+        "label":"URL 3"
+      },
+        {
+        "type":"text",
+        "id":"text4",
+        "label":"Text 4"
+      },
+       {
+        "type":"url",
+        "id":"url4",
+        "label":"URL 4"
+      },
+      
+    ],
+    "presets": [
+       {
+        "name": "About QuestionAnswer Sec"
+      }
+    ]
+  }
+{% endschema %}
