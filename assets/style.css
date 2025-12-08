@@ -77,7 +77,7 @@
 
 .predictive-search__content-wrapper .tabs-nav__item-list .tabs-nav__item {   border: 1px solid;}
 
-.cstm_menu_item .mobile-nav__link {    border: 1px solid;    padding: 10px !important;  justify-content: center;   border-radius: 40px;}
+.cstm_menu_item .mobile-nav__link {    border: 1px solid;    padding: 10px !important;  justify-content: center;   border-radius: 40px; text-align: center;}
 
 #mobile-menu-drawer .cstm_menu_item a {   padding: 0;}
 #mobile-menu-drawer .cstm_menu_item {    padding: 25px 0;   display: flex; gap: 15px;}
