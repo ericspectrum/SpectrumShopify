@@ -292,28 +292,21 @@ const showLessBtn = document.querySelector('.footer_showless');
 const originalHTML = footerHTML.innerHTML;
 const originalText = footerHTML.innerText.trim();
 
-// Скільки слів показувати до "Read More"
 const limit = 40;
 
 const words = originalText.split(/\s+/);
 
 if (words.length > limit) {
   const truncatedText = words.slice(0, limit).join(" ");
-
-  // Створюємо тимчасовий div з повним HTML
   const temp = document.createElement("div");
   temp.innerHTML = originalHTML;
-
-  // Обрізаємо HTML правильно
-  footerHTML.innerHTML = truncateHTML(temp, truncatedText) + "...";
+  footerHTML.innerHTML = truncateHTML(temp, truncatedText) + "..." + `<span class="footer_readmore">Read More</span>`;
   showLessBtn.style.display = "none";
 } else {
   readMoreBtn.style.display = "none";
   showLessBtn.style.display = "none";
 }
 
-
-// ======= FUNCTIONS =======
 function truncateHTML(container, truncatedText) {
   let result = "";
   let collectedText = "";
@@ -344,8 +337,6 @@ function copyAttrs(node) {
     .join(" ");
 }
 
-
-// ======= BUTTONS =======
 readMoreBtn.addEventListener("click", () => {
   footerHTML.innerHTML = originalHTML;
   readMoreBtn.style.display = "none";
