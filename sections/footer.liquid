@@ -56,7 +56,6 @@
                  <h2>{{ section.settings.footUppHead }}</h2>
                   <div class="footer_contenttext">
                     <span class="footer_orText">{{ section.settings.footUppText }}</span>
-                    <span class="footer_readmore">Read More</span>
                     <span class="footer_showless">Show Less</span>
                   </div>
                 </div>
@@ -327,7 +326,7 @@ function truncateHTML(container, truncatedText) {
   }
 
   recurse(container);
-  const tail = `...<span class="footer_readmore">Read More</span>`;
+  const tail = `... <span class="footer_readmore">Read More</span>`;
 
   const lastClosingP = result.lastIndexOf("</p>");
 
@@ -369,32 +368,6 @@ footerHTML.parentElement.addEventListener("click", (e) => {
 
 </script>
 
-{% comment %} <script>
-  const footerText = document.querySelector('.fott_uppCont_sec .footer_contenttext .footer_orText')    
-  const textReadMoreBtn = document.querySelector('.footer_readmore')
-  const textShowLessBtn = document.querySelector('.footer_showless')
-  
-  const footerInnerText = footerText.innerText
-  const textSplit = footerInnerText.split(" ")
-  const trunctText = textSplit.slice(0, 40).join(" ") + "...";
-
-  if(textSplit.length >= 40){
-    footerText.innerText = trunctText
-    textShowLessBtn.style.display = 'none'
-  }
-
-  textReadMoreBtn.addEventListener('click' , (item) =>{
-    footerText.innerText = footerInnerText;
-   textShowLessBtn.style.display = 'block'
-   textReadMoreBtn.style.display = 'none'
-  })
-  textShowLessBtn.addEventListener('click',()=>{
-     footerText.innerText = trunctText;
-    textShowLessBtn.style.display = 'none'
-   textReadMoreBtn.style.display = 'block'
-  })
-  
-</script> {% endcomment %}
 
 {% schema %}
 {
