@@ -332,6 +332,7 @@ const readMoreBtn = document.querySelector('.footer_readmore');
 const showLessBtn = document.querySelector('.footer_showless');
 
 const fullHTML = footerText.innerHTML;
+console.log(fullHTML);
 const truncatedHTML = truncateHTML(fullHTML, 40);
 
 if (fullHTML.replace(/<[^>]+>/g, '').split(/\s+/).length > 40) {
