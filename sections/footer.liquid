@@ -54,9 +54,12 @@
               {% if section.settings.footUppHead  != blank%}
                <div class="fott_uppCont_sec_inner">
                  <h2>{{ section.settings.footUppHead }}</h2>
-                 <div class="footer_contenttext"><span class="footer_orText">{{ section.settings.footUppText }}</span>  <span class="footer_readmore">Read More</span> <span class="footer_showless">Show Less</span></div>
-                 
-               </div>
+                  <div class="footer_contenttext">
+                    <span class="footer_orText">{% raw %}{{ section.settings.footUppText }}{% endraw %}</span>
+                    <span class="footer_readmore">Read More</span>
+                    <span class="footer_showless">Show Less</span>
+                  </div>
+                </div>
                 {% endif %}
                
           </div>
