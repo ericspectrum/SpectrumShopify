@@ -371,7 +371,7 @@
         "mobile_button_2_label": "Sale",
         "mobile_button_2_link": "shopify://collections/sale",
         "mobile_button_2_style": "filled",
-        "mobile_button_2_text_color": "#f7a98c",
+        "mobile_button_2_text_color": "rgba(0,0,0,0)",
         "header_layout": "logo_left_navigation_center",
         "show_icons": true,
         "reduce_desktop_padding": false,
