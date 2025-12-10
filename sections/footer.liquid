@@ -300,7 +300,7 @@ if (words.length > limit) {
   const truncatedText = words.slice(0, limit).join(" ");
   const temp = document.createElement("div");
   temp.innerHTML = originalHTML;
-  footerHTML.innerHTML = truncateHTML(temp, truncatedText) + "..." + `<span class="footer_readmore">Read More</span>`;
+  footerHTML.innerHTML = truncateHTML(temp, truncatedText);
   showLessBtn.style.display = "none";
 } else {
   readMoreBtn.style.display = "none";
@@ -327,6 +327,20 @@ function truncateHTML(container, truncatedText) {
   }
 
   recurse(container);
+  const tail = `...<span class="footer_readmore">Read More</span>`;
+
+  const lastClosingP = result.lastIndexOf("</p>");
+
+  if (lastClosingP !== -1) {
+    result =
+      result.slice(0, lastClosingP) +
+      tail +
+      result.slice(lastClosingP);
+  } else {
+    result += tail;
+  }
+
+  return result;
   return result;
 }
 
@@ -348,7 +362,7 @@ showLessBtn.addEventListener("click", () => {
   const temp = document.createElement("div");
   temp.innerHTML = originalHTML;
 
-  footerHTML.innerHTML = truncateHTML(temp, truncatedText) + "...";
+  footerHTML.innerHTML = truncateHTML(temp, truncatedText);
   readMoreBtn.style.display = "inline";
   showLessBtn.style.display = "none";
 });
