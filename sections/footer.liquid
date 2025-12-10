@@ -351,21 +351,22 @@ function copyAttrs(node) {
     .join(" ");
 }
 
-readMoreBtn.addEventListener("click", () => {
-  footerHTML.innerHTML = originalHTML;
-  readMoreBtn.style.display = "none";
-  showLessBtn.style.display = "inline";
+footerHTML.parentElement.addEventListener("click", (e) => {
+  if (e.target.classList.contains("footer_readmore")) {
+    footerHTML.innerHTML = originalHTML;
+    document.querySelector('.footer_showless').style.display = "inline";
+  }
+
+  if (e.target.classList.contains("footer_showless")) {
+    const truncatedText = words.slice(0, limit).join(" ");
+    const temp = document.createElement("div");
+    temp.innerHTML = originalHTML;
+
+    footerHTML.innerHTML = truncateHTML(temp, truncatedText);
+    document.querySelector('.footer_showless').style.display = "none";
+  }
 });
 
-showLessBtn.addEventListener("click", () => {
-  const truncatedText = words.slice(0, limit).join(" ");
-  const temp = document.createElement("div");
-  temp.innerHTML = originalHTML;
-
-  footerHTML.innerHTML = truncateHTML(temp, truncatedText);
-  readMoreBtn.style.display = "inline";
-  showLessBtn.style.display = "none";
-});
 </script>
 
 {% comment %} <script>
