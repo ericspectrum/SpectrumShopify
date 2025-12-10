@@ -123,7 +123,7 @@
             <div class="cstm_menu_item">
             <a href="{{ link.url }}" class="mobile-nav__link  {% if settings.heading_text_transform == 'uppercase' %}h6{% else %}h5{% endif %}">{{ link.title }}</a>
               {% if mobile_button_2_label != blank and mobile_button_2_link != blank %}
-                <a href="{{ mobile_button_2_link }}" class="mobile-nav__link  h6"
+                <a href="{{ mobile_button_2_link }}" class="mobile-nav__link {{ mobile_button_2_style }} h6"
                 style="color: {{ mobile_button_2_text_color }};">
                   {{ mobile_button_2_label }}
                 </a>
