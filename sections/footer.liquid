@@ -284,6 +284,76 @@
 </footer>
 
 
+<script>
+function truncateHTML(html, wordLimit) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+
+  let words = [];
+  let truncatedHTML = "";
+
+  function traverse(node) {
+    if (words.length >= wordLimit) return;
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      const textWords = node.textContent.split(/\s+/);
+
+      for (let w of textWords) {
+        if (w.trim().length === 0) continue;
+        if (words.length < wordLimit) {
+          words.push(w);
+        }
+      }
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      let startTag = `<${node.nodeName.toLowerCase()}`;
+      for (let attr of node.attributes) {
+        startTag += ` ${attr.name}="${attr.value}"`;
+      }
+      startTag += ">";
+
+      truncatedHTML += startTag;
+
+      for (let child of node.childNodes) {
+        traverse(child);
+        if (words.length >= wordLimit) break;
+      }
+
+      truncatedHTML += `</${node.nodeName.toLowerCase()}>`;
+    }
+  }
+
+  traverse(div);
+
+  return truncatedHTML + "...";
+}
+
+const footerText = document.querySelector('.footer_orText');
+const readMoreBtn = document.querySelector('.footer_readmore');
+const showLessBtn = document.querySelector('.footer_showless');
+
+const fullHTML = footerText.innerHTML;
+const truncatedHTML = truncateHTML(fullHTML, 40);
+
+if (fullHTML.replace(/<[^>]+>/g, '').split(/\s+/).length > 40) {
+  footerText.innerHTML = truncatedHTML;
+  showLessBtn.style.display = 'none';
+} else {
+  readMoreBtn.style.display = 'none';
+  showLessBtn.style.display = 'none';
+}
+
+readMoreBtn.addEventListener('click', () => {
+  footerText.innerHTML = fullHTML;
+  readMoreBtn.style.display = 'none';
+  showLessBtn.style.display = 'inline';
+});
+
+showLessBtn.addEventListener('click', () => {
+  footerText.innerHTML = truncatedHTML;
+  showLessBtn.style.display = 'none';
+  readMoreBtn.style.display = 'inline';
+});
+</script>
 
 {% comment %} <script>
   const footerText = document.querySelector('.fott_uppCont_sec .footer_contenttext .footer_orText')    
