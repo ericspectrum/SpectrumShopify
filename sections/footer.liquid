@@ -55,7 +55,7 @@
                <div class="fott_uppCont_sec_inner">
                  <h2>{{ section.settings.footUppHead }}</h2>
                   <div class="footer_contenttext">
-                    <span class="footer_orText">{% raw %}{{ section.settings.footUppText }}{% endraw %}</span>
+                    <span class="footer_orText">{{ section.settings.footUppText }}</span>
                     <span class="footer_readmore">Read More</span>
                     <span class="footer_showless">Show Less</span>
                   </div>
@@ -285,7 +285,7 @@
 
 
 
-<script>
+{% comment %} <script>
   const footerText = document.querySelector('.fott_uppCont_sec .footer_contenttext .footer_orText')    
   const textReadMoreBtn = document.querySelector('.footer_readmore')
   const textShowLessBtn = document.querySelector('.footer_showless')
@@ -310,7 +310,7 @@
    textReadMoreBtn.style.display = 'block'
   })
   
-</script>
+</script> {% endcomment %}
 
 {% schema %}
 {
