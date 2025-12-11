@@ -370,7 +370,7 @@
         "sidebar_navigation_menu": "",
         "mobile_button_2_label": "Sale",
         "mobile_button_2_link": "shopify://collections/sale",
-        "mobile_button_2_style": "filled",
+        "mobile_button_2_style": "outlined",
         "mobile_button_2_text_color": "#4eff79",
         "header_layout": "logo_left_navigation_center",
         "show_icons": true,
