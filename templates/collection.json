@@ -28,7 +28,7 @@
       "settings": {
         "promoText": "",
         "promotion2_head": "SITEWIDE SALE",
-        "promotion2_text": "<p>Get 20% off almost all full priced items thru 12/14 at 11:59pm ET. </p><p>USE CODE: NAUGHTY20</p><p>See <a href=\"/pages/coupons\" title=\"Coupons\">terms</a>*</p>",
+        "promotion2_text": "<p>Get 20% off almost all full priced items thru 12/14 at 11:59pm ET. </p><p>USE CODE: NAUGHTY20</p><p>See <a href=\"/pages/coupons\" title=\"Coupons\"><span style=\"text-decoration:underline\">terms</span></a>*</p>",
         "promo2btn_text": "APPLY CODE",
         "promo2btn_url": "https://spectrumboutique.com/discount/NAUGHTY20?redirect=%2Fcollections%2Fall",
         "show_sort_by": true,
