@@ -12,9 +12,9 @@
     "custom_banner_section_hpwxHD": {
       "type": "Custom_Banner_Section",
       "settings": {
-        "image": "shopify://shop_images/SPECTRUM_BOUTIQUE_SITEWIDE_SALE.png",
-        "text": "SITEWIDE SALE!",
-        "phag": "<p>Take 20% off *almost* everything and stock up on sex toy gifts for everyone on your naughty list! <strong>Use code: NAUGHTY20</strong>.<strong> </strong><em>Excludes We-Vibe and Womanizer.</em></p>",
+        "image": "shopify://shop_images/December_Gift_Card_Promo_Purple_2.png",
+        "text": "Free Gift Cards",
+        "phag": "<p>Get a free gift card up to $60 with your purchase of $100+ thru 12/31! <a href=\"/pages/coupons\" title=\"Coupons\">Learn more here</a>. </p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
         "link-text": "Shop All toys",
