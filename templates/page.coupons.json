@@ -31,6 +31,7 @@
     },
     "rich_text_mJQ7kb": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
