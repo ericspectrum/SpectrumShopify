@@ -12,18 +12,28 @@
     "custom_banner_section_hpwxHD": {
       "type": "Custom_Banner_Section",
       "settings": {
-        "image": "shopify://shop_images/December_Gift_Card_Promo_Purple_2.png",
-        "text": "Free Gift Cards",
-        "phag": "<p>Get a free gift card up to $60 with your purchase of $100+ thru 12/31! <a href=\"/pages/coupons\" title=\"Coupons\">Learn more here</a>. </p>",
+        "image": "shopify://shop_images/Holiday_Kit_Image.png",
+        "text": "Bundle & Save!",
+        "phag": "<p>Why settle for a sex toy kit someone else put together when you can customize your own and <strong>save 20%</strong>?!</p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop All toys",
-        "link": "shopify://collections/all"
+        "link-text": "Start Building Your Kit",
+        "link": "shopify://pages/build-your-own-holiday-gift-kit"
       }
     },
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_dfiUY7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
+            "heading": "Free Gift Cards",
+            "description": "Get a free gift card up to $60 for yourself or to re-gift when you spend $100 or more. See terms!",
+            "link": "shopify://pages/coupons",
+            "button_text": "Learn More"
+          }
+        },
         "column_Vdhgwr": {
           "type": "column",
           "settings": {
@@ -44,17 +54,6 @@
             "button_text": "Shop Evolved"
           }
         },
-        "column_dfiUY7": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Mix_Match_2.png",
-            "heading": "Build Your Kit",
-            "description": "Why settle for a sex toy kit someone else put together when you can customize your own and save 20%?!",
-            "link": "shopify://pages/build-your-own-holiday-gift-kit",
-            "button_text": "Build Your Kit"
-          }
-        },
         "column_QzNfAj": {
           "type": "column",
           "settings": {
@@ -67,9 +66,9 @@
         }
       },
       "block_order": [
+        "column_dfiUY7",
         "column_Vdhgwr",
         "column_VXaTxK",
-        "column_dfiUY7",
         "column_QzNfAj"
       ],
       "settings": {
