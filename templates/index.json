@@ -14,7 +14,7 @@
       "settings": {
         "image": "shopify://shop_images/Holiday_Kit_Image.png",
         "text": "Bundle & Save!",
-        "phag": "<p>Why settle for a sex toy kit someone else put together when you can customize your own and <strong>save 20%</strong>?!</p>",
+        "phag": "<p>Why settle for a sex toy kit someone else put together when you can customize your own and <strong>save 20%</strong>?! <a href=\"/pages/coupons\" target=\"_blank\" title=\"Coupons\">See terms</a>*</p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
         "link-text": "Start Building Your Kit",
