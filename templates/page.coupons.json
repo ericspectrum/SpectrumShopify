@@ -68,6 +68,25 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
+    "rich_text_qKpyNJ": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
+        "title": "Build your Own Kit Terms",
+        "content": "<p>Bundle and save this Holiday season. Get 20% off when you build-your-own sex toy kit! Learn more & start building now!</p><p><em>Kit Terms: Kits can only be made with the select items featured in each step. You can customize between colors and styles and choose between many options, but other substitutions cannot be made. No code needed. Simply complete each step and you will see an automatic discount applied when you meet the minimum conditions. Cannot be combined with other promotions. Excludes We-Vibe and Womanizer items.</em></p>",
+        "button_text": "Build Your Kit",
+        "button_link": "shopify://pages/build-your-own-holiday-gift-kit",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
     "rich_text_4zBnnA": {
       "type": "rich-text",
       "disabled": true,
@@ -135,25 +154,6 @@
         "content": "<p>This is our welcome coupon, good for 10% off your first purchase. </p>",
         "button_text": "APPLY WELOVEYOU",
         "button_link": "https://spectrumboutique.com/discount/weloveyou?redirect=%2Fcollections%2Fall",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
-    "rich_text_qKpyNJ": {
-      "type": "rich-text",
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "Build your Own Kit Terms",
-        "content": "<p>Bundle and save this Holiday season. Get 20% off when you build-your-own sex toy kit! Learn more & start building now!</p><p><em>Kit Terms: Kits can only be made with the select items featured in each step. You can customize between colors and styles and choose between many options, but other substitutions cannot be made. No code needed. Simply complete each step and you will see an automatic discount applied when you meet the minimum conditions. Cannot be combined with other promotions. Excludes We-Vibe and Womanizer items.</em></p>",
-        "button_text": "Build Your Kit",
-        "button_link": "shopify://pages/build-your-own-holiday-gift-kit",
         "background_type": "full_width",
         "text_width": "medium",
         "text_position": "center",
@@ -312,11 +312,11 @@
     "simple_image_with_text_QnRnQx",
     "rich_text_mJQ7kb",
     "rich_text_edNLEa",
+    "rich_text_qKpyNJ",
     "rich_text_4zBnnA",
     "rich_text_Bwnf38",
     "rich_text_Nhgrh9",
     "rich_text_nVndH4",
-    "rich_text_qKpyNJ",
     "rich_text_9tBFfP",
     "gallery_Lj4wWU",
     "rich_text_VD4aqk",
