@@ -27,9 +27,9 @@
       "type": "main-collection",
       "settings": {
         "promoText": "",
-        "promotion2_head": "Give & Receive",
-        "promotion2_text": "<p><strong>Spend $100 or more & earn a free gift card up to $60 </strong>to keep or regift. See terms & details <a href=\"https://spectrumboutique.com/pages/coupons\" title=\"Coupons\"><span style=\"text-decoration:underline\">here</span></a><span style=\"text-decoration:underline\">.</span></p>",
-        "promo2btn_text": "Shop All",
+        "promotion2_head": "Free Gift Card",
+        "promotion2_text": "<p>Get a free Spectrum Boutique gift card with your purchase of $100+!</p><p>See <a href=\"/pages/coupons\" title=\"Coupons\"><span style=\"text-decoration:underline\">terms</span></a>*</p>",
+        "promo2btn_text": "Shop All Toys",
         "promo2btn_url": "shopify://collections/all",
         "show_sort_by": true,
         "products_per_page": 39,
