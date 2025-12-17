@@ -54,9 +54,11 @@
               {% if section.settings.footUppHead  != blank%}
                <div class="fott_uppCont_sec_inner">
                  <h2>{{ section.settings.footUppHead }}</h2>
-                 <div class="footer_contenttext"><span class="footer_orText">{{ section.settings.footUppText }}</span>  <span class="footer_readmore">Read More</span> <span class="footer_showless">Show Less</span></div>
-                 
-               </div>
+                  <div class="footer_contenttext">
+                    <span class="footer_orText">{{ section.settings.footUppText }}</span>
+                    <span class="footer_showless">Show Less</span>
+                  </div>
+                </div>
                 {% endif %}
                
           </div>
@@ -281,33 +283,91 @@
 </footer>
 
 
-
 <script>
-  const footerText = document.querySelector('.fott_uppCont_sec .footer_contenttext .footer_orText')    
-  const textReadMoreBtn = document.querySelector('.footer_readmore')
-  const textShowLessBtn = document.querySelector('.footer_showless')
-  
-  const footerInnerText = footerText.innerText
-  const textSplit = footerInnerText.split(" ")
-  const trunctText = textSplit.slice(0, 40).join(" ") + "...";
+const footerHTML = document.querySelector('.footer_orText');
+const readMoreBtn = document.querySelector('.footer_readmore');
+const showLessBtn = document.querySelector('.footer_showless');
 
-  if(textSplit.length >= 40){
-    footerText.innerText = trunctText
-    textShowLessBtn.style.display = 'none'
+const originalHTML = footerHTML.innerHTML;
+const originalText = footerHTML.innerText.trim();
+
+const limit = 40;
+
+const words = originalText.split(/\s+/);
+
+if (words.length > limit) {
+  const truncatedText = words.slice(0, limit).join(" ");
+  const temp = document.createElement("div");
+  temp.innerHTML = originalHTML;
+  footerHTML.innerHTML = truncateHTML(temp, truncatedText);
+  showLessBtn.style.display = "none";
+} else {
+  readMoreBtn.style.display = "none";
+  showLessBtn.style.display = "none";
+}
+
+function truncateHTML(container, truncatedText) {
+  let result = "";
+  let collectedText = "";
+
+  function recurse(node) {
+    if (collectedText.length >= truncatedText.length) return;
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      const remaining = truncatedText.length - collectedText.length;
+      const chunk = node.textContent.slice(0, remaining);
+      collectedText += chunk;
+      result += chunk;
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      result += `<${node.nodeName.toLowerCase()}${copyAttrs(node)}>`;
+      node.childNodes.forEach(recurse);
+      result += `</${node.nodeName.toLowerCase()}>`;
+    }
   }
 
-  textReadMoreBtn.addEventListener('click' , (item) =>{
-    footerText.innerText = footerInnerText;
-   textShowLessBtn.style.display = 'block'
-   textReadMoreBtn.style.display = 'none'
-  })
-  textShowLessBtn.addEventListener('click',()=>{
-     footerText.innerText = trunctText;
-    textShowLessBtn.style.display = 'none'
-   textReadMoreBtn.style.display = 'block'
-  })
-  
+  recurse(container);
+  const tail = `... <span class="footer_readmore">Read More</span>`;
+
+  const lastClosingP = result.lastIndexOf("</p>");
+
+  if (lastClosingP !== -1) {
+    result =
+      result.slice(0, lastClosingP) +
+      tail +
+      result.slice(lastClosingP);
+  } else {
+    result += tail;
+  }
+
+  return result;
+  return result;
+}
+
+function copyAttrs(node) {
+  if (!node.attributes.length) return "";
+  return " " + [...node.attributes]
+    .map(attr => `${attr.name}="${attr.value}"`)
+    .join(" ");
+}
+
+footerHTML.parentElement.addEventListener("click", (e) => {
+  if (e.target.classList.contains("footer_readmore")) {
+    footerHTML.innerHTML = originalHTML;
+    document.querySelector('.footer_showless').style.display = "inline";
+  }
+
+  if (e.target.classList.contains("footer_showless")) {
+    const truncatedText = words.slice(0, limit).join(" ");
+    const temp = document.createElement("div");
+    temp.innerHTML = originalHTML;
+
+    footerHTML.innerHTML = truncateHTML(temp, truncatedText);
+    document.querySelector('.footer_showless').style.display = "none";
+  }
+});
+
 </script>
+
 
 {% schema %}
 {

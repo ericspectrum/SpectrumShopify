@@ -465,7 +465,13 @@ MOBILE MENU DRAWER
 {%- endcomment -%}
 
 {%- assign menu = section.settings.sidebar_navigation_menu | default: section.settings.navigation_menu -%}
-{%- render 'mobile-menu', menu: menu -%}
+{%- render 'mobile-menu', 
+  menu: menu,
+  mobile_button_2_label: section.settings.mobile_button_2_label,
+  mobile_button_2_link: section.settings.mobile_button_2_link,
+  mobile_button_2_style: section.settings.mobile_button_2_style,
+  mobile_button_2_text_color: section.settings.mobile_button_2_text_color
+%}
 
 {%- comment -%}
 ------------------------------------------------------------------------------------
@@ -554,6 +560,31 @@ SEARCH DRAWER
       "id": "sidebar_navigation_menu",
       "label": "Mobile menu",
       "info": "Select a different menu for mobile sidebar. If none is set the main menu is used."
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_2_label",
+      "label": "Mobile CTA second button label"
+    },
+    {
+      "type": "url",
+      "id": "mobile_button_2_link",
+      "label": "Mobile CTA second button link"
+    },
+    {
+      "type": "select",
+      "id": "mobile_button_2_style",
+      "label": "Mobile CTA second button style",
+      "options": [
+        { "value": "filled", "label": "Filled" },
+        { "value": "outlined", "label": "Outlined" }
+      ],
+      "default": "outlined"
+    },
+    {
+      "type": "color",
+      "id": "mobile_button_2_text_color",
+      "label": "Mobile CTA second button text color"
     },
     {
       "type": "header",
