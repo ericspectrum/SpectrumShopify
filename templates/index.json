@@ -27,21 +27,11 @@
         "column_dfiUY7": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
-            "heading": "Free Gift Cards",
-            "description": "Get a free gift card up to $60 for yourself or to re-gift when you spend $100 or more. See terms!",
-            "link": "shopify://pages/coupons",
-            "button_text": "Learn More"
-          }
-        },
-        "column_Vdhgwr": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Honey_Play_Box_3b7e75e5-c425-4cf4-ae15-e7e4f77f1222.png",
-            "heading": "Honey Play Box",
-            "description": "Unique sex toys from Honey Play Box are on sale! Get 30% off with code: HONEY30 thru 12/31.",
-            "link": "shopify://collections/honey-play-box",
-            "button_text": "Shop Honey"
+            "image": "shopify://shop_images/XR_Creature_Black_Friday_Sale.png",
+            "heading": "XR Sale",
+            "description": "You loved our XR & Creature Cocks sex toy sale so much, we brought it back! Get 25% off with code: XRMAS25",
+            "link": "shopify://collections/xr-brands",
+            "button_text": "shop XR"
           }
         },
         "column_VXaTxK": {
@@ -54,8 +44,29 @@
             "button_text": "Shop Evolved"
           }
         },
+        "column_Vdhgwr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Honey_Play_Box_3b7e75e5-c425-4cf4-ae15-e7e4f77f1222.png",
+            "heading": "Honey Play Box",
+            "description": "Unique sex toys from Honey Play Box are on sale! Get 30% off with code: HONEY30 thru 12/31.",
+            "link": "shopify://collections/honey-play-box",
+            "button_text": "Shop Honey"
+          }
+        },
+        "column_YzP7PC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
+            "heading": "Free Gift Cards",
+            "description": "Get a free gift card up to $60 for yourself or to re-gift when you spend $100 or more. See terms!",
+            "link": "shopify://pages/coupons",
+            "button_text": "Learn More"
+          }
+        },
         "column_QzNfAj": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Essentials.png",
             "heading": "The Essentials",
@@ -67,8 +78,9 @@
       },
       "block_order": [
         "column_dfiUY7",
-        "column_Vdhgwr",
         "column_VXaTxK",
+        "column_Vdhgwr",
+        "column_YzP7PC",
         "column_QzNfAj"
       ],
       "settings": {
