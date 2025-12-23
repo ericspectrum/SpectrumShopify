@@ -56,6 +56,7 @@
         },
         "column_YzP7PC": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
             "heading": "Free Gift Cards",
@@ -84,9 +85,9 @@
         "column_QzNfAj"
       ],
       "settings": {
-        "image": "shopify://shop_images/Holiday_Guides_Featured_Banner_image_1.png",
-        "heading": "Holiday Gift Guides",
-        "des": "<p>Looking for the perfect sex toy gift for yourself or someone else? Check out our holiday gift guides, written by our team of sexperts to help you choose the right sexy gift regardless of budget or interests.</p>",
+        "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
+        "heading": "Free Gift Cards",
+        "des": "<p>Get a free gift card up to $60 for yourself or to re-gift when you spend $100 or more. See terms!</p>",
         "button1": "Read Guides",
         "link1": "shopify://pages/holiday-gift-guides",
         "button2": "Shop Staff Picks",
