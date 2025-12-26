@@ -26,6 +26,7 @@
       "blocks": {
         "column_dfiUY7": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/XR_Creature_Black_Friday_Sale.png",
             "heading": "XR Sale",
@@ -67,7 +68,6 @@
         },
         "column_QzNfAj": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Essentials.png",
             "heading": "The Essentials",
