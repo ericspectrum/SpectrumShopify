@@ -13,12 +13,12 @@
       "type": "Custom_Banner_Section",
       "settings": {
         "image": "shopify://shop_images/Spectrum_Boutique_ICYMI_Sale.png",
-        "text": "Flash Sale!",
-        "phag": "<p>You're on our nice list! Get <strong>20% off our staff picks</strong> & start the year with a fresh sex toy! Thru 12/25. Excludes We-Vibe & Womanizer.</p><p><strong>Use code: NICE20</strong></p>",
+        "text": "BOXING DAY SALE",
+        "phag": "<p>Take 25% off sitewide thru 11:59pm ET on 11/26. Excludes We-Vibe and Womanizer items.</p><p><strong>Use code: UNBOXING</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Our Picks",
-        "link": "shopify://collections/holiday-gift-picks"
+        "link-text": "Shop sex toys",
+        "link": "shopify://collections/all"
       }
     },
     "custom_multi_column_section_NTjk4K": {
