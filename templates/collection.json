@@ -27,8 +27,8 @@
       "type": "main-collection",
       "settings": {
         "promoText": "",
-        "promotion2_head": "Boxing Day Sale!",
-        "promotion2_text": "<p>Get 25% off sitewide thru 12/26 at 11:59pm ET. Excludes We-Vibe and Womanizer. <br/></p><p><strong>Use code: UNBOXED</strong></p>",
+        "promotion2_head": "Sitewide Sale!",
+        "promotion2_text": "<p>Today only: 25% off sitewide!<br/><strong>Use code: UNBOXED</strong></p><p><em>Excludes We-Vibe & Womanizer items.</em></p>",
         "promo2btn_text": "Shop All",
         "promo2btn_url": "shopify://collections/all",
         "show_sort_by": true,
