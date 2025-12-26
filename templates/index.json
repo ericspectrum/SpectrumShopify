@@ -448,6 +448,7 @@
       "blocks": {
         "item_PdVyia": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Build_Your_Own_Holiday_Gift_Kit_Page_Header.png",
             "tab_label": "Item",
