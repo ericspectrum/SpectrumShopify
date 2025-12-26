@@ -16,6 +16,7 @@
       "blocks": {
         "message_qQkEad": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "text": "Last Minute? Shop Gift Cards!",
             "announceUrl": "https://spectrumboutique.com/products/spectrum-boutique-gift-card-1?_pos=1&_sid=04277b378&_ss=r",
