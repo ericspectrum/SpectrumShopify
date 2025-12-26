@@ -28,7 +28,7 @@
       "settings": {
         "promoText": "",
         "promotion2_head": "Sitewide Sale!",
-        "promotion2_text": "<p>Today only: 25% off sitewide!<br/><strong>Use code: UNBOXED</strong></p><p><em>Excludes We-Vibe & Womanizer items.</em></p>",
+        "promotion2_text": "<p>Today only: 25% off sitewide!<br/><strong>Use code: UNBOXING</strong></p><p><em>Excludes We-Vibe & Womanizer items.</em></p>",
         "promo2btn_text": "Shop All",
         "promo2btn_url": "shopify://collections/all",
         "show_sort_by": true,
