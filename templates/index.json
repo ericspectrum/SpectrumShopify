@@ -12,13 +12,13 @@
     "custom_banner_section_hpwxHD": {
       "type": "Custom_Banner_Section",
       "settings": {
-        "image": "shopify://shop_images/Spectrum_Boutique_ICYMI_Sale.png",
-        "text": "BOXING DAY SALE",
-        "phag": "<p>Take 25% off sitewide thru 11:59pm ET on 11/26. Excludes We-Vibe and Womanizer items.</p><p><strong>Use code: UNBOXING</strong></p>",
+        "image": "shopify://shop_images/December_Gift_Card_Promo_Purple_2.png",
+        "text": "Free Gift Cards",
+        "phag": "<p>Get a free gift card up to $60 when you spend $100+</p><p><a href=\"/pages/coupons\" title=\"Coupons\">See terms*</a></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop sex toys",
-        "link": "shopify://collections/all"
+        "link-text": "Shop Gift Cards",
+        "link": "shopify://products/spectrum-boutique-gift-card-1"
       }
     },
     "custom_multi_column_section_NTjk4K": {
