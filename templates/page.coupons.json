@@ -106,6 +106,25 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
+    "rich_text_tF9nnR": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
+        "title": "HONEY30",
+        "content": "<p>Get 30% off all Honey Play Box sex toys with code: <strong>HONEY30</strong> and explore beyond the basics!</p><p><em>Offer ends 12/31 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
+        "button_text": "Apply HONEY30",
+        "button_link": "https://spectrumboutique.com/discount/Essentials30?redirect=%2Fcollections%2Fspectrum-essentials",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
     "rich_text_nVndH4": {
       "type": "rich-text",
       "settings": {
@@ -275,6 +294,7 @@
     "rich_text_qKpyNJ",
     "rich_text_Bwnf38",
     "rich_text_Nhgrh9",
+    "rich_text_tF9nnR",
     "rich_text_nVndH4",
     "rich_text_9tBFfP",
     "gallery_Lj4wWU",
