@@ -29,25 +29,6 @@
         "btnUrl2": ""
       }
     },
-    "rich_text_mJQ7kb": {
-      "type": "rich-text",
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "UNBOXING",
-        "content": "<p>Today only: 25% off sitewide!</p><p><strong>USE CODE: UNBOXING</strong></p><p>Excludes We-Vibe & Womanizer. Ends 12/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. </p>",
-        "button_text": "Apply UNBOXING",
-        "button_link": "https://spectrumboutique.com/discount/unboxing?redirect=%2Fcollections%2Fall",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
     "rich_text_edNLEa": {
       "type": "rich-text",
       "settings": {
@@ -290,7 +271,6 @@
   "order": [
     "main",
     "simple_image_with_text_QnRnQx",
-    "rich_text_mJQ7kb",
     "rich_text_edNLEa",
     "rich_text_qKpyNJ",
     "rich_text_Bwnf38",
