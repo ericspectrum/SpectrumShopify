@@ -12,13 +12,13 @@
     "custom_banner_section_hpwxHD": {
       "type": "Custom_Banner_Section",
       "settings": {
-        "image": "shopify://shop_images/December_Gift_Card_Promo_Purple_2.png",
-        "text": "Free Gift Cards",
-        "phag": "<p>Get a free gift card up to $60 when you spend $100+</p><p><a href=\"/pages/coupons\" title=\"Coupons\">See terms*</a></p>",
+        "image": "shopify://shop_images/New_Year_Sitewide_Sale_Spectrum_Boutique.png",
+        "text": "Sitewide Sale!",
+        "phag": "<p>Say goodbye to 2025 with 25% off *almost* everything!</p><p><strong>Use code: NEWYEAR</strong></p><h4><em>Ends 1/1 at 11:59pm ET. Excludes We-Vibe and Womanizer.</em></h4>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Gift Cards",
-        "link": "shopify://products/spectrum-boutique-gift-card-1"
+        "link-text": "Shop All",
+        "link": "shopify://collections/all"
       }
     },
     "custom_multi_column_section_NTjk4K": {
