@@ -25,17 +25,6 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_dfiUY7": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/XR_Creature_Black_Friday_Sale.png",
-            "heading": "XR Sale",
-            "description": "You loved our XR & Creature Cocks sex toy sale so much, we brought it back! Get 25% off with code: XRMAS25",
-            "link": "shopify://collections/xr-brands",
-            "button_text": "shop XR"
-          }
-        },
         "column_VXaTxK": {
           "type": "column",
           "settings": {
@@ -56,9 +45,18 @@
             "button_text": "Shop Honey"
           }
         },
+        "column_QzNfAj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Essentials_New_Year_Sale.png",
+            "heading": "The Essentials",
+            "description": "Get 30% off all Spectrum Essentials sex toys with code: ESSENTIALS30 and explore beyond the basics!",
+            "link": "shopify://collections/spectrum-essentials",
+            "button_text": "Shop Essentials"
+          }
+        },
         "column_YzP7PC": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
             "heading": "Free Gift Cards",
@@ -66,24 +64,13 @@
             "link": "shopify://pages/coupons",
             "button_text": "Learn More"
           }
-        },
-        "column_QzNfAj": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Essentials.png",
-            "heading": "The Essentials",
-            "description": "Get 30% off all Spectrum Essentials sex toys with code: ESSENTIALS30 and explore beyond the basics!",
-            "link": "shopify://collections/spectrum-essentials",
-            "button_text": "Shop Essentials"
-          }
         }
       },
       "block_order": [
-        "column_dfiUY7",
         "column_VXaTxK",
         "column_Vdhgwr",
-        "column_YzP7PC",
-        "column_QzNfAj"
+        "column_QzNfAj",
+        "column_YzP7PC"
       ],
       "settings": {
         "image": "shopify://shop_images/About_Us_Spectrum_Essentials.png",
