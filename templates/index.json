@@ -11,6 +11,7 @@
   "sections": {
     "custom_banner_section_hpwxHD": {
       "type": "Custom_Banner_Section",
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/New_Year_Sitewide_Sale_Spectrum_Boutique.png",
         "text": "Sitewide Sale!",
@@ -38,7 +39,7 @@
         "column_VXaTxK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Evolved_1.png",
+            "image": "shopify://shop_images/New_Evolved_1.png",
             "heading": "Evolved Sale",
             "description": "Get 30% off all Evolved Novelties, Gender X, Playboy, & Zero Tolerance sex toys with code EVOLVED30.",
             "link": "shopify://collections/evolved-bfcm-2025",
