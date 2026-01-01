@@ -48,6 +48,63 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
+    "rich_text_ipjaGq": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
+        "title": "Tantus30",
+        "content": "<p>Take 30% off all Tantus sex toys with code: <strong>TANTUS30</strong>.</p><p><em>Terms: Ends 1/31 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
+        "button_text": "APPLY TANTUS30",
+        "button_link": "https://spectrumboutique.com/discount/TANTUS30?redirect=%2Fcollections%2Ftantus",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "rich_text_4GbqHV": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
+        "title": "PDX30",
+        "content": "<p>Take 30% off all Pipedream sex toys, including: PDX, Icicles, Fetish Fantasy, King Cock, and more! </p><p><strong>Use code: PDX30</strong></p><p><em>Terms: Ends 1/31 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
+        "button_text": "APPLY PDX30",
+        "button_link": "https://spectrumboutique.com/discount/PDX30?redirect=%2Fcollections%2Fearthly-body-bfcm-2025-copy",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "rich_text_W9pUYr": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
+        "title": "LIBERATOR GIFT WITH PURCHASE",
+        "content": "<p>Get a free Liberator Deluxe Bond Cuff Kit valued at $60 when you spend $100 or more on Liberator items.</p><p><em>Terms: While supplies last. Cannot be combined with other promotions or used on already discounted items. No code needed. Free gift will be added to your cart once you meet the required amount. Limit one per purchase.</em></p>",
+        "button_text": "SHOP LIBERATOR",
+        "button_link": "shopify://collections/liberator",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
     "rich_text_y4awMN": {
       "type": "rich-text",
       "settings": {
@@ -77,66 +134,6 @@
         "content": "<p>Bundle and save this Holiday season. Get 20% off when you build-your-own sex toy kit! Learn more & start building now!</p><p><em>Kit Terms: Kits can only be made with the select items featured in each step. You can customize between colors and styles and choose between many options, but other substitutions cannot be made. No code needed. Simply complete each step and you will see an automatic discount applied when you meet the minimum conditions. Cannot be combined with other promotions. Excludes We-Vibe and Womanizer items.</em></p>",
         "button_text": "Build Your Kit",
         "button_link": "shopify://pages/build-your-own-holiday-gift-kit",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
-    "rich_text_Bwnf38": {
-      "type": "rich-text",
-      "disabled": true,
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "EVOLVED30",
-        "content": "<p>Get 30% off all Evolved Novelties,Gender X, Playboy, & Zero Tolerance sex toys with code <strong>EVOLVED30</strong>.</p><p><em>Offer ends 12/31 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
-        "button_text": "APPLY EVOLVED30",
-        "button_link": "https://spectrumboutique.com/discount/EVOLVED30?redirect=%2Fcollections%2Fevolved-bfcm-2025",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
-    "rich_text_Nhgrh9": {
-      "type": "rich-text",
-      "disabled": true,
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "Essentials30",
-        "content": "<p>Get 30% off all Spectrum Essentials sex toys with code: <strong>ESSENTIALS30</strong> and explore beyond the basics!</p><p><em>Offer ends 12/31 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
-        "button_text": "apply essentials30",
-        "button_link": "https://spectrumboutique.com/discount/Essentials30?redirect=%2Fcollections%2Fspectrum-essentials",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
-    "rich_text_tF9nnR": {
-      "type": "rich-text",
-      "disabled": true,
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "HONEY30",
-        "content": "<p>Get 30% off all Honey Play Box sex toys with code: <strong>HONEY30</strong> and explore beyond the basics!</p><p><em>Offer ends 12/31 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
-        "button_text": "Apply HONEY30",
-        "button_link": "",
         "background_type": "full_width",
         "text_width": "medium",
         "text_position": "center",
@@ -313,11 +310,11 @@
     "main",
     "simple_image_with_text_QnRnQx",
     "rich_text_edNLEa",
+    "rich_text_ipjaGq",
+    "rich_text_4GbqHV",
+    "rich_text_W9pUYr",
     "rich_text_y4awMN",
     "rich_text_qKpyNJ",
-    "rich_text_Bwnf38",
-    "rich_text_Nhgrh9",
-    "rich_text_tF9nnR",
     "rich_text_nVndH4",
     "rich_text_9tBFfP",
     "gallery_Lj4wWU",
