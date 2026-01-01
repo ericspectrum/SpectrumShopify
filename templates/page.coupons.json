@@ -129,6 +129,7 @@
     },
     "rich_text_tF9nnR": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
