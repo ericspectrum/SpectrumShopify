@@ -393,27 +393,6 @@
     },
     "custom_image_with_text_MxRmkc": {
       "type": "Custom_ImageWithText",
-      "blocks": {
-        "item_kwjerT": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Shots_Banner_1.png",
-            "tab_label": "",
-            "subheading": "",
-            "title": "",
-            "heading1": "Shots Toys",
-            "content": "<p>Discover <strong>Shots sex toys</strong>, designed for every body and every desire. Vibrators that buzz, flick, or suction, colorful BDSM gear, butt plugs for all experience levels, and classic strokers and pumps are just the beginning!</p>",
-            "button_text": "Shop Shots",
-            "button_link": "shopify://collections/shots-sex-toys",
-            "button_text1": "Shop All Toys",
-            "button_link1": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "item_kwjerT"
-      ],
       "custom_css": [
         ".image-with-text__image-wrapper {margin: 0;}",
         ".image-with-text__content-wrapper {margin: 0 auto;}",
