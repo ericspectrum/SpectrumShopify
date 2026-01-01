@@ -27,6 +27,7 @@
       "blocks": {
         "column_VXaTxK": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/New_Evolved_1.png",
             "heading": "Evolved Sale",
@@ -37,6 +38,7 @@
         },
         "column_Vdhgwr": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/honey_play_box_new_years.png",
             "heading": "Honey Play Box",
@@ -47,6 +49,7 @@
         },
         "column_QzNfAj": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Essentials_New_Year_Sale.png",
             "heading": "The Essentials",
@@ -57,6 +60,7 @@
         },
         "column_YzP7PC": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
             "heading": "Free Gift Cards",
