@@ -396,6 +396,7 @@
       "blocks": {
         "item_kwjerT": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Shots_Banner_1.png",
             "tab_label": "",
