@@ -27,54 +27,39 @@
       "blocks": {
         "column_VXaTxK": {
           "type": "column",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/New_Evolved_1.png",
-            "heading": "Evolved Sale",
-            "description": "Get 30% off all Evolved Novelties, Gender X, Playboy, & Zero Tolerance sex toys with code EVOLVED30.",
-            "link": "shopify://collections/evolved-bfcm-2025",
-            "button_text": "Shop Evolved"
+            "image": "shopify://shop_images/TANTUS_7f3a5174-3f97-4bcb-bcf8-898e4d83199e.png",
+            "heading": "Tantus",
+            "description": "Take 30% off all Tantus sex toys and save on platinum silicone dildos, butt plugs, and more with code: TANTUS30",
+            "link": "shopify://collections/tantus",
+            "button_text": "Shop Tantus"
           }
         },
         "column_Vdhgwr": {
           "type": "column",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/honey_play_box_new_years.png",
-            "heading": "Honey Play Box",
-            "description": "Unique sex toys from Honey Play Box are on sale! Get 30% off with code: HONEY30 thru 12/31.",
-            "link": "shopify://collections/honey-play-box",
-            "button_text": "Shop Honey"
+            "image": "shopify://shop_images/PIPEDREAM_JANUARY.png",
+            "heading": "Pipedream",
+            "description": "All Icicles, PDX, and Ultimate Fantasy, and other Pipedream sex toys are 30% off thru 1/31 with code: PDX30",
+            "link": "shopify://collections/earthly-body-bfcm-2025-copy",
+            "button_text": "Shop Pipedream"
           }
         },
         "column_QzNfAj": {
           "type": "column",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Essentials_New_Year_Sale.png",
-            "heading": "The Essentials",
-            "description": "Get 30% off all Spectrum Essentials sex toys with code: ESSENTIALS30 and explore beyond the basics!",
-            "link": "shopify://collections/spectrum-essentials",
-            "button_text": "Shop Essentials"
-          }
-        },
-        "column_YzP7PC": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Free_Gift_Card_Promo.png",
-            "heading": "Free Gift Cards",
-            "description": "Get a free gift card up to $60 for yourself or to re-gift when you spend $100 or more. See terms!",
-            "link": "shopify://pages/coupons",
-            "button_text": "Learn More"
+            "image": "shopify://shop_images/LIBERATOR_GWP_f2baa7da-adf0-4124-bf68-f4c28193c860.png",
+            "heading": "Liberator GWP",
+            "description": "Spend $100+ on Liberator items and get a free Liberator Deluxe Bond Cuff Kit, valued at $60. No code needed.",
+            "link": "shopify://collections/liberator",
+            "button_text": "Shop Liberator"
           }
         }
       },
       "block_order": [
         "column_VXaTxK",
         "column_Vdhgwr",
-        "column_QzNfAj",
-        "column_YzP7PC"
+        "column_QzNfAj"
       ],
       "settings": {
         "image": "shopify://shop_images/About_Us_Spectrum_Essentials.png",
