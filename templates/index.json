@@ -14,12 +14,12 @@
       "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/New_Year_Sitewide_Sale_Spectrum_Boutique.png",
-        "text": "Sitewide Sale!",
-        "phag": "<p>Say goodbye to 2025 with 25% off *almost* everything!</p><p><strong>Use code: NEWYEAR</strong></p><h4><em>Ends 1/1 at 11:59pm ET. Excludes We-Vibe and Womanizer.</em></h4>",
+        "text": "New Year, New Toys!",
+        "phag": "<p>Get a fresh start this new year with the latest in sex toys. Check out what's new!</p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop All",
-        "link": "shopify://collections/all"
+        "link-text": "Shop New In",
+        "link": "shopify://collections/new-arrivals"
       }
     },
     "custom_multi_column_section_NTjk4K": {
