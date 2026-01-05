@@ -25,16 +25,6 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_VXaTxK": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/New_Year_New_Toys_f93284ad-d571-4671-9ddc-dd170e9d8064.png",
-            "heading": "Fresh Start",
-            "description": "Explore our newest products, including some of the most recent innovative sex toys!",
-            "link": "shopify://collections/new-arrivals",
-            "button_text": "Shop New In"
-          }
-        },
         "column_Vdhgwr": {
           "type": "column",
           "settings": {
@@ -54,12 +44,22 @@
             "link": "shopify://collections/liberator",
             "button_text": "Shop Liberator"
           }
+        },
+        "column_VXaTxK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/New_Year_New_Toys_f93284ad-d571-4671-9ddc-dd170e9d8064.png",
+            "heading": "Fresh Start",
+            "description": "Explore our newest products, including some of the most recent innovative sex toys!",
+            "link": "shopify://collections/new-arrivals",
+            "button_text": "Shop New In"
+          }
         }
       },
       "block_order": [
-        "column_VXaTxK",
         "column_Vdhgwr",
-        "column_QzNfAj"
+        "column_QzNfAj",
+        "column_VXaTxK"
       ],
       "settings": {
         "image": "shopify://shop_images/About_Us_Spectrum_Essentials.png",
