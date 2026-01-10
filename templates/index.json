@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_VXaTxK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/TANTUS_7f3a5174-3f97-4bcb-bcf8-898e4d83199e.png",
+            "heading": "Tantus",
+            "description": "Experience the gold standard of silicone body-safe sex toys with 30% off all Tantus Toys thru 1/31 with code: TANTUS30",
+            "link": "shopify://collections/tantus",
+            "button_text": "Shop Tantus"
+          }
+        },
         "column_Vdhgwr": {
           "type": "column",
           "settings": {
@@ -44,22 +54,12 @@
             "link": "shopify://collections/liberator",
             "button_text": "Shop Liberator"
           }
-        },
-        "column_VXaTxK": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/TANTUS_7f3a5174-3f97-4bcb-bcf8-898e4d83199e.png",
-            "heading": "Tantus",
-            "description": "Experience the gold standard of silicone body-safe sex toys with 30% off all Tantus Toys thru 1/31 with code: TANTUS30",
-            "link": "shopify://collections/tantus",
-            "button_text": "Shop Tantus"
-          }
         }
       },
       "block_order": [
+        "column_VXaTxK",
         "column_Vdhgwr",
-        "column_QzNfAj",
-        "column_VXaTxK"
+        "column_QzNfAj"
       ],
       "settings": {
         "image": "shopify://shop_images/About_Us_Spectrum_Essentials.png",
