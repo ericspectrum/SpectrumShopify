@@ -48,11 +48,11 @@
         "column_VXaTxK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/New_Year_New_Toys_f93284ad-d571-4671-9ddc-dd170e9d8064.png",
-            "heading": "Fresh Start",
-            "description": "Explore our newest products, including some of the most recent innovative sex toys!",
-            "link": "shopify://collections/new-arrivals",
-            "button_text": "Shop New In"
+            "image": "shopify://shop_images/TANTUS_7f3a5174-3f97-4bcb-bcf8-898e4d83199e.png",
+            "heading": "Tantus",
+            "description": "Experience the gold standard of silicone body-safe sex toys with 30% off all Tantus Toys thru 1/31 with code: TANTUS30",
+            "link": "shopify://collections/tantus",
+            "button_text": "Shop Tantus"
           }
         }
       },
