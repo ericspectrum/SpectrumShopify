@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/DILS20_FLASH_SALE_1.png",
-        "text": "20% OFF DILDOS",
-        "phag": "<p>Take 20% off all dildos, this weekend only!</p><p><strong>Use code: DILS20</strong></p>",
+        "image": "shopify://shop_images/Tantus_Main.png",
+        "text": "Tantus Sale",
+        "phag": "<p>Take 30% off all Tantus toys and experience the gold standard of body-safe sex toys.</p><p><strong>Use code: TANTUS30</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Dildos",
-        "link": "shopify://collections/dildos"
+        "link-text": "Shop Tantus",
+        "link": "shopify://collections/tantus"
       }
     },
     "custom_multi_column_section_NTjk4K": {
