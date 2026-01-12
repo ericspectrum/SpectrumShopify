@@ -27,6 +27,7 @@
       "blocks": {
         "column_VXaTxK": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/TANTUS_7f3a5174-3f97-4bcb-bcf8-898e4d83199e.png",
             "heading": "Tantus",
@@ -36,6 +37,16 @@
           }
         },
         "column_Vdhgwr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/New_Year_New_Toys_f93284ad-d571-4671-9ddc-dd170e9d8064.png",
+            "heading": "Fresh Start",
+            "description": "Start the new year with new sex toys and explore more in 2026!",
+            "link": "shopify://collections/new-arrivals",
+            "button_text": "Shop New In"
+          }
+        },
+        "column_P9HDJd": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/PIPEDREAM_JANUARY.png",
@@ -59,6 +70,7 @@
       "block_order": [
         "column_VXaTxK",
         "column_Vdhgwr",
+        "column_P9HDJd",
         "column_QzNfAj"
       ],
       "settings": {
