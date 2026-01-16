@@ -31,7 +31,6 @@
     },
     "rich_text_edNLEa": {
       "type": "rich-text",
-      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
@@ -108,6 +107,7 @@
     },
     "rich_text_y4awMN": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
