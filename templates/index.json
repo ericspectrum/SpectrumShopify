@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Tantus_Main.png",
-        "text": "Tantus Sale",
-        "phag": "<p>Take 30% off all Tantus toys and experience the gold standard of body-safe sex toys.</p><p><strong>Use code: TANTUS30</strong></p>",
+        "image": "shopify://shop_images/Dragon_Day_Creature_Toy_Sale.png",
+        "text": "Flash Sale!",
+        "phag": "<p>Take 20% off our collection of fantasy-shaped sex toys thru Sunday 1/18!</p><p><strong>Use code: DRAGONDAY20</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Tantus",
-        "link": "shopify://collections/tantus"
+        "link-text": "Shop Fantasy",
+        "link": "shopify://collections/fantasy-shaped-toys"
       }
     },
     "custom_multi_column_section_NTjk4K": {
@@ -27,7 +27,6 @@
       "blocks": {
         "column_VXaTxK": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/TANTUS_7f3a5174-3f97-4bcb-bcf8-898e4d83199e.png",
             "heading": "Tantus",
@@ -38,6 +37,7 @@
         },
         "column_Vdhgwr": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/New_Year_New_Toys_f93284ad-d571-4671-9ddc-dd170e9d8064.png",
             "heading": "Fresh Start",
