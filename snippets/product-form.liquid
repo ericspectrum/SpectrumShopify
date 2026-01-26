@@ -542,6 +542,7 @@
 {%- when 'short_description' -%}
 
   <span class="hidden" data-tags="{{ product.tags | join: ', ' }}">{{ product.tags | join: ', ' }}</span>
+  <script>console.log("{{ product.tags | join: ', ' }}")</script>
   <div class="cstm_shortdescription">
       <div class="short_descp">{{ product.metafields.magento.short_description }}</div> 
       <ul class="product-highlights">
