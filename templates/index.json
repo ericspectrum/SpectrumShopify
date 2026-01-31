@@ -38,9 +38,9 @@
         "column_P9HDJd": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PIPEDREAM_JANUARY.png",
+            "image": "shopify://shop_images/Pipedream_Vday_26.png",
             "heading": "Pipedream",
-            "description": "All Icicles, PDX, and Ultimate Fantasy, and other Pipedream sex toys are 30% off thru 1/31 with code: PDX30",
+            "description": "All Icicles, PDX, and Ultimate Fantasy, and other Pipedream sex toys are 30% off thru 1/31 with code: PDX30 - ends tonight, don't miss it!",
             "link": "shopify://collections/pipedream",
             "button_text": "Shop Pipedream"
           }
@@ -48,11 +48,11 @@
         "column_QzNfAj": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/LIBERATOR_GWP_f2baa7da-adf0-4124-bf68-f4c28193c860.png",
-            "heading": "Liberator GWP",
-            "description": "Spend $100+ on Liberator items and get a free Liberator Deluxe Bond Cuff Kit, valued at $60. No code needed.",
-            "link": "shopify://collections/liberator",
-            "button_text": "Shop Liberator"
+            "image": "shopify://shop_images/Essentials_VDay_26.png",
+            "heading": "Essentials",
+            "description": "Spectrum Essentials is our affordable, body-safe brand of sex toys, designed lovingly by our team! Get it 30% off thru 2/16 with code: ESSENTIALS30",
+            "link": "shopify://collections/spectrum-essentials",
+            "button_text": "Shop Essentials"
           }
         }
       },
