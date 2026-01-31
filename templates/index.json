@@ -15,7 +15,7 @@
       "settings": {
         "image": "shopify://shop_images/V-Day_Sale_Main_Header.png",
         "text": "Valentine's Day Sale",
-        "phag": "<p>Take 20% off SITEWIDE and get the perfect sexy Valentine's Day gifts for yourself, a friend, or a sweetie. See terms*</p><p><strong>Use code: VDAY26</strong></p>",
+        "phag": "<p>Take 20% off SITEWIDE and get the perfect sexy Valentine's Day gifts for yourself, a friend, or a sweetie. <a href=\"/pages/coupons\" title=\"Coupons\">See terms</a>*</p><p><strong>Use code: VDAY26</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
         "link-text": "Shop All Toys",
