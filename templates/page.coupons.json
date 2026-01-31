@@ -54,6 +54,25 @@
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
+        "title": "VDAY26",
+        "content": "<p>Get 20% off sitewide with code: VDAY26 and stock up on the best sexy gifts for Valentine's Day.</p><p><em>Terms: Ends 2/6 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. Excludes We-Vibe Pivot 2 and Verge 2.</em></p>",
+        "button_text": "APPLY VDAY26",
+        "button_link": "https://spectrumboutique.com/discount/VDAY26?redirect=%2Fcollections%2Fall",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "rich_text_dPk6zD": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
         "title": "Tantus30",
         "content": "<p>Take 30% off all Tantus sex toys with code: <strong>TANTUS30</strong>.</p><p><em>Terms: Ends 1/31 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
         "button_text": "APPLY TANTUS30",
@@ -313,6 +332,7 @@
     "simple_image_with_text_QnRnQx",
     "rich_text_edNLEa",
     "rich_text_ipjaGq",
+    "rich_text_dPk6zD",
     "rich_text_4GbqHV",
     "rich_text_W9pUYr",
     "rich_text_y4awMN",
