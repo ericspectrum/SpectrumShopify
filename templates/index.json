@@ -48,6 +48,16 @@
         "column_QzNfAj": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Sportsheets_Email_Only.png",
+            "heading": "Sportsheets",
+            "description": "Get kinky thru February with sex toys and BDSM gear from Sportsheets. Take 30% off all Sportsheets sex toys all month with code: InTheSheets",
+            "link": "shopify://collections/sportsheets-bfcm-2025",
+            "button_text": "Shop Sportsheets"
+          }
+        },
+        "column_rYCyfp": {
+          "type": "column",
+          "settings": {
             "image": "shopify://shop_images/Essentials_VDay_26.png",
             "heading": "Essentials",
             "description": "Spectrum Essentials is our affordable, body-safe brand of sex toys, designed lovingly by our team! Get it 30% off thru 2/16 with code: ESSENTIALS30",
@@ -59,7 +69,8 @@
       "block_order": [
         "column_VXaTxK",
         "column_P9HDJd",
-        "column_QzNfAj"
+        "column_QzNfAj",
+        "column_rYCyfp"
       ],
       "settings": {
         "image": "shopify://shop_images/About_Us_Spectrum_Essentials.png",
