@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/V-Day_Sale_Main_Header.png",
-        "text": "Valentine's Day Sale",
-        "phag": "<p>Take 20% off SITEWIDE and get the perfect sexy Valentine's Day gifts for yourself, a friend, or a sweetie. <a href=\"/pages/coupons\" title=\"Coupons\">See terms</a>*</p><p><strong>Use code: VDAY26</strong></p>",
+        "image": "shopify://shop_images/Biird_Vday_26.png",
+        "text": "Biird Sale",
+        "phag": "<p>We love Biird's body-friendly sex toys that are as beautiful as they are functional. Get 20% off all Biird items thru Februaary!</p><p><strong>Use code: BiirdFeb</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop All Toys",
-        "link": "shopify://collections/all"
+        "link-text": "Shop Biird",
+        "link": "shopify://collections/biird-bfcm-2025"
       }
     },
     "custom_multi_column_section_NTjk4K": {
