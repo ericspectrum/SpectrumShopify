@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Biird_Vday_26.png",
-        "text": "Biird Sale",
-        "phag": "<p>We love Biird's body-friendly sex toys that are as beautiful as they are functional. Get 20% off all Biird items thru Februaary!</p><p><strong>Use code: BiirdFeb</strong></p>",
+        "image": "shopify://shop_images/Sportsheets_February.png",
+        "text": "Sportsheets",
+        "phag": "<p>Get kinky with sex toys and BDSM gear from Sportsheets. Take 30% off all Sportsheets sex toys all month!</p><p><strong>Use code: InTheSheets</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Biird",
-        "link": "shopify://collections/biird-bfcm-2025"
+        "link-text": "Shop Sportsheets",
+        "link": "shopify://collections/sportsheets-bfcm-2025"
       }
     },
     "custom_multi_column_section_NTjk4K": {
@@ -45,16 +45,6 @@
             "button_text": "Shop Pipedream"
           }
         },
-        "column_QzNfAj": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Sportsheets_Email_Only.png",
-            "heading": "Sportsheets",
-            "description": "Get kinky with sex toys and BDSM gear from Sportsheets. Take 30% off all Sportsheets sex toys all month with code: InTheSheets",
-            "link": "shopify://collections/sportsheets-bfcm-2025",
-            "button_text": "Shop Sportsheets"
-          }
-        },
         "column_rYCyfp": {
           "type": "column",
           "settings": {
@@ -69,7 +59,6 @@
       "block_order": [
         "column_VXaTxK",
         "column_P9HDJd",
-        "column_QzNfAj",
         "column_rYCyfp"
       ],
       "settings": {
