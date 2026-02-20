@@ -28,11 +28,11 @@
         "column_VXaTxK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Tantus_Vday_26.png",
-            "heading": "Tantus",
-            "description": "Get 30% off all Tantus sex toys and enjoy the gold standard of silicone pleasure products. Use code: TANTUS30 thru 2/16.",
+            "image": "shopify://shop_images/Bathmate_Image_Only.png",
+            "heading": "Bathmate",
+            "description": "Get 20% off all Bathmate Penis Pumps and accessories. Use code: BATHMATE20 thru 2/28.",
             "link": "shopify://collections/tantus",
-            "button_text": "Shop Tantus"
+            "button_text": "Shop Bathmate"
           }
         },
         "column_P9HDJd": {
@@ -40,7 +40,7 @@
           "settings": {
             "image": "shopify://shop_images/Biird_Feb_26.png",
             "heading": "Biird",
-            "description": "Take 20% off Biird's collection of beautiful, functional, body-safe sex toys thru February with code: BIIRDFEB.",
+            "description": "Take 20% off Biird's beautiful and body-safe sex toys thru February with code: BIIRDFEB.",
             "link": "shopify://collections/biird-sex-toys",
             "button_text": "Shop Biird"
           }
@@ -50,7 +50,7 @@
           "settings": {
             "image": "shopify://shop_images/Essentials_VDay_26.png",
             "heading": "Essentials",
-            "description": "Spectrum Essentials, our affordable, body-safe brand of sex toys, is 30% off thru 2/16 with code: ESSENTIALS30",
+            "description": "Spectrum Essentials body-safe affordable sex toys are 30% off with code: ESSENTIALS30",
             "link": "shopify://collections/spectrum-essentials",
             "button_text": "Shop Essentials"
           }
