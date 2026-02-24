@@ -13,18 +13,28 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Sportsheets_February.png",
-        "text": "Sportsheets",
-        "phag": "<p>Get kinky with sex toys and BDSM gear from Sportsheets. Take 30% off all Sportsheets sex toys all month!</p><p><strong>Use code: InTheSheets</strong></p>",
+        "image": "shopify://shop_images/Flash_Sale_1.png",
+        "text": "Flash Sale!",
+        "phag": "<p>Today only: Take 20% off (almost) everything with code:<strong> STEAMY20</strong></p><p><em>Excludes We-Vibe & Womanizer. </em><a href=\"/pages/coupons\" title=\"Coupons\"><em>See terms*</em></a></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Sportsheets",
-        "link": "shopify://collections/sport-sheets-sex-toys"
+        "link-text": "Shop Sale",
+        "link": "shopify://collections/all"
       }
     },
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_NHRRbi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sportsheets_Email_Only.png",
+            "heading": "Sportsheets",
+            "description": "Take 30% off all Sportsheets items thru 2/28 with code: InTheSheets.",
+            "link": "shopify://collections/sport-sheets-sex-toys",
+            "button_text": "Shop Sportsheets"
+          }
+        },
         "column_VXaTxK": {
           "type": "column",
           "settings": {
@@ -57,6 +67,7 @@
         }
       },
       "block_order": [
+        "column_NHRRbi",
         "column_VXaTxK",
         "column_P9HDJd",
         "column_rYCyfp"
