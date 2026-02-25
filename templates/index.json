@@ -27,6 +27,7 @@
       "blocks": {
         "column_NHRRbi": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Sportsheets_Email_Only.png",
             "heading": "Sportsheets",
