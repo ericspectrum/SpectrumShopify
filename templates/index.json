@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Sportsheets_February.png",
-        "text": "Sportsheets",
-        "phag": "<p>Take 30% off all Sportsheets bondage gear and sex toys thru February with code: <strong>INTHESHEETS</strong></p>",
+        "image": "shopify://shop_images/Copy_of_New_Year_25_26_Main_Banner_-_1.png",
+        "text": "Shots Sale",
+        "phag": "<p>Take 30% off all Shots sex toys thru March with code: <strong>HOTSHOTS</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Sale",
-        "link": "shopify://collections/sport-sheets-sex-toys"
+        "link-text": "Shop Shots",
+        "link": "shopify://collections/shots-sex-toys"
       }
     },
     "custom_multi_column_section_NTjk4K": {
