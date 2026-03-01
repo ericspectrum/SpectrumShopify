@@ -349,6 +349,7 @@
       "blocks": {
         "item_HMQnqB": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Dr._Tush_January_2026.png",
             "tab_label": "Item",
