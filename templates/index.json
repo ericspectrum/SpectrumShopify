@@ -60,10 +60,10 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Essentials_VDay_26.png",
-            "heading": "Essentials",
-            "description": "Spectrum Essentials body-safe affordable sex toys are 30% off with code: ESSENTIALS30",
-            "link": "shopify://collections/spectrum-essentials",
-            "button_text": "Shop Essentials"
+            "heading": "Free Gift!",
+            "description": "Get your FREE Spectrum Essentials Sweet Spot Dual-Action anal Vibrator thru March when you spend $125 or more. No code needed. Limit 1 per purchase.",
+            "link": "shopify://collections/all",
+            "button_text": "Shop All Toys"
           }
         }
       },
