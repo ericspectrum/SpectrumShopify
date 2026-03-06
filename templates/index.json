@@ -25,17 +25,6 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_NHRRbi": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Sportsheets_Email_Only.png",
-            "heading": "Sportsheets",
-            "description": "Take 30% off all Sportsheets items thru 2/28 with code: InTheSheets.",
-            "link": "shopify://collections/sport-sheets-sex-toys",
-            "button_text": "Shop Sportsheets"
-          }
-        },
         "column_VXaTxK": {
           "type": "column",
           "settings": {
@@ -61,14 +50,13 @@
           "settings": {
             "image": "shopify://shop_images/Free_Sweet_Spot_GWP.png",
             "heading": "Free Gift!",
-            "description": "Get a FREE Spectrum Essentials Sweet Spot anal vibrator when you spend $125 or more. No code needed. See terms*",
+            "description": "Get a FREE Spectrum Essentials Sweet Spot anal vibrator when you spend $125 or more. No code needed. Limit one per purchase.",
             "link": "shopify://collections/all",
             "button_text": "Shop All Toys"
           }
         }
       },
       "block_order": [
-        "column_NHRRbi",
         "column_VXaTxK",
         "column_P9HDJd",
         "column_rYCyfp"
