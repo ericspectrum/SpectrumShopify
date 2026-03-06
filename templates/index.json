@@ -366,6 +366,7 @@
       "block_order": [
         "item_HMQnqB"
       ],
+      "disabled": true,
       "custom_css": [
         ".image-with-text__image-wrapper {margin: 0;}",
         ".image-with-text__content-wrapper {margin: 0 auto;}",
