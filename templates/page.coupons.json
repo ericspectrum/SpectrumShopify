@@ -89,6 +89,7 @@
     },
     "rich_text_QiTehY": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
