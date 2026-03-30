@@ -38,11 +38,11 @@
         "column_P9HDJd": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Dildo_Flash_Sale.png",
-            "heading": "Flash Sale!",
-            "description": "Refresh your sex toy collection for Spring and get 20% off all dildos thru 3/29 with code: SPRUNG",
-            "link": "shopify://collections/dildos",
-            "button_text": "Shop Dildos"
+            "image": "shopify://shop_images/Essentials_New_Year_Sale.png",
+            "heading": "Essentials",
+            "description": "Take 30% off our house brand of sex toys, Spectrum Essentials. Curated by our sexperts with your pleasure in mind! Use code: Essentials30",
+            "link": "shopify://collections/spectrum-essentials",
+            "button_text": "Shop Essentials"
           }
         },
         "column_rYCyfp": {
