@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Copy_of_New_Year_25_26_Main_Banner_-_1.png",
-        "text": "Shots Sale",
-        "phag": "<p>Take 30% off all Shots sex toys thru March with code: <strong>HOTSHOTS</strong></p>",
+        "image": "shopify://shop_images/Doc_Johnson_Sale_April_2026_Spectrum_Boutique.png",
+        "text": "Doc Johnson",
+        "phag": "<p>Get 30% off all Doc Johnson sex toys ith code: <strong>DJSPRING30</strong> and save on body-safe classic toys and innovative new sex toy technology!</p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Shots",
-        "link": "shopify://collections/shots-sex-toys"
+        "link-text": "Shop Doc",
+        "link": "shopify://collections/doc-johnson"
       }
     },
     "custom_multi_column_section_NTjk4K": {
@@ -28,31 +28,31 @@
         "column_VXaTxK": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/inBloom_Promo_Slot_1_8c0905f7-2528-442f-bd89-9c6050449bcd.png",
-            "heading": "Spring Cleaning",
-            "description": "Double discounts are in effect for our sex toy Sale section! Use code: SpringCleaning for an additional 25% off already discounted items!",
-            "link": "shopify://collections/sale",
-            "button_text": "Shop Sale"
+            "image": "shopify://shop_images/April_Showers_Lube_Sale_Spectrum_Boutique.png",
+            "heading": "April Showers",
+            "description": "Stock up on a sexual wellness staple we recommend for all your sex, play, and sex toy needs! Take 20% off all lubes this April with code: AprilShowers",
+            "link": "shopify://collections/lubes",
+            "button_text": "Shop Lube"
           }
         },
         "column_P9HDJd": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Essentials_New_Year_Sale.png",
-            "heading": "Essentials",
-            "description": "Take 30% off our house brand of sex toys, Spectrum Essentials. Curated by our sexperts with your pleasure in mind! Use code: Essentials30",
-            "link": "shopify://collections/spectrum-essentials",
-            "button_text": "Shop Essentials"
+            "image": "shopify://shop_images/Chakrubs_Sale_April_2026_Spectrum_Boutique.png",
+            "heading": "Chakrubs",
+            "description": "Beautifully crafted crystal dildos and kegel balls are on sale this month! Use code: Chakrubs10 for 10% off all Chakrubs sex toys.",
+            "link": "shopify://collections/chakrubs-sex-toys",
+            "button_text": "Shop Chakrubs"
           }
         },
         "column_rYCyfp": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Free_Sweet_Spot_GWP.png",
-            "heading": "Free Gift!",
-            "description": "Get a FREE Spectrum Essentials Sweet Spot anal vibrator when you spend $125 or more. No code needed. Limit one per purchase.",
-            "link": "shopify://collections/all",
-            "button_text": "Shop All Toys"
+            "image": "shopify://shop_images/3_98c006bf-503d-445f-9293-33c917dcd3be.png",
+            "heading": "Kegel Sale",
+            "description": "Strengthening your pelvic floor can support stronger orgasms, bladder control, and general pelvic health. Take 20% off all kegel exercisers this month with code: Kegel20",
+            "link": "shopify://collections/kegel-balls-trainers",
+            "button_text": "Shop Kegel"
           }
         }
       },
