@@ -25,16 +25,6 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_9Trgwr": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/April_2026_Promos.png",
-            "heading": "G-Spot Sale",
-            "description": "Save 20% on all G-Spot sex toys thru Sunday and explore the potential of stronger orgasms, squirting, and more!",
-            "link": "shopify://collections/g-spot-flash-sale",
-            "button_text": "Shop G-Spot"
-          }
-        },
         "column_VXaTxK": {
           "type": "column",
           "settings": {
@@ -67,7 +57,6 @@
         }
       },
       "block_order": [
-        "column_9Trgwr",
         "column_VXaTxK",
         "column_P9HDJd",
         "column_rYCyfp"
