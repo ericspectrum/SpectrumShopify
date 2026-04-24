@@ -300,6 +300,16 @@
               </div>
               {% endif %}
             </div>
+            {% if promo.image_banner_promo == true and promo.cta_url != blank %}
+              <script>
+                document.querySelectorAll('.cstmpromotion2_faq').forEach(el => {
+                  el.style.cursor = 'pointer';
+                  el.addEventListener('click', () => {
+                    window.location.href = '{{ promo.cta_url }}';
+                  });
+                });
+              </script>
+            {% endif %}
 
           {% elsif section.settings.promotion2_head != blank %}
             <div class="cstmpromotion2_faq">
