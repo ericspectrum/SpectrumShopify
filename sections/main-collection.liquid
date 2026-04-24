@@ -280,6 +280,7 @@
             {% endif %}
 
             <div class="cstmpromotion2_faq" style="{{ bg_style }}">
+              {% if promo.image_banner_promo == false %}
               <div class="cstmpromotion2_faq_text">
                 <div class="promotion_2head">
                   <h2>{{ promo.title }}</h2>
@@ -297,6 +298,7 @@
                   </div>
                 </div>
               </div>
+              {% endif %}
             </div>
 
           {% elsif section.settings.promotion2_head != blank %}
