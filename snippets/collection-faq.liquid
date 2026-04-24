@@ -1,0 +1,39 @@
+{% assign faq = collection.metafields.custom.faq_collection.value %}
+
+{% if faq %}
+  <div class="collection-faq">
+
+    <div class="faq-teaser">
+      <details>
+        <summary>{{ faq.teaser_question }}</summary>
+        <div class="faq-answer">{{ faq.teaser_answer | metafield_tag }}</div>
+      </details>
+    </div>
+
+    <button class="faq-cta" onclick="this.nextElementSibling.toggleAttribute('hidden')">
+      Read more Frequently Asked Questions about {{ faq.title }}
+    </button>
+
+    <div class="faq-full" hidden>
+      {% for entry in faq.faq_entries.value %}
+        <details class="faq-item">
+          <summary>{{ entry.question }}</summary>
+          <div class="faq-answer">{{ entry.answer | metafield_tag }}</div>
+        </details>
+      {% endfor %}
+    </div>
+
+  </div>
+
+{% else %}
+
+  <div class="collection-faq collection-faq--generic">
+    <details>
+      <summary>Do you have questions about this collection?</summary>
+      <div class="faq-answer">
+        <p>Contact our support team and we'll be happy to help.</p>
+      </div>
+    </details>
+  </div>
+
+{% endif %}
