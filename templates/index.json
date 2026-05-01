@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Doc_Johnson_Sale_April_2026_Spectrum_Boutique.png",
-        "text": "Doc Johnson",
-        "phag": "<p>Get 30% off all Doc Johnson sex toys with code: <strong>DJSPRING30</strong> and save on body-safe classic toys and innovative new sex toy technology!</p>",
+        "image": "shopify://shop_images/EVOLVED_MAY_26.png",
+        "text": "Evolved Sale!",
+        "phag": "<p>Get 30% off all Evolved Novelties sex toys with code: <strong>EVOLVED30</strong> thru the month of May and explore these cute, innovative sex toys!</p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Doc",
-        "link": "shopify://collections/doc-johnson"
+        "link-text": "Shop Evolved",
+        "link": "shopify://collections/evolved-sex-toys"
       }
     },
     "custom_multi_column_section_NTjk4K": {
