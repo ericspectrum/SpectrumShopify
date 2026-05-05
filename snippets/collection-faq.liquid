@@ -11,7 +11,6 @@
     <div class="faq-teaser">
       <details>
         <summary>{{ faq.teaser_question }}</summary>
-        <script>console.log({{ faq.teaser_answer | metafield_tag }})</script>
         <div class="faq-answer" data-richtext-html>{{ faq.teaser_answer | metafield_tag }}</div>
       </details>
     </div>
@@ -36,7 +35,6 @@
 {% endif %}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-
   document.querySelectorAll('details').forEach(details => {
     details.addEventListener('toggle', () => {
       const summary = details.querySelector('summary');
