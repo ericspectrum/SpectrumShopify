@@ -1,0 +1,170 @@
+{% assign faq = collection.metafields.custom.faq_collection.value %}
+
+{% unless faq %}
+  {% assign faq = shop.metaobjects.faq_collection['default'] %}
+{% endunless %}
+
+{% if faq %}
+<section class="collection-faq-wrapper">
+  <div class="collection-faq">
+
+    <div class="faq-teaser">
+      <details>
+        <summary>{{ faq.teaser_question }}</summary>
+        <div class="faq-answer" data-richtext-html>{{ faq.teaser_answer | metafield_tag }}</div>
+      </details>
+    </div>
+
+    {% if faq.faq_entries.value %}
+      <button class="faq-cta" onclick="this.nextElementSibling.toggleAttribute('hidden'); this.remove()">
+        More {{ faq.title }}
+      </button>
+    {% endif %}
+
+    <div class="faq-full" hidden>
+      {% for entry in faq.faq_entries.value %}
+        <details class="faq-item">
+          <summary>{{ entry.question }}</summary>
+          <div class="faq-answer" data-richtext-html>{{ entry.answer | metafield_tag }}</div>
+        </details>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-richtext-html]').forEach(el => {
+    el.innerHTML = el.textContent;
+  });
+  document.querySelectorAll('details').forEach(details => {
+    details.addEventListener('toggle', () => {
+      const summary = details.querySelector('summary');
+      if (details.open) {
+        summary.dataset.open = 'true';
+      } else {
+        delete summary.dataset.open;
+      }
+    });
+  });
+});
+</script>
+<style>
+  .collection-faq-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .product-facet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .collection-faq {
+    padding: 8px 16px;
+    width: 100%;
+    border-radius: 10px;
+    background: #d0ffec;
+    color: rgb(var(--text-color));
+  }
+
+  .faq-teaser summary {
+    font-weight: 600;
+  }
+
+  .faq-teaser summary,
+  .faq-item summary {
+    font-size: 18px;
+    cursor: pointer;
+    list-style: none;
+    font-family: DomaineDisp_Regular !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid currentColor;
+    gap: 12px;
+  }
+
+    .faq-teaser summary::after,
+    .faq-item summary::after {
+    content: '+';
+    font-size: 32px;
+    line-height: 1;
+    flex-shrink: 0;
+    }
+
+    .faq-teaser summary[data-open]::after,
+    .faq-item summary[data-open]::after {
+    content: '-';
+    }
+
+  .faq-answer {
+    padding: 12px 0 16px;
+    line-height: 1.6;
+  }
+
+  .faq-cta {
+    background: rgb(var(--background));
+    color: rgb(var(--text-color));
+    border-radius: 10px;
+    margin-top: 6px;
+    padding: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .faq-answer a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .faq-full {
+    margin-top: 8px;
+  }
+
+  summary {
+    margin-bottom: 2px;
+  }
+
+  /* Tablet */
+  @media (min-width: 640px) {
+    .collection-faq {
+      padding: 8px 24px;
+    }
+
+    .faq-teaser summary,
+    .faq-item summary {
+      font-size: 20px;
+      padding: 14px 0;
+    }
+
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .collection-faq {
+      padding: 20px;
+      padding-top: 4px;
+      max-width: 860px;
+    }
+
+    .faq-teaser summary,
+    .faq-item summary {
+      font-size: 22px;
+      padding: 16px 0;
+    }
+
+    .faq-answer {
+      padding: 14px 0 20px;
+      font-size: 16px;
+    }
+
+  }
+</style>
