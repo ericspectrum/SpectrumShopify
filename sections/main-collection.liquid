@@ -280,6 +280,7 @@
             {% endif %}
 
             <div class="cstmpromotion2_faq" style="{{ bg_style }}">
+              {% if promo.image_banner_promo == false %}
               <div class="cstmpromotion2_faq_text">
                 <div class="promotion_2head">
                   <h2>{{ promo.title }}</h2>
@@ -297,7 +298,18 @@
                   </div>
                 </div>
               </div>
+              {% endif %}
             </div>
+            {% if promo.image_banner_promo == true and promo.cta_url != blank %}
+              <script>
+                document.querySelectorAll('.cstmpromotion2_faq').forEach(el => {
+                  el.style.cursor = 'pointer';
+                  el.addEventListener('click', () => {
+                    window.location.href = '{{ promo.cta_url }}';
+                  });
+                });
+              </script>
+            {% endif %}
 
           {% elsif section.settings.promotion2_head != blank %}
             <div class="cstmpromotion2_faq">
@@ -349,6 +361,8 @@
           </div>
         {%- endif -%}
       </div>
+
+      {% render 'collection-faq' %}
     </product-facet>
   </div>
 </section>
