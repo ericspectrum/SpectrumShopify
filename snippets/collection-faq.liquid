@@ -36,9 +36,7 @@
 {% endif %}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('[data-richtext-html]').forEach(el => {
-    el.innerHTML = el.textContent;
-  });
+
   document.querySelectorAll('details').forEach(details => {
     details.addEventListener('toggle', () => {
       const summary = details.querySelector('summary');
