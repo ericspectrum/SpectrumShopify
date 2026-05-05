@@ -11,6 +11,7 @@
     <div class="faq-teaser">
       <details>
         <summary>{{ faq.teaser_question }}</summary>
+        <script>console.log({{ faq.teaser_answer | metafield_tag }})</script>
         <div class="faq-answer" data-richtext-html>{{ faq.teaser_answer | metafield_tag }}</div>
       </details>
     </div>
