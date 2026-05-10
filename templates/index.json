@@ -314,7 +314,7 @@
         ".image-with-text__wrapper {padding: 0;}",
         ".image-with-text__image-wrapper {width: 50%; max-width: 714px;}",
         ".container {max-width: 1200px;}",
-        "@media only screen and (max-width: 990px) {.container {padding: 0; } .image-with-text__image-wrapper {width: 50%; } .image-with-text__wrapper {display: flex; row-gap: 40px; } .became-visible {padding: 0; }}"
+        "@media only screen and (max-width: 990px) {.container {padding: 0; } .image-with-text__image-wrapper {width: 100%; } .image-with-text__wrapper {display: flex; row-gap: 40px; } .became-visible {padding: 0; }}"
       ],
       "settings": {
         "reveal_on_scroll": false,
