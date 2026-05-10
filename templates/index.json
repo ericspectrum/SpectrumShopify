@@ -291,25 +291,23 @@
       "blocks": {
         "item_J77dWT": {
           "type": "item",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Sex_Toy_Gift_Guide.png",
+            "image": "shopify://shop_images/Carrot_Plugs.png",
             "tab_label": "Item",
             "subheading": "",
             "title": "",
-            "heading1": "Holiday Gift Guides",
-            "content": "<p>Want to give the gift of pleasure this holiday season, but don't know where to start? Check out our holiday gift guides, full of tips for choosing the right sex toy gift for yourself or someone special!</p>",
-            "button_text": "Read Gift Guides",
-            "button_link": "shopify://pages/holiday-gift-guides",
-            "button_text1": "Shop Staff Picks",
-            "button_link1": "shopify://collections/holiday-gift-picks"
+            "heading1": "The Cutest Cravings",
+            "content": "<p>Do you love cute stuff that also feels delicious? Explore our collection of food-shaped sex toys, featuring fruit-inspired vibrators, dessert-themed dildos, and other cheeky designs that do more than just look cute.</p>",
+            "button_text": "Shop Collection",
+            "button_link": "shopify://collections/food-shaped-sex-toys",
+            "button_text1": "Shop All Toys",
+            "button_link1": "shopify://collections/all"
           }
         }
       },
       "block_order": [
         "item_J77dWT"
       ],
-      "disabled": true,
       "custom_css": [
         ".image-with-text__image-wrapper {margin: 0;}",
         ".image-with-text__content-wrapper {margin: 0 auto;}",
@@ -320,7 +318,7 @@
       ],
       "settings": {
         "reveal_on_scroll": false,
-        "img_link": "https://spectrumboutique.com/collections/our-brands/?sort_by=best-selling&filter.v.price.gte=&filter.v.price.lte=&filter.p.m.magento.brands=B-Vibe&filter.p.m.magento.brands=Cowgirl&filter.p.m.magento.brands=Le+Wand",
+        "img_link": "shopify://collections/food-shaped-sex-toys",
         "background_type": "boxed",
         "background_overlap": "both",
         "image_position": "right",
