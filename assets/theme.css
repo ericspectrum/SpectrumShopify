@@ -12440,6 +12440,7 @@ shopify-payment-terms {
 .predictive-search__results .tabs-nav__scroller-inner .tabs-nav__item-list .tabs-nav__item {  width: 48%; text-align: center;}
 
 .product .product-form .shopify-product-form .product-form__payment-container {   max-width: 275px !important;}
+.back-in-stock-button { max-width: 275px !important;}
 .product .product-form .shopify-product-form .product-form__payment-container .product-form__add-button{border:1px solid #FFC236 !important;}
 .product .product-form .shopify-product-form .product-form__payment-container .product-form__add-button .loader-button__text {  font-family: 'Lausanne_semibold' !important; font-size:14px; font-weight:600 !important; color: #222222; letter-spacing: 0;
 }
