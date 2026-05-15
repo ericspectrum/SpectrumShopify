@@ -357,6 +357,7 @@
       "blocks": {
         "item_jntmXe": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "tab_label": "Item",
             "subheading": "Subheading",
