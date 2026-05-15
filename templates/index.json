@@ -358,14 +358,14 @@
         "item_HMQnqB": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Dr._Tush_January_2026.png",
+            "image": "shopify://shop_images/Aneros_Tempo.png",
             "tab_label": "Item",
             "subheading": "",
             "title": "",
-            "heading1": "Dr. Tush",
-            "content": "<p>Aftercare shouldn’t be an afterthought! <strong>Dr. Tush aftercare products</strong> are made from natural ingredients to be body-safe for all your post-anal, kink, front-hole play, and nipple play needs!</p>",
-            "button_text": "Shop Dr. Tush",
-            "button_link": "shopify://collections/dr-tush-bfcm-2025",
+            "heading1": "Aneros",
+            "content": "<p>Aneros sex toys bring together prostate health and anal pleasure with classic shapes designed with your anatomy in mind! Explore more thru the end of May with 20% off all Aneros products AND a free bottle of Aneros Sessions Lube when you spend $55 or more on Aneros. No code needed for free gift!</p>",
+            "button_text": "Shop Aneros",
+            "button_link": "shopify://collections/aneros",
             "button_text1": "Shop all Anal",
             "button_link1": "shopify://collections/butt-toys-anal-sex-toys"
           }
@@ -374,7 +374,6 @@
       "block_order": [
         "item_HMQnqB"
       ],
-      "disabled": true,
       "custom_css": [
         ".image-with-text__image-wrapper {margin: 0;}",
         ".image-with-text__content-wrapper {margin: 0 auto;}",
