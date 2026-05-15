@@ -27,6 +27,7 @@
       "blocks": {
         "column_6WDJMC": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Aneros.png",
             "heading": "Aneros",
@@ -37,6 +38,7 @@
         },
         "column_VXaTxK": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/VUSH-SOL-VibratingStroker-Ecomm_08.jpg",
             "heading": "Vush",
@@ -434,14 +436,6 @@
       "block_order": [
         "item_D86Ua7"
       ],
-      "custom_css": [
-        ".image-with-text__image-wrapper {margin: 0;}",
-        ".image-with-text__content-wrapper {margin: 0 auto;}",
-        ".image-with-text__wrapper {padding: 0;}",
-        ".image-with-text__image-wrapper {width: 50%; max-width: 714px;}",
-        ".container {max-width: 1200px;}",
-        "@media only screen and (max-width: 990px) {.container {padding: 0; } .image-with-text__image-wrapper {width: 100%; } .image-with-text__wrapper {display: flex; row-gap: 40px; } .became-visible {padding: 0; }}"
-      ],
       "settings": {
         "reveal_on_scroll": false,
         "img_link": "shopify://collections/vush-sex-toys",
@@ -548,9 +542,9 @@
     "custom_multi_column_section_NTjk4K",
     "custom_featured_collection_b8qFrq",
     "top_picks_featured_collection_m4FDCH",
-    "custom_image_with_text_UBKADz",
-    "custom_image_with_text_yT9yB6",
     "custom_image_with_text_6dNJPD",
+    "custom_image_with_text_yT9yB6",
+    "custom_image_with_text_UBKADz",
     "custom_image_with_text_MxRmkc",
     "custom_image_with_text_7dPxrD",
     "1736915607329b1acb",
