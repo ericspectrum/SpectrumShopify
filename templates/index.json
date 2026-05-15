@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_6WDJMC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Aneros.png",
+            "heading": "Aneros Sale",
+            "description": "Take 20% off all Aneros products with code: PSPOT and receive a free bottle of Sessions Lube when you spend $55 or more on Aneros items. No code needed for free gift.",
+            "link": "shopify://collections/aneros",
+            "button_text": "Shop Aneros"
+          }
+        },
         "column_VXaTxK": {
           "type": "column",
           "settings": {
@@ -57,6 +67,7 @@
         }
       },
       "block_order": [
+        "column_6WDJMC",
         "column_VXaTxK",
         "column_P9HDJd",
         "column_rYCyfp"
