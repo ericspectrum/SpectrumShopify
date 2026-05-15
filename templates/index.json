@@ -39,6 +39,16 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/GENDER_X_SALE_MAY_25_4.png",
+            "heading": "Vush",
+            "description": "Get to know Vush! This collection of sex toys is versatile, sleek looking, and always body-safe! Take 20% off all Vush Sex Toys thru the end of May with code: VUSH20",
+            "link": "shopify://collections/vush-sex-toys",
+            "button_text": "Shop Vush"
+          }
+        },
+        "column_4PWRfJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/GENDER_X_SALE_MAY_25_4.png",
             "heading": "Gender X",
             "description": "From gender-affirming items to unique sex toys for all desires, Gender X is a go-to for your pleasure and sexual wellness needs! Get 30% off Gender X thru May with code: GENDERX30",
             "link": "shopify://collections/gender-x-sex-toys",
@@ -69,6 +79,7 @@
       "block_order": [
         "column_6WDJMC",
         "column_VXaTxK",
+        "column_4PWRfJ",
         "column_P9HDJd",
         "column_rYCyfp"
       ],
