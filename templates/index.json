@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Evolved_May_2026_Main_Banner_1.png",
-        "text": "Evolved Sale!",
-        "phag": "<p>Get 30% off all Evolved Novelties sex toys with code: <strong>EVOLVED30</strong> thru the month of May and explore these cute, innovative sex toys!</p>",
+        "image": "shopify://shop_images/sitewide_sale.png",
+        "text": "Sitewide Sale",
+        "phag": "<p>The long weekend just got a little more interesting. Take 20% off (almost) everything thru Monday.</p><p><strong>Use code: LONGWEEKEND</strong></p><p><em>Excludes We-Vibe & Womanizer items*</em></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Evolved",
-        "link": "shopify://collections/evolved-sex-toys"
+        "link-text": "Shop Sex Toys",
+        "link": "shopify://collections/all"
       }
     },
     "custom_multi_column_section_NTjk4K": {
@@ -310,39 +310,31 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
-    "custom_image_with_text_UBKADz": {
+    "custom_image_with_text_6dNJPD": {
       "type": "Custom_ImageWithText",
       "blocks": {
-        "item_J77dWT": {
+        "item_D86Ua7": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Carrot_Plugs.png",
+            "image": "shopify://shop_images/Peachy_Family_Photo_2024.jpg",
             "tab_label": "Item",
             "subheading": "",
             "title": "",
-            "heading1": "The Cutest Cravings",
-            "content": "<p>Do you love cute stuff that also feels delicious? Explore our collection of food-shaped sex toys, featuring fruit-inspired vibrators, dessert-themed dildos, and other cheeky designs that do more than just look cute.</p>",
-            "button_text": "Shop Collection",
-            "button_link": "shopify://collections/food-shaped-sex-toys",
+            "heading1": "Meet Vush!",
+            "content": "<p>Vush sex toys were created with a vision of celebrating everyone's unique pleasure journey. These beautifully crafted body-safe sex toys are a testament to pleasure and exploration. Get 20% off Vush sex toys thru the end of May with code: VUSH20 </p>",
+            "button_text": "Shop Vush",
+            "button_link": "shopify://collections/vush-sex-toys",
             "button_text1": "Shop All Toys",
             "button_link1": "shopify://collections/all"
           }
         }
       },
       "block_order": [
-        "item_J77dWT"
-      ],
-      "custom_css": [
-        ".image-with-text__image-wrapper {margin: 0;}",
-        ".image-with-text__content-wrapper {margin: 0 auto;}",
-        ".image-with-text__wrapper {padding: 0;}",
-        ".image-with-text__image-wrapper {width: 50%; max-width: 714px;}",
-        ".container {max-width: 1200px;}",
-        "@media only screen and (max-width: 990px) {.container {padding: 0; } .image-with-text__image-wrapper {width: 100%; } .image-with-text__wrapper {display: flex; row-gap: 40px; } .became-visible {padding: 0; }}"
+        "item_D86Ua7"
       ],
       "settings": {
         "reveal_on_scroll": false,
-        "img_link": "shopify://collections/food-shaped-sex-toys",
+        "img_link": "shopify://collections/vush-sex-toys",
         "background_type": "boxed",
         "background_overlap": "both",
         "image_position": "right",
@@ -414,31 +406,39 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
-    "custom_image_with_text_6dNJPD": {
+    "custom_image_with_text_UBKADz": {
       "type": "Custom_ImageWithText",
       "blocks": {
-        "item_D86Ua7": {
+        "item_J77dWT": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Peachy_Family_Photo_2024.jpg",
+            "image": "shopify://shop_images/Carrot_Plugs.png",
             "tab_label": "Item",
             "subheading": "",
             "title": "",
-            "heading1": "Meet Vush!",
-            "content": "<p>Vush sex toys were created with a vision of celebrating everyone's unique pleasure journey. These beautifully crafted body-safe sex toys are a testament to pleasure and exploration. Get 20% off Vush sex toys thru the end of May with code: VUSH20 </p>",
-            "button_text": "Shop Vush",
-            "button_link": "shopify://collections/vush-sex-toys",
+            "heading1": "The Cutest Cravings",
+            "content": "<p>Do you love cute stuff that also feels delicious? Explore our collection of food-shaped sex toys, featuring fruit-inspired vibrators, dessert-themed dildos, and other cheeky designs that do more than just look cute.</p>",
+            "button_text": "Shop Collection",
+            "button_link": "shopify://collections/food-shaped-sex-toys",
             "button_text1": "Shop All Toys",
             "button_link1": "shopify://collections/all"
           }
         }
       },
       "block_order": [
-        "item_D86Ua7"
+        "item_J77dWT"
+      ],
+      "custom_css": [
+        ".image-with-text__image-wrapper {margin: 0;}",
+        ".image-with-text__content-wrapper {margin: 0 auto;}",
+        ".image-with-text__wrapper {padding: 0;}",
+        ".image-with-text__image-wrapper {width: 50%; max-width: 714px;}",
+        ".container {max-width: 1200px;}",
+        "@media only screen and (max-width: 990px) {.container {padding: 0; } .image-with-text__image-wrapper {width: 100%; } .image-with-text__wrapper {display: flex; row-gap: 40px; } .became-visible {padding: 0; }}"
       ],
       "settings": {
         "reveal_on_scroll": false,
-        "img_link": "shopify://collections/vush-sex-toys",
+        "img_link": "shopify://collections/food-shaped-sex-toys",
         "background_type": "boxed",
         "background_overlap": "both",
         "image_position": "right",
