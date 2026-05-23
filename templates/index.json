@@ -25,20 +25,8 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_6WDJMC": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Aneros.png",
-            "heading": "Aneros",
-            "description": "Take 20% off all Aneros products with code: PSPOT and receive a free bottle of Sessions Lube when you spend $55 or more on Aneros.",
-            "link": "shopify://collections/aneros",
-            "button_text": "Shop Aneros"
-          }
-        },
         "column_VXaTxK": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/VUSH-SOL-VibratingStroker-Ecomm_08.jpg",
             "heading": "Vush",
@@ -47,8 +35,19 @@
             "button_text": "Shop Vush"
           }
         },
+        "column_6WDJMC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Aneros.png",
+            "heading": "Aneros",
+            "description": "Take 20% off all Aneros products with code: PSPOT and receive a free bottle of Sessions Lube when you spend $55 or more on Aneros.",
+            "link": "shopify://collections/aneros",
+            "button_text": "Shop Aneros"
+          }
+        },
         "column_4PWRfJ": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/GENDER_X_SALE_MAY_25_4.png",
             "heading": "Gender X",
@@ -59,6 +58,7 @@
         },
         "column_P9HDJd": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/PLAYBOY_2.png",
             "heading": "Playboy",
@@ -79,8 +79,8 @@
         }
       },
       "block_order": [
-        "column_6WDJMC",
         "column_VXaTxK",
+        "column_6WDJMC",
         "column_4PWRfJ",
         "column_P9HDJd",
         "column_rYCyfp"
@@ -384,6 +384,7 @@
         "item_jntmXe",
         "item_HMQnqB"
       ],
+      "disabled": true,
       "custom_css": [
         ".image-with-text__image-wrapper {margin: 0;}",
         ".image-with-text__content-wrapper {margin: 0 auto;}",
