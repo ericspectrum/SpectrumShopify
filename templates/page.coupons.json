@@ -29,6 +29,25 @@
         "btnUrl2": ""
       }
     },
+    "rich_text_htV7Y8": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
+        "title": "longweekend",
+        "content": "<p>The long weekend just got a little more interesting with 20% off all our sex toys and sexual health items!</p><p><strong>Use code: LONGWEEKEND</strong></p><p>Terms: Offer ends 5/25/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. Excludes We-Vibe and Womanizer items.</p>",
+        "button_text": "APPLY LONGWEEKEND",
+        "button_link": "https://spectrumboutique.com/discount/longweekend?redirect=%2Fcollections%2Fall",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
     "rich_text_ipjaGq": {
       "type": "rich-text",
       "disabled": true,
@@ -68,7 +87,7 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
-    "rich_text_htV7Y8": {
+    "rich_text_YpBELV": {
       "type": "rich-text",
       "settings": {
         "show_socialIcon": false,
@@ -370,9 +389,10 @@
   "order": [
     "main",
     "simple_image_with_text_QnRnQx",
+    "rich_text_htV7Y8",
     "rich_text_ipjaGq",
     "rich_text_dPk6zD",
-    "rich_text_htV7Y8",
+    "rich_text_YpBELV",
     "rich_text_4Ct8WN",
     "rich_text_QaAe9U",
     "rich_text_QiTehY",
