@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/sitewide_sale.png",
-        "text": "SITEWIDE SALE",
-        "phag": "<p>The long weekend just got a little more interesting with 20% off all our sex toys and sexual health items!</p><p><strong>Use code: LONGWEEKEND</strong></p><p><em>Excludes We-Vibe & Womanizer items*</em></p>",
+        "image": "shopify://shop_images/May_26_Main_Banner_-_4.png",
+        "text": "Vush Sale!",
+        "phag": "<p>Get to know one of our favorite new brands, Vush sex toys! These versatile, body-safe toys are 20% off thru the end of May.</p><p><strong>Use code: VUSH20</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Sex Toys",
-        "link": "shopify://collections/all"
+        "link-text": "Shop Vush",
+        "link": "shopify://collections/vush-sex-toys"
       }
     },
     "custom_multi_column_section_NTjk4K": {
@@ -27,6 +27,7 @@
       "blocks": {
         "column_VXaTxK": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/VUSH-SOL-VibratingStroker-Ecomm_08.jpg",
             "heading": "Vush",
@@ -45,9 +46,18 @@
             "button_text": "Shop Aneros"
           }
         },
+        "column_rYCyfp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/We-Vibe_May_26.png",
+            "heading": "We-Vibe Sale",
+            "description": "Shop We-Vibe sex toys for your couples play or solo sessions! Select We-Vibe styles and colors are on sale! No code needed, all items priced as marked.",
+            "link": "shopify://collections/we-vibe",
+            "button_text": "Shop We-Vibe"
+          }
+        },
         "column_4PWRfJ": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/GENDER_X_SALE_MAY_25_4.png",
             "heading": "Gender X",
@@ -66,24 +76,14 @@
             "link": "shopify://collections/playboy-sex-toys",
             "button_text": "Shop Playboy"
           }
-        },
-        "column_rYCyfp": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/We-Vibe_May_26.png",
-            "heading": "We-Vibe Sale",
-            "description": "Shop We-Vibe sex toys for your couples play or solo sessions! Select We-Vibe styles and colors are on sale! No code needed, all items priced as marked.",
-            "link": "shopify://collections/we-vibe",
-            "button_text": "Shop We-Vibe"
-          }
         }
       },
       "block_order": [
         "column_VXaTxK",
         "column_6WDJMC",
+        "column_rYCyfp",
         "column_4PWRfJ",
-        "column_P9HDJd",
-        "column_rYCyfp"
+        "column_P9HDJd"
       ],
       "settings": {
         "image": "shopify://shop_images/About_Us_Spectrum_Essentials.png",
