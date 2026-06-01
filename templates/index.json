@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Dame_Products_Sale_at_Spectrum_Boutique.png",
-        "text": "Dame Sale!",
-        "phag": "<p>We love Dame Products' commitment to addressing the Pleasure Gap with sex toys that get the job done! This June, get 20% off all Dame sex toys.</p><p><strong>Use code: DAME20</strong></p>",
+        "image": "shopify://shop_images/June_26_Main_Banner.png",
+        "text": "Queer Makers!",
+        "phag": "<p>Celebrate Queer Makers designing sex toys to meet your needs and desires! Get 20% off our Queer Makers collection thru June.</p><p><strong>Use code: Pride2026</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Dame",
-        "link": "shopify://collections/dame-products"
+        "link-text": "Shop Queer",
+        "link": "shopify://collections/queer-owned-brands"
       }
     },
     "custom_multi_column_section_NTjk4K": {
