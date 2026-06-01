@@ -25,16 +25,6 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_6WDJMC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Aneros.png",
-            "heading": "Aneros",
-            "description": "Take 20% off all Aneros products with code: PSPOT and receive a free bottle of Sessions Lube when you spend $55 or more on Aneros thru 6/15.",
-            "link": "shopify://collections/aneros",
-            "button_text": "Shop Aneros"
-          }
-        },
         "column_rYCyfp": {
           "type": "column",
           "settings": {
@@ -43,6 +33,16 @@
             "description": "Shop We-Vibe sex toys for your couples play or solo sessions! Select We-Vibe styles and colors are on sale! No code needed, all items priced as marked.",
             "link": "shopify://collections/we-vibe",
             "button_text": "Shop We-Vibe"
+          }
+        },
+        "column_6WDJMC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Aneros.png",
+            "heading": "Aneros",
+            "description": "Take 20% off all Aneros products with code: PSPOT and receive a free bottle of Sessions Lube when you spend $55 or more on Aneros thru 6/15.",
+            "link": "shopify://collections/aneros",
+            "button_text": "Shop Aneros"
           }
         },
         "column_LciBjT": {
@@ -57,8 +57,8 @@
         }
       },
       "block_order": [
-        "column_6WDJMC",
         "column_rYCyfp",
+        "column_6WDJMC",
         "column_LciBjT"
       ],
       "settings": {
