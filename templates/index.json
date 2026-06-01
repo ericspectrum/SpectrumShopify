@@ -48,11 +48,11 @@
         "column_LciBjT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/We-Vibe_May_26.png",
-            "heading": "We-Vibe Sale",
-            "description": "Shop We-Vibe sex toys for your couples play or solo sessions! Select We-Vibe styles and colors are on sale! No code needed, all items priced as marked.",
-            "link": "shopify://collections/we-vibe",
-            "button_text": "Shop We-Vibe"
+            "image": "shopify://shop_images/Spectrum_Essentials_Image_Only.png",
+            "heading": "Essentials",
+            "description": "Spectrum Essentials was created with your pleasure and budget in mind! Try them out and take 25% off Spectrum Essentials sex toys. Use code: ESSENTIAL",
+            "link": "shopify://collections/spectrum-essentials",
+            "button_text": "Shop Essentials"
           }
         }
       },
