@@ -25,23 +25,12 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_VXaTxK": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/VUSH-SOL-VibratingStroker-Ecomm_08.jpg",
-            "heading": "Vush",
-            "description": "Get to know one of our favorite new brands, Vush sex toys! These versatile, body-safe toys are 20% off thru the end of May with code: VUSH20",
-            "link": "shopify://collections/vush-sex-toys",
-            "button_text": "Shop Vush"
-          }
-        },
         "column_6WDJMC": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Aneros.png",
             "heading": "Aneros",
-            "description": "Take 20% off all Aneros products with code: PSPOT and receive a free bottle of Sessions Lube when you spend $55 or more on Aneros.",
+            "description": "Take 20% off all Aneros products with code: PSPOT and receive a free bottle of Sessions Lube when you spend $55 or more on Aneros thru 6/15.",
             "link": "shopify://collections/aneros",
             "button_text": "Shop Aneros"
           }
@@ -56,34 +45,21 @@
             "button_text": "Shop We-Vibe"
           }
         },
-        "column_4PWRfJ": {
+        "column_LciBjT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/GENDER_X_SALE_MAY_25_4.png",
-            "heading": "Gender X",
-            "description": "From gender-affirming items to unique sex toys for all, Gender X is a go-to for sexual wellness! Get 30% off Gender X with code: GENDERX30",
-            "link": "shopify://collections/gender-x-sex-toys",
-            "button_text": "Shop Gender X"
-          }
-        },
-        "column_P9HDJd": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/PLAYBOY_2.png",
-            "heading": "Playboy",
-            "description": "Shop one of the most iconic names in sex toys, Playboy Pleasure, and save! All Playboy sex toys are 30% off thru May with code: PLAYBOY30",
-            "link": "shopify://collections/playboy-sex-toys",
-            "button_text": "Shop Playboy"
+            "image": "shopify://shop_images/We-Vibe_May_26.png",
+            "heading": "We-Vibe Sale",
+            "description": "Shop We-Vibe sex toys for your couples play or solo sessions! Select We-Vibe styles and colors are on sale! No code needed, all items priced as marked.",
+            "link": "shopify://collections/we-vibe",
+            "button_text": "Shop We-Vibe"
           }
         }
       },
       "block_order": [
-        "column_VXaTxK",
         "column_6WDJMC",
         "column_rYCyfp",
-        "column_4PWRfJ",
-        "column_P9HDJd"
+        "column_LciBjT"
       ],
       "settings": {
         "image": "shopify://shop_images/About_Us_Spectrum_Essentials.png",
