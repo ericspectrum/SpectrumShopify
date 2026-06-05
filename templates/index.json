@@ -292,12 +292,12 @@
         "item_D86Ua7": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Peachy_Family_Photo_2024.jpg",
+            "image": "shopify://shop_images/vush_aura_wireless_rechargeable_tens_device_4_spectrum_boutique.jpg",
             "tab_label": "Item",
             "subheading": "",
             "title": "",
             "heading1": "Meet Vush!",
-            "content": "<p>Vush sex toys were created with a vision of celebrating everyone's unique pleasure journey. These beautifully crafted body-safe sex toys are a testament to pleasure and exploration. Get 20% off Vush sex toys thru the end of May with code: VUSH20 </p>",
+            "content": "<p>Vush sex toys were created with a vision of celebrating everyone's unique pleasure journey. These beautifully crafted body-safe sex toys are a testament to pleasure, wellness, and exploration. Get 20% off Vush sex toys thru June 15th with code: <strong>VUSH20 </strong></p>",
             "button_text": "Shop Vush",
             "button_link": "shopify://collections/vush-sex-toys",
             "button_text1": "Shop All Toys",
@@ -308,13 +308,20 @@
       "block_order": [
         "item_D86Ua7"
       ],
-      "disabled": true,
+      "custom_css": [
+        ".image-with-text__image-wrapper {margin: 0;}",
+        ".image-with-text__content-wrapper {margin: 0 auto;}",
+        ".image-with-text__wrapper {padding: 0;}",
+        ".image-with-text__image-wrapper {width: 50%; max-width: 714px;}",
+        ".container {max-width: 1200px;}",
+        "@media only screen and (max-width: 990px) {.container {padding: 0; } .image-with-text__image-wrapper {width: 100%; } .image-with-text__wrapper {display: flex; row-gap: 40px; } .became-visible {padding: 0; }}"
+      ],
       "settings": {
         "reveal_on_scroll": false,
         "img_link": "shopify://collections/vush-sex-toys",
         "background_type": "boxed",
         "background_overlap": "both",
-        "image_position": "right",
+        "image_position": "left",
         "text_alignment": "left",
         "cycle_speed": 8,
         "accent_background": "#d2ffeb",
