@@ -90,8 +90,8 @@
           "stop_loading_on_collection_pages": false
         }
       },
-      "8924815989287078155": {
-        "type": "shopify://apps/early-bird/blocks/app-embed/5e02e264-328a-43b1-b83b-d997dd7938d0",
+      "8764476057892802672": {
+        "type": "shopify://apps/stoq/blocks/main/4bb73be2-b7c2-4870-949f-c528145452a3",
         "disabled": false,
         "settings": {}
       }
