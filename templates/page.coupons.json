@@ -29,25 +29,6 @@
         "btnUrl2": ""
       }
     },
-    "rich_text_dPk6zD": {
-      "type": "rich-text",
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "Aneros Promo",
-        "content": "<p>Take 20% off all <a href=\"/collections/aneros\" title=\"Aneros Sex Toys\"><strong>Aneros sex toys</strong></a> with code: <strong>PSPOT</strong>. Additionally, you'll receive a free gift of a bottle of Aneros Sessions Water-Based Lube when you spend $55 or more on Aneros items!</p><p><em>Terms: Offer ends 6/15/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. No code needed for free gift. Gift will be added to your cart when you meet the minimum requirements. Limit one per purchase.</em></p>",
-        "button_text": "APPLY PSPOT",
-        "button_link": "https://spectrumboutique.com/discount/PSPOT",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
     "rich_text_YpBELV": {
       "type": "rich-text",
       "settings": {
@@ -67,15 +48,16 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
-    "rich_text_4Ct8WN": {
+    "rich_text_dPk6zD": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
-        "title": "ESSENTIAL",
-        "content": "<p>Build up your toy box with our <a href=\"https://spectrumboutique.com/collections/spectrum-essentials\" target=\"_blank\" title=\"Spectrum Essentials\"><strong>Spectrum Essentials</strong></a> collection. Designed to center pleasure anatomy, body-safety, versatility, and affordability. Take 25% off all Spectrum Essentials items through June! <strong>Use code: ESSENTIAL</strong> </p><p><em>Terms: Offer ends 6/30/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
-        "button_text": "apply essential",
-        "button_link": "https://spectrumboutique.com/discount/Essential?redirect=%2Fcollections%2Fspectrum-essentials",
+        "title": "Aneros Promo",
+        "content": "<p>Take 20% off all <a href=\"/collections/aneros\" title=\"Aneros Sex Toys\"><strong>Aneros sex toys</strong></a> with code: <strong>PSPOT</strong>. Additionally, you'll receive a free gift of a bottle of Aneros Sessions Water-Based Lube when you spend $55 or more on Aneros items!</p><p><em>Terms: Offer ends 6/15/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. No code needed for free gift. Gift will be added to your cart when you meet the minimum requirements. Limit one per purchase.</em></p>",
+        "button_text": "APPLY PSPOT",
+        "button_link": "https://spectrumboutique.com/discount/PSPOT",
         "background_type": "full_width",
         "text_width": "medium",
         "text_position": "center",
@@ -88,6 +70,7 @@
     },
     "rich_text_QaAe9U": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
@@ -95,6 +78,25 @@
         "content": "<p>Back by popular demand: get 20% off <a href=\"https://spectrumboutique.com/collections/vush-sex-toys\" target=\"_blank\" title=\"Vush Sex Toys\"><strong>Vush</strong></a> sex toys and get to know why we love Vush's collection of sleek and body-friendly toys. <strong>Use code: VUSH20</strong></p><p><em>Terms: Offer ends 6/15/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
         "button_text": "APPLY vush20",
         "button_link": "https://spectrumboutique.com/discount/VUSH20?redirect=%2Fcollections%2Fvush-sex-toys",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "rich_text_4Ct8WN": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
+        "title": "ESSENTIAL",
+        "content": "<p>Build up your toy box with our <a href=\"https://spectrumboutique.com/collections/spectrum-essentials\" target=\"_blank\" title=\"Spectrum Essentials\"><strong>Spectrum Essentials</strong></a> collection. Designed to center pleasure anatomy, body-safety, versatility, and affordability. Take 25% off all Spectrum Essentials items through June! <strong>Use code: ESSENTIAL</strong> </p><p><em>Terms: Offer ends 6/30/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
+        "button_text": "apply essential",
+        "button_link": "https://spectrumboutique.com/discount/Essential?redirect=%2Fcollections%2Fspectrum-essentials",
         "background_type": "full_width",
         "text_width": "medium",
         "text_position": "center",
