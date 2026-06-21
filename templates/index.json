@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_6WDJMC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Travel_Friendly_2.png",
+            "heading": "Travel Friendly",
+            "description": "Summer is officially here! Get vacation ready with 20% off Travel-friendly sex toys. Use code: VACAY",
+            "link": "shopify://collections/travel-friendly",
+            "button_text": "Shop Travel Friendly"
+          }
+        },
         "column_rYCyfp": {
           "type": "column",
           "settings": {
@@ -33,16 +43,6 @@
             "description": "Shop We-Vibe sex toys for your couples play or solo sessions! Select We-Vibe styles and colors are on sale! No code needed, all items priced as marked.",
             "link": "shopify://collections/we-vibe",
             "button_text": "Shop We-Vibe"
-          }
-        },
-        "column_6WDJMC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/On_A_Budget_1.png",
-            "heading": "On a Budget?",
-            "description": "Shop our Sale section for everyday deals of up to 60% off. No code needed. All items priced as marked!",
-            "link": "shopify://collections/sale",
-            "button_text": "Shop Sale"
           }
         },
         "column_LciBjT": {
@@ -57,8 +57,8 @@
         }
       },
       "block_order": [
-        "column_rYCyfp",
         "column_6WDJMC",
+        "column_rYCyfp",
         "column_LciBjT"
       ],
       "settings": {
