@@ -25,16 +25,6 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_6WDJMC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Travel_Friendly_2.png",
-            "heading": "Travel Friendly",
-            "description": "Summer is officially here! Get vacation ready with 20% off Travel-friendly sex toys. Use code: VACAY",
-            "link": "shopify://collections/travel-friendly",
-            "button_text": "Shop Travel"
-          }
-        },
         "column_rYCyfp": {
           "type": "column",
           "settings": {
@@ -43,6 +33,16 @@
             "description": "Support Queer sex toy makers! Take 20% off our collection of toys by Queer Makers thru June 30th with code: PRIDE2026",
             "link": "shopify://collections/queer-owned-brands",
             "button_text": "Shop Queer"
+          }
+        },
+        "column_6WDJMC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Travel_Friendly_2.png",
+            "heading": "Travel Friendly",
+            "description": "Summer is officially here! Get vacation ready with 20% off Travel-friendly sex toys. Use code: VACAY",
+            "link": "shopify://collections/travel-friendly",
+            "button_text": "Shop Travel"
           }
         },
         "column_LciBjT": {
@@ -57,8 +57,8 @@
         }
       },
       "block_order": [
-        "column_6WDJMC",
         "column_rYCyfp",
+        "column_6WDJMC",
         "column_LciBjT"
       ],
       "settings": {
