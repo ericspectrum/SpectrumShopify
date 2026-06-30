@@ -13,9 +13,9 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Pride_Sitewide_Sale.png",
-        "text": "Sitewide Sale!",
-        "phag": "<p>Celebrate Pride with <strong>20% off everything</strong>* thru Monday. Because we believe everyone deserves exploration, pleasure, and to feel at home in their body.</p><p><strong>Use code: EXPLORE20</strong></p><p><em>(Excludes We-Vibe and Womanizer)</em></p>",
+        "image": "shopify://shop_images/June_26_Main_Banner.png",
+        "text": "Queer Makers",
+        "phag": "<p>Support Queer sex toy makers with 20% off our Queer Makers collection thru 6/30.</p><p><strong>Use code: PRIDE2026</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
         "link-text": "Shop All Toys",
@@ -28,11 +28,11 @@
         "column_rYCyfp": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Queer_Makers.png",
-            "heading": "Queer Makers",
-            "description": "Support Queer sex toy makers! Take 20% off our collection of toys by Queer Makers thru June 30th with code: PRIDE2026",
-            "link": "shopify://collections/queer-owned-brands",
-            "button_text": "Shop Queer"
+            "image": "shopify://shop_images/We-Vibe_May_26.png",
+            "heading": "We-Vibe",
+            "description": "Select We-Vibe styles and colors are on sale! No code needed, all items priced as marked.",
+            "link": "shopify://collections/we-vibe",
+            "button_text": "Shop We-Vibe"
           }
         },
         "column_6WDJMC": {
