@@ -292,14 +292,14 @@
         "item_D86Ua7": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/vush_aura_wireless_rechargeable_tens_device_4_spectrum_boutique.jpg",
+            "image": "shopify://shop_images/Blush_Banner.png",
             "tab_label": "Item",
             "subheading": "",
             "title": "",
-            "heading1": "Meet Vush!",
-            "content": "<p>Vush sex toys were created with a vision of celebrating everyone's unique pleasure journey. These beautifully crafted body-safe sex toys are a testament to pleasure, wellness, and exploration. Get 20% off Vush sex toys thru June 15th with code: <strong>VUSH20 </strong></p>",
-            "button_text": "Shop Vush",
-            "button_link": "shopify://collections/vush-sex-toys",
+            "heading1": "Do you Blush?",
+            "content": "<p>The team at Blush Novelties believes all bodies are beautiful, worthy, and deserving of pleasure. That's why Blush sex toys are body-safe, affordable, and designed to infuse beauty, joy, and pleasure into sex toys that are built for all to enjoy!</p>",
+            "button_text": "Shop Blush",
+            "button_link": "shopify://collections/blush",
             "button_text1": "Shop All Toys",
             "button_link1": "shopify://collections/all"
           }
@@ -308,7 +308,6 @@
       "block_order": [
         "item_D86Ua7"
       ],
-      "disabled": true,
       "custom_css": [
         ".image-with-text__image-wrapper {margin: 0;}",
         ".image-with-text__content-wrapper {margin: 0 auto;}",
