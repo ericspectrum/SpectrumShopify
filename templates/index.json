@@ -48,11 +48,11 @@
         "column_LciBjT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Spectrum_Essentials_Image_Only.png",
-            "heading": "Essentials",
-            "description": "Spectrum Essentials was created with your pleasure and budget in mind! Try them out and take 25% off Spectrum Essentials sex toys. Use code: ESSENTIAL",
-            "link": "shopify://collections/spectrum-essentials",
-            "button_text": "Shop Essentials"
+            "image": "shopify://shop_images/Prowler_Image_Only_Jouly_Essentials_Coupon.png",
+            "heading": "Prowler",
+            "description": "Bondage gear and accessories from Prowler and Prowler RED are on sale thru the end of the month. Explore your kinky side and save thru 7/31! Use code: ABSJULY30",
+            "link": "shopify://collections/abs-july-sale",
+            "button_text": "Shop Prowler"
           }
         }
       },
