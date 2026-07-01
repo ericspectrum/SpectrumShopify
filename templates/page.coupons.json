@@ -31,14 +31,13 @@
     },
     "rich_text_YpBELV": {
       "type": "rich-text",
-      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
-        "title": "EXPLORE20",
-        "content": "<p>Celebrate Pride with <strong>20% off everything</strong>*. Because we believe everyone deserves pleasure, exploration, and to feel at home in their body, not just during Pride, but all year long!</p><p><strong>Use code: EXPLORE20</strong></p><p><em>Terms: Offer ends 6/29/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. Excludes We-Vibe and Womanizer items.</em></p>",
-        "button_text": "APPLY EXPLORE20",
-        "button_link": "https://spectrumboutique.com/discount/EXPLORE20?redirect=%2Fcollections%2Fall",
+        "title": "Dream30",
+        "content": "<p>From classic vibrators to bedroom bondage and more, Pipedream Products offer something for everyone. Take 30% off all Pipedream sex toys with code: <strong>DREAM30</strong></p><p><strong>Use code: DREAM30</strong></p><p><em>Terms: Offer ends 7/31/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. </em></p>",
+        "button_text": "APPLY DREAM30",
+        "button_link": "https://spectrumboutique.com/discount/DREAM30?redirect=%2Fcollections%2Fpipedream",
         "background_type": "full_width",
         "text_width": "medium",
         "text_position": "center",
