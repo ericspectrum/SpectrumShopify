@@ -85,16 +85,6 @@ NOTE TO DEVELOPERS: welcome to Focal theme! We hope that you will enjoy editing 
     <!-- End Cloudflare Web Analytics -->
 
 
-    {% if request.page_type == '404' %}
-  <link rel="preconnect" href="https://redirectmapper.com">
-  <script>try{window.__rm={pk:"s66uf73gef8ei2tn7gw4y1a2",p:fetch("https://redirectmapper.com/api/resolve?projectKey=s66uf73gef8ei2tn7gw4y1a2&url="+encodeURIComponent(location.href)+(document.referrer?"&referrer="+encodeURIComponent(document.referrer):"")).then(function(r){return r.json()})}}catch(e){}</script>
-  <script
-    async
-    id="redirect-mapper"
-    src="https://redirectmapper.com/api/script"
-    data-project-key="s66uf73gef8ei2tn7gw4y1a2"
-    data-page-type="{{ request.page_type }}"></script>
-{% endif %}
 
     
    
