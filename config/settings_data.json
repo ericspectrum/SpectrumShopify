@@ -90,7 +90,7 @@
       },
       "15313946438125251499": {
         "type": "shopify://apps/restock-rooster/blocks/restock-rooster-button/2f682ae2-c8b5-4598-a3ae-4cf8e3ce00af",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "stop_loading_on_collection_pages": false
         }
