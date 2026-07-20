@@ -13,28 +13,18 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Vibrator_Sale_Hero.png",
-        "text": "Flash Sale!",
-        "phag": "<p>The vibes are immaculate - and on sale thru the weekend! Get 20% off all vibrating sex toys.</p><p><strong>Use code: SUMMERVIBES</strong></p><p><em>Excludes We-Vibe and Womanizer items.</em></p>",
+        "image": "shopify://shop_images/Je_Joue_at_Spectrum_Boutique.png",
+        "text": "Je Joue",
+        "phag": "<p>Play more with Je Joue sex toys! Thru 7/31, take 30% off these classic sex toys featuring soft silicone, rumbly vibrations, and more.<br/><strong>Use code: JEJOUE30</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Vibrators",
-        "link": "shopify://collections/vibrators"
+        "link-text": "Shop Je Joue",
+        "link": "shopify://collections/je-joue"
       }
     },
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_rYCyfp": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Je_Joue_Image_Only_July_2ad95f5c-ce16-4a76-beeb-20ab556f779f.png",
-            "heading": "Je Joue",
-            "description": "Play more with Je Joue sex toys! Thru 7/31, take 30% off these classic sex toys featuring soft silicone, rumbly vibrations, and more.\nUse code: JEJOUE30",
-            "link": "shopify://collections/abs-july-sale",
-            "button_text": "Shop Me You Us"
-          }
-        },
         "column_nnxyxA": {
           "type": "column",
           "settings": {
@@ -67,7 +57,6 @@
         }
       },
       "block_order": [
-        "column_rYCyfp",
         "column_nnxyxA",
         "column_6WDJMC",
         "column_LciBjT"
