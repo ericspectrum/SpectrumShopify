@@ -29,25 +29,6 @@
         "btnUrl2": ""
       }
     },
-    "rich_text_YpBELV": {
-      "type": "rich-text",
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "summervibes",
-        "content": "<p>The vibes are immaculate - and on sale thru the weekend! Get 20% off all vibrating sex toys.</p><p><strong>Use code: SUMMERVIBES</strong></p><p><em>Terms: Offer ends 7/19/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. Excludes We-Vibe and Womanizer items.</em></p>",
-        "button_text": "APPLY SUMMERVIBES",
-        "button_link": "https://spectrumboutique.com/discount/summervibes?redirect=%2Fcollections%2Fvibrators",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
     "rich_text_N6DQYk": {
       "type": "rich-text",
       "settings": {
@@ -270,7 +251,6 @@
   "order": [
     "main",
     "simple_image_with_text_QnRnQx",
-    "rich_text_YpBELV",
     "rich_text_N6DQYk",
     "rich_text_UV9ETH",
     "rich_text_4Ct8WN",
