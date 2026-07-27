@@ -78,11 +78,6 @@
         "disabled": false,
         "settings": {}
       },
-      "8764476057892802672": {
-        "type": "shopify://apps/stoq/blocks/main/4bb73be2-b7c2-4870-949f-c528145452a3",
-        "disabled": false,
-        "settings": {}
-      },
       "15313946438125251499": {
         "type": "shopify://apps/restock-rooster/blocks/restock-rooster-button/2f682ae2-c8b5-4598-a3ae-4cf8e3ce00af",
         "disabled": false,
@@ -90,9 +85,9 @@
           "stop_loading_on_collection_pages": false
         }
       },
-      "8605505498557855500": {
-        "type": "shopify://apps/bogos-io-free-gift/blocks/app-embed/0432bba6-720a-4e95-be5a-b868386f7aa6",
-        "disabled": true,
+      "1877152918344802950": {
+        "type": "shopify://apps/intelligems-a-b-testing/blocks/intelligems-script/fa83b64c-0c77-4c0c-b4b2-b94b42f5ef19",
+        "disabled": false,
         "settings": {}
       }
     }
