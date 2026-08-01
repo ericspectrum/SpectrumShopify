@@ -28,11 +28,11 @@
         "column_nnxyxA": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Me_you_Us_Image_Only_July_1.png",
-            "heading": "Me You Us",
-            "description": "Shop our Me You Us sale and save 30% on this line of cute, colorful sex toys that are also versatile and body-safe. Use code: ABSJULY30",
-            "link": "shopify://collections/abs-july-sale",
-            "button_text": "Shop Me You Us"
+            "image": "shopify://shop_images/romp_piccolo_pdp_gallery_1000x1000_05_1.jpg",
+            "heading": "Summer Sale",
+            "description": "Shop Spectrum's sex toy Sale section for the deepest discounts of the summer and save up to 70% on select items. No code needed, all items priced as marked.",
+            "link": "shopify://collections/sale",
+            "button_text": "Shop Sale"
           }
         },
         "column_6WDJMC": {
