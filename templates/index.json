@@ -38,21 +38,21 @@
         "column_6WDJMC": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Pipedream_Image_Only_July.png",
-            "heading": "Pipedream",
-            "description": "From classic vibrators to bedroom bondage and more, Pipedream Products offer something for everyone. Take 30% off all Pipedream sex toys with code: DREAM30",
-            "link": "shopify://collections/pipedream",
-            "button_text": "Shop Pipedream"
+            "image": "shopify://shop_images/Sex_Games_Sale.png",
+            "heading": "Fun & Games",
+            "description": "Summer fun takes on a whole new meaning this month, with 25% off all sex games for couples or groups! Use code: FunAndGames",
+            "link": "shopify://collections/sex-games",
+            "button_text": "Shop Games"
           }
         },
         "column_LciBjT": {
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Prowler_Image_Only_Jouly_Essentials_Coupon.png",
-            "heading": "Prowler",
-            "description": "Bondage gear and accessories from Prowler and Prowler RED are on sale thru the end of the month. Explore your kinky side and save thru 7/31! Use code: ABSJULY30",
-            "link": "shopify://collections/abs-july-sale",
-            "button_text": "Shop Prowler"
+            "heading": "Essentials",
+            "description": "Rumbly motors, body-safe silicone, and versatility are at the center of our Spectrum Essentials sex toys. Shop the collection and get 30% off through August with code: Essentials30",
+            "link": "shopify://collections/spectrum-essentials",
+            "button_text": "Shop Essentials"
           }
         }
       },
