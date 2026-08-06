@@ -35,7 +35,7 @@
         "show_socialIcon": false,
         "subheading": "",
         "title": "Summer Sale!",
-        "content": "<p>Shop Spectrum's sex toy Sale section for the deepest discounts of the summer and save up to 70% on select items. </p><p>No code needed, all items priced as marked.</p><p><em>Terms: Offer ends 8/31/26 at 11:59pm ET or while supplies last. Cannot be combined with other promotions.</em></p>",
+        "content": "<p>Shop Spectrum's sex toy Sale section for the deepest discounts of the summer and save up to 70% on select items. </p><p><strong>No code needed, all items priced as marked.</strong></p><p><em>Terms: Offer ends 8/31/26 at 11:59pm ET or while supplies last. Cannot be combined with other promotions.</em></p>",
         "button_text": "Shop Sale",
         "button_link": "shopify://collections/sale",
         "background_type": "full_width",
