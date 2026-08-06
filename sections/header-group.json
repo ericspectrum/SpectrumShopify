@@ -16,7 +16,6 @@
       "blocks": {
         "message_qQkEad": {
           "type": "message",
-          "disabled": true,
           "settings": {
             "text": "On a budget? Explore all our current promotions!",
             "announceUrl": "shopify://pages/coupons",
