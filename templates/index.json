@@ -28,6 +28,16 @@
         "column_8qddiG": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Anal_August_Butt_Toy_Sale_no_text.png",
+            "heading": "Butt Stuff",
+            "description": "Celebrate Anal August with 25% off all items in our Butt Toys collection thru Monday! Use code: ButtStuff at checkout.",
+            "link": "shopify://collections/butt-toys-anal-sex-toys",
+            "button_text": "Shop Butt"
+          }
+        },
+        "column_nNiD4c": {
+          "type": "column",
+          "settings": {
             "image": "shopify://shop_images/romp_piccolo_pdp_gallery_1000x1000_05_1.jpg",
             "heading": "Summer Sale",
             "description": "Shop Spectrum's sex toy Sale section for the deepest discounts of the summer and save up to 70% on select items. No code needed, all items priced as marked.",
@@ -58,6 +68,7 @@
       },
       "block_order": [
         "column_8qddiG",
+        "column_nNiD4c",
         "column_6WDJMC",
         "column_LciBjT"
       ],
