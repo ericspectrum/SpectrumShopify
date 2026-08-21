@@ -35,16 +35,6 @@
             "button_text": "Shop Sale"
           }
         },
-        "column_y4fftc": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Anal_August_Butt_Toy_Sale_no_text.png",
-            "heading": "Butt Stuff",
-            "description": "Celebrate Anal August with 25% off all butt toys! Use code: ButtStuff at checkout thru Monday.",
-            "link": "shopify://collections/butt-toys-anal-sex-toys",
-            "button_text": "Shop Butt"
-          }
-        },
         "column_6WDJMC": {
           "type": "column",
           "settings": {
@@ -68,7 +58,6 @@
       },
       "block_order": [
         "column_nNiD4c",
-        "column_y4fftc",
         "column_6WDJMC",
         "column_LciBjT"
       ],
