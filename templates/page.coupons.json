@@ -34,6 +34,25 @@
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
+        "title": "BUTTSTUFF",
+        "content": "<p>Celebrate Anal August with 25% off all items in our Butt Toys collection thru Monday!</p><p><strong>Use code: ButtStuff</strong></p><p><em>Terms: Offer ends 8/32426 at 11:59pm ET. Cannot be combined with other promotions.</em></p>",
+        "button_text": "Apply buttstuff",
+        "button_link": "https://spectrumboutique.com/discount/BUTTSTUFF?redirect=%2Fcollections%2Fbutt-toys-anal-sex-toys",
+        "background_type": "full_width",
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "left",
+        "background": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
+    "rich_text_gWzJdN": {
+      "type": "rich-text",
+      "settings": {
+        "show_socialIcon": false,
+        "subheading": "",
         "title": "Summer Sale!",
         "content": "<p>Shop Spectrum's sex toy Sale section for the deepest discounts of the summer and save up to 70% on select items. </p><p><strong>No code needed, all items priced as marked.</strong></p><p><em>Terms: Offer ends 8/31/26 at 11:59pm ET or while supplies last. Cannot be combined with other promotions.</em></p>",
         "button_text": "Shop Sale",
@@ -271,6 +290,7 @@
     "main",
     "simple_image_with_text_QnRnQx",
     "rich_text_N6DQYk",
+    "rich_text_gWzJdN",
     "rich_text_cqHJPm",
     "rich_text_UV9ETH",
     "rich_text_4Ct8WN",
