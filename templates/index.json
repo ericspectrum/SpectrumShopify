@@ -29,7 +29,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/GRINDERS_SALE_IMAGE_ONLY.png",
-            "heading": "Rise & Grind!",
+            "heading": "Rise & Grind",
             "description": "For the lovers of grinding, humping, and frotting: take 20% off all grinding sex toys this month with code: GrindTime",
             "link": "shopify://collections/grinding-humping-toys",
             "button_text": "Shop Grinders"
@@ -48,11 +48,11 @@
         "column_LciBjT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Spectrum_Essentials_Image_Only.png",
-            "heading": "Essentials",
-            "description": "Rumbly motors, body-safe silicone, and versatility are at the center of our Spectrum Essentials sex toys. Shop the collection and get 30% off through August with code: Essentials30",
-            "link": "shopify://collections/spectrum-essentials",
-            "button_text": "Shop Essentials"
+            "image": "shopify://shop_images/SEPTEMBER_BOOK_SALE_IMAGE_ONLY.png",
+            "heading": "Hit the Books",
+            "description": "It's time for a little pleasure reading! Get 20% off our collection of how-to sex books, erotica, sexual health books & more with code: HitTheBooks",
+            "link": "shopify://collections/sex-sexuality-books",
+            "button_text": "Shop Books"
           }
         }
       },
