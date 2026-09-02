@@ -40,7 +40,7 @@
           "settings": {
             "image": "shopify://shop_images/APPAREL_SALE_IMAGE_ONLY.png",
             "heading": "Get Dressed Up",
-            "description": "Dress up to get down! All of our apparel, including sexy lingerie, costumes, pasties, jock straps, and more wearables are 20% off with code: DressUp",
+            "description": "Dress up to get down! All apparel, including sexy lingerie, costumes, pasties, jock straps, and more wearables are 20% off with code: DressUp",
             "link": "shopify://collections/apparel",
             "button_text": "Shop Apparel"
           }
