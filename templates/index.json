@@ -28,11 +28,11 @@
         "column_nNiD4c": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/romp_piccolo_pdp_gallery_1000x1000_05_1.jpg",
-            "heading": "Summer Sale",
-            "description": "Shop Spectrum's sex toy Sale section for the deepest discounts of the summer and save up to 70% on select items. No code needed, all items priced as marked.",
-            "link": "shopify://collections/sale",
-            "button_text": "Shop Sale"
+            "image": "shopify://shop_images/GRINDERS_SALE_IMAGE_ONLY.png",
+            "heading": "Rise & Grind!",
+            "description": "For the lovers of grinding, humping, and frotting: take 20% off all grinding sex toys this month with code: GrindTime",
+            "link": "shopify://collections/grinding-humping-toys",
+            "button_text": "Shop Grinders"
           }
         },
         "column_6WDJMC": {
