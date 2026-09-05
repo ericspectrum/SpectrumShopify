@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_Fy8nxx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Cookout_sale.png",
+            "heading": "Flash Sale!",
+            "description": "This long weekend, take 25% off all food-shaped sex toys and save on sexy fruits, veggies, and of course, desserts! Use code: Cookout",
+            "link": "shopify://collections/food-shaped-sex-toys",
+            "button_text": "Shop Food-Shaped"
+          }
+        },
         "column_nNiD4c": {
           "type": "column",
           "settings": {
@@ -57,6 +67,7 @@
         }
       },
       "block_order": [
+        "column_Fy8nxx",
         "column_nNiD4c",
         "column_6WDJMC",
         "column_LciBjT"
