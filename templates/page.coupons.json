@@ -29,25 +29,6 @@
         "btnUrl2": ""
       }
     },
-    "rich_text_gWzJdN": {
-      "type": "rich-text",
-      "settings": {
-        "show_socialIcon": false,
-        "subheading": "",
-        "title": "cookout",
-        "content": "<p>This long weekend, take 25% off all food-shaped sex toys and save on sexy fruits, veggies, and of course, desserts! </p><p><strong>Use code: COOKOUT</strong></p>",
-        "button_text": "Apply COOKOUT",
-        "button_link": "https://spectrumboutique.com/discount/COOKOUT?redirect=%2Fcollections%2Ffood-shaped-sex-toys",
-        "background_type": "full_width",
-        "text_width": "medium",
-        "text_position": "center",
-        "text_alignment": "left",
-        "background": "rgba(0,0,0,0)",
-        "text_color": "rgba(0,0,0,0)",
-        "button_background": "rgba(0,0,0,0)",
-        "button_text_color": "rgba(0,0,0,0)"
-      }
-    },
     "rich_text_WpwL7n": {
       "type": "rich-text",
       "settings": {
@@ -289,7 +270,6 @@
   "order": [
     "main",
     "simple_image_with_text_QnRnQx",
-    "rich_text_gWzJdN",
     "rich_text_WpwL7n",
     "rich_text_cqHJPm",
     "rich_text_UV9ETH",
