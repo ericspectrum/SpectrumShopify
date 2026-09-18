@@ -172,11 +172,20 @@
                         <a href="{{ collection.url }}">All</a>
                     </div>
                     {% assign tags_array = all_tags | split: ',' | uniq %}
-                    {% for tag in tags_array %}
+                    {% assign pinned_tag = 'Under $50' %}
+                    {% if tags_array contains pinned_tag %}
                         <div class="cstm_collection_title23 ">
-                            <a href="{{ collection.url }}?filter.p.m.magento.tag_attributes={{ tag | url_encode }}"
-                               class="tag-link cstm_banner_tags">{{ tag }}</a>
+                            <a href="{{ collection.url }}?filter.p.m.magento.tag_attributes={{ pinned_tag | url_encode }}"
+                               class="tag-link cstm_banner_tags">{{ pinned_tag }}</a>
                         </div>
+                    {% endif %}
+                    {% for tag in tags_array %}
+                        {% unless tag == blank or tag == pinned_tag %}
+                            <div class="cstm_collection_title23 ">
+                                <a href="{{ collection.url }}?filter.p.m.magento.tag_attributes={{ tag | url_encode }}"
+                                   class="tag-link cstm_banner_tags">{{ tag }}</a>
+                            </div>
+                        {% endunless %}
                     {% endfor %}
                 {%- endif -%}
             </ul>
