@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_Ug6Hnc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SITEWIDE_SALE_NO_TEXT.png",
+            "heading": "Flash sale!",
+            "description": "Don't miss our sex toy sale! Take 20% off (almost) everything, today only!\n\nUse code: Explore20\n\nExcludes We-Vibe and Womanizer.",
+            "link": "shopify://collections/all",
+            "button_text": "Shop Sex Toys"
+          }
+        },
         "column_nNiD4c": {
           "type": "column",
           "settings": {
@@ -57,6 +67,7 @@
         }
       },
       "block_order": [
+        "column_Ug6Hnc",
         "column_nNiD4c",
         "column_6WDJMC",
         "column_LciBjT"
