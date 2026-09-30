@@ -37,11 +37,24 @@
             "button_text": "",
             "button_link": ""
           }
+        },
+        "message_qcfbRX": {
+          "type": "message",
+          "settings": {
+            "text": "Free ground shipping on domestic orders over $135!",
+            "announceUrl": "shopify://pages/rewards",
+            "learn_more_text": "Learn more",
+            "title": "",
+            "content": "",
+            "button_text": "",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
         "message_qQkEad",
-        "message_F8jnpi"
+        "message_F8jnpi",
+        "message_qcfbRX"
       ],
       "settings": {
         "announcement_bar_position": "non_sticky",
