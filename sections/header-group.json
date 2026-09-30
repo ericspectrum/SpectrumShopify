@@ -41,7 +41,7 @@
         "message_qcfbRX": {
           "type": "message",
           "settings": {
-            "text": "Free ground shipping on domestic orders over $135!",
+            "text": "FREE GROUND SHIPPING ON DOMESTIC ORDERS OVER $135",
             "announceUrl": "shopify://pages/rewards",
             "learn_more_text": "Learn more",
             "title": "",
