@@ -42,7 +42,7 @@
           "type": "message",
           "settings": {
             "text": "FREE GROUND SHIPPING ON DOMESTIC ORDERS OVER $135",
-            "announceUrl": "shopify://pages/rewards",
+            "announceUrl": "",
             "learn_more_text": "Learn more",
             "title": "",
             "content": "",
