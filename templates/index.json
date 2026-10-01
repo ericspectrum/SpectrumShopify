@@ -48,11 +48,11 @@
         "column_LciBjT": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/SEPTEMBER_BOOK_SALE_IMAGE_ONLY.png",
-            "heading": "Hit the Books",
-            "description": "It's time for a little pleasure reading! Get 20% off our collection of how-to sex books, erotica, sexual health books & more with code: HitTheBooks",
-            "link": "shopify://collections/sex-sexuality-books",
-            "button_text": "Shop Books"
+            "image": "shopify://shop_images/Solo_Sex_Magic.png",
+            "heading": "Solo Sex Magic",
+            "description": "Manifest your desires thru mindful masturbation, sex toys, and pleasure! Read more in this article on Solo Sex Magic by Gwen Walsh.",
+            "link": "shopify://blogs/spectrum-journal/solo-sex-magic",
+            "button_text": "Read Blog"
           }
         }
       },
