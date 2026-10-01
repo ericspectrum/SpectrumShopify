@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Tantus_Sale_at_Spectrum_Boutique_1.png",
-        "text": "Tantus Sale!",
-        "phag": "<p>Explore the gold standard of body-safe silicone sex toys with 20% off Tantus toys through September!</p><p><strong>Use code: TANTUS20</strong></p>",
+        "image": "shopify://shop_images/Creature_Cocks_Sale_at_Spectrum_Boutique.png",
+        "text": "Get Spooky",
+        "phag": "<p>Save on fantasy sex toys and BDSM gear this Spooky Season with 30% off XR Brands, including Creature Cocks & much more!</p><p><strong>Use code: SPOOKY30</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Tantus",
-        "link": "shopify://collections/tantus"
+        "link-text": "Shop XR Brands",
+        "link": "shopify://collections/xr-brands"
       }
     },
     "custom_multi_column_section_NTjk4K": {
