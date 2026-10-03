@@ -15,7 +15,7 @@
       "settings": {
         "image": "shopify://shop_images/Creature_Cocks_Sale_at_Spectrum_Boutique.png",
         "text": "Get Spooky",
-        "phag": "<p>Save on fantasy sex toys and BDSM gear this Spooky Season with 30% off XR Brands, including Creature Cocks!</p><p><strong>Use code: SPOOKY30</strong></p>",
+        "phag": "<p>Save on fantasy sex toys and BDSM gear this Spooky Season with 30% off XR Brands, including Creature Cocks & much more!</p><p><strong>Use code: SPOOKY30</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
         "link-text": "Shop XR Brands",
@@ -35,16 +35,6 @@
             "button_text": "Shop Shots"
           }
         },
-        "column_6WDJMC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/APPAREL_SALE_IMAGE_ONLY.png",
-            "heading": "Get Dressed Up",
-            "description": "Dress up to get down! All apparel, including sexy lingerie, costumes, pasties, jock straps, and more wearables are 20% off with code: DressUp",
-            "link": "shopify://collections/apparel",
-            "button_text": "Shop Apparel"
-          }
-        },
         "column_LciBjT": {
           "type": "column",
           "settings": {
@@ -54,12 +44,22 @@
             "link": "shopify://blogs/spectrum-journal/solo-sex-magic",
             "button_text": "Read Blog"
           }
+        },
+        "column_6WDJMC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BDSM_IMAGE_ONLY.png",
+            "heading": "Kinktober",
+            "description": "Celebrate Kinktober with us! Take 20% all BDSM items thru the end of October. Use code: KINKTOBER",
+            "link": "shopify://collections/bdsm-toys-bondage",
+            "button_text": "Shop BDSM"
+          }
         }
       },
       "block_order": [
         "column_nNiD4c",
-        "column_6WDJMC",
-        "column_LciBjT"
+        "column_LciBjT",
+        "column_6WDJMC"
       ],
       "settings": {
         "image": "shopify://shop_images/t3phohdx9llkuu9u60cp.jpg",
