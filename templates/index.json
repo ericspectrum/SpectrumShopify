@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_6WDJMC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/BDSM_IMAGE_ONLY.png",
+            "heading": "Kinktober",
+            "description": "Celebrate Kinktober with us! Take 20% all BDSM items thru the end of October. Use code: KINKTOBER",
+            "link": "shopify://collections/bdsm-toys-bondage",
+            "button_text": "Shop BDSM"
+          }
+        },
         "column_nNiD4c": {
           "type": "column",
           "settings": {
@@ -44,22 +54,12 @@
             "link": "shopify://blogs/spectrum-journal/solo-sex-magic",
             "button_text": "Read Blog"
           }
-        },
-        "column_6WDJMC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/BDSM_IMAGE_ONLY.png",
-            "heading": "Kinktober",
-            "description": "Celebrate Kinktober with us! Take 20% all BDSM items thru the end of October. Use code: KINKTOBER",
-            "link": "shopify://collections/bdsm-toys-bondage",
-            "button_text": "Shop BDSM"
-          }
         }
       },
       "block_order": [
+        "column_6WDJMC",
         "column_nNiD4c",
-        "column_LciBjT",
-        "column_6WDJMC"
+        "column_LciBjT"
       ],
       "settings": {
         "image": "shopify://shop_images/t3phohdx9llkuu9u60cp.jpg",
