@@ -129,15 +129,6 @@
             "link": "shopify://collections/dildos"
           }
         },
-        "images_KEbWkT": {
-          "type": "images",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Simply_Sweet_Banana_Split_Dildo_at_Spectrum_Boutique.png",
-            "link-text": "Shop Food-Shaped",
-            "link": "shopify://collections/food-shaped-sex-toys"
-          }
-        },
         "images_V9jtXV": {
           "type": "images",
           "settings": {
@@ -244,7 +235,6 @@
         "images_8baJT3",
         "images_gjHRnc",
         "images_fWFrmY",
-        "images_KEbWkT",
         "images_V9jtXV",
         "images_D4cQwC",
         "images_3KQBLA",
