@@ -85,7 +85,7 @@
           "type": "images",
           "settings": {
             "image": "shopify://shop_images/Soft_Dildos.png",
-            "link-text": "Soft Dildos",
+            "link-text": "Shop Soft Dildos",
             "link": "shopify://collections/soft-silicone-dildos"
           }
         },
@@ -93,7 +93,7 @@
           "type": "images",
           "settings": {
             "image": "shopify://shop_images/Gridning_and_Humping_Toys.png",
-            "link-text": "Grinding Toys",
+            "link-text": "Shop Grinding Toys",
             "link": "shopify://collections/grinding-humping-toys"
           }
         },
@@ -101,8 +101,15 @@
           "type": "images",
           "settings": {
             "image": "shopify://shop_images/Tantus_Vday_26.png",
-            "link-text": "Squishy Toys",
+            "link-text": "Shop Squishy Toys",
             "link": "shopify://collections/squishy-toys"
+          }
+        },
+        "images_KEbWkT": {
+          "type": "images",
+          "settings": {
+            "link-text": "Button",
+            "link": ""
           }
         },
         "images_gjHRnc": {
@@ -238,6 +245,7 @@
         "images_hc6FGY",
         "images_Gr9H98",
         "images_8baJT3",
+        "images_KEbWkT",
         "images_gjHRnc",
         "images_fWFrmY",
         "images_V9jtXV",
