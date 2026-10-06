@@ -97,20 +97,20 @@
             "link": "shopify://collections/grinding-humping-toys"
           }
         },
+        "images_aUPgNY": {
+          "type": "images",
+          "settings": {
+            "image": "shopify://shop_images/Massagers_36d6a048-46d5-4da1-a5fa-3e5bccf4e494.png",
+            "link-text": "Shop Massagers",
+            "link": "shopify://collections/wand-massagers"
+          }
+        },
         "images_8baJT3": {
           "type": "images",
           "settings": {
             "image": "shopify://shop_images/Tantus_Vday_26.png",
             "link-text": "Shop Squishy Toys",
             "link": "shopify://collections/squishy-toys"
-          }
-        },
-        "images_KEbWkT": {
-          "type": "images",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Sweet_Banana_Split_Dildo_at_Spectrum_Boutique.png",
-            "link-text": "Shop Food-Shaped",
-            "link": "shopify://collections/food-shaped-sex-toys"
           }
         },
         "images_gjHRnc": {
@@ -129,28 +129,21 @@
             "link": "shopify://collections/dildos"
           }
         },
+        "images_KEbWkT": {
+          "type": "images",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Simply_Sweet_Banana_Split_Dildo_at_Spectrum_Boutique.png",
+            "link-text": "Shop Food-Shaped",
+            "link": "shopify://collections/food-shaped-sex-toys"
+          }
+        },
         "images_V9jtXV": {
           "type": "images",
           "settings": {
             "image": "shopify://shop_images/Butt.png",
             "link-text": "Shop Butt",
             "link": "shopify://collections/butt-toys-anal-sex-toys"
-          }
-        },
-        "images_aUPgNY": {
-          "type": "images",
-          "settings": {
-            "image": "shopify://shop_images/Massagers_36d6a048-46d5-4da1-a5fa-3e5bccf4e494.png",
-            "link-text": "Shop Massagers",
-            "link": "shopify://collections/wand-massagers"
-          }
-        },
-        "images_BnQeUQ": {
-          "type": "images",
-          "settings": {
-            "image": "shopify://shop_images/grinding_2.png",
-            "link-text": "Shop Humping Toys",
-            "link": "shopify://collections/grinding-humping-toys"
           }
         },
         "images_D4cQwC": {
@@ -187,6 +180,7 @@
         },
         "images_QHjRz4": {
           "type": "images",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Kegel_1.png",
             "link-text": "Shop Kegel",
@@ -235,6 +229,7 @@
         },
         "images_RUEVtQ": {
           "type": "images",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Apparel.png",
             "link-text": "Shop Apparel",
@@ -245,13 +240,12 @@
       "block_order": [
         "images_hc6FGY",
         "images_Gr9H98",
+        "images_aUPgNY",
         "images_8baJT3",
-        "images_KEbWkT",
         "images_gjHRnc",
         "images_fWFrmY",
+        "images_KEbWkT",
         "images_V9jtXV",
-        "images_aUPgNY",
-        "images_BnQeUQ",
         "images_D4cQwC",
         "images_3KQBLA",
         "images_y9Gtqh",
