@@ -81,8 +81,17 @@
     "custom_featured_collection_b8qFrq": {
       "type": "Custom_Featured_Collection",
       "blocks": {
+        "images_Gr9H98": {
+          "type": "images",
+          "disabled": true,
+          "settings": {
+            "link-text": "Button",
+            "link": ""
+          }
+        },
         "images_8baJT3": {
           "type": "images",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Tantus_Vday_26.png",
             "link-text": "Squishy Toys",
@@ -219,6 +228,7 @@
         }
       },
       "block_order": [
+        "images_Gr9H98",
         "images_8baJT3",
         "images_gjHRnc",
         "images_fWFrmY",
