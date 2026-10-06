@@ -85,8 +85,9 @@
           "type": "images",
           "disabled": true,
           "settings": {
-            "link-text": "Button",
-            "link": ""
+            "image": "shopify://shop_images/Gridning_and_Humping_Toys.png",
+            "link-text": "Grinding Toys",
+            "link": "shopify://collections/grinding-humping-toys"
           }
         },
         "images_8baJT3": {
