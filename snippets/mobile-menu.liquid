@@ -14,11 +14,20 @@
   </div>
 
   <div class="drawer__content">
-    <ul class="cstm_mobile-nav mobile-nav list--unstyled" role="list">
+    <ul class="cstm_mobile-nav mobile-nav list--unstyled mobile-nav--alt" role="list">
       {%- for link in menu.links -%}
         {%- assign link_title_downcase = link.title | strip | downcase -%}
         {%- assign mega_menu_block = '' -%}
         {%- assign mega_menu_images = '' -%}
+        {%- assign nav_cta_class = '' -%}
+
+        {%- if link_title_downcase == 'new arrivals' -%}
+          {%- assign nav_cta_class = 'mobile-nav__item--cta mobile-nav__item--cta-new' -%}
+        {%- elsif link_title_downcase == 'best sellers' -%}
+          {%- assign nav_cta_class = 'mobile-nav__item--cta mobile-nav__item--cta-best' -%}
+        {%- elsif link_title_downcase == 'sale' -%}
+          {%- assign nav_cta_class = 'mobile-nav__item--cta mobile-nav__item--cta-sale' -%}
+        {%- endif -%}
 
         {%- for block in section.blocks -%}
           {%- assign menu_item_downcase = block.settings.menu_item | strip | downcase -%}
@@ -70,7 +79,7 @@
           {%- endcapture -%}
         {%- endif -%}
 
-        <li class="cstm_mobile-nav-tab mobile-nav__item" data-level="1">
+        <li class="cstm_mobile-nav-tab mobile-nav__item {{ nav_cta_class }}" data-level="1">
           {%- if link.links.size > 0 or mega_menu_images != blank -%}
             <div class="custom_btn_mobilemenu">
             <button class="custom_btn_mobilemenu_firstbtn mobile-nav__link  {% if settings.heading_text_transform == 'uppercase' %}h6{% else %}h5{% endif %}" aria-controls="mobile-menu-{{ forloop.index }}" aria-expanded="false">
@@ -85,9 +94,9 @@
              </div>
             <collapsible-content id="mobile-menu-{{ forloop.index }}" class="collapsible">
               {%- if link.links.size > 0 -%}
-                <ul class="mobile-nav list--unstyled" role="list">
+                <ul class="mobile-nav mobile-nav--sub list--unstyled" role="list">
                   {%- for sub_link in link.links -%}
-                    <li class="111 mobile-nav__item" data-level="2">
+                    <li class="mobile-nav__item" data-level="2">
                       {%- if sub_link.links.size > 0 -%}
                         <button  class="mobile-nav__link" aria-controls="mobile-menu-{{ forloop.parentloop.index }}-{{ forloop.index }}" aria-expanded="false">
                         <a href={{ sub_link.url }}>{{- sub_link.title -}}</a>  
@@ -95,7 +104,7 @@
                         </button>
 
                         <collapsible-content id="mobile-menu-{{ forloop.parentloop.index }}-{{ forloop.index }}" class="collapsible" open>
-                          <ul class="mobile-nav list--unstyled" role="list">
+                          <ul class="mobile-nav mobile-nav--sub-leaf list--unstyled" role="list">
                             {%- for sub_sub_link in sub_link.links -%}
                               <li class="mobile-nav__item" data-level="3">
                                 <a href="{{ sub_sub_link.url }}" class="mobile-nav__link">{{ sub_sub_link.title }}</a>
@@ -120,10 +129,10 @@
               {%- endif -%}
             </collapsible-content>
           {%- else -%}
-            <div class="cstm_menu_item">
+            <div class="cstm_menu_item {% if nav_cta_class != blank %}cstm_menu_item--cta{% endif %}">
               
             <a href="{{ link.url }}" class="mobile-nav__link  {% if settings.heading_text_transform == 'uppercase' %}h6{% else %}h5{% endif %}">{{ link.title }}</a>
-              {% if mobile_button_2_label != blank and mobile_button_2_link != blank %}
+              {% if mobile_button_2_label != blank and mobile_button_2_link != blank and nav_cta_class == blank %}
                 <a href="{{ mobile_button_2_link }}" class="mobile-nav__link {{ mobile_button_2_style }} h6"
                 {% if mobile_button_2_text_color != blank and mobile_button_2_text_color != 'rgba(0,0,0,0)' %} style="color: {{ mobile_button_2_text_color }} !important;"{%- endif -%}>
                   {{ mobile_button_2_label }}
