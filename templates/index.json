@@ -89,20 +89,20 @@
             "link": "shopify://collections/wand-massagers"
           }
         },
-        "images_hc6FGY": {
-          "type": "images",
-          "settings": {
-            "image": "shopify://shop_images/Soft_Dildos.png",
-            "link-text": "Shop Soft Dildos",
-            "link": "shopify://collections/soft-silicone-dildos"
-          }
-        },
         "images_Gr9H98": {
           "type": "images",
           "settings": {
             "image": "shopify://shop_images/Grinding_Sex_Toys_at_Spectrum_Boutique.png",
             "link-text": "Shop Grinding Toys",
             "link": "shopify://collections/grinding-humping-toys"
+          }
+        },
+        "images_hc6FGY": {
+          "type": "images",
+          "settings": {
+            "image": "shopify://shop_images/Soft_Dildos.png",
+            "link-text": "Shop Soft Dildos",
+            "link": "shopify://collections/soft-silicone-dildos"
           }
         },
         "images_8baJT3": {
@@ -129,20 +129,20 @@
             "link": "shopify://collections/dildos"
           }
         },
-        "images_V9jtXV": {
-          "type": "images",
-          "settings": {
-            "image": "shopify://shop_images/Butt.png",
-            "link-text": "Shop Butt",
-            "link": "shopify://collections/butt-toys-anal-sex-toys"
-          }
-        },
         "images_D4cQwC": {
           "type": "images",
           "settings": {
             "image": "shopify://shop_images/Thrusting_Vibrators_at_Spectrum_Boutique.png",
             "link-text": "Shop Thrusters",
             "link": "shopify://collections/thrusting-dildos-vibrators"
+          }
+        },
+        "images_V9jtXV": {
+          "type": "images",
+          "settings": {
+            "image": "shopify://shop_images/Butt.png",
+            "link-text": "Shop Butt",
+            "link": "shopify://collections/butt-toys-anal-sex-toys"
           }
         },
         "images_3KQBLA": {
@@ -213,7 +213,7 @@
         "images_QHmkKz": {
           "type": "images",
           "settings": {
-            "image": "shopify://shop_images/Gender.png",
+            "image": "shopify://shop_images/Gender_Affirmation_Items_at_Spectrum_Boutique.png",
             "link-text": "Shop Gender",
             "link": "shopify://collections/gender"
           }
@@ -230,13 +230,13 @@
       },
       "block_order": [
         "images_aUPgNY",
-        "images_hc6FGY",
         "images_Gr9H98",
+        "images_hc6FGY",
         "images_8baJT3",
         "images_gjHRnc",
         "images_fWFrmY",
-        "images_V9jtXV",
         "images_D4cQwC",
+        "images_V9jtXV",
         "images_3KQBLA",
         "images_y9Gtqh",
         "images_7tiAHe",
