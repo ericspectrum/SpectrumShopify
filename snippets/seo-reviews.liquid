@@ -1,0 +1,35 @@
+{%- comment -%}
+  Server-rendered product reviews from metafield custom.seo_reviews (JSON array).
+  Hidden from UI (Growave widget stays visible); present in HTML source for crawlers/LLMs.
+
+  Expected item shape:
+  { "rating": 5, "title": "...", "body": "...", "author": "...", "date": "YYYY-MM-DD" }
+{%- endcomment -%}
+
+{%- assign seo_reviews = product.metafields.custom.seo_reviews.value -%}
+{%- if seo_reviews != blank -%}
+  <section class="seo-reviews visually-hidden" aria-hidden="true">
+    {%- for review in seo_reviews limit: 5 -%}
+      {%- if review.body != blank -%}
+        <article>
+          {%- if review.title != blank -%}
+            <h3>{{ review.title | escape }}</h3>
+          {%- endif -%}
+          <p>{{ review.body | escape }}</p>
+          <p>
+            {%- if review.rating != blank -%}Rating: {{ review.rating }}/5{%- endif -%}
+            {%- if review.author != blank -%}
+              {%- if review.rating != blank %} — {% endif -%}
+              {{ review.author | escape }}
+            {%- endif -%}
+            {%- if review.date != blank -%}
+              {%- if review.rating != blank or review.author != blank %} ({% else %}({% endif -%}
+              {{- review.date -}}
+              )
+            {%- endif -%}
+          </p>
+        </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </section>
+{%- endif -%}

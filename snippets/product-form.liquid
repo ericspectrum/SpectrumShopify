@@ -479,19 +479,18 @@
 </div>
 
 <div id="Paris" class="tabcontent">
+  {%- render 'seo-reviews', product: product -%}
 
-  <div class="gw-rv-main-widget-placeholder" style="display: block" data-product_id={{product.id}}></div>
+  <div class="gw-rv-main-widget-placeholder" style="display: block" data-product_id="{{ product.id }}"></div>
 
- 
-  
-{% capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1 %}{% endcapture %} 
-{% unless the_snippet_reviews contains 'Liquid error' %} 
-{{ the_snippet_reviews }} 
-{% endunless %} 
-  
-    {% comment %}
-{{ block.settings.tab_cont2 }}
-   {% endcomment %}
+  {% capture the_snippet_reviews %}{% render 'socialshopwave-widget-recommends' with 1 %}{% endcapture %}
+  {% unless the_snippet_reviews contains 'Liquid error' %}
+    {{ the_snippet_reviews }}
+  {% endunless %}
+
+  {% comment %}
+    {{ block.settings.tab_cont2 }}
+  {% endcomment %}
 </div>
 
 <div id="Tokyo" class="tabcontent">
