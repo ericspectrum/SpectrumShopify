@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_yY3xaR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Wand_Massagers_on_Sale_at_Spectrum_Boutique_1.png",
+            "heading": "Wands Out!",
+            "description": "Turn up the magic this weekend with 20% off all Wand Massagers. Use code: WANDS20",
+            "link": "shopify://collections/wand-massagers",
+            "button_text": "Shop Wands"
+          }
+        },
         "column_6WDJMC": {
           "type": "column",
           "settings": {
@@ -47,6 +57,7 @@
         },
         "column_LciBjT": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Solo_Sex_Magic.png",
             "heading": "Solo Sex Magic",
@@ -57,6 +68,7 @@
         }
       },
       "block_order": [
+        "column_yY3xaR",
         "column_6WDJMC",
         "column_nNiD4c",
         "column_LciBjT"
@@ -421,7 +433,7 @@
             "tab_label": "Item",
             "subheading": "",
             "title": "",
-            "heading1": "Trick or TREATS!",
+            "heading1": "Tricks AND treats!",
             "content": "<p>Explore our collection of food-shaped sex toys, featuring the just restocked Banana Split Dildo and other fruit-inspired vibrators, dessert-themed dildos, lickable pasties, candy themed sex toys, and cheeky designs that do more than just look cute!</p>",
             "button_text": "Shop Collection",
             "button_link": "shopify://collections/food-shaped-sex-toys",
