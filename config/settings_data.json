@@ -45,6 +45,7 @@
     "show_product_rating": false,
     "product_color_display": "swatch",
     "product_image_size": "square",
+    "seo_reviews_limit": 40,
     "cart_type": "message",
     "cart_show_free_shipping_threshold": true,
     "cart_free_shipping_threshold": "135",
