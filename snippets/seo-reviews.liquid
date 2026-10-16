@@ -1,15 +1,17 @@
 {%- comment -%}
   Server-rendered product reviews from metafield custom.seo_reviews (JSON array).
   Hidden from UI (Growave widget stays visible); present in HTML source for crawlers/LLMs.
+  Limit: Theme settings → SEO Reviews → seo_reviews_limit
 
   Expected item shape:
   { "rating": 5, "title": "...", "body": "...", "author": "...", "date": "YYYY-MM-DD" }
 {%- endcomment -%}
 
 {%- assign seo_reviews = product.metafields.custom.seo_reviews.value -%}
-{%- if seo_reviews != blank -%}
+{%- assign seo_reviews_limit = settings.seo_reviews_limit | default: 10 -%}
+{%- if seo_reviews != blank and seo_reviews_limit > 0 -%}
   <section class="seo-reviews visually-hidden" aria-hidden="true">
-    {%- for review in seo_reviews limit: 5 -%}
+    {%- for review in seo_reviews limit: seo_reviews_limit -%}
       {%- if review.body != blank -%}
         <article>
           {%- if review.title != blank -%}

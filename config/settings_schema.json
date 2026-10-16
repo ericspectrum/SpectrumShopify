@@ -486,6 +486,25 @@
     ]
   },
   {
+    "name": "SEO Reviews",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Server-rendered reviews from the product metafield custom.seo_reviews (for crawlers/LLMs). The Growave widget is unchanged for shoppers."
+      },
+      {
+        "type": "range",
+        "id": "seo_reviews_limit",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "label": "Max reviews in page source",
+        "info": "Caps how many reviews from the metafield are printed in HTML. Keep modest (e.g. 10) to avoid heavy pages. Import should ideally store the same N or fewer.",
+        "default": 10
+      }
+    ]
+  },
+  {
     "name": "Cart",
     "settings": [
       {
