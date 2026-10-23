@@ -263,23 +263,48 @@ $('.product_slider_c').slick({
     }
   }
 
-  // Growave "See all reviews": switch to Reviews tab if needed, then scroll
+  // Growave "See all reviews": if Reviews tab is hidden, open it and scroll ourselves
+  // (Growave scroll no-ops when the main widget sits in display:none)
   document.addEventListener("click", function (e) {
-    var btn = e.target.closest(".gw-rv-average__tooltip-btn");
+    var btn = null;
+    var path = typeof e.composedPath === "function" ? e.composedPath() : [];
+    for (var i = 0; i < path.length; i++) {
+      var el = path[i];
+      if (el && el.classList && el.classList.contains("gw-rv-average__tooltip-btn")) {
+        btn = el;
+        break;
+      }
+    }
+    if (!btn && e.target && e.target.closest) {
+      btn = e.target.closest(".gw-rv-average__tooltip-btn");
+    }
     if (!btn) return;
 
     var reviewsTab = document.getElementById("tab-reviews");
     if (!reviewsTab) return;
 
-    if (!reviewsTab.classList.contains("active")) {
-      openProductTab(null, "tab-reviews");
-    }
+    var isHidden = !reviewsTab.classList.contains("active") || getComputedStyle(reviewsTab).display === "none";
+    if (!isHidden) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    openProductTab(null, "tab-reviews");
+
+    var scrollToReviews = function () {
+      var target =
+        document.querySelector("#tab-reviews .gw-rv-main-widget") ||
+        document.querySelector("#tab-reviews .gw-rv-main-widget-placeholder") ||
+        document.querySelector(".product_custom_tab_section") ||
+        reviewsTab;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
 
     requestAnimationFrame(function () {
-      var target = document.querySelector(".product_custom_tab_section") || reviewsTab;
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToReviews();
+      setTimeout(scrollToReviews, 350);
     });
-  });
+  }, true);
   </script>
 
 
