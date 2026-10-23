@@ -462,13 +462,13 @@
   <div class="product_custom_tab_section">
 
   <div class="tab">
-  <button class="tablinks  active" onclick="openCity(event, 'London')">{{ block.settings.tab_head1 }}</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">{{ block.settings.tab_head2 }}</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">{{ block.settings.tab_head3 }}</button>
+  <button class="tablinks active" data-tab="tab-description" onclick="openProductTab(event, 'tab-description')">{{ block.settings.tab_head1 }}</button>
+  <button class="tablinks" data-tab="tab-reviews" onclick="openProductTab(event, 'tab-reviews')">{{ block.settings.tab_head2 }}</button>
+  <button class="tablinks" data-tab="tab-additional" onclick="openProductTab(event, 'tab-additional')">{{ block.settings.tab_head3 }}</button>
 </div>
 
 <!-- Tab content -->
-<div id="London" class="tabcontent  active" style="display: block;">
+<div id="tab-description" class="tabcontent active" style="display: block;">
   {{ product.description }}
   {% comment %}
   <!-- {{ block.settings.tab_cont1 }} -->
@@ -478,7 +478,7 @@
           {%- endif -%}    
 </div>
 
-<div id="Paris" class="tabcontent">
+<div id="tab-reviews" class="tabcontent">
   {%- render 'seo-reviews', product: product -%}
 
   <div class="gw-rv-main-widget-placeholder" style="display: block" data-product_id="{{ product.id }}"></div>
@@ -493,7 +493,7 @@
   {% endcomment %}
 </div>
 
-<div id="Tokyo" class="tabcontent">
+<div id="tab-additional" class="tabcontent">
   {{ block.settings.tab_cont3 }}
 </div>
     

@@ -235,24 +235,51 @@ $('.product_slider_c').slick({
 </script>  
 
   <script>
+  function openProductTab(evt, tabId) {
+    var i, tabcontent, tablinks, tab;
 
-  function openCity(evt, cityName) {
- 
-  var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+      tabcontent[i].classList.remove("active");
+    }
 
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+
+    tab = document.getElementById(tabId);
+    if (tab) {
+      tab.style.display = "block";
+      tab.classList.add("active");
+    }
+
+    if (evt && evt.currentTarget) {
+      evt.currentTarget.classList.add("active");
+    } else {
+      var tabBtn = document.querySelector('.tablinks[data-tab="' + tabId + '"]');
+      if (tabBtn) tabBtn.classList.add("active");
+    }
   }
 
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+  // Growave "See all reviews": switch to Reviews tab if needed, then scroll
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".gw-rv-average__tooltip-btn");
+    if (!btn) return;
 
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+    var reviewsTab = document.getElementById("tab-reviews");
+    if (!reviewsTab) return;
+
+    if (!reviewsTab.classList.contains("active")) {
+      openProductTab(null, "tab-reviews");
+    }
+
+    requestAnimationFrame(function () {
+      var target = document.querySelector(".product_custom_tab_section") || reviewsTab;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
   </script>
 
 
