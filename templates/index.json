@@ -25,6 +25,16 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
+        "column_GTnPky": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Creature_Cocks_on_Sale_at_Spectrum_Boutique.png",
+            "heading": "XR Brands",
+            "description": "Save on fantasy sex toys & BDSM gear with 30% off XR Brands (including Creature Cocks and the Banana Split Dildo)! Use code: SPOOKY30",
+            "link": "shopify://collections/xr-brands",
+            "button_text": "Shop XR"
+          }
+        },
         "column_6WDJMC": {
           "type": "column",
           "settings": {
@@ -47,6 +57,7 @@
         },
         "column_LciBjT": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Solo_Sex_Magic.png",
             "heading": "Solo Sex Magic",
@@ -57,6 +68,7 @@
         }
       },
       "block_order": [
+        "column_GTnPky",
         "column_6WDJMC",
         "column_nNiD4c",
         "column_LciBjT"
