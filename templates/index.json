@@ -40,20 +40,10 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/BDSM_IMAGE_ONLY_117fad4f-6999-4f2f-82a8-5e011cfc92f5.png",
-            "heading": "Kinktober",
-            "description": "Celebrate Kinktober with us! Take 20% all BDSM items thru the end of October. Use code: KINKTOBER",
+            "heading": "BDSM",
+            "description": "From bondage to role play, impact play, to medical play, and everything in between, there’s so much to explore in our BDSM collection!",
             "link": "shopify://collections/bdsm-toys-bondage",
             "button_text": "Shop BDSM"
-          }
-        },
-        "column_nNiD4c": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Shots_Sex_Toys_Sale_at_Spectrum_Boutique.png",
-            "heading": "Shots",
-            "description": "Take 30% off all Shots sex toys thru October and get to know one of our favorite, most unique sex toy brands! Use code: BestShot",
-            "link": "shopify://collections/shots-sex-toys",
-            "button_text": "Shop Shots"
           }
         },
         "column_LciBjT": {
@@ -65,13 +55,23 @@
             "link": "shopify://blogs/spectrum-journal/solo-sex-magic",
             "button_text": "Read Blog"
           }
+        },
+        "column_nNiD4c": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Shots_Sex_Toys_Sale_at_Spectrum_Boutique.png",
+            "heading": "Shots",
+            "description": "Take 30% off all Shots sex toys thru October and get to know one of our favorite, most unique sex toy brands! Use code: BestShot",
+            "link": "shopify://collections/shots-sex-toys",
+            "button_text": "Shop Shots"
+          }
         }
       },
       "block_order": [
         "column_GTnPky",
         "column_6WDJMC",
-        "column_nNiD4c",
-        "column_LciBjT"
+        "column_LciBjT",
+        "column_nNiD4c"
       ],
       "settings": {
         "image": "shopify://shop_images/Blush_Sex_Toys_at_Spectrum_Boutique.png",
