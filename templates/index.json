@@ -27,6 +27,7 @@
       "blocks": {
         "column_GTnPky": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Creature_Cocks_on_Sale_at_Spectrum_Boutique.png",
             "heading": "XR Brands",
@@ -57,7 +58,6 @@
         },
         "column_LciBjT": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Solo_Sex_Magic.png",
             "heading": "Solo Sex Magic",
