@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Creature_Cocks_Sale_at_Spectrum_Boutique_1.png",
-        "text": "Fantasy Sex Toys",
-        "phag": "<p>Shop our selection of fantasy creature-shaped dildos, grinding pads, strokers, vibrators, and more fantasy-inspired sex toys.</p>",
+        "image": "shopify://shop_images/Dame_Sale_at_Spectrum_Boutique.png",
+        "text": "Dame Products",
+        "phag": "<p>Dame is creating a world where wellness is a pleasure! Explore your pleasure this month with 20% off all Dame sex toys.</p><p><strong>Use code: DAME20</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Fantasy",
-        "link": "shopify://collections/fantasy-shaped-toys"
+        "link-text": "Shop Dame",
+        "link": "shopify://collections/dame-products"
       }
     },
     "custom_multi_column_section_NTjk4K": {
