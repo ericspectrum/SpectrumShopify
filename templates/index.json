@@ -25,25 +25,14 @@
     "custom_multi_column_section_NTjk4K": {
       "type": "Custom_MultiColumn_Section",
       "blocks": {
-        "column_GTnPky": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Creature_Cocks_on_Sale_at_Spectrum_Boutique.png",
-            "heading": "XR Brands",
-            "description": "Save on fantasy sex toys & BDSM gear with 30% off XR Brands (including Creature Cocks and the Banana Split Dildo)! Use code: SPOOKY30",
-            "link": "shopify://collections/xr-brands",
-            "button_text": "Shop XR"
-          }
-        },
         "column_6WDJMC": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/BDSM_IMAGE_ONLY_117fad4f-6999-4f2f-82a8-5e011cfc92f5.png",
-            "heading": "BDSM",
-            "description": "From bondage to role play, impact play, to medical play, and everything in between, there’s so much to explore in our BDSM collection!",
-            "link": "shopify://collections/bdsm-toys-bondage",
-            "button_text": "Shop BDSM"
+            "image": "shopify://shop_images/PIPEDREAM_AND_PDX_ON_SALE_AT_SPECTRUM_BOUTIQUE.png",
+            "heading": "Pipedream",
+            "description": "Take 25% off all Pipedream and PDX sex toys with code: DREAM25 thru November and explore these classic sex toys.",
+            "link": "shopify://collections/pipedream",
+            "button_text": "Shop Pipedream"
           }
         },
         "column_LciBjT": {
@@ -68,7 +57,6 @@
         }
       },
       "block_order": [
-        "column_GTnPky",
         "column_6WDJMC",
         "column_LciBjT",
         "column_nNiD4c"
