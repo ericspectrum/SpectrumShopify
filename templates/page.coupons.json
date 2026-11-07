@@ -50,14 +50,13 @@
     },
     "rich_text_wdiPDT": {
       "type": "rich-text",
-      "disabled": true,
       "settings": {
         "show_socialIcon": false,
         "subheading": "",
-        "title": "dame25",
-        "content": "<p>Get your tricks and your treats with 20% off sitewide. Don't miss our sex toy sale ending Sunday!&nbsp;</p><p><strong>Use code: HALLOWEEKEND</strong></p><p><em>Terms: Offer ends 11/1/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items. Excludes all We-Vibe and Womanizer items.</em></p>",
-        "button_text": "Apply halloweekend",
-        "button_link": "https://spectrumboutique.com/discount/HALLOWEEKEND?redirect=%2Fcollections%2Fall",
+        "title": "dream25",
+        "content": "<p>Take 25% off all Pipedream and PDX sex toys with code: DREAM25 thru November and explore these classic sex toys.</p><p><strong>Use code: DREAM25</strong></p><p><em>Terms: Offer ends 11/30/26 at 11:59pm ET. Cannot be combined with other promotions or used on already discounted items.</em></p>",
+        "button_text": "Apply DREAM25",
+        "button_link": "https://spectrumboutique.com/discount/DREAM25?redirect=%2Fcollections%2Fpipedream",
         "background_type": "full_width",
         "text_width": "medium",
         "text_position": "center",
