@@ -90,6 +90,11 @@
         "type": "shopify://apps/intelligems-a-b-testing/blocks/intelligems-script/fa83b64c-0c77-4c0c-b4b2-b94b42f5ef19",
         "disabled": false,
         "settings": {}
+      },
+      "9216205709425313739": {
+        "type": "shopify://apps/kx-ai-collections/blocks/kimonix-merch-utils/019d29cf-e108-7d99-ad0d-3da0f2b408e1",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
