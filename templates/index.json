@@ -15,11 +15,11 @@
       "settings": {
         "image": "shopify://shop_images/Pride_Sitewide_Sale.png",
         "text": "Early Bird Sale",
-        "phag": "<p>Lovers List members get 20% off sitewide thru Friday! Excludes We-Vibe and Womanizer.</p><p><strong>Use code: EARLYBIRD26</strong></p><p></p><p><em>Not a member? Join today to access the sale. You must be logged in for your code to work.</em></p>",
+        "phag": "<p>Lovers List members get 20% off sitewide thru Friday! Excludes We-Vibe and Womanizer.</p><p><strong>Use code: EARLYBIRD26</strong></p><p></p><p><em>Not a member? </em><a href=\"https://spectrumboutique.com/account/register\" title=\"https://spectrumboutique.com/account/register\"><em><strong>Join today</strong></em></a><em> to access the sale. You must be logged in for your code to work.</em></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Join Today",
-        "link": "https://spectrumboutique.com/account/register"
+        "link-text": "Shop All Toys",
+        "link": "shopify://collections/all"
       }
     },
     "custom_multi_column_section_NTjk4K": {
