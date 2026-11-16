@@ -1,1 +1,36 @@
-{"sections":{"main":{"type":"main-customers-account","blocks":{"orders":{"type":"orders","settings":{}}},"block_order":["orders"],"settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-customers-account",
+      "blocks": {
+        "liquid_XhNCTW": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div\n    class=\"gw-rd-popup-root-widget-placeholder\"\n    data-gw-widget-shadow-root-enabled=\"true\"\n    style=\"display: block\"\n></div>"
+          }
+        },
+        "orders": {
+          "type": "orders",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "liquid_XhNCTW",
+        "orders"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

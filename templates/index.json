@@ -540,6 +540,13 @@
         "include_horizontal_margins": true,
         "include_vertical_margins": true
       }
+    },
+    "1794796003b20aed59": {
+      "type": "apps",
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
     }
   },
   "order": [
@@ -553,6 +560,7 @@
     "custom_image_with_text_MxRmkc",
     "custom_image_with_text_7dPxrD",
     "1736915607329b1acb",
-    "1736916130c9216525"
+    "1736916130c9216525",
+    "1794796003b20aed59"
   ]
 }
