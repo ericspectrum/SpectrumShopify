@@ -547,6 +547,26 @@
         "include_horizontal_margins": true,
         "include_vertical_margins": true
       }
+    },
+    "17947972337a536cc8": {
+      "type": "apps",
+      "blocks": {
+        "growave_loyalty_wishlist_v2_rewards_loyalty_info_widget_rDfLef": {
+          "type": "shopify://apps/growave-loyalty-wishlist/blocks/v2.rewards.loyaltyInfoWidget/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
+          "settings": {
+            "widget_version": "v2",
+            "custom_redeem_link": "",
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "growave_loyalty_wishlist_v2_rewards_loyalty_info_widget_rDfLef"
+      ],
+      "settings": {
+        "include_horizontal_margins": true,
+        "include_vertical_margins": true
+      }
     }
   },
   "order": [
@@ -561,6 +581,7 @@
     "custom_image_with_text_7dPxrD",
     "1736915607329b1acb",
     "1736916130c9216525",
-    "1794796003b20aed59"
+    "1794796003b20aed59",
+    "17947972337a536cc8"
   ]
 }
