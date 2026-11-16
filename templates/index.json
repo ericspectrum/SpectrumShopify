@@ -15,7 +15,7 @@
       "settings": {
         "image": "shopify://shop_images/Pride_Sitewide_Sale.png",
         "text": "Early Bird Sale",
-        "phag": "<p>Lovers List members get 20% off sitewide thru Friday! Excludes We-Vibe and Womanizer.</p><p><strong>Use code: EARLYBIRD26</strong></p><p><strong>-</strong></p><p><em>Not a member? Join today to access the sale. You must be logged in for your code to work.</em></p>",
+        "phag": "<p>Lovers List members get 20% off sitewide thru Friday! Excludes We-Vibe and Womanizer.</p><p><strong>Use code: EARLYBIRD26</strong></p><p></p><p><em>Not a member? Join today to access the sale. You must be logged in for your code to work.</em></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
         "link-text": "Join Today",
