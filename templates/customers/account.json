@@ -12,20 +12,20 @@
     "main": {
       "type": "main-customers-account",
       "blocks": {
+        "orders": {
+          "type": "orders",
+          "settings": {}
+        },
         "liquid_XhNCTW": {
           "type": "liquid",
           "settings": {
             "liquid": "<div\n    class=\"gw-rd-popup-root-widget-placeholder\"\n    data-gw-widget-shadow-root-enabled=\"true\"\n    style=\"display: block\"\n></div>"
           }
-        },
-        "orders": {
-          "type": "orders",
-          "settings": {}
         }
       },
       "block_order": [
-        "liquid_XhNCTW",
-        "orders"
+        "orders",
+        "liquid_XhNCTW"
       ],
       "settings": {}
     }
