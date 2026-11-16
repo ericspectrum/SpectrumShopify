@@ -29,6 +29,16 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/PIPEDREAM_AND_PDX_ON_SALE_AT_SPECTRUM_BOUTIQUE.png",
+            "heading": "Dame",
+            "description": "Dame is creating a world where wellness is a pleasure! Explore your pleasure with 20% off all Dame sex toys.\n\nUse code: DAME20",
+            "link": "shopify://collections/dame-products",
+            "button_text": "Shop Dame"
+          }
+        },
+        "column_Dmp3qE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PIPEDREAM_AND_PDX_ON_SALE_AT_SPECTRUM_BOUTIQUE.png",
             "heading": "Pipedream",
             "description": "Take 25% off all Pipedream and PDX sex toys with code: DREAM25 thru November and explore these classic sex toys.",
             "link": "shopify://collections/pipedream",
@@ -58,6 +68,7 @@
       },
       "block_order": [
         "column_6WDJMC",
+        "column_Dmp3qE",
         "column_LciBjT",
         "column_nNiD4c"
       ],
