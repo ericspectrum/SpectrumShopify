@@ -80,7 +80,7 @@
         {%- endif -%}
 
         <li class="cstm_mobile-nav-tab mobile-nav__item {{ nav_cta_class }}" data-level="1">
-          {%- if link.links.size > 0 or mega_menu_images != blank -%}
+          {%- if link.links.size > 0 -%}
             <div class="custom_btn_mobilemenu">
               <a href="{{ link.url }}" class="custom_btn_mobilemenu_firstbtn mobile-nav__link {% if settings.heading_text_transform == 'uppercase' %}h6{% else %}h5{% endif %}">
                 {{- link.title -}}
@@ -114,13 +114,6 @@
                 </ul>
               {%- endif -%}
 
-              {%- if mega_menu_images != blank -%}
-                <div class="mobile-nav__images-wrapper {% if images_count >= 3 %}mobile-nav__images-wrapper--tight{% endif %} hide-scrollbar">
-                  <div class="mobile-nav__images-scroller">
-                    {{- mega_menu_images -}}
-                  </div>
-                </div>
-              {%- endif -%}
             </collapsible-content>
           {%- else -%}
             <div class="cstm_menu_item {% if nav_cta_class != blank %}cstm_menu_item--cta{% endif %}">
