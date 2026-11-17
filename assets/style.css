@@ -755,9 +755,9 @@ a,p,span,button{
 
 .mega-menu .mega-menu__inner .mega-menu__columns-wrapper .mega-menu__column .mega-menu__title {
   margin: 0;
-  font-family: Lausanne, sans-serif !important;
+  font-family: 'Lausanne_semibold', Lausanne, sans-serif !important;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700 !important;
   color: #00B9E2;
   border-bottom: 1px solid rgba(0, 185, 226, 0.18);
   padding-bottom: 8px;
