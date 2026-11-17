@@ -73,7 +73,7 @@
         "mega_menu_MhkBnx": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Sale",
+            "menu_item": "",
             "images_position": "right",
             "image_1_heading": "",
             "image_1_text": "",
@@ -98,7 +98,7 @@
         "mega_menu_hP8niL": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Anal Play",
+            "menu_item": "Toys",
             "images_position": "right",
             "image_1": "shopify://shop_images/inbloom_rosales_rose_sucking_vibrator_main_lilac_spectrum_boutique_copy.png",
             "image_1_heading": "InBloom Rosales",
@@ -128,7 +128,7 @@
         "mega_menu_Fg9b7G": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Strap-Ons & Harnesses",
+            "menu_item": "",
             "images_position": "right",
             "image_1_heading": "",
             "image_1_text": "",
@@ -153,7 +153,7 @@
         "mega_menu_DwxAXB": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Vibrators & Clitoral Toys",
+            "menu_item": "Vibrators",
             "images_position": "right",
             "image_1": "shopify://shop_images/d884822c576bb912de264d95dfb5f5fca08b4cd819d0ff4b33690056fe573288_071d1296-7a90-42d5-a682-5d9c2c2f2b6f.jpg",
             "image_1_heading": "Rechargeable Magic Wand ",
@@ -214,7 +214,7 @@
         "mega_menu_4LF7JR": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Penis Toys & Masturbators",
+            "menu_item": "",
             "images_position": "right",
             "image_1_heading": "",
             "image_1_text": "",
@@ -239,7 +239,7 @@
         "mega_menu_VA7D8W": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "BDSM & Bondage",
+            "menu_item": "BDSM",
             "images_position": "right",
             "image_1": "shopify://shop_images/36b57920ed2244b2d80c2e5b235f30edd55ff70d1063ea7fd18033448bde9a53_a610fb9b-9ae7-460d-986d-01d0e2a62690.jpg",
             "image_1_heading": "Zoe Ligon X The Stockroom Wrist Cuffs",
@@ -267,7 +267,7 @@
         "mega_menu_nzmjR6": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Brands",
+            "menu_item": "",
             "images_position": "right",
             "image_1_heading": "",
             "image_1_text": "",
@@ -292,7 +292,7 @@
         "mega_menu_xcfAEA": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Lube & Care",
+            "menu_item": "Wellness",
             "images_position": "right",
             "image_1": "shopify://shop_images/1461d262141f429957262882eb73621aea5939b1604a39dedbbd6a7b5736d5ee_92c068f3-6939-4afd-9942-bc8cf30286d3.jpg",
             "image_1_heading": "Sliquid H2O Water Based Lube",
@@ -320,7 +320,7 @@
         "mega_menu_aFcggA": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Lingerie & Wearables",
+            "menu_item": "Apparel & Accessories",
             "images_position": "right",
             "image_1": "shopify://shop_images/RE_2.png",
             "image_1_heading": "Sex Talk Couples Card Game",
@@ -348,7 +348,7 @@
         "mega_menu_a9xfg3": {
           "type": "mega_menu",
           "settings": {
-            "menu_item": "Learn",
+            "menu_item": "Education",
             "images_position": "right",
             "image_1": "shopify://shop_images/RE_4.png",
             "image_1_heading": "Carnal Knowledge: Sex Education You Didn't Get In School",
@@ -392,10 +392,10 @@
         "logo": "shopify://shop_images/Group_1.png",
         "logo_max_width": 140,
         "mobile_logo_max_width": 130,
-        "navigation_menu": "main-menu",
+        "navigation_menu": "test-main-menu",
         "sidebar_navigation_menu": "",
-        "mobile_button_2_label": "",
-        "mobile_button_2_link": "",
+        "mobile_button_2_label": "Sale",
+        "mobile_button_2_link": "shopify://collections/sale",
         "mobile_button_2_style": "outlined",
         "mobile_button_2_text_color": "",
         "header_layout": "logo_left_navigation_center",
