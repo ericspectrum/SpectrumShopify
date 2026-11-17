@@ -570,19 +570,20 @@ a,p,span,button{
 .header__linklist .header__linklist-item:not(:last-child),
 .header .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child),
 .shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {
-  margin-inline-end: 10px;
+  margin-inline-end: 28px;
 }
 
 .header__linklist-link {
   font-family: 'Lausanne', sans-serif;
   font-size: 14px;
   letter-spacing: 0.01em;
+  color: #00B9E2;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .header__linklist-item .nv_cstmIcon {
   display: inline-flex;
-  margin-inline-start: 4px;
+  margin-inline-start: 6px;
   opacity: 0.55;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -653,6 +654,9 @@ a,p,span,button{
 }
 
 .header__linklist .header__linklist-item .mega-menu .mega-menu__inner {
+  justify-content: start;
+  align-items: start;
+  width: 100%;
   padding-top: 28px;
   padding-bottom: 32px;
   max-height: min(70vh, 560px);
@@ -662,12 +666,27 @@ a,p,span,button{
   scrollbar-color: rgba(0, 185, 226, 0.35) transparent;
 }
 
+/* Columns left (logo-aligned via .container); cards take the rest */
+.mega-menu .mega-menu__inner:has(> .mega-menu__columns-wrapper + .mega-menu__images-wrapper) {
+  grid-template-columns: max-content minmax(0, 1fr);
+}
+
+.mega-menu .mega-menu__inner:has(> .mega-menu__images-wrapper + .mega-menu__columns-wrapper) {
+  grid-template-columns: minmax(0, 1fr) max-content;
+}
+
 .mega-menu .mega-menu__inner .mega-menu__columns-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
   gap: 20px 28px;
   margin: 0;
   width: 100%;
+}
+
+.mega-menu .mega-menu__inner:has(.mega-menu__images-wrapper) .mega-menu__columns-wrapper {
+  width: max-content;
+  max-width: min(420px, 38vw);
+  grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
 }
 
 .mega-menu .mega-menu__inner .mega-menu__columns-wrapper .mega-menu__column {
@@ -685,14 +704,14 @@ a,p,span,button{
   font-family: Lausanne, sans-serif !important;
   font-size: 15px;
   font-weight: 600;
-  color: #39153C;
-  border-bottom: 1px solid rgba(57, 21, 60, 0.12);
+  color: #00B9E2;
+  border-bottom: 1px solid rgba(0, 185, 226, 0.18);
   padding-bottom: 8px;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .mega-menu .mega-menu__inner .mega-menu__columns-wrapper .mega-menu__column .mega-menu__title:hover {
-  color: #00B9E2;
+  opacity: 0.75;
 }
 
 /* Leaf-only columns (title without nested list) read as grid links */
@@ -726,16 +745,30 @@ a,p,span,button{
 
 .mega-menu .mega-menu__images-wrapper {
   gap: 16px;
+  width: 100%;
+  min-width: 0;
+  grid-auto-columns: minmax(140px, 1fr);
+  align-items: start;
 }
 
 .mega-menu__image-push {
+  width: auto;
+  min-width: 0;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.25s ease;
 }
 
+.mega-menu__image-push:only-child {
+  width: min(100%, 320px);
+}
+
 .mega-menu__image-push:hover {
   transform: translateY(-2px);
+}
+
+.mega-menu__image-wrapper {
+  margin-block-end: 12px;
 }
 
 .nav-dropdown {
@@ -851,7 +884,7 @@ a,p,span,button{
 .btn-link-inline { gap: 7px; width: 70%;}
 .image-with-text .image-with-text__wrapper .image-with-text__content .ib-small-text {  font-size: 42px;}
 .ib-padd1 .image-with-text .image-with-text__content-wrapper { width: 45%;}  
-.header .header__inline-navigation .header__linklist  .header__linklist-item:not(:last-child) {  margin-inline-end: 25px;}
+.header .header__inline-navigation .header__linklist  .header__linklist-item:not(:last-child) {  margin-inline-end: 22px;}
 .shopify-section--header .header__wrapper .header__inline-navigation .header__linklist {  justify-content: center;}
 /* .header .header__icon-list {  gap: 10px;} */
 .template-collection .shopify-section--collection-banner .container{ padding : 0 40px;}
@@ -866,7 +899,7 @@ a,p,span,button{
 @media only screen and (max-width: 1280px){
 
 .shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist {   justify-content: center;}
-.shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {   margin-inline-end: 20px;}
+.shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {   margin-inline-end: 16px;}
 
   
 }
