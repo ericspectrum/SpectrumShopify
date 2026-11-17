@@ -560,27 +560,10 @@ a,p,span,button{
 
 /*  =================================        Menu (alt nav concept)           ================================*/
 
-.header__wrapper {
-  gap: 16px;
-}
-
 .header__inline-navigation {
-  flex: 1 1 auto !important;
   min-width: 0;
   max-width: 100%;
   overflow: hidden;
-}
-
-.header__logo {
-  flex: 0 0 auto;
-}
-
-.header__secondary-links {
-  flex: 0 0 auto !important;
-  position: relative;
-  z-index: 3;
-  background: #FAF7F4;
-  padding-inline-start: 8px;
 }
 
 .header__inline-navigation .header__linklist {
