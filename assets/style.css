@@ -562,15 +562,21 @@ a,p,span,button{
 
 .header__inline-navigation .header__linklist {
   align-items: center;
-  flex-wrap: wrap;
-  row-gap: 8px;
+  flex-wrap: nowrap;
   column-gap: 0;
 }
 
 .header__linklist .header__linklist-item:not(:last-child),
 .header .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child),
 .shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {
-  margin-inline-end: 28px;
+  margin-inline-end: 14px;
+}
+
+@media screen and (min-width: 1750px) {
+  .header__linklist-item:not(:last-child),
+  .shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {
+    margin-inline-end: 18px !important;
+  }
 }
 
 .header__linklist-link {
@@ -603,7 +609,7 @@ a,p,span,button{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 40px;
   border: 1.5px solid transparent;
   font-weight: 600 !important;
@@ -747,20 +753,24 @@ a,p,span,button{
   gap: 16px;
   width: 100%;
   min-width: 0;
-  grid-auto-columns: minmax(140px, 1fr);
+  justify-content: start;
+  justify-items: start;
+  grid-auto-flow: column;
+  grid-auto-columns: 160px;
   align-items: start;
 }
 
 .mega-menu__image-push {
-  width: auto;
-  min-width: 0;
+  width: 160px;
+  max-width: 160px;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.25s ease;
 }
 
 .mega-menu__image-push:only-child {
-  width: min(100%, 320px);
+  width: 200px;
+  max-width: 200px;
 }
 
 .mega-menu__image-push:hover {
@@ -769,6 +779,18 @@ a,p,span,button{
 
 .mega-menu__image-wrapper {
   margin-block-end: 12px;
+}
+
+@media screen and (min-width: 1400px) {
+  .mega-menu .mega-menu__images-wrapper {
+    gap: 20px;
+    grid-auto-columns: 168px;
+  }
+
+  .mega-menu__image-push {
+    width: 168px;
+    max-width: 168px;
+  }
 }
 
 .nav-dropdown {
@@ -884,7 +906,7 @@ a,p,span,button{
 .btn-link-inline { gap: 7px; width: 70%;}
 .image-with-text .image-with-text__wrapper .image-with-text__content .ib-small-text {  font-size: 42px;}
 .ib-padd1 .image-with-text .image-with-text__content-wrapper { width: 45%;}  
-.header .header__inline-navigation .header__linklist  .header__linklist-item:not(:last-child) {  margin-inline-end: 22px;}
+.header .header__inline-navigation .header__linklist  .header__linklist-item:not(:last-child) {  margin-inline-end: 12px;}
 .shopify-section--header .header__wrapper .header__inline-navigation .header__linklist {  justify-content: center;}
 /* .header .header__icon-list {  gap: 10px;} */
 .template-collection .shopify-section--collection-banner .container{ padding : 0 40px;}
@@ -899,7 +921,7 @@ a,p,span,button{
 @media only screen and (max-width: 1280px){
 
 .shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist {   justify-content: center;}
-.shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {   margin-inline-end: 16px;}
+.shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {   margin-inline-end: 10px;}
 
   
 }
