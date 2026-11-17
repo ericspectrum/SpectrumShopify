@@ -580,23 +580,71 @@ a,p,span,button{
 }
 
 .header__linklist-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-family: 'Lausanne', sans-serif;
   font-size: 14px;
   letter-spacing: 0.01em;
   color: #00B9E2;
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  padding-block: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* One interactive unit: underline spans label + chevron */
+.header__linklist-item:not(.header__linklist-item--cta) .header__linklist-link--dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.22s ease;
+  pointer-events: none;
+}
+
+.header__linklist-item:not(.header__linklist-item--cta) .header__linklist-link--dropdown:hover::after,
+.header__linklist-item:not(.header__linklist-item--cta) .header__linklist-link--dropdown:focus-visible::after,
+.header__linklist-item:not(.header__linklist-item--cta) .header__linklist-link--dropdown[aria-expanded="true"]::after {
+  transform: scaleX(1);
+}
+
+.header__linklist-label {
+  display: inline-block;
 }
 
 .header__linklist-item .nv_cstmIcon {
   display: inline-flex;
-  margin-inline-start: 6px;
-  opacity: 0.55;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  opacity: 0.85;
+  transform-origin: center;
+  transition: transform 0.22s ease, opacity 0.2s ease;
+}
+
+.header__linklist-item .nv_cstmIcon svg {
+  width: 9px;
+  height: 7px;
+  display: block;
 }
 
 .header__linklist-item.has-dropdown:hover .nv_cstmIcon,
 .header__linklist-item.has-dropdown:focus-within .nv_cstmIcon {
   opacity: 1;
+}
+
+.header__linklist-link--dropdown[aria-expanded="true"] .nv_cstmIcon {
+  opacity: 1;
+  transform: rotate(180deg);
 }
 
 /* Desktop CTA pills: New Arrivals / Best Sellers / Sale */
