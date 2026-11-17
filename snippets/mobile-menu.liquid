@@ -82,26 +82,20 @@
         <li class="cstm_mobile-nav-tab mobile-nav__item {{ nav_cta_class }}" data-level="1">
           {%- if link.links.size > 0 or mega_menu_images != blank -%}
             <div class="custom_btn_mobilemenu">
-            <button class="custom_btn_mobilemenu_firstbtn mobile-nav__link  {% if settings.heading_text_transform == 'uppercase' %}h6{% else %}h5{% endif %}" aria-controls="mobile-menu-{{ forloop.index }}" aria-expanded="false">
-              <a class="" href={{ link.url }}>
-              {{- link.title -}}
-                </a>
-              <button is="toggle-button" class="mobile-nav__link {% if settings.heading_text_transform == 'uppercase' %}h6{% else %}h5{% endif %}" aria-controls="mobile-menu-{{ forloop.index }}" aria-expanded="false">
-                <span   class="animated-plus"></span>
+              <a href="{{ link.url }}" class="custom_btn_mobilemenu_firstbtn mobile-nav__link {% if settings.heading_text_transform == 'uppercase' %}h6{% else %}h5{% endif %}">
+                {{- link.title -}}
+              </a>
+              <button type="button" is="toggle-button" class="mobile-nav__toggle" aria-controls="mobile-menu-{{ forloop.index }}" aria-expanded="false" aria-label="{{ link.title | escape }}">
+                <span class="animated-plus" aria-hidden="true"></span>
               </button>
-              
-            </button>
-             </div>
+            </div>
             <collapsible-content id="mobile-menu-{{ forloop.index }}" class="collapsible">
               {%- if link.links.size > 0 -%}
                 <ul class="mobile-nav mobile-nav--sub list--unstyled" role="list">
                   {%- for sub_link in link.links -%}
                     <li class="mobile-nav__item" data-level="2">
                       {%- if sub_link.links.size > 0 -%}
-                        <button  class="mobile-nav__link" aria-controls="mobile-menu-{{ forloop.parentloop.index }}-{{ forloop.index }}" aria-expanded="false">
-                        <a href={{ sub_link.url }}>{{- sub_link.title -}}</a>  
-                          <!-- <span class="animated-plus"></span> -->
-                        </button>
+                        <a href="{{ sub_link.url }}" class="mobile-nav__link mobile-nav__link--parent">{{- sub_link.title -}}</a>
 
                         <collapsible-content id="mobile-menu-{{ forloop.parentloop.index }}-{{ forloop.index }}" class="collapsible" open>
                           <ul class="mobile-nav mobile-nav--sub-leaf list--unstyled" role="list">
