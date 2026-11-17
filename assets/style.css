@@ -1280,7 +1280,11 @@ a,p,span,button{
 
 #mobile-menu-drawer .mobile-nav--sub .mobile-nav__link--parent {
   font-weight: 600;
-  padding: 10px 8px 6px;
+  padding: 10px 8px 8px;
+  border-bottom: 1.5px solid rgba(0, 185, 226, 0.28);
+  margin-bottom: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #mobile-menu-drawer .mobile-nav--sub-leaf {
