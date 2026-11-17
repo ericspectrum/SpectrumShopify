@@ -1026,12 +1026,15 @@ a,p,span,button{
   grid-template-columns: 1fr 1fr;
   gap: 8px 10px;
   padding: 4px 0 12px;
-  align-items: start;
+  align-items: stretch;
 }
 
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   min-width: 0;
+  height: 100%;
 }
 
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item:not(:last-child) {
@@ -1042,10 +1045,19 @@ a,p,span,button{
   grid-column: 1 / -1;
 }
 
+#mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item .custom_btn_mobilemenu,
+#mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item > .cstm_menu_item {
+  flex: 1 1 auto;
+  align-self: stretch;
+  min-height: 100%;
+}
+
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item .custom_btn_mobilemenu {
   border-radius: 10px;
   background: rgba(0, 185, 226, 0.06);
   padding-inline-end: 2px;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item .custom_btn_mobilemenu_firstbtn,
@@ -1120,15 +1132,19 @@ a,p,span,button{
 
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item > .cstm_menu_item {
   padding: 0;
-  display: block;
+  display: flex;
   gap: 0;
+  height: 100%;
 }
 
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item:not(.mobile-nav__item--cta) > .cstm_menu_item > .mobile-nav__link {
   border: none !important;
   justify-content: flex-start;
+  align-items: center;
   text-align: start;
   background: rgba(0, 185, 226, 0.06);
+  height: 100%;
+  box-sizing: border-box;
 }
 
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item--cta .cstm_menu_item .mobile-nav__link {
@@ -1138,16 +1154,41 @@ a,p,span,button{
   text-align: center;
 }
 
-/* Expanded branch spans full drawer width so submenu isn't trapped in a half column */
+/* Keep parent in its grid cell on open — no full-row jump */
+#mobile-menu-drawer .mobile-nav--alt:has(> .mobile-nav__item > .collapsible[open]) {
+  align-items: start;
+}
+
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item:has(> .collapsible[open]) {
-  grid-column: 1 / -1;
+  grid-column: auto;
+}
+
+#mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item:has(> .collapsible[open]) .custom_btn_mobilemenu {
+  border-radius: 10px 10px 0 0;
+}
+
+#mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item > .collapsible {
+  margin-inline: 0;
+  background: rgba(0, 185, 226, 0.04);
+  border-radius: 0 0 10px 10px;
+  padding: 4px 6px 8px;
+}
+
+#mobile-menu-drawer .mobile-nav--alt .mobile-nav .mobile-nav {
+  margin-inline: 0;
+  padding-inline-start: 0;
+  margin-block-end: 0 !important;
+}
+
+#mobile-menu-drawer .mobile-nav--alt .mobile-nav .mobile-nav .mobile-nav__item {
+  margin-block-end: 0;
 }
 
 #mobile-menu-drawer .mobile-nav--sub {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px 8px;
-  padding: 8px 0 4px;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 4px 0 0;
 }
 
 #mobile-menu-drawer .mobile-nav--sub > .mobile-nav__item {
@@ -1156,27 +1197,41 @@ a,p,span,button{
 }
 
 #mobile-menu-drawer .mobile-nav--sub > .mobile-nav__item:has(.collapsible) {
-  grid-column: 1 / -1;
+  grid-column: auto;
 }
 
 #mobile-menu-drawer .mobile-nav--sub .mobile-nav__link {
   font-size: 13px;
-  padding: 8px 6px;
+  padding: 7px 6px;
   color: #00B9E2;
   font-family: 'Lausanne', sans-serif;
 }
 
+#mobile-menu-drawer .mobile-nav--sub .mobile-nav__link--parent {
+  font-weight: 600;
+  padding-top: 10px;
+}
+
 #mobile-menu-drawer .mobile-nav--sub-leaf {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 8px;
-  padding: 4px 0 8px;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 0 0 4px;
+  margin-inline: 0 !important;
+  padding-inline-start: 8px !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  border-inline-start: none;
 }
 
 #mobile-menu-drawer .mobile-nav--sub-leaf .mobile-nav__link {
   font-size: 12px;
-  padding: 6px 4px;
+  padding: 5px 4px;
   color: #00B9E2;
+}
+
+#mobile-menu-drawer .mobile-nav--sub-leaf .mobile-nav__item {
+  margin-block-end: 0 !important;
 }
 
 .how_to_use_section_container .content-section-container-custom {  width: 95% !important;  margin: 0 auto; }
