@@ -125,5 +125,15 @@
         {%- endif -%}
       </li>
     {%- endfor -%}
+
+    <li class="header__linklist-item header__linklist-item--more has-dropdown" data-nav-more hidden>
+      <button type="button" class="header__linklist-link header__linklist-link--dropdown" aria-expanded="false" aria-controls="desktop-menu-more" data-nav-more-trigger>
+        <span class="header__linklist-label">More</span>
+        <span class="nv_cstmIcon" aria-hidden="true">
+          {% render 'icon' with 'nav_icon' %}
+        </span>
+      </button>
+      <ul hidden id="desktop-menu-more" class="nav-dropdown nav-dropdown--more list--unstyled" role="list" data-nav-more-list></ul>
+    </li>
   </ul>
 </desktop-navigation>

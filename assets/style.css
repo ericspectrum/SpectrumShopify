@@ -560,9 +560,27 @@ a,p,span,button{
 
 /*  =================================        Menu (alt nav concept)           ================================*/
 
+.header__wrapper {
+  gap: 16px;
+}
+
 .header__inline-navigation {
+  flex: 1 1 auto !important;
   min-width: 0;
+  max-width: 100%;
   overflow: hidden;
+}
+
+.header__logo {
+  flex: 0 0 auto;
+}
+
+.header__secondary-links {
+  flex: 0 0 auto !important;
+  position: relative;
+  z-index: 3;
+  background: #FAF7F4;
+  padding-inline-start: 8px;
 }
 
 .header__inline-navigation .header__linklist {
@@ -571,21 +589,30 @@ a,p,span,button{
   column-gap: 0;
   min-width: 0;
   max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 185, 226, 0.35) transparent;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 2px;
+  width: 100%;
+  overflow: hidden;
 }
 
-.header__inline-navigation .header__linklist::-webkit-scrollbar {
-  height: 3px;
+.header__linklist-item--more {
+  position: relative;
+  flex-shrink: 0;
 }
 
-.header__inline-navigation .header__linklist::-webkit-scrollbar-thumb {
-  background: rgba(0, 185, 226, 0.35);
-  border-radius: 3px;
+.header__linklist-item--more .header__linklist-link {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding-inline: 0;
+}
+
+.header__linklist-item--more .nav-dropdown--more {
+  right: 0;
+  left: auto;
+  min-width: 220px;
+  max-height: min(70vh, 480px);
+  overflow: auto;
 }
 
 .header__linklist .header__linklist-item:not(:last-child),
@@ -1175,7 +1202,7 @@ a,p,span,button{
 #mobile-menu-drawer .mobile-nav--alt > .mobile-nav__item--cta-best .cstm_menu_item .mobile-nav__link {
   background: transparent !important;
   color: #00B9E2 !important;
-  border: 1.5px solid #00B9E2 !important;
+  border: 1px solid #00B9E2 !important;
   border-radius: 40px !important;
   justify-content: center !important;
   text-align: center !important;
