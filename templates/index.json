@@ -13,13 +13,13 @@
       "type": "Custom_Banner_Section",
       "custom_css": [],
       "settings": {
-        "image": "shopify://shop_images/Pride_Sitewide_Sale.png",
-        "text": "Early Bird Sale",
-        "phag": "<p>Lovers List members get 20% off sitewide thru Friday! Excludes We-Vibe and Womanizer.</p><p><strong>Use code: EARLYBIRD26</strong></p><p></p><p><em>Not a member? </em><a href=\"https://spectrumboutique.com/account/register\" title=\"https://spectrumboutique.com/account/register\"><em><strong>Join today</strong></em></a><em> to access the sale. You must be logged in for your code to work.</em></p>",
+        "image": "shopify://shop_images/Dame_Sale_at_Spectrum_Boutique_fa086601-8985-46cd-ba38-9414ee3f45ce.png",
+        "text": "Dame Sale",
+        "phag": "<p>Dame is creating a world where wellness is a pleasure! Explore your pleasure with 20% off all Dame sex toys.<br/><br/><strong>Use code: DAME20</strong></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop All Toys",
-        "link": "shopify://collections/all"
+        "link-text": "Shop Dame",
+        "link": "shopify://collections/dame-products"
       }
     },
     "custom_multi_column_section_NTjk4K": {
@@ -561,19 +561,6 @@
     },
     "17947972337a536cc8": {
       "type": "apps",
-      "blocks": {
-        "growave_loyalty_wishlist_v2_rewards_loyalty_info_widget_rDfLef": {
-          "type": "shopify://apps/growave-loyalty-wishlist/blocks/v2.rewards.loyaltyInfoWidget/b3d2efbe-110a-4e27-84a8-1f2ed63996a4",
-          "settings": {
-            "widget_version": "v2",
-            "custom_redeem_link": "",
-            "custom_css": ""
-          }
-        }
-      },
-      "block_order": [
-        "growave_loyalty_wishlist_v2_rewards_loyalty_info_widget_rDfLef"
-      ],
       "settings": {
         "include_horizontal_margins": true,
         "include_vertical_margins": true
