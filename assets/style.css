@@ -606,19 +606,6 @@ a,p,span,button{
     overflow: visible;
   }
 
-  /* Zero-height flex break between balanced nav rows (inserted by JS) */
-  .shopify-section--header .header__linklist-item--row-break {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-    list-style: none !important;
-  }
-
   .shopify-section--header .header--nav-inline .header__secondary-links,
   .shopify-section--header .header:not(.header--nav-stacked) .header__secondary-links {
     flex: 0 0 auto !important;
