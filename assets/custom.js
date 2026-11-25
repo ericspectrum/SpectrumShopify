@@ -148,9 +148,9 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
  */
 (function initDesktopNavLayout() {
   const MQ = window.matchMedia('(min-width: 1000px)');
-  const SIDE_GAP = 16;
-  const NAV_MARGIN = 12;
-  const WIDTH_BUFFER = 12;
+  const SIDE_GAP = 10;
+  const NAV_MARGIN = 6;
+  const WIDTH_BUFFER = 4;
   let resizeTimer = null;
 
   function getParts() {
