@@ -42,12 +42,25 @@
         "img_right": true
       }
     },
+    "simple_image_with_text_cont_9BfUwj": {
+      "type": "SimpleImageWithText_Cont",
+      "settings": {
+        "img": "shopify://shop_images/Mix_Match_Kit_2.png",
+        "heading": "Made for You Sex Toy Kit",
+        "text": "<p>Get exactly what you want in the perfectly curated sex toy gift kit: the one you build yourself. Make it just so by choosing any 3 sex toys or accessories and get 25% off the whole bundle!</p>",
+        "btnText": "Build Your Own Made for You Kit",
+        "btnText2": "",
+        "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15620",
+        "btnUrl2": "",
+        "img_right": false
+      }
+    },
     "simple_image_with_text_cont_ALiTaQ": {
       "type": "SimpleImageWithText_Cont",
       "settings": {
         "img": "shopify://shop_images/Cheek_to_Cheek_Cover.png",
         "heading": "Cheek-to-Cheek: Anal Play Kit",
-        "text": "<p>The Cheek-to-Cheek Anal Play Kit lets you choose the right douche, anal plug or trainer set, and lube to take your butt play to the next level! Bundle and get 20% off!</p>",
+        "text": "<p>The Cheek-to-Cheek Anal Play Kit lets you choose the right douche, anal plug or trainer set, and lube to take your butt play to the next level! Bundle and get 25% off!</p>",
         "btnText": "Build Your Own Cheek-To-Cheek Bundle",
         "btnText2": "",
         "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15483?ver=3.0",
@@ -60,7 +73,7 @@
       "settings": {
         "img": "shopify://shop_images/Ride_Together_Cover.png",
         "heading": "Ride Together: Strap-On Kit",
-        "text": "<p>Pre-packaged strap-on kits are great, but there's nothing like choosing the perfect fit harness, perfect size dildo, and the lube that works for your bod! Build your own Ride Together kit and get it all for 20% off!</p>",
+        "text": "<p>Pre-packaged strap-on kits are great, but there's nothing like choosing the perfect fit harness, perfect size dildo, and the lube that works for your bod! Build your own Ride Together kit and get it all for 25% off!</p>",
         "btnText": "Build Your Own Ride Together Kit",
         "btnText2": "",
         "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15481?ver=3.0",
@@ -73,23 +86,10 @@
       "settings": {
         "img": "shopify://shop_images/What_s_Your_Fantasy_Kit_1.png",
         "heading": "What's Your Fantasy: BDSM Kit",
-        "text": "<p>Get kinky, your way! Build your own What's Your Fantasy BDSM Kit and get everything you need to layer sensations, bondage, impact, and more. All for 20% off when you bundle.</p>",
+        "text": "<p>Get kinky, your way! Build your own What's Your Fantasy BDSM Kit and get everything you need to layer sensations, bondage, impact, and more. All for 25% off when you bundle.</p>",
         "btnText": "Build Your Own What's Your Fantasy Kit",
         "btnText2": "",
         "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15484?ver=3.0",
-        "btnUrl2": "",
-        "img_right": false
-      }
-    },
-    "simple_image_with_text_cont_9BfUwj": {
-      "type": "SimpleImageWithText_Cont",
-      "settings": {
-        "img": "shopify://shop_images/Mix_Match_Kit_2.png",
-        "heading": "Made for You Sex Toy Kit",
-        "text": "<p>Get exactly what you want in the perfectly curated sex toy gift kit: the one you build yourself. Make it just so by choosing any 3 sex toys or accessories and get 25% off the whole bundle!</p>",
-        "btnText": "Build Your Own Made for You Kit",
-        "btnText2": "",
-        "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15620",
         "btnUrl2": "",
         "img_right": false
       }
@@ -194,10 +194,10 @@
     "simple_image_with_text_dBjpNm",
     "main",
     "simple_image_with_text_cont_HewpnF",
+    "simple_image_with_text_cont_9BfUwj",
     "simple_image_with_text_cont_ALiTaQ",
     "simple_image_with_text_cont_LmhQWe",
     "simple_image_with_text_cont_YjytRd",
-    "simple_image_with_text_cont_9BfUwj",
     "simple_image_with_text_cont_YyyDFX",
     "featured_collections_aKHKC9",
     "custom_featured_collection_x9fkm8"
