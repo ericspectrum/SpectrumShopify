@@ -141,29 +141,102 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 }
 
 /**
- * Desktop nav uses a two-row wrap layout now — keep the More slot hidden
- * and ensure no items stay marked as overflow leftovers.
+ * Desktop header nav:
+ * - If all items fit between logo and action icons → one row (inline)
+ * - Otherwise → stacked two-row layout
  */
-(function initDesktopNavMore() {
-  function resetMore() {
-    const nav = document.querySelector('desktop-navigation');
-    if (!nav) return;
-    const moreItem = nav.querySelector('[data-nav-more]');
-    const moreList = nav.querySelector('[data-nav-more-list]');
-    const moreTrigger = nav.querySelector('[data-nav-more-trigger]');
-    nav.querySelectorAll('.header__linklist-item.is-nav-overflow').forEach((item) => {
+(function initDesktopNavLayout() {
+  const MQ = window.matchMedia('(min-width: 1000px)');
+  let resizeTimer = null;
+
+  function getParts() {
+    const header = document.querySelector('store-header.header') || document.querySelector('.shopify-section--header .header');
+    if (!header) return null;
+    const wrapper = header.querySelector('.header__wrapper');
+    const logo = header.querySelector('.header__logo');
+    const nav = header.querySelector('.header__inline-navigation');
+    const icons = header.querySelector('.header__secondary-links');
+    const list = nav && nav.querySelector('.header__linklist');
+    if (!wrapper || !logo || !nav || !icons || !list) return null;
+    return { header, wrapper, logo, nav, icons, list };
+  }
+
+  function hideMore(list) {
+    const moreItem = list.querySelector('[data-nav-more]');
+    const moreList = list.querySelector('[data-nav-more-list]');
+    list.querySelectorAll('.header__linklist-item.is-nav-overflow').forEach((item) => {
       item.hidden = false;
       item.classList.remove('is-nav-overflow');
     });
-    if (moreList) moreList.innerHTML = '';
+    if (moreList) {
+      moreList.innerHTML = '';
+      moreList.setAttribute('hidden', '');
+    }
     if (moreItem) moreItem.hidden = true;
-    if (moreTrigger) moreTrigger.setAttribute('aria-expanded', 'false');
-    if (moreList) moreList.setAttribute('hidden', '');
+  }
+
+  function itemOuterWidth(el) {
+    const styles = window.getComputedStyle(el);
+    return el.offsetWidth
+      + (parseFloat(styles.marginInlineStart) || 0)
+      + (parseFloat(styles.marginInlineEnd) || 0);
+  }
+
+  function measureNavWidth(list) {
+    return [...list.querySelectorAll(':scope > .header__linklist-item:not([data-nav-more])')]
+      .reduce((sum, item) => sum + itemOuterWidth(item), 0);
+  }
+
+  function layoutNav() {
+    const parts = getParts();
+    if (!parts) return;
+
+    hideMore(parts.list);
+
+    if (!MQ.matches) {
+      parts.header.classList.remove('header--nav-inline', 'header--nav-stacked');
+      return;
+    }
+
+    // Measure against available space in a temporary inline flex context
+    parts.header.classList.add('header--nav-inline');
+    parts.header.classList.remove('header--nav-stacked');
+
+    const gap = 16;
+    const sideGaps = 12 * 2;
+    const available = parts.wrapper.clientWidth
+      - parts.logo.offsetWidth
+      - parts.icons.offsetWidth
+      - gap * 2
+      - sideGaps;
+    const needed = measureNavWidth(parts.list);
+
+    if (needed > 0 && needed <= available) {
+      parts.header.classList.add('header--nav-inline');
+      parts.header.classList.remove('header--nav-stacked');
+    } else {
+      parts.header.classList.add('header--nav-stacked');
+      parts.header.classList.remove('header--nav-inline');
+    }
+  }
+
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(layoutNav, 100);
+  }
+
+  function run() {
+    layoutNav();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', resetMore);
+    document.addEventListener('DOMContentLoaded', run);
   } else {
-    resetMore();
+    run();
+  }
+
+  window.addEventListener('resize', onResize);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(run);
   }
 })();
