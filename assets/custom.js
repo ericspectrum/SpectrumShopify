@@ -142,11 +142,15 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
 /**
  * Desktop header nav:
- * - If all items fit between logo and action icons → one row (inline)
- * - Otherwise → stacked two-row layout
+ * Prefer logo | nav | icons, where nav may wrap into up to 2 rows
+ * in the space between logo and action icons.
+ * Only if that middle gap needs more than 2 rows → stack nav below.
  */
 (function initDesktopNavLayout() {
   const MQ = window.matchMedia('(min-width: 1000px)');
+  const MAX_INLINE_ROWS = 2;
+  const SIDE_GAP = 16;
+  const NAV_MARGIN = 12;
   let resizeTimer = null;
 
   function getParts() {
@@ -182,9 +186,26 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
       + (parseFloat(styles.marginInlineEnd) || 0);
   }
 
-  function measureNavWidth(list) {
-    return [...list.querySelectorAll(':scope > .header__linklist-item:not([data-nav-more])')]
-      .reduce((sum, item) => sum + itemOuterWidth(item), 0);
+  function countWrapRows(itemWidths, availableWidth) {
+    if (availableWidth <= 0) return Infinity;
+    let rows = 1;
+    let rowWidth = 0;
+
+    itemWidths.forEach((width) => {
+      const w = Math.min(width, availableWidth);
+      if (rowWidth === 0) {
+        rowWidth = w;
+        return;
+      }
+      if (rowWidth + w <= availableWidth) {
+        rowWidth += w;
+        return;
+      }
+      rows += 1;
+      rowWidth = w;
+    });
+
+    return rows;
   }
 
   function layoutNav() {
@@ -198,20 +219,22 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
       return;
     }
 
-    // Measure against available space in a temporary inline flex context
+    // Measure item widths in the preferred inline context first
     parts.header.classList.add('header--nav-inline');
     parts.header.classList.remove('header--nav-stacked');
 
-    const gap = 16;
-    const sideGaps = 12 * 2;
     const available = parts.wrapper.clientWidth
       - parts.logo.offsetWidth
       - parts.icons.offsetWidth
-      - gap * 2
-      - sideGaps;
-    const needed = measureNavWidth(parts.list);
+      - (SIDE_GAP * 2)
+      - (NAV_MARGIN * 2);
 
-    if (needed > 0 && needed <= available) {
+    const itemWidths = [...parts.list.querySelectorAll(':scope > .header__linklist-item:not([data-nav-more])')]
+      .map((item) => itemOuterWidth(item));
+
+    const rowsNeeded = countWrapRows(itemWidths, available);
+
+    if (rowsNeeded <= MAX_INLINE_ROWS) {
       parts.header.classList.add('header--nav-inline');
       parts.header.classList.remove('header--nav-stacked');
     } else {

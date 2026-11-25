@@ -562,53 +562,58 @@ a,p,span,button{
 
 /*
   Desktop nav layout (JS toggles classes on .header):
-  - .header--nav-inline  → logo | nav | icons (one row) when everything fits
-  - .header--nav-stacked → logo+icons on row 1, full-width wrapping nav on row 2
+  - .header--nav-inline  → logo | nav (up to 2 wrapped rows) | icons
+  - .header--nav-stacked → logo+icons on row 1, full-width wrapping nav below
 */
 @media screen and (min-width: 1000px) {
   .shopify-section--header .header .header__linklist-item--more {
     display: none !important;
   }
 
-  /* Inline: fit between logo and actions */
-  .shopify-section--header .header--nav-inline .container .header__wrapper {
+  /* Preferred: nav sits between logo and actions, may wrap to 2 rows */
+  .shopify-section--header .header--nav-inline .container .header__wrapper,
+  .shopify-section--header .header:not(.header--nav-stacked) .container .header__wrapper {
     display: flex;
     align-items: center;
     column-gap: 16px;
   }
 
-  .shopify-section--header .header--nav-inline .header__logo {
+  .shopify-section--header .header--nav-inline .header__logo,
+  .shopify-section--header .header:not(.header--nav-stacked) .header__logo {
     order: -1 !important;
     flex: 0 0 auto !important;
     margin-inline: 0 !important;
   }
 
-  .shopify-section--header .header--nav-inline .header__inline-navigation {
+  .shopify-section--header .header--nav-inline .header__inline-navigation,
+  .shopify-section--header .header:not(.header--nav-stacked) .header__inline-navigation {
     flex: 1 1 auto !important;
     min-width: 0;
     max-width: none !important;
     margin-inline: 12px !important;
     justify-content: center;
-    overflow: hidden;
-  }
-
-  .shopify-section--header .header--nav-inline .header__inline-navigation .header__linklist {
-    flex-wrap: nowrap;
-    justify-content: center;
-    width: max-content;
-    max-width: 100%;
-    margin-inline: auto;
     overflow: visible;
   }
 
-  .shopify-section--header .header--nav-inline .header__secondary-links {
+  .shopify-section--header .header--nav-inline .header__inline-navigation .header__linklist,
+  .shopify-section--header .header:not(.header--nav-stacked) .header__inline-navigation .header__linklist {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    row-gap: 6px;
+    overflow: visible;
+  }
+
+  .shopify-section--header .header--nav-inline .header__secondary-links,
+  .shopify-section--header .header:not(.header--nav-stacked) .header__secondary-links {
     flex: 0 0 auto !important;
     max-width: none !important;
     margin-inline-start: 0 !important;
   }
 
-  /* Default before JS / stacked: not enough space between logo and actions */
-  .shopify-section--header .header:not(.header--nav-inline) .container .header__wrapper,
+  /* Fallback: middle gap too narrow even for a 2-row nav block */
   .shopify-section--header .header--nav-stacked .container .header__wrapper {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -620,7 +625,6 @@ a,p,span,button{
     row-gap: 10px;
   }
 
-  .shopify-section--header .header:not(.header--nav-inline) .header__logo,
   .shopify-section--header .header--nav-stacked .header__logo {
     grid-area: logo;
     order: unset !important;
@@ -628,7 +632,6 @@ a,p,span,button{
     margin-inline: 0 !important;
   }
 
-  .shopify-section--header .header:not(.header--nav-inline) .header__secondary-links,
   .shopify-section--header .header--nav-stacked .header__secondary-links {
     grid-area: icons;
     flex: 0 0 auto !important;
@@ -637,7 +640,6 @@ a,p,span,button{
     justify-self: end;
   }
 
-  .shopify-section--header .header:not(.header--nav-inline) .header__inline-navigation,
   .shopify-section--header .header--nav-stacked .header__inline-navigation {
     grid-area: nav;
     flex: none !important;
@@ -648,7 +650,6 @@ a,p,span,button{
     overflow: visible;
   }
 
-  .shopify-section--header .header:not(.header--nav-inline) .header__inline-navigation .header__linklist,
   .shopify-section--header .header--nav-stacked .header__inline-navigation .header__linklist {
     align-items: center;
     justify-content: center;
