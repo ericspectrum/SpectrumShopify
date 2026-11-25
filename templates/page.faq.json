@@ -190,6 +190,13 @@
     "faq_page_content_links_pqP7aR": {
       "type": "faqPage_Content_Links",
       "blocks": {
+        "block_rdYfyh": {
+          "type": "block",
+          "settings": {
+            "link_text": "Black Friday Sale",
+            "septer": true
+          }
+        },
         "block_7jj3UX": {
           "type": "block",
           "settings": {
@@ -242,6 +249,7 @@
         }
       },
       "block_order": [
+        "block_rdYfyh",
         "block_7jj3UX",
         "block_bLMdCe",
         "block_tBKXRJ",
