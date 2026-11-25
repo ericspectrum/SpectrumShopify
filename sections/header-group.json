@@ -392,7 +392,7 @@
         "logo": "shopify://shop_images/Group_1.png",
         "logo_max_width": 140,
         "mobile_logo_max_width": 130,
-        "navigation_menu": "main-menu",
+        "navigation_menu": "test-main-menu",
         "sidebar_navigation_menu": "",
         "mobile_button_2_label": "Sale",
         "mobile_button_2_link": "shopify://collections/sale",
