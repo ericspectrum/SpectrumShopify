@@ -560,20 +560,73 @@ a,p,span,button{
 
 /*  =================================        Menu (alt nav concept)           ================================*/
 
+/* Desktop: logo + icons on row 1, full-width nav wrapping on row 2 */
+@media screen and (min-width: 1000px) {
+  .shopify-section--header .header .container .header__wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo icons"
+      "nav nav";
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 10px;
+  }
+
+  .shopify-section--header .header .header__logo {
+    grid-area: logo;
+    order: unset !important;
+    flex: 0 0 auto !important;
+    margin-inline: 0 !important;
+  }
+
+  .shopify-section--header .header .header__secondary-links {
+    grid-area: icons;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    margin-inline-start: 0 !important;
+    justify-self: end;
+  }
+
+  .shopify-section--header .header .header__inline-navigation {
+    grid-area: nav;
+    flex: none !important;
+    width: 100%;
+    max-width: none !important;
+    margin-inline: 0 !important;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .shopify-section--header .header .header__inline-navigation .header__linklist {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 0;
+    row-gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  /* More is unused when nav wraps to two rows */
+  .shopify-section--header .header .header__linklist-item--more {
+    display: none !important;
+  }
+}
+
 .header__inline-navigation {
   min-width: 0;
   max-width: 100%;
-  overflow: hidden;
 }
 
 .header__inline-navigation .header__linklist {
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   column-gap: 0;
   min-width: 0;
   max-width: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .header__linklist-item--more {
