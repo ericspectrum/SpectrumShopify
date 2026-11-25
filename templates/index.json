@@ -306,6 +306,50 @@
         "button_text_color": "rgba(0,0,0,0)"
       }
     },
+    "custom_image_with_text_ejGtzm": {
+      "type": "Custom_ImageWithText",
+      "blocks": {
+        "item_7TBqgm": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Build_Your_Own_Sex_Toy_Kit.png",
+            "tab_label": "Item",
+            "subheading": "",
+            "title": "",
+            "heading1": "Build Your Own Kit",
+            "content": "<p>Shopping for an experience for yourself or someone special? Check out our customizable sex toy kits, where you choose exactly what you want and save 25% on the whole kit!</p>",
+            "button_text": "Start Building",
+            "button_link": "shopify://pages/build-your-own-holiday-gift-kit",
+            "button_text1": "Shop All Toys",
+            "button_link1": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "item_7TBqgm"
+      ],
+      "custom_css": [
+        ".image-with-text__image-wrapper {margin: 0;}",
+        ".image-with-text__content-wrapper {margin: 0 auto;}",
+        ".image-with-text__wrapper {padding: 0;}",
+        ".image-with-text__image-wrapper {width: 50%; max-width: 714px;}",
+        ".container {max-width: 1200px;}",
+        "@media only screen and (max-width: 990px) {.container {padding: 0; } .image-with-text__image-wrapper {width: 100%; } .image-with-text__wrapper {display: flex; row-gap: 40px; } .became-visible {padding: 0; }}"
+      ],
+      "settings": {
+        "reveal_on_scroll": false,
+        "img_link": "shopify://collections/food-shaped-sex-toys",
+        "background_type": "boxed",
+        "background_overlap": "both",
+        "image_position": "right",
+        "text_alignment": "left",
+        "cycle_speed": 8,
+        "accent_background": "#d2ffeb",
+        "text_color": "rgba(0,0,0,0)",
+        "button_background": "rgba(0,0,0,0)",
+        "button_text_color": "rgba(0,0,0,0)"
+      }
+    },
     "custom_image_with_text_6dNJPD": {
       "type": "Custom_ImageWithText",
       "blocks": {
@@ -561,6 +605,7 @@
     "custom_multi_column_section_NTjk4K",
     "custom_featured_collection_b8qFrq",
     "top_picks_featured_collection_m4FDCH",
+    "custom_image_with_text_ejGtzm",
     "custom_image_with_text_6dNJPD",
     "custom_image_with_text_yT9yB6",
     "custom_image_with_text_UBKADz",
