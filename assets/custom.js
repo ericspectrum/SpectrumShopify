@@ -142,13 +142,12 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
 /**
  * Desktop header nav:
- * Prefer logo | nav | icons, where nav may wrap into up to 2 rows
- * in the space between logo and action icons.
- * Only if that middle gap needs more than 2 rows → stack nav below.
+ * Prefer logo | nav | icons. Split items into ~equal-width rows (max 2)
+ * so the nav forms a compact rectangle in the gap between logo and icons.
+ * Only if that balanced block still doesn't fit → stack nav below.
  */
 (function initDesktopNavLayout() {
   const MQ = window.matchMedia('(min-width: 1000px)');
-  const MAX_INLINE_ROWS = 2;
   const SIDE_GAP = 16;
   const NAV_MARGIN = 12;
   let resizeTimer = null;
@@ -179,6 +178,20 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     if (moreItem) moreItem.hidden = true;
   }
 
+  function clearRowBreaks(list) {
+    list.querySelectorAll('[data-nav-row-break]').forEach((el) => el.remove());
+    list.style.removeProperty('width');
+    list.style.removeProperty('max-width');
+  }
+
+  function insertRowBreak(list, beforeItem) {
+    const br = document.createElement('li');
+    br.className = 'header__linklist-item header__linklist-item--row-break';
+    br.setAttribute('data-nav-row-break', '');
+    br.setAttribute('aria-hidden', 'true');
+    list.insertBefore(br, beforeItem);
+  }
+
   function itemOuterWidth(el) {
     const styles = window.getComputedStyle(el);
     return el.offsetWidth
@@ -186,26 +199,40 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
       + (parseFloat(styles.marginInlineEnd) || 0);
   }
 
-  function countWrapRows(itemWidths, availableWidth) {
-    if (availableWidth <= 0) return Infinity;
-    let rows = 1;
-    let rowWidth = 0;
+  function sumWidths(widths, from, to) {
+    let total = 0;
+    for (let i = from; i < to; i += 1) total += widths[i];
+    return total;
+  }
 
-    itemWidths.forEach((width) => {
-      const w = Math.min(width, availableWidth);
-      if (rowWidth === 0) {
-        rowWidth = w;
-        return;
-      }
-      if (rowWidth + w <= availableWidth) {
-        rowWidth += w;
-        return;
-      }
-      rows += 1;
-      rowWidth = w;
-    });
+  /**
+   * Find split index (first item of row 2) that best balances two row widths.
+   * Returns { splitIndex, blockWidth } where blockWidth is the wider row.
+   */
+  function balancedTwoRowBlock(itemWidths) {
+    const n = itemWidths.length;
+    if (n <= 1) {
+      return { splitIndex: n, blockWidth: sumWidths(itemWidths, 0, n) };
+    }
 
-    return rows;
+    let bestSplit = Math.ceil(n / 2);
+    let bestDiff = Infinity;
+    let bestMax = Infinity;
+
+    for (let split = 1; split < n; split += 1) {
+      const row1 = sumWidths(itemWidths, 0, split);
+      const row2 = sumWidths(itemWidths, split, n);
+      const diff = Math.abs(row1 - row2);
+      const maxW = Math.max(row1, row2);
+
+      if (diff < bestDiff || (diff === bestDiff && maxW < bestMax)) {
+        bestDiff = diff;
+        bestMax = maxW;
+        bestSplit = split;
+      }
+    }
+
+    return { splitIndex: bestSplit, blockWidth: bestMax };
   }
 
   function layoutNav() {
@@ -213,15 +240,20 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     if (!parts) return;
 
     hideMore(parts.list);
+    clearRowBreaks(parts.list);
 
     if (!MQ.matches) {
       parts.header.classList.remove('header--nav-inline', 'header--nav-stacked');
       return;
     }
 
-    // Measure item widths in the preferred inline context first
+    // Measure in inline context (items on one conceptual row for widths)
     parts.header.classList.add('header--nav-inline');
     parts.header.classList.remove('header--nav-stacked');
+
+    const items = [...parts.list.querySelectorAll(':scope > .header__linklist-item:not([data-nav-more])')];
+    const itemWidths = items.map((item) => itemOuterWidth(item));
+    const { splitIndex, blockWidth } = balancedTwoRowBlock(itemWidths);
 
     const available = parts.wrapper.clientWidth
       - parts.logo.offsetWidth
@@ -229,14 +261,19 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
       - (SIDE_GAP * 2)
       - (NAV_MARGIN * 2);
 
-    const itemWidths = [...parts.list.querySelectorAll(':scope > .header__linklist-item:not([data-nav-more])')]
-      .map((item) => itemOuterWidth(item));
+    // Small buffer for subpixel / rounding
+    const fitsInline = blockWidth > 0 && blockWidth <= available - 2;
 
-    const rowsNeeded = countWrapRows(itemWidths, available);
-
-    if (rowsNeeded <= MAX_INLINE_ROWS) {
+    if (fitsInline) {
       parts.header.classList.add('header--nav-inline');
       parts.header.classList.remove('header--nav-stacked');
+
+      // Compact rectangle: width of the wider balanced row + forced break
+      parts.list.style.width = Math.ceil(blockWidth) + 'px';
+      parts.list.style.maxWidth = '100%';
+      if (splitIndex > 0 && splitIndex < items.length) {
+        insertRowBreak(parts.list, items[splitIndex]);
+      }
     } else {
       parts.header.classList.add('header--nav-stacked');
       parts.header.classList.remove('header--nav-inline');
