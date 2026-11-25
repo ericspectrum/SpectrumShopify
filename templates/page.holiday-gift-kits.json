@@ -29,28 +29,28 @@
         "page_width": "medium"
       }
     },
-    "simple_image_with_text_cont_9BfUwj": {
-      "type": "SimpleImageWithText_Cont",
-      "settings": {
-        "img": "shopify://shop_images/Mix_Match_Kit_2.png",
-        "heading": "Made for You Sex Toy Kit",
-        "text": "<p>Get exactly what you want in the perfectly curated sex toy gift kit: the one you build yourself. Make it just so by choosing any 3 sex toys or accessories and get 25% off the whole bundle!</p>",
-        "btnText": "Build Your Own Made for You Kit",
-        "btnText2": "",
-        "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15620",
-        "btnUrl2": "",
-        "img_right": false
-      }
-    },
     "simple_image_with_text_cont_HewpnF": {
       "type": "SimpleImageWithText_Cont",
       "settings": {
         "img": "shopify://shop_images/Magic_Moments_Kit_Cover.png",
         "heading": "Magic Moments: Magic Wand & nJoy Kit",
-        "text": "<p>This kit is all about *magic*. Choose from our top 3 brands and categories: one Magic Wand, one nJoy Wand, and one Sliquid lube. Get 20% off when you bundle the 3!</p>",
+        "text": "<p>This kit is all about *magic*. Choose from our top 3 brands and categories: one Magic Wand, one nJoy Wand, and one Sliquid lube. Get 25% off when you bundle the 3!</p>",
         "btnText": "build your own magic moments kit",
         "btnText2": "",
         "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15479?ver=3.0",
+        "btnUrl2": "",
+        "img_right": true
+      }
+    },
+    "simple_image_with_text_cont_ALiTaQ": {
+      "type": "SimpleImageWithText_Cont",
+      "settings": {
+        "img": "shopify://shop_images/Cheek_to_Cheek_Cover.png",
+        "heading": "Cheek-to-Cheek: Anal Play Kit",
+        "text": "<p>The Cheek-to-Cheek Anal Play Kit lets you choose the right douche, anal plug or trainer set, and lube to take your butt play to the next level! Bundle and get 20% off!</p>",
+        "btnText": "Build Your Own Cheek-To-Cheek Bundle",
+        "btnText2": "",
+        "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15483?ver=3.0",
         "btnUrl2": "",
         "img_right": true
       }
@@ -68,19 +68,6 @@
         "img_right": false
       }
     },
-    "simple_image_with_text_cont_ALiTaQ": {
-      "type": "SimpleImageWithText_Cont",
-      "settings": {
-        "img": "shopify://shop_images/Cheek_to_Cheek_Cover.png",
-        "heading": "Cheek-to-Cheek: Anal Play Kit",
-        "text": "<p>The Cheek-to-Cheek Anal Play Kit lets you choose the right douche, anal plug or trainer set, and lube to take your butt play to the next level! Bundle and get 20% off!</p>",
-        "btnText": "Build Your Own Cheek-To-Cheek Bundle",
-        "btnText2": "",
-        "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15483?ver=3.0",
-        "btnUrl2": "",
-        "img_right": true
-      }
-    },
     "simple_image_with_text_cont_YjytRd": {
       "type": "SimpleImageWithText_Cont",
       "settings": {
@@ -90,6 +77,19 @@
         "btnText": "Build Your Own What's Your Fantasy Kit",
         "btnText2": "",
         "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15484?ver=3.0",
+        "btnUrl2": "",
+        "img_right": false
+      }
+    },
+    "simple_image_with_text_cont_9BfUwj": {
+      "type": "SimpleImageWithText_Cont",
+      "settings": {
+        "img": "shopify://shop_images/Mix_Match_Kit_2.png",
+        "heading": "Made for You Sex Toy Kit",
+        "text": "<p>Get exactly what you want in the perfectly curated sex toy gift kit: the one you build yourself. Make it just so by choosing any 3 sex toys or accessories and get 25% off the whole bundle!</p>",
+        "btnText": "Build Your Own Made for You Kit",
+        "btnText2": "",
+        "btnUrl": "https://spectrumboutique.com/apps/secomapp_freegifts_get_order/bundle/15620",
         "btnUrl2": "",
         "img_right": false
       }
@@ -193,11 +193,11 @@
   "order": [
     "simple_image_with_text_dBjpNm",
     "main",
-    "simple_image_with_text_cont_9BfUwj",
     "simple_image_with_text_cont_HewpnF",
-    "simple_image_with_text_cont_LmhQWe",
     "simple_image_with_text_cont_ALiTaQ",
+    "simple_image_with_text_cont_LmhQWe",
     "simple_image_with_text_cont_YjytRd",
+    "simple_image_with_text_cont_9BfUwj",
     "simple_image_with_text_cont_YyyDFX",
     "featured_collections_aKHKC9",
     "custom_featured_collection_x9fkm8"
