@@ -57,6 +57,8 @@
         "message_qcfbRX"
       ],
       "settings": {
+        "logo": "shopify://shop_images/logo-white.png",
+        "logo_max_width": 140,
         "announcement_bar_position": "non_sticky",
         "announcement_text_size": "normal",
         "autoplay": true,
