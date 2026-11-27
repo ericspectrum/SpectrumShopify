@@ -129,10 +129,12 @@
               {% if mega_menu_block != '' %}{{ mega_menu_block.shopify_attributes }}{% endif %}
             >
               <div class="catalog-menu__pane-head">
-                {%- if link.url == blank or link.url == '#' -%}
-                  <span class="catalog-menu__pane-title">{{ link.title }}</span>
-                {%- else -%}
-                  <a href="{{ link.url }}" class="catalog-menu__pane-title">{{ link.title }}</a>
+                <span class="catalog-menu__pane-title">{{ link.title }}</span>
+
+                {%- if link.url != blank and link.url != '#' -%}
+                  <a href="{{ link.url }}" class="catalog-menu__shop-all">
+                    Shop All {{ link.title }}
+                  </a>
                 {%- endif -%}
               </div>
 
@@ -159,14 +161,19 @@
                       </div>
                     {%- endfor -%}
                   </div>
-                {%- else -%}
-                  <div class="catalog-menu__empty">
-                    <a href="{{ link.url }}" class="catalog-menu__shop-all">Shop all {{ link.title }}</a>
-                  </div>
                 {%- endif -%}
 
                 {%- if mega_menu_images != blank -%}
-                  <div class="catalog-menu__images {% if images_count >= 3 %}catalog-menu__images--tight{% endif %}">
+                  {%- if images_count <= 4 -%}
+                    {%- assign images_cols = images_count -%}
+                  {%- else -%}
+                    {%- assign images_cols = 3 -%}
+                  {%- endif -%}
+                  <div
+                    class="catalog-menu__images"
+                    data-images-count="{{ images_count }}"
+                    style="--images-cols: {{ images_cols }};"
+                  >
                     {{- mega_menu_images -}}
                   </div>
                 {%- endif -%}
