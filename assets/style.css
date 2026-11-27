@@ -1585,11 +1585,33 @@ body.catalog-menu-open {
   width: 100%;
 }
 
-/* Only wrap to 2 equal rows when the pane is genuinely narrow */
+/* 6–10 cards: keep equal rows (e.g. 10 → 2×5) */
+.catalog-menu__images[data-images-count="6"] {
+  --images-cols: 3;
+}
+
+.catalog-menu__images[data-images-count="7"],
+.catalog-menu__images[data-images-count="8"] {
+  --images-cols: 4;
+}
+
+.catalog-menu__images[data-images-count="9"],
+.catalog-menu__images[data-images-count="10"] {
+  --images-cols: 5;
+}
+
+/* Only wrap further when the pane is genuinely narrow */
 @container catalog-pane (max-width: 640px) {
   .catalog-menu__images[data-images-count="5"],
   .catalog-menu__images[data-images-count="6"] {
     --images-cols: 3;
+  }
+
+  .catalog-menu__images[data-images-count="7"],
+  .catalog-menu__images[data-images-count="8"],
+  .catalog-menu__images[data-images-count="9"],
+  .catalog-menu__images[data-images-count="10"] {
+    --images-cols: 4;
   }
 
   .catalog-menu__images[data-images-count="3"],
