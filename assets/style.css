@@ -1214,12 +1214,17 @@ body.catalog-menu-open {
   z-index: 31;
 }
 
+.shopify-section--header .header {
+  position: relative;
+  z-index: 2;
+}
+
 .catalog-menu__drawer {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 30;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -1231,17 +1236,12 @@ body.catalog-menu-open {
   position: fixed;
   inset: 0;
   z-index: 1;
-  background: rgba(57, 21, 60, 0.28);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(57, 21, 60, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   opacity: 0;
   transition: opacity 0.22s ease;
   cursor: pointer;
-  /* Keep blur below sticky header / announcement */
-  top: calc(
-    var(--header-height, 72px)
-    + (var(--announcement-bar-height, 0px) * var(--enable-sticky-announcement-bar, 0))
-  );
 }
 
 .catalog-menu__drawer.is-open .catalog-menu__backdrop {
