@@ -1169,36 +1169,44 @@ body.catalog-menu-open {
   overflow: hidden;
 }
 
-.catalog-menu__trigger {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-  padding: 10px 16px;
-  border: 0;
-  border-radius: 999px;
-  background: #00B9E2;
-  color: #FAF7F4;
-  font-family: 'Lausanne', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+.catalog-menu {
+  display: none;
 }
 
-.catalog-menu__trigger:hover,
-.catalog-menu__trigger:focus-visible,
-.catalog-menu__trigger[aria-expanded="true"] {
-  background: #037E99;
-  outline: none;
+.catalog-menu__trigger.button {
+  --button-background: 0, 185, 226;
+  --button-text-color: 250, 247, 244;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 8px 16px !important;
+  border: 0;
+  border-radius: 999px;
+  font-family: 'Lausanne', sans-serif;
+  font-size: 14px !important;
+  font-weight: 600;
+  letter-spacing: 0.02em !important;
+  line-height: 1.2 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  text-transform: none !important;
+  cursor: pointer;
+  box-shadow: none;
+  vertical-align: middle;
+}
+
+.catalog-menu__trigger.button:focus-visible {
+  outline: 2px solid #037E99;
+  outline-offset: 2px;
 }
 
 .catalog-menu__trigger-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 0;
 }
 
 .shopify-section--header {
@@ -1461,16 +1469,37 @@ body.catalog-menu-open {
 }
 
 @media screen and (min-width: 1000px) {
-  /* Keep Collections near the logo instead of stretched center nav */
+  .shopify-section--header .header .header__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Mobile hamburger nav not needed on desk when catalog is used */
   .shopify-section--header .header .header__inline-navigation {
-    flex: 0 0 auto !important;
-    max-width: none !important;
-    margin-inline: 0 16px !important;
-    justify-content: flex-start !important;
+    display: none !important;
   }
 
   .shopify-section--header .header .header__logo {
+    order: 1 !important;
     flex: 0 0 auto !important;
+    margin-inline: 0 !important;
+    max-width: none !important;
+  }
+
+  .shopify-section--header .header .catalog-menu {
+    display: flex;
+    align-items: center;
+    order: 2 !important;
+    flex: 0 0 auto !important;
+    margin-inline-start: 28px !important;
+  }
+
+  .shopify-section--header .header .header__secondary-links {
+    order: 3 !important;
+    flex: 1 1 auto !important;
+    justify-content: flex-end;
+    margin-inline-start: 24px !important;
   }
 }
 
