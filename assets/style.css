@@ -1103,7 +1103,9 @@ a,p,span,button{
   font-family: 'Lausanne', sans-serif;
   font-size: 13px;
   line-height: 1.3;
-  color: #39153c;
+  color: #00b9e2;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

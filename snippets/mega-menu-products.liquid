@@ -1,0 +1,106 @@
+{%- comment -%}
+  Desktop mega-menu fallback: up to 5 products in one row when manual image cards are not set.
+  Resolves products from the menu link collection, URL handle, and/or child collection links.
+{%- endcomment -%}
+
+{%- assign products_added = 0 -%}
+{%- assign product_ids_seen = '|' -%}
+
+{%- capture resolved_products -%}
+  {%- comment -%} 1) Parent collection / catalog / URL handle {%- endcomment -%}
+  {%- assign source_collection = false -%}
+
+  {%- if link.type == 'collection_link' and link.object != blank -%}
+    {%- assign source_collection = link.object -%}
+  {%- elsif link.type == 'catalog_link' -%}
+    {%- assign source_collection = collections.all -%}
+  {%- elsif link.url contains '/collections/' -%}
+    {%- assign collection_handle = link.url | split: '/collections/' | last | split: '/' | first | split: '?' | first -%}
+    {%- if collection_handle == 'all' -%}
+      {%- assign source_collection = collections.all -%}
+    {%- elsif collection_handle != blank -%}
+      {%- assign source_collection = collections[collection_handle] -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if source_collection and source_collection.products_count > 0 -%}
+    {%- for product in source_collection.products limit: 5 -%}
+      {%- assign id_token = '|' | append: product.id | append: '|' -%}
+      {%- unless product_ids_seen contains id_token -%}
+        {%- assign product_ids_seen = product_ids_seen | append: product.id | append: '|' -%}
+        {%- assign products_added = products_added | plus: 1 -%}
+        {%- render 'mega-menu-product-card', product: product -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- comment -%} 2) Fill remaining slots from child / grandchild collection links {%- endcomment -%}
+  {%- if products_added < 5 -%}
+    {%- for sub_link in link.links -%}
+      {%- if products_added >= 5 -%}{% break %}{%- endif -%}
+
+      {%- assign child_collection = false -%}
+      {%- if sub_link.type == 'collection_link' and sub_link.object != blank -%}
+        {%- assign child_collection = sub_link.object -%}
+      {%- elsif sub_link.url contains '/collections/' -%}
+        {%- assign child_handle = sub_link.url | split: '/collections/' | last | split: '/' | first | split: '?' | first -%}
+        {%- if child_handle == 'all' -%}
+          {%- assign child_collection = collections.all -%}
+        {%- elsif child_handle != blank -%}
+          {%- assign child_collection = collections[child_handle] -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if child_collection and child_collection.products_count > 0 -%}
+        {%- for product in child_collection.products limit: 5 -%}
+          {%- if products_added >= 5 -%}{% break %}{%- endif -%}
+          {%- assign id_token = '|' | append: product.id | append: '|' -%}
+          {%- unless product_ids_seen contains id_token -%}
+            {%- assign product_ids_seen = product_ids_seen | append: product.id | append: '|' -%}
+            {%- assign products_added = products_added | plus: 1 -%}
+            {%- render 'mega-menu-product-card', product: product -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- if products_added < 5 and sub_link.links.size > 0 -%}
+        {%- for nested_link in sub_link.links -%}
+          {%- if products_added >= 5 -%}{% break %}{%- endif -%}
+
+          {%- assign nested_collection = false -%}
+          {%- if nested_link.type == 'collection_link' and nested_link.object != blank -%}
+            {%- assign nested_collection = nested_link.object -%}
+          {%- elsif nested_link.url contains '/collections/' -%}
+            {%- assign nested_handle = nested_link.url | split: '/collections/' | last | split: '/' | first | split: '?' | first -%}
+            {%- if nested_handle == 'all' -%}
+              {%- assign nested_collection = collections.all -%}
+            {%- elsif nested_handle != blank -%}
+              {%- assign nested_collection = collections[nested_handle] -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- if nested_collection and nested_collection.products_count > 0 -%}
+            {%- for product in nested_collection.products limit: 5 -%}
+              {%- if products_added >= 5 -%}{% break %}{%- endif -%}
+              {%- assign id_token = '|' | append: product.id | append: '|' -%}
+              {%- unless product_ids_seen contains id_token -%}
+                {%- assign product_ids_seen = product_ids_seen | append: product.id | append: '|' -%}
+                {%- assign products_added = products_added | plus: 1 -%}
+                {%- render 'mega-menu-product-card', product: product -%}
+              {%- endunless -%}
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- assign resolved_products = resolved_products | strip -%}
+{%- if resolved_products != blank -%}
+  <div class="mega-menu__products-wrapper hidden-pocket hidden-lap">
+    <div class="mega-menu__products">
+      {{- resolved_products -}}
+    </div>
+  </div>
+{%- endif -%}

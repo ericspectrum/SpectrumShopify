@@ -65,34 +65,8 @@
         {%- endcapture -%}
       {%- endif -%}
 
-      {%- comment -%} Fallback product cards when manual mega-menu images are not set {%- endcomment -%}
-      {%- assign mega_menu_products_collection = false -%}
-      {%- if images_count == 0 -%}
-        {%- if link.type == 'collection_link' and link.object != blank -%}
-          {%- assign mega_menu_products_collection = link.object -%}
-        {%- elsif link.type == 'catalog_link' -%}
-          {%- assign mega_menu_products_collection = collections.all -%}
-        {%- else -%}
-          {%- for sub_link in link.links -%}
-            {%- if sub_link.type == 'collection_link' and sub_link.object != blank -%}
-              {%- assign mega_menu_products_collection = sub_link.object -%}
-              {%- break -%}
-            {%- endif -%}
-          {%- endfor -%}
-        {%- endif -%}
-      {%- endif -%}
-
-      {%- capture mega_menu_products -%}
-        {%- if mega_menu_products_collection -%}
-          {%- for product in mega_menu_products_collection.products limit: 5 -%}
-            {%- render 'mega-menu-product-card', product: product -%}
-          {%- endfor -%}
-        {%- endif -%}
-      {%- endcapture -%}
-      {%- assign mega_menu_products = mega_menu_products | strip -%}
-
-      <li class="header__linklist-item {% if link.links.size > 0 or mega_menu_images != blank or mega_menu_products != blank %}has-dropdown{% endif %} {{ nav_cta_class }}" data-item-title="{{ link.title | escape }}">
-        <a class="header__linklist-link {% if link.links.size > 0 or mega_menu_images != blank or mega_menu_products != blank %}header__linklist-link--dropdown{% endif %}" href="{{ link.url }}" {% if link.links.size > 0 or mega_menu_images != blank or mega_menu_products != blank %}aria-controls="desktop-menu-{{ forloop.index }}" aria-expanded="false"{% endif %}>
+      <li class="header__linklist-item {% if link.links.size > 0 or mega_menu_images != blank %}has-dropdown{% endif %} {{ nav_cta_class }}" data-item-title="{{ link.title | escape }}">
+        <a class="header__linklist-link {% if link.links.size > 0 or mega_menu_images != blank %}header__linklist-link--dropdown{% endif %}" href="{{ link.url }}" {% if link.links.size > 0 or mega_menu_images != blank %}aria-controls="desktop-menu-{{ forloop.index }}" aria-expanded="false"{% endif %}>
           <span class="header__linklist-label">{{- link.title -}}</span>
 
           {%- if link.links.size > 0 -%}
@@ -103,14 +77,13 @@
         </a>
 
         {%- comment -%}
-          Always use mega-menu panel for items with children (not the simple nav-dropdown),
-          so new menu titles still get the wide layout. Product cards come from matching blocks
-          or auto top products when images are empty.
+          Always use mega-menu panel for items with children (not the simple nav-dropdown).
+          Manual image cards from blocks win; otherwise desktop auto-loads top products.
         {%- endcomment -%}
-        {%- if link.links.size > 0 or mega_menu_images != blank or mega_menu_products != blank -%}
+        {%- if link.links.size > 0 or mega_menu_images != blank -%}
           <div hidden id="desktop-menu-{{ forloop.index }}" class="mega-menu" {% if mega_menu_block != '' %}{{ mega_menu_block.shopify_attributes }}{% endif %}>
             <div class="container">
-              <div class="mega-menu__inner {% if mega_menu_products != blank and images_count == 0 %}mega-menu__inner--with-products{% endif %}">
+              <div class="mega-menu__inner {% if images_count == 0 %}mega-menu__inner--with-products{% endif %}">
                 {%- if mega_menu_block != '' and mega_menu_block.settings.images_position == 'left' and mega_menu_images != blank -%}
                   <div class="mega-menu__images-wrapper {% if images_count >= 3 %}mega-menu__images-wrapper--tight{% endif %}">
                     {{- mega_menu_images -}}
@@ -145,12 +118,8 @@
                   <div class="mega-menu__images-wrapper {% if images_count >= 3 %}mega-menu__images-wrapper--tight{% endif %}">
                     {{- mega_menu_images -}}
                   </div>
-                {%- elsif mega_menu_products != blank -%}
-                  <div class="mega-menu__products-wrapper">
-                    <div class="mega-menu__products">
-                      {{- mega_menu_products -}}
-                    </div>
-                  </div>
+                {%- elsif images_count == 0 -%}
+                  {%- render 'mega-menu-products', link: link -%}
                 {%- endif -%}
               </div>
             </div>
