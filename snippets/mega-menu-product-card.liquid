@@ -1,0 +1,50 @@
+{%- comment -%}
+  Compact product card for mega-menu fallback row.
+{%- endcomment -%}
+
+{%- assign card_alt = product.featured_media.alt | default: product.title | escape -%}
+
+<a href="{{ product.url }}" class="mega-menu__product" data-instant>
+  <div class="mega-menu__product-media">
+    {%- if product.featured_media -%}
+      {{ product.featured_media | image_url: width: 360 | image_tag: loading: 'lazy', widths: '180,240,360', sizes: '160px', class: 'mega-menu__product-image', alt: card_alt }}
+    {%- endif -%}
+  </div>
+
+  <div class="mega-menu__product-info">
+    <span class="mega-menu__product-title">{{ product.title }}</span>
+    <span class="mega-menu__product-price">
+      {%- if product.price_varies -%}
+        {%- capture price_min -%}
+          {%- if settings.currency_code_enabled -%}
+            {{- product.price_min | money_with_currency -}}
+          {%- else -%}
+            {{- product.price_min | money -}}
+          {%- endif -%}
+        {%- endcapture -%}
+        {{- 'collection.product.from_price_html' | t: price_min: price_min -}}
+      {%- elsif product.compare_at_price > product.price -%}
+        <span class="mega-menu__product-price--sale">
+          {%- if settings.currency_code_enabled -%}
+            {{- product.price | money_with_currency -}}
+          {%- else -%}
+            {{- product.price | money -}}
+          {%- endif -%}
+        </span>
+        <span class="mega-menu__product-price--compare">
+          {%- if settings.currency_code_enabled -%}
+            {{- product.compare_at_price | money_with_currency -}}
+          {%- else -%}
+            {{- product.compare_at_price | money -}}
+          {%- endif -%}
+        </span>
+      {%- else -%}
+        {%- if settings.currency_code_enabled -%}
+          {{- product.price | money_with_currency -}}
+        {%- else -%}
+          {{- product.price | money -}}
+        {%- endif -%}
+      {%- endif -%}
+    </span>
+  </div>
+</a>
