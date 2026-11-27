@@ -141,15 +141,108 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 }
 
 /**
- * Desktop header nav:
- * Prefer logo | nav | icons. Size the linklist to ~half total item width
- * so items naturally wrap into two equal rows between logo and icons.
- * Only if that block still doesn't fit → stack nav below.
+ * Desktop: move logo + secondary links into announcement-bar top row.
+ * header__wrapper stays for nav links only. Mobile keeps original header layout.
+ */
+(function initHeaderTopBar() {
+  const MQ = window.matchMedia('(min-width: 1000px)');
+  let moved = false;
+  let logoHome = null;
+  let iconsHome = null;
+
+  function getEls() {
+    const header = document.querySelector('store-header.header') || document.querySelector('.shopify-section--header .header');
+    const wrapper = header && header.querySelector('.header__wrapper');
+    const logoSlot = document.querySelector('[data-header-top-slot="logo"]');
+    const actionsSlot = document.querySelector('[data-header-top-slot="actions"]');
+    const logo = document.querySelector('.header__logo');
+    const icons = document.querySelector('.header__secondary-links');
+    if (!header || !wrapper || !logoSlot || !actionsSlot || !logo || !icons) return null;
+    return { header, wrapper, logoSlot, actionsSlot, logo, icons };
+  }
+
+  function rememberHomes(els) {
+    if (!logoHome) {
+      logoHome = document.createComment('header-logo-home');
+      els.logo.parentNode.insertBefore(logoHome, els.logo);
+    }
+    if (!iconsHome) {
+      iconsHome = document.createComment('header-icons-home');
+      els.icons.parentNode.insertBefore(iconsHome, els.icons);
+    }
+  }
+
+  function refreshAnnouncementHeight() {
+    const section = document.querySelector('.shopify-section--announcement-bar');
+    if (section) {
+      document.documentElement.style.setProperty('--announcement-bar-height', `${section.clientHeight}px`);
+    }
+  }
+
+  function moveToTopBar() {
+    const els = getEls();
+    if (!els || moved) return;
+    rememberHomes(els);
+    els.logoSlot.appendChild(els.logo);
+    els.actionsSlot.appendChild(els.icons);
+    document.documentElement.classList.add('header-top-bar-active');
+    moved = true;
+    refreshAnnouncementHeight();
+  }
+
+  function restoreToHeader() {
+    if (!moved || !logoHome || !iconsHome) return;
+    const logo = document.querySelector('.header__logo');
+    const icons = document.querySelector('.header__secondary-links');
+    if (logo) logoHome.parentNode.insertBefore(logo, logoHome);
+    if (icons) iconsHome.parentNode.insertBefore(icons, iconsHome);
+    document.documentElement.classList.remove('header-top-bar-active');
+    moved = false;
+    refreshAnnouncementHeight();
+  }
+
+  function sync() {
+    if (MQ.matches) moveToTopBar();
+    else restoreToHeader();
+  }
+
+  function run() {
+    sync();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+
+  MQ.addEventListener('change', sync);
+  document.addEventListener('shopify:section:load', run);
+  document.addEventListener('shopify:section:reorder', run);
+  // Restore before Shopify re-renders either section so nodes aren't destroyed
+  document.addEventListener('shopify:section:unload', (event) => {
+    const section = event.target;
+    if (
+      section
+      && (
+        section.classList.contains('shopify-section--announcement-bar')
+        || section.classList.contains('shopify-section--header')
+      )
+    ) {
+      restoreToHeader();
+      logoHome = null;
+      iconsHome = null;
+    }
+  });
+})();
+
+/**
+ * Desktop header nav (after logo/icons move to announcement bar):
+ * header__wrapper is nav-only. Size linklist into ~2 balanced rows;
+ * if it still won't fit, allow full-width wrap.
  */
 (function initDesktopNavLayout() {
   const MQ = window.matchMedia('(min-width: 1000px)');
-  const SIDE_GAP = 10;
-  const NAV_MARGIN = 6;
   const WIDTH_BUFFER = 4;
   let resizeTimer = null;
 
@@ -157,12 +250,10 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     const header = document.querySelector('store-header.header') || document.querySelector('.shopify-section--header .header');
     if (!header) return null;
     const wrapper = header.querySelector('.header__wrapper');
-    const logo = header.querySelector('.header__logo');
     const nav = header.querySelector('.header__inline-navigation');
-    const icons = header.querySelector('.header__secondary-links');
     const list = nav && nav.querySelector('.header__linklist');
-    if (!wrapper || !logo || !nav || !icons || !list) return null;
-    return { header, wrapper, logo, nav, icons, list };
+    if (!wrapper || !nav || !list) return null;
+    return { header, wrapper, nav, list };
   }
 
   function hideMore(list) {
@@ -220,7 +311,6 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     return rows;
   }
 
-  /** Wider of two ~equal rows (by item width sum). */
   function balancedBlockWidth(itemWidths) {
     const n = itemWidths.length;
     if (n <= 1) return sumWidths(itemWidths, 0, n);
@@ -243,10 +333,6 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     return bestMax;
   }
 
-  /**
-   * Smallest width (<= limit) that wraps into at most maxRows.
-   * Starts from a balanced target so rows stay roughly equal.
-   */
   function widthForTwoRows(itemWidths, limit) {
     if (!itemWidths.length) return 0;
 
@@ -256,7 +342,6 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
       return countWrapRows(itemWidths, limit) <= 2 ? limit : null;
     }
 
-    // Grow if measurement was slightly tight and still needs 3+ rows
     while (width < limit && countWrapRows(itemWidths, width) > 2) {
       width += 8;
     }
@@ -269,7 +354,6 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     list.style.setProperty('flex-wrap', 'nowrap');
     list.style.setProperty('width', 'max-content');
     list.style.setProperty('max-width', 'none');
-    // Force layout before reading widths
     void list.offsetWidth;
 
     const items = [...list.querySelectorAll(':scope > .header__linklist-item:not([data-nav-more]):not([data-nav-row-break])')];
@@ -297,14 +381,7 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     parts.header.classList.add('header--nav-inline');
     parts.header.classList.remove('header--nav-stacked');
 
-    const available = Math.floor(
-      parts.wrapper.clientWidth
-      - parts.logo.offsetWidth
-      - parts.icons.offsetWidth
-      - (SIDE_GAP * 2)
-      - (NAV_MARGIN * 2)
-    );
-
+    const available = Math.floor(parts.wrapper.clientWidth);
     const { widths } = measureItemWidths(parts.list);
     const blockWidth = widthForTwoRows(widths, available);
 
@@ -325,7 +402,8 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
   }
 
   function run() {
-    layoutNav();
+    // Wait a frame so top-bar move settles before measuring nav width
+    requestAnimationFrame(layoutNav);
   }
 
   if (document.readyState === 'loading') {
@@ -338,4 +416,5 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(run);
   }
+  document.addEventListener('shopify:section:load', run);
 })();

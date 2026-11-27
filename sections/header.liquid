@@ -55,12 +55,13 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
     }
   {%- endif -%}
 
-  #shopify-section-{{ section.id }} .header__logo-image {
+  /* Unscoped so max-width still applies when logo is moved into announcement top bar */
+  .header__logo-image {
     max-width: {{ section.settings.mobile_logo_max_width }}px;
   }
 
   @media screen and (min-width: 741px) {
-    #shopify-section-{{ section.id }} .header__logo-image {
+    .header__logo-image {
       max-width: {{ section.settings.logo_max_width }}px;
     }
   }
