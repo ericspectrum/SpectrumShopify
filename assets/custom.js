@@ -231,6 +231,13 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     else open(parts);
   }
 
+  function isOutsideMenu(target) {
+    if (!(target instanceof Element)) return true;
+    if (target.closest('[data-catalog-trigger]')) return false;
+    if (target.closest('.catalog-menu__shell')) return false;
+    return true;
+  }
+
   function bind() {
     const parts = getParts();
     if (!parts || parts.trigger.dataset.catalogBound === 'true') return;
@@ -242,18 +249,26 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
       toggle(parts);
     });
 
-    // Close when clicking backdrop or any empty area outside the panel
+    // Backdrop / empty drawer area
     parts.drawer.addEventListener('click', (event) => {
-      if (event.target.closest('.catalog-menu__panel')) return;
+      if (!isOutsideMenu(event.target)) return;
       close(parts);
     });
 
-    const panel = parts.drawer.querySelector('.catalog-menu__panel');
-    if (panel) {
-      panel.addEventListener('click', (event) => {
-        event.stopPropagation();
+    if (parts.backdrop) {
+      parts.backdrop.addEventListener('click', (event) => {
+        event.preventDefault();
+        close(parts);
       });
     }
+
+    // Capture-phase document listener: reliable outside click even if
+    // the fixed drawer doesn't receive the event for some reason
+    document.addEventListener('click', (event) => {
+      if (!parts.drawer.classList.contains('is-open')) return;
+      if (!isOutsideMenu(event.target)) return;
+      close(parts);
+    }, true);
 
     parts.parents.forEach((parent) => {
       const activate = () => setActiveParent(parts, parent.getAttribute('data-catalog-parent'));

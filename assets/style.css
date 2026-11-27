@@ -1233,8 +1233,7 @@ body.catalog-menu-open {
 }
 
 .catalog-menu__drawer.is-open {
-  display: flex;
-  flex-direction: column;
+  display: block;
   pointer-events: auto;
 }
 
@@ -1254,14 +1253,16 @@ body.catalog-menu-open {
 }
 
 .catalog-menu__panel {
+  /* ~1 parent row ≈ 44px; min = 5 rows + list paddings */
+  --catalog-row: 44px;
+  --catalog-min-h: calc(var(--catalog-row) * 5 + 34px);
+  --catalog-max-h: calc(100dvh - var(--catalog-menu-top, 0px) - 28px);
+
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
   width: 100%;
-  min-height: 0;
-  max-height: none;
+  height: auto;
+  max-height: var(--catalog-max-h);
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -1270,7 +1271,8 @@ body.catalog-menu-open {
   opacity: 0;
   transform: translateY(-6px);
   transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: auto;
+  /* Let outside-of-shell clicks reach the backdrop */
+  pointer-events: none;
 }
 
 .catalog-menu__drawer.is-open .catalog-menu__panel {
@@ -1281,13 +1283,12 @@ body.catalog-menu-open {
 .catalog-menu__shell {
   display: grid;
   grid-template-columns: minmax(240px, 28%) minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr);
-  flex: 1 1 auto;
+  grid-template-rows: auto;
   width: 100%;
   max-width: var(--container-max-width, 1400px);
-  min-height: 0;
-  height: 100%;
-  max-height: none;
+  height: auto;
+  min-height: var(--catalog-min-h);
+  max-height: calc(var(--catalog-max-h) - 28px);
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
@@ -1295,14 +1296,15 @@ body.catalog-menu-open {
   background: #fff;
   border: 1px solid rgba(0, 185, 226, 0.12);
   box-shadow: 0 18px 40px rgba(57, 21, 60, 0.12);
+  pointer-events: auto;
 }
 
 .catalog-menu__parents {
   border-inline-end: 1px solid rgba(0, 185, 226, 0.1);
   overflow-x: hidden;
   overflow-y: auto;
-  min-height: 0;
-  height: 100%;
+  min-height: var(--catalog-min-h);
+  max-height: inherit;
   background: #fff;
   -webkit-overflow-scrolling: touch;
 }
@@ -1411,8 +1413,8 @@ body.catalog-menu-open {
 .catalog-menu__content {
   position: relative;
   overflow: hidden;
-  min-height: 0;
-  height: 100%;
+  min-height: var(--catalog-min-h);
+  max-height: inherit;
   background: #FAF7F4;
 }
 
