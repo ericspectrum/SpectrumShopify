@@ -1,0 +1,170 @@
+{%- comment -%}
+  Desktop catalog menu (Rozetka-style):
+  - part: 'trigger' → Collections button in the header
+  - part: 'drawer'  → full-width panel under the header with blur backdrop
+{%- endcomment -%}
+
+{%- if part == 'trigger' -%}
+  <div class="catalog-menu hidden-pocket hidden-lap">
+    <button
+      type="button"
+      class="catalog-menu__trigger"
+      aria-expanded="false"
+      aria-controls="catalog-menu-drawer"
+      data-catalog-trigger
+    >
+      <span class="catalog-menu__trigger-icon" aria-hidden="true">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 1h18M0 7h18M0 13h18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="catalog-menu__trigger-label">Collections</span>
+    </button>
+  </div>
+
+{%- elsif part == 'drawer' -%}
+  <div
+    id="catalog-menu-drawer"
+    class="catalog-menu__drawer hidden-pocket hidden-lap"
+    hidden
+    data-catalog-drawer
+  >
+    <div class="catalog-menu__backdrop" data-catalog-close tabindex="-1" aria-hidden="true"></div>
+
+    <div
+      class="catalog-menu__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Collections"
+    >
+      <div class="container catalog-menu__shell">
+        <aside class="catalog-menu__parents" aria-label="Categories">
+          <ul class="catalog-menu__parent-list list--unstyled" role="list">
+            {%- for link in menu.links -%}
+              <li class="catalog-menu__parent-item">
+                <a
+                  href="{{ link.url }}"
+                  class="catalog-menu__parent{% if forloop.first %} is-active{% endif %}"
+                  data-catalog-parent="{{ forloop.index }}"
+                  {% if link.links.size > 0 %}aria-controls="catalog-pane-{{ forloop.index }}"{% endif %}
+                >
+                  <span class="catalog-menu__parent-label">{{ link.title }}</span>
+                  {%- if link.links.size > 0 -%}
+                    <span class="catalog-menu__parent-chevron" aria-hidden="true">
+                      {% render 'icon' with 'dropdown-arrow-right', direction_aware: true %}
+                    </span>
+                  {%- endif -%}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </aside>
+
+        <div class="catalog-menu__content">
+          {%- for link in menu.links -%}
+            {%- assign mega_menu_block = '' -%}
+            {%- assign link_title_downcase = link.title | strip | downcase -%}
+
+            {%- for block in section.blocks -%}
+              {%- assign menu_item_downcase = block.settings.menu_item | strip | downcase -%}
+              {%- if menu_item_downcase == link_title_downcase -%}
+                {%- assign mega_menu_block = block -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- assign images_count = 0 -%}
+            {%- capture mega_menu_images -%}
+              {%- if mega_menu_block != '' -%}
+                {%- for i in (1..6) -%}
+                  {%- capture image_setting -%}image_{{ i }}{%- endcapture -%}
+                  {%- if mega_menu_block.settings[image_setting] != blank -%}
+                    {%- assign images_count = images_count | plus: 1 -%}
+                    {%- capture image_heading_setting -%}image_{{ i }}_heading{%- endcapture -%}
+                    {%- capture image_text_setting -%}image_{{ i }}_text{%- endcapture -%}
+                    {%- capture image_link_setting -%}image_{{ i }}_link{%- endcapture -%}
+
+                    {%- capture image_push -%}
+                      <div class="catalog-menu__image-wrapper">
+                        {%- assign menu_image = mega_menu_block.settings[image_setting] -%}
+                        {{ menu_image | image_url: width: menu_image.width | image_tag: loading: 'lazy', sizes: '200px', widths: '200,400,600', class: 'catalog-menu__image' }}
+                      </div>
+                      {%- if mega_menu_block.settings[image_heading_setting] != blank -%}
+                        <p class="catalog-menu__image-heading">{{ mega_menu_block.settings[image_heading_setting] }}</p>
+                      {%- endif -%}
+                      {%- if mega_menu_block.settings[image_text_setting] != blank -%}
+                        <span class="catalog-menu__image-text">{{ mega_menu_block.settings[image_text_setting] }}</span>
+                      {%- endif -%}
+                    {%- endcapture -%}
+
+                    {%- if mega_menu_block.settings[image_link_setting] != blank -%}
+                      <a href="{{ mega_menu_block.settings[image_link_setting] }}" class="catalog-menu__image-push">
+                        {{- image_push -}}
+                      </a>
+                    {%- else -%}
+                      <div class="catalog-menu__image-push">
+                        {{- image_push -}}
+                      </div>
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endcapture -%}
+
+            <div
+              id="catalog-pane-{{ forloop.index }}"
+              class="catalog-menu__pane{% if forloop.first %} is-active{% endif %}"
+              data-catalog-pane="{{ forloop.index }}"
+              {% unless forloop.first %}hidden{% endunless %}
+              {% if mega_menu_block != '' %}{{ mega_menu_block.shopify_attributes }}{% endif %}
+            >
+              <div class="catalog-menu__pane-head">
+                {%- if link.url == blank or link.url == '#' -%}
+                  <span class="catalog-menu__pane-title">{{ link.title }}</span>
+                {%- else -%}
+                  <a href="{{ link.url }}" class="catalog-menu__pane-title">{{ link.title }}</a>
+                {%- endif -%}
+              </div>
+
+              <div class="catalog-menu__pane-body">
+                {%- if link.links.size > 0 -%}
+                  <div class="catalog-menu__columns">
+                    {%- for sub_link in link.links -%}
+                      <div class="catalog-menu__column">
+                        {%- if sub_link.url == blank or sub_link.url == '#' -%}
+                          <span class="catalog-menu__column-title">{{ sub_link.title }}</span>
+                        {%- else -%}
+                          <a href="{{ sub_link.url }}" class="catalog-menu__column-title">{{ sub_link.title }}</a>
+                        {%- endif -%}
+
+                        {%- if sub_link.links.size > 0 -%}
+                          <ul class="catalog-menu__links list--unstyled" role="list">
+                            {%- for sub_sub_link in sub_link.links -%}
+                              <li>
+                                <a href="{{ sub_sub_link.url }}" class="catalog-menu__link">{{ sub_sub_link.title }}</a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                {%- else -%}
+                  <div class="catalog-menu__empty">
+                    <a href="{{ link.url }}" class="catalog-menu__shop-all">Shop all {{ link.title }}</a>
+                  </div>
+                {%- endif -%}
+
+                {%- if mega_menu_images != blank -%}
+                  <div class="catalog-menu__images {% if images_count >= 3 %}catalog-menu__images--tight{% endif %}">
+                    {{- mega_menu_images -}}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

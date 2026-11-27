@@ -139,3 +139,123 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     links[i].rel = 'noreferrer noopener';
   }
 }
+
+/**
+ * Desktop catalog menu (Rozetka-style)
+ * Collections button → panel under header, blur backdrop,
+ * left parents / right submenu on hover.
+ */
+(function initCatalogMenu() {
+  const MQ = window.matchMedia('(min-width: 1000px)');
+  let lastFocused = null;
+
+  function getParts() {
+    const trigger = document.querySelector('[data-catalog-trigger]');
+    const drawer = document.querySelector('[data-catalog-drawer]');
+    if (!trigger || !drawer) return null;
+    return {
+      trigger,
+      drawer,
+      backdrop: drawer.querySelector('[data-catalog-close]'),
+      parents: [...drawer.querySelectorAll('[data-catalog-parent]')],
+      panes: [...drawer.querySelectorAll('[data-catalog-pane]')],
+    };
+  }
+
+  function setActiveParent(parts, id) {
+    parts.parents.forEach((parent) => {
+      const active = parent.getAttribute('data-catalog-parent') === String(id);
+      parent.classList.toggle('is-active', active);
+    });
+
+    parts.panes.forEach((pane) => {
+      const active = pane.getAttribute('data-catalog-pane') === String(id);
+      pane.classList.toggle('is-active', active);
+      if (active) pane.removeAttribute('hidden');
+      else pane.setAttribute('hidden', '');
+    });
+  }
+
+  function open(parts) {
+    if (!MQ.matches) return;
+
+    lastFocused = document.activeElement;
+    parts.drawer.hidden = false;
+    // Force layout before animating
+    void parts.drawer.offsetWidth;
+    parts.drawer.classList.add('is-open');
+    parts.trigger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('catalog-menu-open');
+
+    const active = parts.parents.find((p) => p.classList.contains('is-active')) || parts.parents[0];
+    if (active) setActiveParent(parts, active.getAttribute('data-catalog-parent'));
+
+    const header = document.querySelector('store-header.header');
+    if (header && typeof header.lockTransparency !== 'undefined') {
+      try { header.lockTransparency = true; } catch (e) {}
+    }
+  }
+
+  function close(parts) {
+    if (!parts.drawer.classList.contains('is-open') && parts.drawer.hidden) return;
+
+    parts.drawer.classList.remove('is-open');
+    parts.trigger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('catalog-menu-open');
+
+    const header = document.querySelector('store-header.header');
+    if (header && typeof header.lockTransparency !== 'undefined') {
+      try { header.lockTransparency = false; } catch (e) {}
+    }
+
+    window.setTimeout(() => {
+      if (!parts.drawer.classList.contains('is-open')) {
+        parts.drawer.hidden = true;
+      }
+    }, 220);
+
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
+  }
+
+  function toggle(parts) {
+    if (parts.drawer.classList.contains('is-open')) close(parts);
+    else open(parts);
+  }
+
+  function bind() {
+    const parts = getParts();
+    if (!parts || parts.trigger.dataset.catalogBound === 'true') return;
+    parts.trigger.dataset.catalogBound = 'true';
+
+    parts.trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      toggle(parts);
+    });
+
+    if (parts.backdrop) {
+      parts.backdrop.addEventListener('click', () => close(parts));
+    }
+
+    parts.parents.forEach((parent) => {
+      const activate = () => setActiveParent(parts, parent.getAttribute('data-catalog-parent'));
+      parent.addEventListener('mouseenter', activate);
+      parent.addEventListener('focus', activate);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close(parts);
+    });
+
+    MQ.addEventListener('change', () => {
+      if (!MQ.matches) close(parts);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bind);
+  } else {
+    bind();
+  }
+})();
