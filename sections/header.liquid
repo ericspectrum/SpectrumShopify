@@ -9,6 +9,7 @@ IMPLEMENTATION NOTE: the header in Focal is pretty complex as it allows a lot of
     --enable-sticky-header: {% if section.settings.enable_sticky_header %}1{% else %}0{% endif %};
     --enable-transparent-header: {% if request.page_type == 'index' and section.settings.enable_transparent_header %}1{% else %}0{% endif %};
     --loading-bar-background: {{ settings.header_text_color.red }}, {{ settings.header_text_color.green }}, {{ settings.header_text_color.blue }}; /* Prevent the loading bar to be invisible */
+    --reduce-header-padding: {% if section.settings.reduce_desktop_padding %}1{% else %}0{% endif %};
   }
 
   #shopify-section-{{ section.id }} {

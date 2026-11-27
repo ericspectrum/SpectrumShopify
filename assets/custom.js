@@ -238,22 +238,18 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
 /**
  * Desktop header nav (after logo/icons move to announcement bar):
- * header__wrapper is nav-only. Size linklist into ~2 balanced rows;
- * if it still won't fit, allow full-width wrap.
+ * header__wrapper is nav-only — full-width linklist, CSS handles wrap + spacing.
  */
 (function initDesktopNavLayout() {
   const MQ = window.matchMedia('(min-width: 1000px)');
-  const WIDTH_BUFFER = 4;
-  let resizeTimer = null;
 
   function getParts() {
     const header = document.querySelector('store-header.header') || document.querySelector('.shopify-section--header .header');
     if (!header) return null;
-    const wrapper = header.querySelector('.header__wrapper');
     const nav = header.querySelector('.header__inline-navigation');
     const list = nav && nav.querySelector('.header__linklist');
-    if (!wrapper || !nav || !list) return null;
-    return { header, wrapper, nav, list };
+    if (!nav || !list) return null;
+    return { header, nav, list };
   }
 
   function hideMore(list) {
@@ -270,108 +266,14 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     if (moreItem) moreItem.hidden = true;
   }
 
-  function resetListSizing(list) {
-    list.style.removeProperty('width');
-    list.style.removeProperty('max-width');
-    list.style.removeProperty('flex-wrap');
-  }
-
-  function itemOuterWidth(el) {
-    const styles = window.getComputedStyle(el);
-    return el.offsetWidth
-      + (parseFloat(styles.marginInlineStart) || 0)
-      + (parseFloat(styles.marginInlineEnd) || 0);
-  }
-
-  function sumWidths(widths, from, to) {
-    let total = 0;
-    for (let i = from; i < to; i += 1) total += widths[i];
-    return total;
-  }
-
-  function countWrapRows(itemWidths, availableWidth) {
-    if (availableWidth <= 0) return Infinity;
-    let rows = 1;
-    let rowWidth = 0;
-
-    itemWidths.forEach((width) => {
-      const w = Math.min(width, availableWidth);
-      if (rowWidth === 0) {
-        rowWidth = w;
-        return;
-      }
-      if (rowWidth + w <= availableWidth) {
-        rowWidth += w;
-        return;
-      }
-      rows += 1;
-      rowWidth = w;
-    });
-
-    return rows;
-  }
-
-  function balancedBlockWidth(itemWidths) {
-    const n = itemWidths.length;
-    if (n <= 1) return sumWidths(itemWidths, 0, n);
-
-    let bestMax = Infinity;
-    let bestDiff = Infinity;
-
-    for (let split = 1; split < n; split += 1) {
-      const row1 = sumWidths(itemWidths, 0, split);
-      const row2 = sumWidths(itemWidths, split, n);
-      const diff = Math.abs(row1 - row2);
-      const maxW = Math.max(row1, row2);
-
-      if (diff < bestDiff || (diff === bestDiff && maxW < bestMax)) {
-        bestDiff = diff;
-        bestMax = maxW;
-      }
-    }
-
-    return bestMax;
-  }
-
-  function widthForTwoRows(itemWidths, limit) {
-    if (!itemWidths.length) return 0;
-
-    let width = Math.ceil(balancedBlockWidth(itemWidths) + WIDTH_BUFFER);
-
-    if (width > limit) {
-      return countWrapRows(itemWidths, limit) <= 2 ? limit : null;
-    }
-
-    while (width < limit && countWrapRows(itemWidths, width) > 2) {
-      width += 8;
-    }
-
-    if (countWrapRows(itemWidths, width) > 2) return null;
-    return Math.min(width, limit);
-  }
-
-  function measureItemWidths(list) {
-    list.style.setProperty('flex-wrap', 'nowrap');
-    list.style.setProperty('width', 'max-content');
-    list.style.setProperty('max-width', 'none');
-    void list.offsetWidth;
-
-    const items = [...list.querySelectorAll(':scope > .header__linklist-item:not([data-nav-more]):not([data-nav-row-break])')];
-    const widths = items.map((item) => itemOuterWidth(item));
-
-    list.style.removeProperty('flex-wrap');
-    list.style.removeProperty('width');
-    list.style.removeProperty('max-width');
-
-    return { items, widths };
-  }
-
   function layoutNav() {
     const parts = getParts();
     if (!parts) return;
 
     hideMore(parts.list);
-    resetListSizing(parts.list);
+    parts.list.style.removeProperty('width');
+    parts.list.style.removeProperty('max-width');
+    parts.list.style.removeProperty('flex-wrap');
 
     if (!MQ.matches) {
       parts.header.classList.remove('header--nav-inline', 'header--nav-stacked');
@@ -380,29 +282,11 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
     parts.header.classList.add('header--nav-inline');
     parts.header.classList.remove('header--nav-stacked');
-
-    const available = Math.floor(parts.wrapper.clientWidth);
-    const { widths } = measureItemWidths(parts.list);
-    const blockWidth = widthForTwoRows(widths, available);
-
-    if (blockWidth != null && blockWidth > 0) {
-      parts.header.classList.add('header--nav-inline');
-      parts.header.classList.remove('header--nav-stacked');
-      parts.list.style.width = blockWidth + 'px';
-      parts.list.style.maxWidth = available + 'px';
-    } else {
-      parts.header.classList.add('header--nav-stacked');
-      parts.header.classList.remove('header--nav-inline');
-    }
-  }
-
-  function onResize() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(layoutNav, 100);
+    parts.list.style.width = '100%';
+    parts.list.style.maxWidth = '100%';
   }
 
   function run() {
-    // Wait a frame so top-bar move settles before measuring nav width
     requestAnimationFrame(layoutNav);
   }
 
@@ -412,9 +296,10 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     run();
   }
 
-  window.addEventListener('resize', onResize);
+  window.addEventListener('resize', run);
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(run);
   }
   document.addEventListener('shopify:section:load', run);
+  MQ.addEventListener('change', run);
 })();
