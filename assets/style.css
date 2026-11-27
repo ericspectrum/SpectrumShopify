@@ -1209,7 +1209,7 @@ body.catalog-menu-open {
   line-height: 0;
 }
 
-/* Header + catalog panel must stay above the body-mounted backdrop */
+/* Keep whole header group above page content */
 .shopify-section-group-header-group,
 .shopify-section--header {
   position: relative;
@@ -1217,54 +1217,43 @@ body.catalog-menu-open {
   overflow: visible;
 }
 
+/* Header stays above the catalog drawer (so it is never blurred) */
 .shopify-section--header .header {
   position: relative;
-  z-index: 3;
+  z-index: 5;
 }
 
 .catalog-menu__drawer {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  position: fixed;
+  inset: 0;
   z-index: 4;
+  display: none;
+  padding-top: var(--catalog-menu-top, 0px);
   pointer-events: none;
 }
 
 .catalog-menu__drawer.is-open {
+  display: block;
   pointer-events: auto;
 }
 
+/* Backdrop is BEHIND the panel inside the same drawer — never above the menu */
 .catalog-menu__backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 50;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   margin: 0;
   padding: 0;
   border: 0;
-  background: rgba(57, 21, 60, 0.04);
+  background: rgba(57, 21, 60, 0.05);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.22s ease;
   cursor: pointer;
-}
-
-.catalog-menu__backdrop.is-open {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .catalog-menu__panel {
   position: relative;
-  z-index: 5;
+  z-index: 1;
   width: 100%;
   background: transparent;
   border: 0;
@@ -1274,6 +1263,7 @@ body.catalog-menu-open {
   opacity: 0;
   transform: translateY(-6px);
   transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: auto;
 }
 
 .catalog-menu__drawer.is-open .catalog-menu__panel {

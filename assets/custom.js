@@ -176,31 +176,11 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     });
   }
 
-  function mountBackdrop(parts) {
-    if (!parts.backdrop) return;
-    if (!parts.backdropPlaceholder) {
-      parts.backdropPlaceholder = document.createComment('catalog-backdrop');
-    }
-    if (!parts.backdropPlaceholder.parentNode) {
-      parts.drawer.insertBefore(parts.backdropPlaceholder, parts.backdrop);
-    }
-    // Portal to body so fixed covers the full viewport from the top
-    if (parts.backdrop.parentNode !== document.body) {
-      document.body.appendChild(parts.backdrop);
-    }
-    parts.backdrop.classList.add('is-mounted');
-  }
-
-  function unmountBackdrop(parts) {
-    if (!parts.backdrop || !parts.backdropPlaceholder) return;
-    parts.backdrop.classList.remove('is-open');
-    if (parts.backdropPlaceholder.parentNode) {
-      parts.backdropPlaceholder.parentNode.insertBefore(
-        parts.backdrop,
-        parts.backdropPlaceholder
-      );
-    }
-    parts.backdrop.classList.remove('is-mounted');
+  function syncDrawerTop(parts) {
+    const header = document.querySelector('store-header.header');
+    if (!header) return;
+    const top = Math.round(header.getBoundingClientRect().bottom);
+    parts.drawer.style.setProperty('--catalog-menu-top', `${Math.max(top, 0)}px`);
   }
 
   function open(parts) {
@@ -208,11 +188,9 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
     lastFocused = document.activeElement;
     parts.drawer.hidden = false;
-    mountBackdrop(parts);
-    // Force layout before animating
+    syncDrawerTop(parts);
     void parts.drawer.offsetWidth;
     parts.drawer.classList.add('is-open');
-    parts.backdrop.classList.add('is-open');
     parts.trigger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('catalog-menu-open');
 
@@ -229,7 +207,6 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     if (!parts.drawer.classList.contains('is-open') && parts.drawer.hidden) return;
 
     parts.drawer.classList.remove('is-open');
-    if (parts.backdrop) parts.backdrop.classList.remove('is-open');
     parts.trigger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('catalog-menu-open');
 
@@ -240,7 +217,6 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
     window.setTimeout(() => {
       if (!parts.drawer.classList.contains('is-open')) {
-        unmountBackdrop(parts);
         parts.drawer.hidden = true;
       }
     }, 220);
@@ -277,6 +253,10 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') close(parts);
+    });
+
+    window.addEventListener('resize', () => {
+      if (parts.drawer.classList.contains('is-open')) syncDrawerTop(parts);
     });
 
     MQ.addEventListener('change', () => {
