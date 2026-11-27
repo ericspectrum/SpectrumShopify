@@ -15,11 +15,11 @@
       "settings": {
         "image": "shopify://shop_images/Black_Friday_Sale_at_Spectrum_Boutique.png",
         "text": "Black Friday Sale!",
-        "phag": "<p>Our Black Friday Sale has arrived! Shop our Sale section for discounts of up to 60% select sex toy brands and styles! No code needed.<br/><br/>See terms and addtional deals HERE!</p>",
+        "phag": "<p>Our Black Friday Sale has arrived! Shop our Sale section for discounts of up to 60% select sex toy brands and styles! No code needed.<br/><br/><em><strong>See terms and addtional deals </strong></em><a href=\"/pages/coupons\" title=\"Coupons\"><em><strong>HERE</strong></em></a><em><strong>!</strong></em></p>",
         "clr": "#d2ffeb",
         "clr-text": "#00b9e2",
-        "link-text": "Shop Dame",
-        "link": "shopify://collections/dame-products"
+        "link-text": "Shop Sale",
+        "link": "shopify://collections/sale"
       }
     },
     "custom_multi_column_section_NTjk4K": {
