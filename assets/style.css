@@ -1640,6 +1640,7 @@ body.catalog-menu-open {
     display: flex;
     align-items: center;
     gap: 0;
+    padding: 18px 0 !important; /* was ~27px top + bottom from theme */
   }
 
   /* Mobile hamburger nav not needed on desk when catalog is used */
