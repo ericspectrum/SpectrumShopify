@@ -570,13 +570,16 @@ a,p,span,button{
 
 @media screen and (min-width: 1000px) {
   .header-top-bar {
+    min-height: 48px;
+    background: rgb(var(--section-background));
+  }
+
+  .header-top-bar > .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: calc(18px - var(--reduce-header-padding, 0) * 6px) 16px;
-    min-height: 48px;
-    background: rgb(var(--section-background));
+    padding-block: calc(18px - var(--reduce-header-padding, 0) * 6px);
   }
 
   .header-top-bar__slot {
