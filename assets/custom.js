@@ -183,12 +183,16 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
     parts.drawer.style.setProperty('--catalog-menu-top', `${Math.max(top, 0)}px`);
   }
 
+  const ANIM_MS = 340;
+
   function open(parts) {
     if (!MQ.matches) return;
+    if (parts.drawer.classList.contains('is-open')) return;
 
     lastFocused = document.activeElement;
     parts.drawer.hidden = false;
     syncDrawerTop(parts);
+    // Force reflow so open transitions run from the closed state
     void parts.drawer.offsetWidth;
     parts.drawer.classList.add('is-open');
     parts.trigger.setAttribute('aria-expanded', 'true');
@@ -204,7 +208,7 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
   }
 
   function close(parts) {
-    if (!parts.drawer.classList.contains('is-open') && parts.drawer.hidden) return;
+    if (!parts.drawer.classList.contains('is-open')) return;
 
     parts.drawer.classList.remove('is-open');
     parts.trigger.setAttribute('aria-expanded', 'false');
@@ -219,7 +223,7 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
       if (!parts.drawer.classList.contains('is-open')) {
         parts.drawer.hidden = true;
       }
-    }, 220);
+    }, ANIM_MS);
 
     if (lastFocused && typeof lastFocused.focus === 'function') {
       lastFocused.focus();

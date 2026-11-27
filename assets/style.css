@@ -1169,6 +1169,14 @@ body.catalog-menu-open {
   overflow: hidden;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .catalog-menu__backdrop,
+  .catalog-menu__panel,
+  .catalog-menu__shell {
+    transition: none !important;
+  }
+}
+
 .catalog-menu {
   display: none;
 }
@@ -1227,14 +1235,15 @@ body.catalog-menu-open {
   position: fixed;
   inset: 0;
   z-index: 4;
-  display: none;
+  display: block;
   padding-top: var(--catalog-menu-top, 0px);
   pointer-events: none;
+  visibility: hidden;
 }
 
 .catalog-menu__drawer.is-open {
-  display: block;
   pointer-events: auto;
+  visibility: visible;
 }
 
 /* Backdrop is BEHIND the panel inside the same drawer — never above the menu */
@@ -1246,10 +1255,21 @@ body.catalog-menu-open {
   padding: 0;
   border: 0;
   background: rgba(57, 21, 60, 0.05);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  opacity: 0;
   pointer-events: auto;
   cursor: pointer;
+  transition:
+    opacity 0.28s ease,
+    backdrop-filter 0.32s ease,
+    -webkit-backdrop-filter 0.32s ease;
+}
+
+.catalog-menu__drawer.is-open .catalog-menu__backdrop {
+  opacity: 1;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .catalog-menu__panel {
@@ -1268,16 +1288,8 @@ body.catalog-menu-open {
   box-shadow: none;
   /* padding = inset from viewport edges */
   padding: 12px 16px 16px;
-  opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
   /* Let outside-of-shell clicks reach the backdrop */
   pointer-events: none;
-}
-
-.catalog-menu__drawer.is-open .catalog-menu__panel {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .catalog-menu__shell {
@@ -1297,6 +1309,17 @@ body.catalog-menu-open {
   border: 1px solid rgba(0, 185, 226, 0.12);
   box-shadow: 0 18px 40px rgba(57, 21, 60, 0.12);
   pointer-events: auto;
+  opacity: 0;
+  transform: translateY(-14px) scale(0.985);
+  transform-origin: top center;
+  transition:
+    opacity 0.26s ease,
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.catalog-menu__drawer.is-open .catalog-menu__shell {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .catalog-menu__parents {
