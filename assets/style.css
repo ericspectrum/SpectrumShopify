@@ -693,6 +693,8 @@ a,p,span,button{
     left: 0;
     right: 0;
     width: 100%;
+    /* Sit above the other nav row so cursor can reach the panel from row 1 */
+    z-index: 6;
   }
 
   .shopify-section--header .header .header__linklist-link {

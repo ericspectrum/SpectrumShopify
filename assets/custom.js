@@ -141,6 +141,77 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 }
 
 /**
+ * Mega-menu under the hovered nav row (not under the whole 2-row header).
+ * Prevents the cursor from crossing a lower nav row and closing the panel.
+ */
+(function initMegaMenuRowPosition() {
+  const MQ = window.matchMedia('(min-width: 1000px)');
+
+  function containingBlock() {
+    return document.querySelector('.shopify-section--header');
+  }
+
+  function positionFor(li) {
+    const mega = li && li.querySelector(':scope > .mega-menu');
+    const ancestor = containingBlock();
+    if (!mega || !ancestor || !MQ.matches) return;
+
+    const liRect = li.getBoundingClientRect();
+    const ancestorRect = ancestor.getBoundingClientRect();
+    const top = Math.max(0, Math.round(liRect.bottom - ancestorRect.top));
+    mega.style.top = top + 'px';
+    mega.dataset.megaRowPositioned = 'true';
+  }
+
+  function clearPosition(li) {
+    const mega = li && li.querySelector(':scope > .mega-menu');
+    if (!mega) return;
+    mega.style.removeProperty('top');
+    delete mega.dataset.megaRowPositioned;
+  }
+
+  function openItemFromEvent(event) {
+    const nav = event.target;
+    if (!(nav instanceof Element)) return null;
+    const openLink = nav.querySelector('.header__linklist-link[aria-expanded="true"]');
+    return openLink ? openLink.closest('.header__linklist-item') : null;
+  }
+
+  document.addEventListener('desktop-nav:dropdown:open', (event) => {
+    const li = openItemFromEvent(event);
+    if (li) {
+      // Layout after un-hiding so measurements are correct
+      requestAnimationFrame(() => positionFor(li));
+    }
+  });
+
+  document.addEventListener('desktop-nav:dropdown:close', (event) => {
+    const nav = event.target;
+    if (!(nav instanceof Element)) return;
+    nav.querySelectorAll('.mega-menu[data-mega-row-positioned]').forEach((mega) => {
+      mega.style.removeProperty('top');
+      delete mega.dataset.megaRowPositioned;
+    });
+  });
+
+  // Reposition on resize while open
+  window.addEventListener('resize', () => {
+    if (!MQ.matches) {
+      document.querySelectorAll('.mega-menu[data-mega-row-positioned]').forEach((mega) => {
+        mega.style.removeProperty('top');
+        delete mega.dataset.megaRowPositioned;
+      });
+      return;
+    }
+    const openLink = document.querySelector(
+      '.shopify-section--header .header__linklist-link[aria-expanded="true"]'
+    );
+    const li = openLink && openLink.closest('.header__linklist-item');
+    if (li) positionFor(li);
+  });
+})();
+
+/**
  * Desktop header nav: header__wrapper is nav-only — full-width linklist.
  */
 (function initDesktopNavLayout() {
