@@ -121,6 +121,47 @@
               {%- endif -%}
             {%- endcapture -%}
 
+            {%- comment -%} Fallback: top products from linked collection (or best-sellers) {%- endcomment -%}
+            {%- if mega_menu_images == blank -%}
+              {%- assign fallback_collection = nil -%}
+
+              {%- if link.type == 'collection_link' and link.object != blank -%}
+                {%- assign fallback_collection = link.object -%}
+              {%- elsif link.url contains '/collections/' -%}
+                {%- assign collection_handle = link.url | split: '/collections/' | last | split: '/' | first | split: '?' | first -%}
+                {%- assign fallback_collection = collections[collection_handle] -%}
+              {%- endif -%}
+
+              {%- if fallback_collection == blank or fallback_collection.products_count == 0 -%}
+                {%- assign fallback_collection = collections['best-sellers'] -%}
+              {%- endif -%}
+
+              {%- if fallback_collection != blank and fallback_collection.products_count > 0 -%}
+                {%- assign images_count = 0 -%}
+                {%- capture mega_menu_images -%}
+                  {%- for product in fallback_collection.products limit: 5 -%}
+                    {%- if product.featured_media == blank -%}
+                      {%- continue -%}
+                    {%- endif -%}
+                    {%- assign images_count = images_count | plus: 1 -%}
+                    {%- assign product_image_alt = product.featured_media.alt | default: product.title -%}
+                    <a href="{{ product.url }}" class="catalog-menu__image-push">
+                      <div class="catalog-menu__image-wrapper">
+                        {{ product.featured_media | image_url: width: 400 | image_tag: loading: 'lazy', sizes: '160px', widths: '160,240,320,400', class: 'catalog-menu__image', alt: product_image_alt }}
+                      </div>
+                      <p class="catalog-menu__image-heading">{{ product.title }}</p>
+                      <span class="catalog-menu__image-text">
+                        {%- if product.compare_at_price > product.price -%}
+                          <s class="catalog-menu__image-compare">{{ product.compare_at_price | money }}</s>
+                        {%- endif -%}
+                        {{ product.price | money }}
+                      </span>
+                    </a>
+                  {%- endfor -%}
+                {%- endcapture -%}
+              {%- endif -%}
+            {%- endif -%}
+
             <div
               id="catalog-pane-{{ forloop.index }}"
               class="catalog-menu__pane{% if forloop.first %} is-active{% endif %}"
