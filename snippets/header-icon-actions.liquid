@@ -1,0 +1,63 @@
+{%- comment -%}
+  Shared header icon actions (search, account, wishlist, cart).
+  context: 'header' | 'top-bar'
+{%- endcomment -%}
+
+{%- assign icon_context = context | default: 'header' -%}
+{%- assign icons_enabled = show_icons -%}
+{%- if icons_enabled == nil -%}
+  {%- assign icons_enabled = true -%}
+{%- endif -%}
+{%- assign layout = header_layout | default: 'logo_left_navigation_center' -%}
+
+<div class="header__icon-list">
+  {%- if layout != 'logo_center_search_open' -%}
+    <a
+      href="{{ routes.search_url }}"
+      is="toggle-link"
+      class="cstm_search_icon header__icon-wrapper tap-area {% if icon_context == 'header' %}hidden-pocket hidden-lap{% endif %} {% unless icons_enabled %}{% if icon_context == 'header' %}hidden-desk{% endif %}{% endunless %}"
+      aria-label="{{ 'search.general.title' | t | escape }}"
+      aria-controls="search-drawer"
+      aria-expanded="false"
+    >
+      {%- render 'icon' with 'header-search' -%}
+    </a>
+  {%- endif -%}
+
+  {%- if shop.customer_accounts_enabled -%}
+    <a
+      href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
+      class="cstm_acct_icon header__icon-wrapper tap-area {% if icon_context == 'header' %}hidden-phone{% endif %} {% unless icons_enabled %}{% if icon_context == 'header' %}hidden-desk{% endif %}{% endunless %}"
+      aria-label="{% if customer %}{{ 'header.general.account' | t | escape }}{% else %}{{ 'header.general.login' | t | escape }}{% endif %}"
+    >
+      {%- render 'icon' with 'header-customer' -%}
+    </a>
+  {%- endif -%}
+
+  <a
+    href="/pages/wishlist"
+    class="cstm_wishList_icon header__icon-wrapper tap-area {% if icon_context == 'header' %}hidden-phone{% endif %} {% unless icons_enabled %}{% if icon_context == 'header' %}hidden-desk{% endif %}{% endunless %}"
+    aria-label="Wishlist"
+  >
+    {%- render 'icon' with 'wishListIcon_head' -%}
+  </a>
+
+  <a
+    href="{{ routes.cart_url }}"
+    {% unless settings.cart_type == 'page' or request.page_type == 'cart' %}is="toggle-link" aria-controls="mini-cart" aria-expanded="false"{% endunless %}
+    class="header__icon-wrapper tap-area {% unless icons_enabled %}{% if icon_context == 'header' %}hidden-desk{% endif %}{% endunless %}"
+    aria-label="{{ 'header.general.cart' | t | escape }}"
+    data-no-instant
+  >
+    {%- case settings.cart_icon -%}
+      {%- when 'shopping_bag' -%}
+        {%- render 'icon' with 'header-cart' -%}
+      {%- when 'shopping_cart' -%}
+        {%- render 'icon' with 'header-shopping-cart' -%}
+      {%- when 'tote_bag' -%}
+        {%- render 'icon' with 'header-tote-bag' -%}
+    {%- endcase -%}
+
+    <cart-count class="header__cart-count header__cart-count--floating bubble-count" aria-hidden="true">{{ cart.item_count }}</cart-count>
+  </a>
+</div>

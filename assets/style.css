@@ -561,17 +561,12 @@ a,p,span,button{
 /*  =================================        Menu (alt nav concept)           ================================*/
 
 /*
-  Desktop:
-  - logo + icons live in .header-top-bar (announcement section) via JS
-  - .header__wrapper is nav-only
-  - .header--nav-inline → balanced 2-row linklist
-  - .header--nav-stacked → full-width wrapping nav
+  Desktop (≥1000px):
+  - white logo + icons rendered in .header-top-bar (announcement section)
+  - header logo + secondary-links hidden; header__wrapper is nav-only
+  Mobile:
+  - top-bar slots hidden; header keeps logo + icons
 */
-
-/* Top bar slots stay collapsed until JS moves logo/icons in */
-.header-top-bar__slot:empty {
-  display: none;
-}
 
 @media screen and (min-width: 1000px) {
   .header-top-bar {
@@ -590,12 +585,8 @@ a,p,span,button{
     align-items: center;
   }
 
-  .header-top-bar__slot:empty {
-    display: flex;
-    min-width: 0;
-  }
-
-  .header-top-bar .announcement-bar {
+  .header-top-bar .announcement-bar,
+  .header-top-bar .announcement-bar--spacer {
     flex: 1 1 auto;
     min-width: 0;
     padding-inline: 0;
@@ -606,18 +597,19 @@ a,p,span,button{
     padding-block: 0;
   }
 
-  .header-top-bar .header__logo {
+  .header-top-bar__logo {
+    display: block;
     margin: 0;
-    flex: 0 0 auto;
+    color: #fff;
   }
 
-  /* Ready for white logo later: uncomment when logo asset is inverted
-  .header-top-bar .header__logo-image {
-    filter: brightness(0) invert(1);
+  .header-top-bar .header__logo-image--announcement {
+    display: block;
+    width: auto;
+    height: auto;
   }
-  */
 
-  .header-top-bar .header__secondary-links {
+  .header-top-bar .header__secondary-links--top-bar {
     flex: 0 0 auto !important;
     max-width: none !important;
     margin: 0 !important;
@@ -640,6 +632,12 @@ a,p,span,button{
     color: #00b9e2;
   }
 
+  /* Hide header logo + actions on desktop (duplicated in top bar) */
+  .shopify-section--header .header__logo,
+  .shopify-section--header .header__secondary-links {
+    display: none !important;
+  }
+
   /* Nav-only header row */
   .shopify-section--header .header .header__linklist-item--more {
     display: none !important;
@@ -647,16 +645,18 @@ a,p,span,button{
 
   .shopify-section--header .header > .container {
     padding-inline: 16px;
+    overflow: visible;
   }
 
-  .header-top-bar-active .shopify-section--header .header .container .header__wrapper {
+  .shopify-section--header .header .container .header__wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: calc(12px - var(--reduce-header-padding, 0) * 4px) 0;
+    overflow: visible;
   }
 
-  .header-top-bar-active .shopify-section--header .header .header__inline-navigation {
+  .shopify-section--header .header .header__inline-navigation {
     flex: 1 1 100% !important;
     width: 100%;
     min-width: 0;
@@ -666,68 +666,54 @@ a,p,span,button{
     overflow: visible;
   }
 
-  .header-top-bar-active .shopify-section--header .header .header__inline-navigation .header__linklist {
+  .shopify-section--header .header .header__inline-navigation .header__linklist {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 100% !important;
     max-width: 100% !important;
-    column-gap: 0;
-    row-gap: 8px;
+    column-gap: 18px;
+    row-gap: 10px;
     overflow: visible;
   }
 
-  /* Separate items so labels don't read as one fused strip */
-  .header-top-bar-active .shopify-section--header .header .header__linklist-item {
-    position: relative;
+  /* Keep items static so .mega-menu (absolute, width 100%) anchors to the sticky header section */
+  .shopify-section--header .header .header__linklist-item {
+    position: static;
     flex: 0 1 auto;
     margin-inline-end: 0 !important;
-    padding-inline: 10px;
+    padding-inline: 0;
   }
 
-  .header-top-bar-active .shopify-section--header .header .header__linklist-item:first-child {
-    padding-inline-start: 0;
-  }
-
-  .header-top-bar-active .shopify-section--header .header .header__linklist-item:last-child {
-    padding-inline-end: 0;
-  }
-
-  .header-top-bar-active .shopify-section--header .header .header__linklist-item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 50%;
+  .shopify-section--header .header .header__linklist-item .mega-menu {
+    left: 0;
     right: 0;
-    width: 1px;
-    height: 12px;
-    background: rgba(0, 185, 226, 0.28);
-    transform: translateY(-50%);
-    pointer-events: none;
+    width: 100%;
   }
 
   .shopify-section--header .header .header__linklist-link {
-    font-size: 12px;
-    gap: 4px;
+    font-size: 13.5px;
+    gap: 5px;
   }
 
   .shopify-section--header .header .header__linklist-item--cta .header__linklist-link {
-    font-size: 12px;
-    padding: 4px 10px;
+    font-size: 13.5px;
+    padding: 5px 12px;
   }
 
   .shopify-section--header .header .header__linklist-item .nv_cstmIcon {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
   }
 
   .shopify-section--header .header .header__linklist-item .nv_cstmIcon svg {
-    width: 8px;
-    height: 6px;
+    width: 9px;
+    height: 7px;
   }
 }
 
-/* Mobile / tablet: keep top-bar as plain announcement strip */
+/* Mobile / tablet: announcement messages only; logo + icons stay in header */
 @media screen and (max-width: 999px) {
   .header-top-bar {
     display: block;
@@ -780,36 +766,23 @@ a,p,span,button{
   margin-inline-end: 8px;
 }
 
-.header-top-bar-active .header__linklist .header__linklist-item:not(:last-child),
-.header-top-bar-active .header .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child),
-.header-top-bar-active .shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {
-  margin-inline-end: 0 !important;
+@media screen and (min-width: 1000px) {
+  .header__linklist .header__linklist-item:not(:last-child),
+  .header .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child),
+  .shopify-section--header .header .container .header__wrapper .header__inline-navigation .header__linklist .header__linklist-item:not(:last-child) {
+    margin-inline-end: 0 !important;
+  }
 }
 
-/* Restore slightly airier nav on large desktops */
+/* Slightly larger type on wide desktops */
 @media screen and (min-width: 1600px) {
   .shopify-section--header .header > .container {
     padding-inline: 24px;
   }
 
-  .shopify-section--header .header .header__linklist-item:not(:last-child) {
-    margin-inline-end: 6px !important;
-  }
-
   .shopify-section--header .header .header__linklist-link,
   .shopify-section--header .header .header__linklist-item--cta .header__linklist-link {
-    font-size: 12px;
-  }
-}
-
-@media screen and (min-width: 1750px) {
-  .shopify-section--header .header .header__linklist-item:not(:last-child) {
-    margin-inline-end: 8px !important;
-  }
-
-  .shopify-section--header .header .header__linklist-link,
-  .shopify-section--header .header .header__linklist-item--cta .header__linklist-link {
-    font-size: 12.5px;
+    font-size: 14px;
   }
 }
 
@@ -818,7 +791,7 @@ a,p,span,button{
   align-items: center;
   gap: 4px;
   font-family: 'Lausanne', sans-serif;
-  font-size: 12.5px;
+  font-size: 13.5px;
   letter-spacing: 0.01em;
   color: #00B9E2;
   text-decoration: none;
@@ -1593,6 +1566,13 @@ a,p,span,button{
 .cstmpredictiveSearch {  display: none;}
 .cstm_acct_icon{display:none}
 .cstm_search_icon {display:block !important ; }
+
+  /* Keep full icon set visible in desktop announcement top bar */
+  .header-top-bar .cstm_acct_icon,
+  .header-top-bar .cstm_wishList_icon,
+  .header-top-bar .cstm_search_icon {
+    display: block !important;
+  }
 }
 
 
