@@ -238,11 +238,21 @@ for (let i = 0, linksLength = links.length ; i < linksLength ; i++) {
 
     parts.trigger.addEventListener('click', (event) => {
       event.preventDefault();
+      event.stopPropagation();
       toggle(parts);
     });
 
-    if (parts.backdrop) {
-      parts.backdrop.addEventListener('click', () => close(parts));
+    // Close when clicking backdrop or any empty area outside the panel
+    parts.drawer.addEventListener('click', (event) => {
+      if (event.target.closest('.catalog-menu__panel')) return;
+      close(parts);
+    });
+
+    const panel = parts.drawer.querySelector('.catalog-menu__panel');
+    if (panel) {
+      panel.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
     }
 
     parts.parents.forEach((parent) => {
