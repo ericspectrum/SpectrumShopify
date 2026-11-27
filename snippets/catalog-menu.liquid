@@ -37,14 +37,24 @@
       aria-modal="true"
       aria-label="Collections"
     >
-      <div class="container catalog-menu__shell">
+      <div class="catalog-menu__shell">
         <aside class="catalog-menu__parents" aria-label="Categories">
           <ul class="catalog-menu__parent-list list--unstyled" role="list">
             {%- for link in menu.links -%}
-              <li class="catalog-menu__parent-item">
+              {%- assign link_title_downcase = link.title | strip | downcase -%}
+              {%- assign cta_class = '' -%}
+              {%- if link_title_downcase == 'new arrivals' -%}
+                {%- assign cta_class = ' catalog-menu__parent--cta catalog-menu__parent--new' -%}
+              {%- elsif link_title_downcase == 'best sellers' -%}
+                {%- assign cta_class = ' catalog-menu__parent--cta catalog-menu__parent--best' -%}
+              {%- elsif link_title_downcase == 'sale' -%}
+                {%- assign cta_class = ' catalog-menu__parent--cta catalog-menu__parent--sale' -%}
+              {%- endif -%}
+
+              <li class="catalog-menu__parent-item{% if cta_class != blank %} catalog-menu__parent-item--cta{% endif %}">
                 <a
                   href="{{ link.url }}"
-                  class="catalog-menu__parent{% if forloop.first %} is-active{% endif %}"
+                  class="catalog-menu__parent{% if forloop.first %} is-active{% endif %}{{ cta_class }}"
                   data-catalog-parent="{{ forloop.index }}"
                   {% if link.links.size > 0 %}aria-controls="catalog-pane-{{ forloop.index }}"{% endif %}
                 >
