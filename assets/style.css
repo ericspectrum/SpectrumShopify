@@ -1517,6 +1517,7 @@ body.catalog-menu-open {
 .catalog-menu__shop-all {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   flex-shrink: 0;
   margin-inline-start: auto;
   color: #00B9E2;
@@ -1530,6 +1531,18 @@ body.catalog-menu-open {
   transition: color 0.15s ease;
 }
 
+.catalog-menu__shop-all-icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  transition: transform 0.2s ease;
+}
+
+.catalog-menu__shop-all-icon .icon {
+  width: 14px;
+  height: 12px;
+}
+
 .catalog-menu__shop-all:hover,
 .catalog-menu__shop-all:focus-visible {
   color: #037E99;
@@ -1537,23 +1550,27 @@ body.catalog-menu-open {
   text-underline-offset: 3px;
 }
 
+.catalog-menu__shop-all:hover .catalog-menu__shop-all-icon,
+.catalog-menu__shop-all:focus-visible .catalog-menu__shop-all-icon {
+  transform: translateX(3px);
+}
+
 .catalog-menu__images {
   display: grid;
-  grid-template-columns: repeat(var(--images-cols, 3), minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(var(--images-cols, 5), minmax(0, 1fr));
+  gap: 10px;
   width: 100%;
 }
 
-/* If one row would be too cramped, split into 2 equal rows */
-@container catalog-pane (max-width: 720px) {
+/* Only wrap to 2 equal rows when the pane is genuinely narrow */
+@container catalog-pane (max-width: 640px) {
+  .catalog-menu__images[data-images-count="5"],
+  .catalog-menu__images[data-images-count="6"] {
+    --images-cols: 3;
+  }
+
   .catalog-menu__images[data-images-count="3"],
   .catalog-menu__images[data-images-count="4"] {
-    --images-cols: 2;
-  }
-}
-
-@container catalog-pane (max-width: 520px) {
-  .catalog-menu__images[data-images-count="2"] {
     --images-cols: 2;
   }
 }
@@ -1580,16 +1597,18 @@ body.catalog-menu-open {
 }
 
 .catalog-menu__image-heading {
-  margin: 8px 0 0;
-  font-size: 13px;
+  margin: 6px 0 0;
+  font-size: 12px;
   font-weight: 600;
+  line-height: 1.3;
   color: #39153C;
 }
 
 .catalog-menu__image-text {
   display: block;
   margin-top: 2px;
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 1.3;
   color: rgba(57, 21, 60, 0.7);
 }
 

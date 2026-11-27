@@ -133,7 +133,10 @@
 
                 {%- if link.url != blank and link.url != '#' -%}
                   <a href="{{ link.url }}" class="catalog-menu__shop-all">
-                    Shop All {{ link.title }}
+                    <span>Shop All {{ link.title }}</span>
+                    <span class="catalog-menu__shop-all-icon" aria-hidden="true">
+                      {% render 'icon' with 'nav-arrow-right-small' %}
+                    </span>
                   </a>
                 {%- endif -%}
               </div>
@@ -142,6 +145,11 @@
                 {%- if link.links.size > 0 -%}
                   <div class="catalog-menu__columns">
                     {%- for sub_link in link.links -%}
+                      {%- assign sub_title_downcase = sub_link.title | strip | downcase -%}
+                      {%- if sub_title_downcase == 'shop all' or sub_title_downcase contains 'shop all ' -%}
+                        {%- continue -%}
+                      {%- endif -%}
+
                       <div class="catalog-menu__column">
                         {%- if sub_link.url == blank or sub_link.url == '#' -%}
                           <span class="catalog-menu__column-title">{{ sub_link.title }}</span>
@@ -152,6 +160,10 @@
                         {%- if sub_link.links.size > 0 -%}
                           <ul class="catalog-menu__links list--unstyled" role="list">
                             {%- for sub_sub_link in sub_link.links -%}
+                              {%- assign sub_sub_title_downcase = sub_sub_link.title | strip | downcase -%}
+                              {%- if sub_sub_title_downcase == 'shop all' or sub_sub_title_downcase contains 'shop all ' -%}
+                                {%- continue -%}
+                              {%- endif -%}
                               <li>
                                 <a href="{{ sub_sub_link.url }}" class="catalog-menu__link">{{ sub_sub_link.title }}</a>
                               </li>
@@ -164,15 +176,10 @@
                 {%- endif -%}
 
                 {%- if mega_menu_images != blank -%}
-                  {%- if images_count <= 4 -%}
-                    {%- assign images_cols = images_count -%}
-                  {%- else -%}
-                    {%- assign images_cols = 3 -%}
-                  {%- endif -%}
                   <div
                     class="catalog-menu__images"
                     data-images-count="{{ images_count }}"
-                    style="--images-cols: {{ images_cols }};"
+                    style="--images-cols: {{ images_count }};"
                   >
                     {{- mega_menu_images -}}
                   </div>
