@@ -48,11 +48,11 @@
         "column_nNiD4c": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Spectrum_Essentials_by_Spectrum_Boutique.png",
-            "heading": "Essentials",
-            "description": "Take 20% off our thoughtfully designed collection of body-safe sex toys, Spectrum Essentials. Use code: ESSENTIALS20",
-            "link": "shopify://collections/spectrum-essentials",
-            "button_text": "Shop Essentials"
+            "image": "shopify://shop_images/Snail_Vibe_Black_Friday_Sale_at_Spectrum_Boutique.png",
+            "heading": "S-Vibe Sale",
+            "description": "S-vibe's unique sex toys that move with your body for all-over pleasure are 20% off thru 12/2 with code: SVIBEBFCM",
+            "link": "shopify://collections/s-vibe-sex-toys",
+            "button_text": "Shop S-Vibe"
           }
         }
       },
